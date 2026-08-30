@@ -1,0 +1,186 @@
+{
+  "geneval_00002": {
+    "decision": "keep",
+    "drop_variants": [],
+    "memo": "",
+    "updated_at": "2026-08-30T17:47:17+00:00"
+  },
+  "geneval_00004": {
+    "decision": "keep",
+    "drop_variants": [],
+    "memo": "문제없는거 같음",
+    "updated_at": "2026-08-30T17:48:30+00:00"
+  },
+  "geneval_00007": {
+    "decision": "keep",
+    "drop_variants": [],
+    "memo": "",
+    "updated_at": "2026-08-30T17:49:11+00:00"
+  },
+  "geneval_00028": {
+    "decision": "keep",
+    "drop_variants": [],
+    "memo": "",
+    "updated_at": "2026-08-30T17:50:57+00:00"
+  },
+  "geneval_00034": {
+    "decision": "keep",
+    "drop_variants": [],
+    "memo": "",
+    "updated_at": "2026-08-30T17:51:49+00:00"
+  },
+  "dpg_bench_12": {
+    "decision": "keep",
+    "drop_variants": [],
+    "memo": "",
+    "updated_at": "2026-08-30T17:54:42+00:00"
+  },
+  "gsm8k_00009": {
+    "decision": "keep",
+    "drop_variants": [
+      1
+    ],
+    "memo": "룰베이스(exact-match) 채점 대상 gsm8k: 이 variant는 원본 문제의 수량/관계가 바뀌어 정답 숫자가 달라질 위험이 높음 -> 드롭",
+    "updated_at": "2026-08-30T18:37:02+00:00"
+  },
+  "gsm8k_00011": {
+    "decision": "keep",
+    "drop_variants": [
+      2,
+      5
+    ],
+    "memo": "룰베이스(exact-match) 채점 대상 gsm8k: 이 variant는 원본 문제의 수량/관계가 바뀌어 정답 숫자가 달라질 위험이 높음 -> 드롭",
+    "updated_at": "2026-08-30T18:37:02+00:00"
+  },
+  "gsm8k_00114": {
+    "decision": "keep",
+    "drop_variants": [
+      3
+    ],
+    "memo": "룰베이스(exact-match) 채점 대상 gsm8k: 이 variant는 원본 문제의 수량/관계가 바뀌어 정답 숫자가 달라질 위험이 높음 -> 드롭",
+    "updated_at": "2026-08-30T18:37:02+00:00"
+  },
+  "gsm8k_00145": {
+    "decision": "keep",
+    "drop_variants": [
+      2,
+      4,
+      5
+    ],
+    "memo": "룰베이스(exact-match) 채점 대상 gsm8k: 이 variant는 원본 문제의 수량/관계가 바뀌어 정답 숫자가 달라질 위험이 높음 -> 드롭",
+    "updated_at": "2026-08-30T18:37:02+00:00"
+  },
+  "gsm8k_00166": {
+    "decision": "keep",
+    "drop_variants": [
+      4
+    ],
+    "memo": "룰베이스(exact-match) 채점 대상 gsm8k: 이 variant는 원본 문제의 수량/관계가 바뀌어 정답 숫자가 달라질 위험이 높음 -> 드롭",
+    "updated_at": "2026-08-30T18:37:02+00:00"
+  },
+  "gsm8k_00171": {
+    "decision": "keep",
+    "drop_variants": [
+      1
+    ],
+    "memo": "룰베이스(exact-match) 채점 대상 gsm8k: 이 variant는 원본 문제의 수량/관계가 바뀌어 정답 숫자가 달라질 위험이 높음 -> 드롭",
+    "updated_at": "2026-08-30T18:37:02+00:00"
+  },
+  "gsm8k_00232": {
+    "decision": "keep",
+    "drop_variants": [
+      3,
+      5
+    ],
+    "memo": "룰베이스(exact-match) 채점 대상 gsm8k: 이 variant는 원본 문제의 수량/관계가 바뀌어 정답 숫자가 달라질 위험이 높음 -> 드롭",
+    "updated_at": "2026-08-30T18:37:02+00:00"
+  },
+  "gsm8k_00236": {
+    "decision": "keep",
+    "drop_variants": [
+      2,
+      4,
+      5
+    ],
+    "memo": "룰베이스(exact-match) 채점 대상 gsm8k: 이 variant는 원본 문제의 수량/관계가 바뀌어 정답 숫자가 달라질 위험이 높음 -> 드롭",
+    "updated_at": "2026-08-30T18:37:02+00:00"
+  },
+  "gsm8k_00259": {
+    "decision": "keep",
+    "drop_variants": [
+      3,
+      5
+    ],
+    "memo": "룰베이스(exact-match) 채점 대상 gsm8k: 이 variant는 원본 문제의 수량/관계가 바뀌어 정답 숫자가 달라질 위험이 높음 -> 드롭",
+    "updated_at": "2026-08-30T18:37:02+00:00"
+  },
+  "gsm8k_00283": {
+    "decision": "keep",
+    "drop_variants": [
+      5
+    ],
+    "memo": "룰베이스(exact-match) 채점 대상 gsm8k: 이 variant는 원본 문제의 수량/관계가 바뀌어 정답 숫자가 달라질 위험이 높음 -> 드롭",
+    "updated_at": "2026-08-30T18:37:02+00:00"
+  },
+  "gsm8k_00287": {
+    "decision": "keep",
+    "drop_variants": [
+      5
+    ],
+    "memo": "룰베이스(exact-match) 채점 대상 gsm8k: 이 variant는 원본 문제의 수량/관계가 바뀌어 정답 숫자가 달라질 위험이 높음 -> 드롭",
+    "updated_at": "2026-08-30T18:37:02+00:00"
+  },
+  "gsm8k_00289": {
+    "decision": "keep",
+    "drop_variants": [
+      1,
+      4
+    ],
+    "memo": "룰베이스(exact-match) 채점 대상 gsm8k: 이 variant는 원본 문제의 수량/관계가 바뀌어 정답 숫자가 달라질 위험이 높음 -> 드롭",
+    "updated_at": "2026-08-30T18:37:02+00:00"
+  },
+  "gsm8k_00303": {
+    "decision": "keep",
+    "drop_variants": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "memo": "룰베이스(exact-match) 채점 대상 gsm8k: 이 variant는 원본 문제의 수량/관계가 바뀌어 정답 숫자가 달라질 위험이 높음 -> 드롭",
+    "updated_at": "2026-08-30T18:37:02+00:00"
+  },
+  "gsm8k_00427": {
+    "decision": "keep",
+    "drop_variants": [
+      5
+    ],
+    "memo": "룰베이스(exact-match) 채점 대상 gsm8k: 이 variant는 원본 문제의 수량/관계가 바뀌어 정답 숫자가 달라질 위험이 높음 -> 드롭",
+    "updated_at": "2026-08-30T18:37:02+00:00"
+  },
+  "gsm8k_00462": {
+    "decision": "keep",
+    "drop_variants": [
+      4
+    ],
+    "memo": "룰베이스(exact-match) 채점 대상 gsm8k: 이 variant는 원본 문제의 수량/관계가 바뀌어 정답 숫자가 달라질 위험이 높음 -> 드롭",
+    "updated_at": "2026-08-30T18:37:02+00:00"
+  },
+  "gsm8k_00481": {
+    "decision": "keep",
+    "drop_variants": [
+      2
+    ],
+    "memo": "룰베이스(exact-match) 채점 대상 gsm8k: 이 variant는 원본 문제의 수량/관계가 바뀌어 정답 숫자가 달라질 위험이 높음 -> 드롭",
+    "updated_at": "2026-08-30T18:37:02+00:00"
+  },
+  "gsm8k_00590": {
+    "decision": "keep",
+    "drop_variants": [
+      3
+    ],
+    "memo": "룰베이스(exact-match) 채점 대상 gsm8k: 이 variant는 원본 문제의 수량/관계가 바뀌어 정답 숫자가 달라질 위험이 높음 -> 드롭",
+    "updated_at": "2026-08-30T18:37:02+00:00"
+  }
+}

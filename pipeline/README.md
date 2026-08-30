@@ -36,6 +36,7 @@ construction pipeline controls for this.
 | 2a | Rewrite prompts that failed Stage 1 | `fix` only |
 | 2b | Generate 5 variants (2 interrogative, 3 non-interrogative) | all |
 | 3 | Validate each variant on modality / meaning / naturalness | all |
+| 4 | Apply human drop decisions, produce final dataset | flagged samples only |
 
 Stage 1 does not produce repair instructions. Its judgement criterion would
 become the prescription, and every image prompt would end up rewritten as
@@ -100,6 +101,30 @@ image presence are derived from it.
 LLM judgements are spot-checked by hand: Stage 1 decisions for agreement with
 human labels, and a sample of Stage 3 survivors for meaning preservation.
 Details in the paper.
+
+Stage 3 was run to completion by hand (`gpt-5.5` covered the first ~2,910
+samples before hitting a billing limit; the remaining ~2,800 were validated
+manually against the same three-axis prompt in `prompts/stage3_validate_batch.txt`).
+Two failure patterns needed a human decision rather than the axis scores
+alone:
+
+- **Rule-based-graded sources** (`gsm8k`, `mmlu`, `ScienceQA`, `VQAv2`) reuse a
+  single fixed `gold_answer` across all 5 variants of a sample. A variant that
+  quietly changes a quantity or relationship in the source problem (e.g. "2
+  more than he has" → "short by 2") silently invalidates that gold answer —
+  unlike model-judged sources (`ImgEditBench`, `MagicBrush`, `dpg_bench`,
+  `geneval`), where a judge scores the actual output against whatever was
+  asked, so prompt drift there doesn't break grading the same way. 39 such
+  variants across 19 samples were identified and dropped.
+- **Source-level defects** independent of the variant step: duplicated text in
+  the original prompt, and a couple of `ImgEditBench` items whose source
+  prompt asked for a text answer despite being labeled `TI2I`. 6 samples
+  dropped, plus one `gsm8k` sample whose gold answer changed in every variant.
+
+`pipeline/stage4_finalize.py` applies these decisions
+(`pipeline/decisions/*.json`, one row per sample: `keep`, `drop`, or `keep`
+with a specific list of variants to drop) to `data/stage3_full_5682.json` and
+produces `data/stage3_final_5675.json`.
 
 ## References
 
