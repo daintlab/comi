@@ -48,7 +48,10 @@ become the prescription, and every image prompt would end up rewritten as
 pipeline/
   stage1_judge.py       Stage 1 only
   stage2_pipeline.py    Stage 2a → 2b → 3
+  stage4_finalize.py    Stage 4: apply drop decisions
   prompts/              system prompts, one txt per stage
+  decisions/            per-sample drop/keep decisions (see Human verification)
+  logs/                 full-run logs, one per stage
 data/
   samples.jsonl         input samples
 assets/
