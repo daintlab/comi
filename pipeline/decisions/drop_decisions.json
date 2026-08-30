@@ -1,0 +1,56 @@
+{
+  "imgeditbench_00057": {
+    "decision": "keep",
+    "drop_variants": []
+  },
+  "imgeditbench_00079": {
+    "decision": "keep",
+    "drop_variants": []
+  },
+  "imgeditbench_00274": {
+    "decision": "drop",
+    "drop_variants": []
+  },
+  "imgeditbench_00371": {
+    "decision": "keep",
+    "drop_variants": [
+      1
+    ]
+  },
+  "imgeditbench_00486": {
+    "decision": "drop",
+    "drop_variants": []
+  },
+  "imgeditbench_00558": {
+    "decision": "drop",
+    "drop_variants": []
+  },
+  "mmlu_openstyle_00014": {
+    "decision": "drop",
+    "drop_variants": []
+  },
+  "mmlu_openstyle_00481": {
+    "decision": "drop",
+    "drop_variants": []
+  },
+  "vqav2bt_365182006": {
+    "decision": "drop",
+    "drop_variants": []
+  },
+  "imgeditbench_00156": {
+    "decision": "keep",
+    "drop_variants": []
+  },
+  "mmlu_openstyle_00652": {
+    "decision": "keep",
+    "drop_variants": []
+  },
+  "mmlu_openstyle_00669": {
+    "decision": "keep",
+    "drop_variants": []
+  },
+  "imgeditbench_00216": {
+    "decision": "keep",
+    "drop_variants": []
+  }
+}
