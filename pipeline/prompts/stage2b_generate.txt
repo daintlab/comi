@@ -19,6 +19,7 @@ Every variant must:
   - request the same thing as the original
   - still call for the same output modality
   - be a natural utterance someone would actually type
+  - restate every fact, number, name, and option from the original explicitly — never refer to them as "these values", "the given conditions", "the scenarios above", or similar, since the variant has no prior context to point back to
 
 Do not add details, qualifiers, or scene description that the original does not
 have. Vary how the request is phrased, not what is being requested.

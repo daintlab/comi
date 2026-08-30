@@ -4,8 +4,16 @@ Stage 2a (수정) -> 2b (증강) -> 3 (검증).
 Stage 1은 stage1_judge.py로 미리 돌려두고, 그 출력 JSON을 입력으로 받는다.
 Stage 1을 두 번 돌리지 않기 위해 분리했다.
 
-  입력    stage1_judge.py의 출력 (results[]에 route, needs_refinement 포함)
-  2a      route == "fix" 인 샘플만 수정. keep은 원본 그대로 통과.
+2a는 stage2a_fix.py로도 따로 뺄 수 있다(같은 로직, 별도 스크립트/실행 단위로
+분리). 이 파일은 두 가지 방식을 다 지원한다:
+  - stage2a_fix.py의 출력(source_prompt가 이미 채워져 있음)을 --input으로 주면
+    2a를 다시 호출하지 않고 그 값을 그대로 써서 2b/3만 수행한다.
+  - stage1_judge.py의 출력(source_prompt 없음)을 바로 --input으로 주면 기존처럼
+    이 파일이 2a까지 전부 수행한다(단독 실행).
+
+  입력    stage1_judge.py 또는 stage2a_fix.py의 출력
+  2a      route == "fix" 인 샘플만 수정. keep은 원본 그대로 통과. (stage2a_fix.py로
+          미리 됐으면 건너뜀)
   2b      전체 샘플에 대해 의문형 2 / 비의문형 3으로 variant 5개
   3       variant별 modality / meaning / naturalness 3축 검증
 
@@ -15,6 +23,11 @@ Stage 2a는 refine_hint를 쓰지 않는다. 재작성 원칙을 시스템 프�
 
 사용법
 ------
+    # 2a 분리해서 먼저 실행
+    python stage2a_fix.py --input stage1_55.json --output stage2a_55.json
+    python stage2_pipeline.py --input stage2a_55.json --output stage2_55.json
+
+    # 또는 기존처럼 한 번에(2a까지 이 파일이 수행)
     python stage2_pipeline.py --input stage1_55.json --output stage2_55.json
     python stage2_pipeline.py --input stage1_55.json --limit 10 --workers 4
     GEN_MODEL=gpt-5.5 VAL_MODEL=gpt-5.5 python stage2_pipeline.py ...
@@ -176,7 +189,14 @@ def process(client: OpenAI, sample: dict) -> dict:
     route = sample.get("route", "keep")
 
     # ---- Stage 2a
-    if route == "fix":
+    # stage2a_fix.py를 먼저 돌려서 source_prompt가 이미 채워져 있으면(route=="fix"인데
+    # fixed_prompt가 None이 아니거나, route=="keep"이라 원본 그대로인 경우 포함) 그걸
+    # 그대로 쓰고 2a를 다시 호출하지 않는다. stage1 출력을 바로 넣는 단독 실행(2a까지
+    # 이 파일이 직접 수행)도 여전히 지원한다.
+    if sample.get("source_prompt") is not None:
+        source = sample["source_prompt"]
+        rec["fixed_prompt"] = sample.get("fixed_prompt")
+    elif route == "fix":
         f = call(client, GEN_MODEL, FIX_SYSTEM,
                  ctx(sample) + f'Prompt:\n"""\n{original}\n"""',
                  FIX_SCHEMA, temperature=1.0)
@@ -305,6 +325,18 @@ def analyze(results: list[dict]) -> dict[str, Any]:
 
 # ============================================================ main
 
+def _save(path: str, stage1_input: str, judge_model: str | None,
+          results: list[dict], rep: dict[str, Any]) -> None:
+    tmp = path + ".tmp"
+    with open(tmp, "w", encoding="utf-8") as f:
+        json.dump({"stage1_input": stage1_input, "judge_model": judge_model,
+                   "gen_model": GEN_MODEL, "val_model": VAL_MODEL,
+                   "slots": SLOTS, "n_variants": len(SLOTS),
+                   "report": rep, "results": results},
+                  f, ensure_ascii=False, indent=2)
+    os.replace(tmp, path)  # 원자적 교체 -- 저장 중 크레딧이 끊겨도 파일이 반쯤 쓰인 채로 안 남음
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--input", required=True,
@@ -312,6 +344,10 @@ def main() -> int:
     ap.add_argument("--output", default="stage2_results.json")
     ap.add_argument("--workers", type=int, default=6)
     ap.add_argument("--limit", type=int, default=None)
+    ap.add_argument("--resume", action="store_true",
+                     help="--output에 이미 결과가 있으면 그 id는 건너뛰고 이어서 처리")
+    ap.add_argument("--checkpoint-every", type=int, default=20,
+                     help="이만큼 처리할 때마다 --output에 중간 저장(크레딧 소진 대비)")
     args = ap.parse_args()
 
     if not os.getenv("OPENAI_API_KEY"):
@@ -324,19 +360,36 @@ def main() -> int:
     if args.limit:
         samples = samples[: args.limit]
 
+    done_results: list[dict] = []
+    done_ids: set[str] = set()
+    if args.resume and Path(args.output).exists():
+        with open(args.output, encoding="utf-8") as f:
+            prev = json.load(f)
+        done_results = prev.get("results", [])
+        done_ids = {r["id"] for r in done_results if "id" in r}
+        print(f"[resume] 이미 완료된 {len(done_ids)}건 건너뜀", file=sys.stderr)
+
+    todo = [s for s in samples if s.get("id") not in done_ids]
+
     print(f"stage1={args.input} (judge={stage1.get('judge_model')})",
           file=sys.stderr)
-    print(f"gen={GEN_MODEL}  val={VAL_MODEL}  n={len(samples)}  "
-          f"route={dict(Counter(s['route'] for s in samples))}",
+    print(f"gen={GEN_MODEL}  val={VAL_MODEL}  전체={len(samples)}  "
+          f"남은={len(todo)}  route={dict(Counter(s['route'] for s in todo))}",
           file=sys.stderr)
 
     client = OpenAI()
-    results: list[dict] = []
+    results: list[dict] = list(done_results)
+    n_done_this_run = 0
     with ThreadPoolExecutor(max_workers=args.workers) as ex:
-        futures = [ex.submit(process, client, s) for s in samples]
+        futures = [ex.submit(process, client, s) for s in todo]
         for i, fut in enumerate(futures, 1):
             results.append(fut.result())
-            print(f"\r  {i}/{len(samples)}", end="", file=sys.stderr)
+            n_done_this_run += 1
+            print(f"\r  {i}/{len(todo)}", end="", file=sys.stderr)
+            if n_done_this_run % args.checkpoint_every == 0:
+                _save(args.output, args.input, stage1.get("judge_model"),
+                      results, analyze(results))
+                print(f"  [checkpoint] {len(results)}건 저장", file=sys.stderr)
     print(file=sys.stderr)
 
     rep = analyze(results)
@@ -378,13 +431,7 @@ def main() -> int:
             print(f"  {s['id']} ({s['task']}/{s['route']}, {s['n_pass']}): "
                   f"{s['prompt']}")
 
-    with open(args.output, "w", encoding="utf-8") as f:
-        json.dump({"stage1_input": args.input,
-                   "judge_model": stage1.get("judge_model"),
-                   "gen_model": GEN_MODEL, "val_model": VAL_MODEL,
-                   "slots": SLOTS, "n_variants": len(SLOTS),
-                   "report": rep, "results": results},
-                  f, ensure_ascii=False, indent=2)
+    _save(args.output, args.input, stage1.get("judge_model"), results, rep)
     print(f"\nsaved -> {args.output}")
     return 0
 
