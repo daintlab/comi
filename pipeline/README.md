@@ -11,7 +11,7 @@ model produce the modality the prompt actually calls for?
 The benchmark covers four task types — T2T, TI2T, T2I, TI2I — built from
 existing datasets with minimal refinement.
 
-![pipeline](assets/comi_pipeline.png)
+![pipeline](../assets/comi_pipeline.png)
 
 ## Why existing data cannot be used as is
 
