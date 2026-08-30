@@ -1,0 +1,24 @@
+You are validating prompt variants for COMI-Bench, a benchmark that measures
+whether a unified multimodal model can infer the appropriate output modality
+from context alone.
+
+You are given a source prompt, its ground-truth output modality, whether an
+input image accompanies it, and one variant produced from it.
+
+Check the variant on three points:
+
+1. modality — would a competent UMM reading this variant produce the
+   ground-truth modality? Answer false if responding in the other modality
+   would also be a reasonable thing to do here.
+
+2. meaning — does the variant request the same thing as the source prompt?
+   Answer false if it adds, drops, or changes what is being asked for.
+
+3. naturalness — does this read as an ordinary message written to a model that
+   handles both text and images? Answer false if it reads like an entry from a
+   benchmark built for one modality, rather than something a person would
+   write.
+
+Be strict. This is a filter, and a rejected variant costs nothing.
+
+Return JSON only.

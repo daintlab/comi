@@ -1,0 +1,100 @@
+{"id": "t2i_001", "prompt": "a photo of a dog", "task": "T2I", "source": "COCO-Captions", "note": "bare caption"}
+{"id": "t2i_002", "prompt": "A red double-decker bus on a rainy London street", "task": "T2I", "source": "COCO-Captions", "note": "bare caption"}
+{"id": "t2i_003", "prompt": "two cats sleeping on a windowsill, warm afternoon light", "task": "T2I", "source": "COCO-Captions", "note": "bare caption"}
+{"id": "t2i_004", "prompt": "Draw a watercolor of a lighthouse at dusk.", "task": "T2I", "source": "internal", "note": "explicit directive"}
+{"id": "t2i_005", "prompt": "a bowl of ramen with soft-boiled egg, 4k, highly detailed, trending on artstation", "task": "T2I", "source": "DiffusionDB", "note": "style-token leakage"}
+{"id": "t2i_006", "prompt": "Generate an image of a medieval castle on a cliff.", "task": "T2I", "source": "internal", "note": "explicit directive"}
+{"id": "t2i_007", "prompt": "an astronaut riding a horse on Mars", "task": "T2I", "source": "DrawBench", "note": "bare caption"}
+{"id": "t2i_008", "prompt": "Create a minimalist poster for a jazz festival.", "task": "T2I", "source": "internal", "note": "explicit directive"}
+{"id": "t2i_009", "prompt": "portrait of an elderly fisherman, black and white photography", "task": "T2I", "source": "DiffusionDB", "note": "bare caption"}
+{"id": "t2i_010", "prompt": "Make me a picture of a birthday cake with seven candles.", "task": "T2I", "source": "internal", "note": "explicit directive"}
+{"id": "t2i_011", "prompt": "a crowded night market in Taipei, neon signs", "task": "T2I", "source": "DiffusionDB", "note": "bare caption"}
+{"id": "t2i_012", "prompt": "Illustrate a fox curled up asleep under a maple tree.", "task": "T2I", "source": "internal", "note": "explicit directive"}
+{"id": "t2i_013", "prompt": "sunset over a wheat field, oil painting style", "task": "T2I", "source": "DiffusionDB", "note": "bare caption"}
+{"id": "t2i_014", "prompt": "I need a logo for a coffee shop called Ember. Design one.", "task": "T2I", "source": "internal", "note": "explicit directive"}
+{"id": "t2i_015", "prompt": "a glass of iced coffee on a wooden table, shallow depth of field", "task": "T2I", "source": "COCO-Captions", "note": "bare caption"}
+{"id": "t2i_016", "prompt": "Render a cutaway diagram of a beehive.", "task": "T2I", "source": "internal", "note": "explicit directive"}
+{"id": "t2i_017", "prompt": "three penguins standing on an ice floe", "task": "T2I", "source": "COCO-Captions", "note": "bare caption"}
+{"id": "t2i_018", "prompt": "Paint a stormy sea with a small wooden boat.", "task": "T2I", "source": "internal", "note": "explicit directive"}
+{"id": "t2i_019", "prompt": "cyberpunk alleyway, rain, reflections, cinematic lighting", "task": "T2I", "source": "DiffusionDB", "note": "style-token leakage"}
+{"id": "t2i_020", "prompt": "Show me what a treehouse library would look like.", "task": "T2I", "source": "internal", "note": "show-verb, image intended"}
+{"id": "t2i_021", "prompt": "a stack of pancakes with syrup dripping down", "task": "T2I", "source": "COCO-Captions", "note": "bare caption"}
+{"id": "t2i_022", "prompt": "Sketch a bicycle leaning against a brick wall.", "task": "T2I", "source": "internal", "note": "explicit directive"}
+{"id": "t2i_023", "prompt": "vintage travel poster for Jeju Island", "task": "T2I", "source": "DiffusionDB", "note": "bare caption"}
+{"id": "t2i_024", "prompt": "Produce an image of a robot watering plants in a greenhouse.", "task": "T2I", "source": "internal", "note": "explicit directive"}
+{"id": "t2i_025", "prompt": "close-up of a honeybee on a lavender flower, macro photography", "task": "T2I", "source": "DiffusionDB", "note": "bare caption"}
+{"id": "ti2i_001", "prompt": "remove the ball", "task": "TI2I", "source": "EditBench", "note": "bare goal state"}
+{"id": "ti2i_002", "prompt": "Change the background of this photo to a beach at sunset.", "task": "TI2I", "source": "internal", "note": "explicit directive"}
+{"id": "ti2i_003", "prompt": "make it black and white", "task": "TI2I", "source": "InstructPix2Pix", "note": "short directive"}
+{"id": "ti2i_004", "prompt": "the sky should be clearer", "task": "TI2I", "source": "MagicBrush", "note": "bare goal state"}
+{"id": "ti2i_005", "prompt": "Turn this portrait into a pencil sketch.", "task": "TI2I", "source": "internal", "note": "explicit directive"}
+{"id": "ti2i_006", "prompt": "add a hat on the dog", "task": "TI2I", "source": "InstructPix2Pix", "note": "short directive"}
+{"id": "ti2i_007", "prompt": "no cars in the street", "task": "TI2I", "source": "MagicBrush", "note": "bare goal state"}
+{"id": "ti2i_008", "prompt": "Replace the wooden table with a marble one.", "task": "TI2I", "source": "internal", "note": "explicit directive"}
+{"id": "ti2i_009", "prompt": "brighter", "task": "TI2I", "source": "EditBench", "note": "extremely bare"}
+{"id": "ti2i_010", "prompt": "Erase the text watermark in the corner.", "task": "TI2I", "source": "internal", "note": "explicit directive"}
+{"id": "ti2i_011", "prompt": "this room but in scandinavian style", "task": "TI2I", "source": "MagicBrush", "note": "bare goal state"}
+{"id": "ti2i_012", "prompt": "Make the sofa red.", "task": "TI2I", "source": "internal", "note": "explicit directive"}
+{"id": "ti2i_013", "prompt": "put sunglasses on him", "task": "TI2I", "source": "InstructPix2Pix", "note": "short directive"}
+{"id": "ti2i_014", "prompt": "the building should be taller", "task": "TI2I", "source": "MagicBrush", "note": "bare goal state"}
+{"id": "ti2i_015", "prompt": "Convert this photo to a night scene.", "task": "TI2I", "source": "internal", "note": "explicit directive"}
+{"id": "ti2i_016", "prompt": "less clutter on the desk", "task": "TI2I", "source": "MagicBrush", "note": "bare goal state"}
+{"id": "ti2i_017", "prompt": "Add a rainbow above the mountains.", "task": "TI2I", "source": "internal", "note": "explicit directive"}
+{"id": "ti2i_018", "prompt": "swap the flowers for sunflowers", "task": "TI2I", "source": "InstructPix2Pix", "note": "short directive"}
+{"id": "ti2i_019", "prompt": "winter version of this image", "task": "TI2I", "source": "MagicBrush", "note": "bare goal state"}
+{"id": "ti2i_020", "prompt": "Crop out the person on the left.", "task": "TI2I", "source": "internal", "note": "explicit directive"}
+{"id": "ti2i_021", "prompt": "make the food look fresher", "task": "TI2I", "source": "InstructPix2Pix", "note": "short directive"}
+{"id": "ti2i_022", "prompt": "this car in blue", "task": "TI2I", "source": "MagicBrush", "note": "bare goal state"}
+{"id": "ti2i_023", "prompt": "Blur the license plate for privacy.", "task": "TI2I", "source": "internal", "note": "explicit directive"}
+{"id": "ti2i_024", "prompt": "Restore this old damaged photograph.", "task": "TI2I", "source": "internal", "note": "explicit directive"}
+{"id": "ti2i_025", "prompt": "the dress should be longer", "task": "TI2I", "source": "MagicBrush", "note": "bare goal state"}
+{"id": "ti2t_001", "prompt": "How many tomatoes are there?", "task": "TI2T", "source": "MM-Vet", "note": "plain VQA"}
+{"id": "ti2t_002", "prompt": "What is the largest denomination on the table?", "task": "TI2T", "source": "TextVQA", "note": "plain VQA"}
+{"id": "ti2t_003", "prompt": "Can you explain this meme?", "task": "TI2T", "source": "MM-Vet", "note": "explanation"}
+{"id": "ti2t_004", "prompt": "Which room is bigger, the double garage or the living room?", "task": "TI2T", "source": "MM-Vet", "note": "plain VQA"}
+{"id": "ti2t_005", "prompt": "What is written on the sign?", "task": "TI2T", "source": "TextVQA", "note": "plain VQA"}
+{"id": "ti2t_006", "prompt": "Is this apple organic?", "task": "TI2T", "source": "MM-Vet", "note": "plain VQA"}
+{"id": "ti2t_007", "prompt": "Describe what is happening in this photo.", "task": "TI2T", "source": "COCO-Captions", "note": "description request"}
+{"id": "ti2t_008", "prompt": "Which of the following best describes the mood of this image? A) cheerful B) somber C) chaotic D) serene", "task": "TI2T", "source": "MMBench", "note": "format leakage: multiple choice"}
+{"id": "ti2t_009", "prompt": "Answer with the option's letter from the given choices directly. What color is the umbrella? A) red B) blue C) green D) yellow", "task": "TI2T", "source": "MMBench", "note": "format leakage: answer-format instruction"}
+{"id": "ti2t_010", "prompt": "What is to the left of the laptop on the right desk?", "task": "TI2T", "source": "MM-Vet", "note": "spatial VQA"}
+{"id": "ti2t_011", "prompt": "Based on this chart, which year had the highest net migration?", "task": "TI2T", "source": "ChartQA", "note": "chart VQA"}
+{"id": "ti2t_012", "prompt": "Why is this photo funny?", "task": "TI2T", "source": "MM-Vet", "note": "explanation"}
+{"id": "ti2t_013", "prompt": "What brand is the shoe in this picture?", "task": "TI2T", "source": "OK-VQA", "note": "knowledge VQA"}
+{"id": "ti2t_014", "prompt": "Count the number of birds.", "task": "TI2T", "source": "VQAv2", "note": "plain VQA"}
+{"id": "ti2t_015", "prompt": "Is the person taller than the car? Answer yes or no.", "task": "TI2T", "source": "VQAv2", "note": "format leakage: yes/no"}
+{"id": "ti2t_016", "prompt": "Summarize the information in this table in at least 150 words.", "task": "TI2T", "source": "MM-Vet", "note": "format leakage: length spec"}
+{"id": "ti2t_017", "prompt": "What time does the clock show?", "task": "TI2T", "source": "TextVQA", "note": "plain VQA"}
+{"id": "ti2t_018", "prompt": "Which are the producers in this food web?", "task": "TI2T", "source": "AI2D", "note": "diagram VQA"}
+{"id": "ti2t_019", "prompt": "What safety hazard can you identify in this workshop photo?", "task": "TI2T", "source": "internal", "note": "reasoning"}
+{"id": "ti2t_020", "prompt": "How much would it cost to buy three of these?", "task": "TI2T", "source": "MM-Vet", "note": "OCR + math"}
+{"id": "ti2t_021", "prompt": "What style of architecture is this building?", "task": "TI2T", "source": "OK-VQA", "note": "knowledge VQA"}
+{"id": "ti2t_022", "prompt": "Would this sofa look cramped if I changed it to red?", "task": "TI2T", "source": "internal", "note": "HARD: edit-like surface, advice intent"}
+{"id": "ti2t_023", "prompt": "What would happen if I removed the support beam shown here?", "task": "TI2T", "source": "internal", "note": "HARD: edit-like surface, reasoning intent"}
+{"id": "ti2t_024", "prompt": "Fill in the blank: The animal in this image is a ____.", "task": "TI2T", "source": "internal", "note": "format leakage: cloze"}
+{"id": "ti2t_025", "prompt": "Rate the composition of this photograph and explain your reasoning.", "task": "TI2T", "source": "internal", "note": "judgement"}
+{"id": "t2t_001", "prompt": "What is the capital of Australia?", "task": "T2T", "source": "TriviaQA", "note": "plain QA"}
+{"id": "t2t_002", "prompt": "Explain how photosynthesis works.", "task": "T2T", "source": "internal", "note": "explanation"}
+{"id": "t2t_003", "prompt": "Why do onions make you cry?", "task": "T2T", "source": "ELI5", "note": "explanation"}
+{"id": "t2t_004", "prompt": "Draw a comparison between capitalism and socialism.", "task": "T2T", "source": "internal", "note": "HARD: idiomatic 'draw'"}
+{"id": "t2t_005", "prompt": "Paint me a picture of what remote work will look like in 2035.", "task": "T2T", "source": "internal", "note": "HARD: idiomatic 'paint a picture'"}
+{"id": "t2t_006", "prompt": "How do I make the background of a product photo white in Photoshop?", "task": "T2T", "source": "internal", "note": "HARD: edit-like surface, how-to intent"}
+{"id": "t2t_007", "prompt": "Describe what a Baroque cathedral typically looks like.", "task": "T2T", "source": "internal", "note": "HARD: visual topic, text answer"}
+{"id": "t2t_008", "prompt": "Solve for x: 3x + 7 = 22.", "task": "T2T", "source": "GSM8K", "note": "math"}
+{"id": "t2t_009", "prompt": "Give me five ideas for a birthday party theme.", "task": "T2T", "source": "internal", "note": "ideation"}
+{"id": "t2t_010", "prompt": "Show me the steps to change a bike tire.", "task": "T2T", "source": "internal", "note": "HARD: 'show me' but text"}
+{"id": "t2t_011", "prompt": "What's the difference between a latte and a flat white?", "task": "T2T", "source": "internal", "note": "plain QA"}
+{"id": "t2t_012", "prompt": "Write a haiku about autumn rain.", "task": "T2T", "source": "internal", "note": "creative text"}
+{"id": "t2t_013", "prompt": "Which is better for a beginner, Python or JavaScript?", "task": "T2T", "source": "internal", "note": "advice"}
+{"id": "t2t_014", "prompt": "Summarize the plot of Moby Dick in three sentences.", "task": "T2T", "source": "internal", "note": "format leakage: length spec"}
+{"id": "t2t_015", "prompt": "How would a red sofa look in a small living room?", "task": "T2T", "source": "internal", "note": "HARD: visual hypothetical, no input image"}
+{"id": "t2t_016", "prompt": "What are the symptoms of vitamin D deficiency?", "task": "T2T", "source": "internal", "note": "plain QA"}
+{"id": "t2t_017", "prompt": "Explain how internet usage grew between 1990 and 2020.", "task": "T2T", "source": "internal", "note": "explanation"}
+{"id": "t2t_018", "prompt": "Translate 'good morning' into Japanese.", "task": "T2T", "source": "internal", "note": "plain task"}
+{"id": "t2t_019", "prompt": "Sketch out a plan for launching a small bakery.", "task": "T2T", "source": "internal", "note": "HARD: idiomatic 'sketch'"}
+{"id": "t2t_020", "prompt": "What causes the northern lights?", "task": "T2T", "source": "ELI5", "note": "explanation"}
+{"id": "t2t_021", "prompt": "Recommend a laptop for video editing under $1500.", "task": "T2T", "source": "internal", "note": "advice"}
+{"id": "t2t_022", "prompt": "Illustrate why recursion is useful with an example.", "task": "T2T", "source": "internal", "note": "HARD: idiomatic 'illustrate'"}
+{"id": "t2t_023", "prompt": "How do I remove a red wine stain from a carpet?", "task": "T2T", "source": "internal", "note": "HARD: 'remove' reads like an edit"}
+{"id": "t2t_024", "prompt": "What does a healthy plant leaf look like compared to an overwatered one?", "task": "T2T", "source": "internal", "note": "HARD: visual topic, text answer"}
+{"id": "t2t_025", "prompt": "Outline the causes of World War I.", "task": "T2T", "source": "internal", "note": "explanation"}

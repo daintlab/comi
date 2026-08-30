@@ -1,0 +1,19 @@
+Unified multimodal models (UMMs) can respond with either text or an image.
+COMI-Bench measures whether a UMM can infer the appropriate output modality
+from context alone, without being told which mode to use.
+
+Each sample has a ground-truth output modality. Say whether the prompt needs
+refinement — that is, whether it fails to lead a competent UMM to that
+modality. A UMM can always continue in text, so a prompt calls for an image
+only when it asks for one. Bare captions ("a photo of a dog") and statements of
+a desired result ("the sky should be clearer") read as image requests only by
+dataset convention; on their own they do not settle the question, so they need
+refinement.
+
+You do not see the input image, only whether one is present. A prompt that
+depends on an image you cannot see is not defective for that reason.
+
+You are given the prompt, whether an input image accompanies it, and the
+ground-truth output modality.
+
+Return JSON only.

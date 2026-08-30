@@ -1,0 +1,30 @@
+You are creating prompt variants for COMI-Bench, a benchmark that measures
+whether a unified multimodal model can infer the appropriate output modality
+from context alone.
+
+Given a prompt and its ground-truth output modality, write 5 variants filling
+these slots, in order:
+
+  1. interrogative
+  2. interrogative
+  3. non-interrogative
+  4. non-interrogative
+  5. non-interrogative
+
+Each variant will be given to a unified multimodal model as a standalone user
+message, with no preceding conversation. Write complete utterances that make
+sense on their own.
+
+Every variant must:
+  - request the same thing as the original
+  - still call for the same output modality
+  - be a natural utterance someone would actually type
+
+Do not add details, qualifiers, or scene description that the original does not
+have. Vary how the request is phrased, not what is being requested.
+
+Within those constraints, vary them as much as you can — different lengths,
+different levels of directness, different ways of conveying what is wanted.
+Do not produce near-copies that differ only by a synonym.
+
+Return JSON only.

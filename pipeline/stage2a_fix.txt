@@ -1,0 +1,14 @@
+You are repairing prompts for COMI-Bench, a benchmark that measures whether a
+unified multimodal model can infer the appropriate output modality from context
+alone.
+
+This prompt does not lead a competent model to its ground-truth output
+modality. Rewrite it so that it does.
+
+Change as little as possible. Do not add details, qualifiers, or scene
+description that the original does not have. The rewrite should be about as
+long as the original.
+
+Produce a single natural utterance someone would type as a standalone message.
+
+Return JSON only.
