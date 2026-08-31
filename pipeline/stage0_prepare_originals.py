@@ -8,18 +8,20 @@ Stage 0: 원본 프롬프트 확정 (MC/language bias 완화 재샘플링 + 최�
 
   A) MMLU -- MC(4지선다) 형식 자체가 서프면-폼 편향이라 open-style로 전면 재작성.
      Open-LLM-Benchmark(OSQ-bench) 소스에서 subject 비율 유지 층화추출로 700건 확정.
-       재현: /nas/home/ysk1207/nips/after-rebuttar/scienceqa_filtering/sample_mmlu_openstyle_700.py
-       산출물: .../scienceqa_filtering/mmlu_openstyle_700.json (700건)
+       재현: pipeline/stage0/mmlu_openstyle/sample_mmlu_openstyle_700.py
+             (HF datasets만 사용, LLM 호출 없음 -- 그대로 재실행 가능)
+       산출물: data/stage0_inputs/mmlu_openstyle_700.json (700건)
 
   B) ScienceQA -- 2단계 필터링으로 "이미지가 실제로 필요한" 문항만 선별.
        Step1 (language bias, blind test): 이미지 없이 선지만 주고 gpt-5.2가 3회 반복
          답변 -> 3회 중 과반 정답이면 language-biased로 판정, 탈락.
        Step2 (선지 의존도): 선지 없이 이미지+질문만으로 유일하게 답 가능한지 판정.
        전체 2,017건 -> Step1 생존 653 -> Step2 생존 409.
-       재현: /nas/home/ysk1207/nips/after-rebuttar/scienceqa_filtering/blind_test_full.py,
-             run_gpt_audit_v5_full.py
-       산출물: .../scienceqa_filtering/final_409.json (409건)
+       재현: pipeline/stage0/scienceqa_filtering/{blind_test_full.py, run_gpt_audit_v5_full.py}
+             (원본 2,017건 pool과 이미지는 이 저장소에 없음 -- pipeline/stage0/README.md 참고)
+       산출물: data/stage0_inputs/scienceqa_final_409.json (409건)
        리포트: /nas/home/ysk1207/nips/after-rebuttar/scienceqa_filtering_report.md
+               (이 기기 로컬 경로, 레포에는 없음 -- 필요시 별도 공유)
 
   C) VQAv2 -- ScienceQA와 동일한 blind test(language bias)만 적용(선지가 없는
      open-ended라 Step2는 해당 없음). 이미지 없이 질문만 주고 3회 반복 답변 후
@@ -27,10 +29,12 @@ Stage 0: 원본 프롬프트 확정 (MC/language bias 완화 재샘플링 + 최�
      일치하면 정답 -> 과반 정답이면 탈락.
        파일럿 200(층화, yes/no 1/3 캡) -> 생존율 확인 -> 최종 2,400(단순 무작위) 전수
        -> 생존 1,541 -> 그중 991건 무작위 확정(SEED=42).
-       재현: /nas/home/ysk1207/nips/after-rebuttar/vqav2_filtering/{prepare_pool.py,
-             blind_test_full.py, finalize_survivors.py, select_final_991.py}
-       산출물: .../vqav2_filtering/vqav2_final_ti2t_991.json (991건)
+       재현: pipeline/stage0/vqav2_filtering/{prepare_pool.py, blind_test_full.py,
+             finalize_survivors.py, select_final_991.py}
+             (공식 VQAv2 val2014 questions/annotations는 이 저장소에 없음 -- README 참고)
+       산출물: data/stage0_inputs/vqav2_final_ti2t_991.json (991건)
        리포트: /nas/home/ysk1207/nips/after-rebuttar/vqav2_filtering_report.md
+               (이 기기 로컬 경로, 레포에는 없음 -- 필요시 별도 공유)
 
   D) 나머지 5개 소스(gsm8k/geneval/dpg_bench/MagicBrush/ImgEditBench)는 원래
      28,410-variant 확장판(comi_bench_full_refined.json)에서 그대로 가져온다.
@@ -63,20 +67,15 @@ import re
 from collections import Counter
 from pathlib import Path
 
-import pandas as pd
+DATA_DIR = Path(__file__).resolve().parent.parent / "data"
 
-COMI_FULL = "/nas/home/ysk1207/nips/after-rebuttar/comi_bench_full_refined.json"
-MMLU_OPENSTYLE = "/nas/home/ysk1207/nips/after-rebuttar/scienceqa_filtering/mmlu_openstyle_700.json"
-SCIENCEQA_409 = "/nas/home/ysk1207/nips/after-rebuttar/scienceqa_filtering/final_409.json"
-VQAV2_991 = "/nas/home/ysk1207/nips/after-rebuttar/vqav2_filtering/vqav2_final_ti2t_991.json"
+COMI_FULL = DATA_DIR / "stage0_inputs" / "comi_bench_full_refined.json"
+MMLU_OPENSTYLE = DATA_DIR / "stage0_inputs" / "mmlu_openstyle_700.json"
+SCIENCEQA_409 = DATA_DIR / "stage0_inputs" / "scienceqa_final_409.json"
+VQAV2_991 = DATA_DIR / "stage0_inputs" / "vqav2_final_ti2t_991.json"
 
-GSM8K_TEST = ("/home/ysk1207/.cache/huggingface/hub/datasets--openai--gsm8k/"
-              "snapshots/740312add88f781978c0658806c59bc2815b9866/main/test-00000-of-00001.parquet")
-GSM8K_TRAIN = ("/home/ysk1207/.cache/huggingface/hub/datasets--openai--gsm8k/"
-               "snapshots/740312add88f781978c0658806c59bc2815b9866/main/train-00000-of-00001.parquet")
-
-DEFAULT_OUT_JSON = "/home/ysk1207/comi/data/comi_bench_final_original_5682.json"
-DEFAULT_OUT_JSONL = "/home/ysk1207/comi/data/stage0_originals.jsonl"
+DEFAULT_OUT_JSON = str(DATA_DIR / "comi_bench_final_original_5682.json")
+DEFAULT_OUT_JSONL = str(DATA_DIR / "stage0_originals.jsonl")
 
 UNCHANGED_SOURCES = ["gsm8k", "geneval", "dpg_bench", "MagicBrush", "ImgEditBench"]
 
@@ -90,15 +89,19 @@ DEFAULT_NOTE = "unchanged_original"           # D
 
 
 def recover_gsm8k_gold(gsm_items: list[dict]) -> list[dict]:
-    gsm_test = pd.read_parquet(GSM8K_TEST)
-    gsm_train = pd.read_parquet(GSM8K_TRAIN)
-    pool = pd.concat([gsm_test, gsm_train], ignore_index=True)
+    import datasets  # HF hub에서 받음 -- 로컬 캐시 스냅샷 경로에 의존하지 않음
+
+    gsm = datasets.load_dataset("openai/gsm8k", "main")
 
     def extract_final(a: str) -> str | None:
         m = re.search(r"####\s*(.+)", a)
         return m.group(1).strip().replace(",", "") if m else None
 
-    by_q = {row["question"].strip(): extract_final(row["answer"]) for _, row in pool.iterrows()}
+    by_q = {}
+    for split in ("train", "test"):
+        for row in gsm[split]:
+            by_q[row["question"].strip()] = extract_final(row["answer"])
+
     matched = 0
     for r in gsm_items:
         gold = by_q.get(r["original_question"].strip())
