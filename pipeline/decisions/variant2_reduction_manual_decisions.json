@@ -1,0 +1,398 @@
+{
+  "magicbrush_00032": {
+    "decision": "drop",
+    "picked_indices": [],
+    "memo": "이미지 편집 태스크가 아니게 됨",
+    "updated_at": "2026-09-01T06:19:38+00:00"
+  },
+  "geneval_00160": {
+    "decision": "rescue",
+    "picked_indices": [
+      0,
+      2
+    ],
+    "memo": "",
+    "updated_at": "2026-09-01T06:23:55+00:00"
+  },
+  "geneval_00495": {
+    "decision": "rescue",
+    "picked_indices": [
+      0,
+      3
+    ],
+    "memo": "",
+    "updated_at": "2026-09-01T06:27:34+00:00"
+  },
+  "dpg_bench_186": {
+    "decision": "rescue",
+    "picked_indices": [
+      0,
+      2
+    ],
+    "memo": "",
+    "updated_at": "2026-09-01T07:06:24+00:00"
+  },
+  "dpg_bench_25": {
+    "decision": "rescue",
+    "picked_indices": [
+      1,
+      3
+    ],
+    "memo": "",
+    "updated_at": "2026-09-01T07:15:28+00:00"
+  },
+  "dpg_bench_6": {
+    "decision": "rescue",
+    "picked_indices": [
+      0,
+      3
+    ],
+    "memo": "",
+    "updated_at": "2026-09-01T07:19:37+00:00"
+  },
+  "dpg_bench_COCOval2014000000187240": {
+    "decision": "rescue",
+    "picked_indices": [
+      0,
+      2
+    ],
+    "memo": "",
+    "updated_at": "2026-09-01T07:32:55+00:00"
+  },
+  "dpg_bench_partiprompts224": {
+    "decision": "rescue",
+    "picked_indices": [
+      0,
+      2
+    ],
+    "memo": "dpg bench 평가에서 추가되는건 평가에 지장 없을듯",
+    "updated_at": "2026-09-01T07:34:31+00:00"
+  },
+  "dpg_bench_partiprompts271": {
+    "decision": "rescue",
+    "picked_indices": [
+      0,
+      2
+    ],
+    "memo": "",
+    "updated_at": "2026-09-01T07:39:23+00:00"
+  },
+  "gsm8k_00303": {
+    "decision": "rescue",
+    "picked_indices": [
+      0,
+      2
+    ],
+    "memo": "",
+    "updated_at": "2026-09-01T07:43:22+00:00"
+  },
+  "magicbrush_00127": {
+    "decision": "rescue",
+    "picked_indices": [
+      1,
+      2
+    ],
+    "memo": "",
+    "updated_at": "2026-09-01T07:45:07+00:00"
+  },
+  "magicbrush_00219": {
+    "decision": "drop",
+    "picked_indices": [],
+    "memo": "",
+    "updated_at": "2026-09-01T07:48:31+00:00"
+  },
+  "magicbrush_00301": {
+    "decision": "rescue",
+    "picked_indices": [
+      0,
+      2
+    ],
+    "memo": "",
+    "updated_at": "2026-09-01T07:48:58+00:00"
+  },
+  "magicbrush_00339": {
+    "decision": "drop",
+    "picked_indices": [],
+    "memo": "",
+    "updated_at": "2026-09-01T07:49:18+00:00"
+  },
+  "magicbrush_00471": {
+    "decision": "rescue",
+    "picked_indices": [
+      0,
+      2
+    ],
+    "memo": "",
+    "updated_at": "2026-09-01T07:49:35+00:00"
+  },
+  "imgeditbench_00486": {
+    "decision": "drop",
+    "picked_indices": [],
+    "memo": "",
+    "updated_at": "2026-09-01T07:50:01+00:00"
+  },
+  "imgeditbench_00558": {
+    "decision": "drop",
+    "picked_indices": [],
+    "memo": "",
+    "updated_at": "2026-09-01T07:50:19+00:00"
+  },
+  "mmlu_openstyle_00005": {
+    "decision": "drop",
+    "picked_indices": [],
+    "memo": "",
+    "updated_at": "2026-09-01T07:50:58+00:00"
+  },
+  "mmlu_openstyle_00013": {
+    "decision": "drop",
+    "picked_indices": [],
+    "memo": "",
+    "updated_at": "2026-09-01T07:51:08+00:00"
+  },
+  "mmlu_openstyle_00073": {
+    "decision": "rescue",
+    "picked_indices": [
+      1,
+      2
+    ],
+    "memo": "",
+    "updated_at": "2026-09-01T07:52:36+00:00"
+  },
+  "mmlu_openstyle_00081": {
+    "decision": "rescue",
+    "picked_indices": [
+      0,
+      2
+    ],
+    "memo": "",
+    "updated_at": "2026-09-01T07:55:16+00:00"
+  },
+  "mmlu_openstyle_00117": {
+    "decision": "drop",
+    "picked_indices": [],
+    "memo": "",
+    "updated_at": "2026-09-01T07:57:32+00:00"
+  },
+  "mmlu_openstyle_00168": {
+    "decision": "rescue",
+    "picked_indices": [
+      0,
+      2
+    ],
+    "memo": "",
+    "updated_at": "2026-09-01T07:58:17+00:00"
+  },
+  "mmlu_openstyle_00192": {
+    "decision": "drop",
+    "picked_indices": [],
+    "memo": "",
+    "updated_at": "2026-09-01T08:04:50+00:00"
+  },
+  "mmlu_openstyle_00280": {
+    "decision": "drop",
+    "picked_indices": [],
+    "memo": "",
+    "updated_at": "2026-09-01T08:18:25+00:00"
+  },
+  "mmlu_openstyle_00424": {
+    "decision": "rescue",
+    "picked_indices": [
+      0,
+      2
+    ],
+    "memo": "",
+    "updated_at": "2026-09-01T08:20:01+00:00"
+  },
+  "mmlu_openstyle_00448": {
+    "decision": "rescue",
+    "picked_indices": [
+      0,
+      2
+    ],
+    "memo": "",
+    "updated_at": "2026-09-02T01:20:37+00:00"
+  },
+  "mmlu_openstyle_00481": {
+    "decision": "drop",
+    "picked_indices": [],
+    "memo": "",
+    "updated_at": "2026-09-02T01:25:46+00:00"
+  },
+  "mmlu_openstyle_00553": {
+    "decision": "rescue",
+    "picked_indices": [
+      0,
+      2
+    ],
+    "memo": "",
+    "updated_at": "2026-09-02T01:27:40+00:00"
+  },
+  "mmlu_openstyle_00613": {
+    "decision": "drop",
+    "picked_indices": [],
+    "memo": "",
+    "updated_at": "2026-09-02T01:29:29+00:00"
+  },
+  "mmlu_openstyle_00695": {
+    "decision": "drop",
+    "picked_indices": [],
+    "memo": "평서문중 자연스러운 것이 없음",
+    "updated_at": "2026-09-02T01:30:30+00:00"
+  },
+  "vqav2bt_561214001": {
+    "decision": "drop",
+    "picked_indices": [],
+    "memo": "평서문 생존 없음",
+    "updated_at": "2026-09-02T01:31:30+00:00"
+  },
+  "vqav2bt_365182006": {
+    "decision": "drop",
+    "picked_indices": [],
+    "memo": "현재 시간을 묻는게 아닌데",
+    "updated_at": "2026-09-02T01:31:48+00:00"
+  },
+  "vqav2bt_437374004": {
+    "decision": "rescue",
+    "picked_indices": [
+      0,
+      4
+    ],
+    "memo": "",
+    "updated_at": "2026-09-02T01:32:26+00:00"
+  },
+  "vqav2bt_218350002": {
+    "decision": "rescue",
+    "picked_indices": [
+      0,
+      3
+    ],
+    "memo": "",
+    "updated_at": "2026-09-02T01:32:45+00:00"
+  },
+  "vqav2bt_554523024": {
+    "decision": "drop",
+    "picked_indices": [],
+    "memo": "답이 변함",
+    "updated_at": "2026-09-02T01:33:27+00:00"
+  },
+  "vqav2bt_445662003": {
+    "decision": "drop",
+    "picked_indices": [],
+    "memo": "language bias",
+    "updated_at": "2026-09-02T01:33:42+00:00"
+  },
+  "vqav2bt_495081001": {
+    "decision": "rescue",
+    "picked_indices": [
+      0,
+      2
+    ],
+    "memo": "",
+    "updated_at": "2026-09-02T01:34:24+00:00"
+  },
+  "vqav2bt_561650001": {
+    "decision": "rescue",
+    "picked_indices": [
+      1,
+      2
+    ],
+    "memo": "",
+    "updated_at": "2026-09-02T01:35:05+00:00"
+  },
+  "vqav2bt_509185003": {
+    "decision": "rescue",
+    "picked_indices": [
+      0,
+      3
+    ],
+    "memo": "",
+    "updated_at": "2026-09-02T01:35:58+00:00"
+  },
+  "vqav2bt_460312002": {
+    "decision": "rescue",
+    "picked_indices": [
+      0,
+      2
+    ],
+    "memo": "",
+    "updated_at": "2026-09-02T01:37:01+00:00"
+  },
+  "vqav2bt_188592005": {
+    "decision": "drop",
+    "picked_indices": [],
+    "memo": "",
+    "updated_at": "2026-09-02T01:37:23+00:00"
+  },
+  "vqav2bt_151394001": {
+    "decision": "drop",
+    "picked_indices": [],
+    "memo": "",
+    "updated_at": "2026-09-02T01:38:02+00:00"
+  },
+  "vqav2bt_104345011": {
+    "decision": "rescue",
+    "picked_indices": [
+      0,
+      2
+    ],
+    "memo": "",
+    "updated_at": "2026-09-02T01:39:03+00:00"
+  },
+  "vqav2bt_564352003": {
+    "decision": "rescue",
+    "picked_indices": [
+      0,
+      4
+    ],
+    "memo": "",
+    "updated_at": "2026-09-02T01:39:43+00:00"
+  },
+  "vqav2bt_480133005": {
+    "decision": "rescue",
+    "picked_indices": [
+      1,
+      2
+    ],
+    "memo": "",
+    "updated_at": "2026-09-02T01:41:06+00:00"
+  },
+  "vqav2bt_228197001": {
+    "decision": "rescue",
+    "picked_indices": [
+      0,
+      2
+    ],
+    "memo": "",
+    "updated_at": "2026-09-02T01:41:51+00:00"
+  },
+  "vqav2bt_182450003": {
+    "decision": "rescue",
+    "picked_indices": [
+      0,
+      2
+    ],
+    "memo": "",
+    "updated_at": "2026-09-02T01:46:38+00:00"
+  },
+  "dpg_bench_partiprompts128": {
+    "decision": "rescue",
+    "picked_indices": [
+      1,
+      3
+    ],
+    "memo": "",
+    "updated_at": "2026-09-02T01:47:20+00:00"
+  },
+  "gsm8k_00289": {
+    "decision": "drop",
+    "picked_indices": [],
+    "memo": "",
+    "updated_at": "2026-09-02T01:48:25+00:00"
+  },
+  "mmlu_openstyle_00288": {
+    "decision": "drop",
+    "picked_indices": [],
+    "memo": "",
+    "updated_at": "2026-09-02T01:48:33+00:00"
+  }
+}
