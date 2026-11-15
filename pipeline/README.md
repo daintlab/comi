@@ -105,9 +105,6 @@ LLM judgements are spot-checked by hand: Stage 1 decisions for agreement with
 human labels, and a sample of Stage 3 survivors for meaning preservation.
 Details in the paper.
 
-Stage 3 was run to completion by hand (`gpt-5.5` covered the first ~2,910
-samples before hitting a billing limit; the remaining ~2,800 were validated
-manually against the same three-axis prompt in `prompts/stage3_validate_batch.txt`).
 Two failure patterns needed a human decision rather than the axis scores
 alone:
 

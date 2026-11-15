@@ -1,0 +1,2979 @@
+{
+  "results": [
+    {
+      "id": "magicbrush_00022",
+      "prompt": "let a rat sniff the broccoli",
+      "task": "TI2I",
+      "source": "MagicBrush",
+      "note": "unchanged_original",
+      "gold_answer": null,
+      "gold_modality": "image",
+      "image_path": "/nas/datahub/magicbrush/dev_source_images/557105_turn2.jpg",
+      "metadata": {},
+      "needs_refinement": false,
+      "basis": "With an input image present, the imperative describes a concrete visual edit to the scene—adding/positioning a rat so it sniffs the broccoli—so a competent multimodal model would infer an image-edit output.",
+      "refine_hint": "",
+      "gt_modality": "image",
+      "route": "keep",
+      "fixed_prompt": null,
+      "source_prompt": "let a rat sniff the broccoli",
+      "variants": [
+        {
+          "slot_assigned": "interrogative",
+          "slot_returned": "interrogative",
+          "text": "Can you create an image that shows a rat sniffing a piece of broccoli?",
+          "is_interrogative": true,
+          "slot_ok": true
+        },
+        {
+          "slot_assigned": "interrogative",
+          "slot_returned": "interrogative",
+          "text": "Would you generate a picture of a rat sniffing broccoli?",
+          "is_interrogative": true,
+          "slot_ok": true
+        },
+        {
+          "slot_assigned": "non-interrogative",
+          "slot_returned": "non-interrogative",
+          "text": "Generate an image of a rat sniffing broccoli.",
+          "is_interrogative": false,
+          "slot_ok": true
+        },
+        {
+          "slot_assigned": "non-interrogative",
+          "slot_returned": "non-interrogative",
+          "text": "Create a visual scene that depicts a rat sniffing a piece of broccoli.",
+          "is_interrogative": false,
+          "slot_ok": true
+        },
+        {
+          "slot_assigned": "non-interrogative",
+          "slot_returned": "non-interrogative",
+          "text": "Produce an illustration in which a rat is sniffing broccoli.",
+          "is_interrogative": false,
+          "slot_ok": true
+        }
+      ],
+      "checks": [
+        {
+          "modality_ok": true,
+          "meaning_ok": false,
+          "naturalness_ok": true,
+          "reason": "It clearly asks for an image, but it changes the likely image-editing request involving the provided broccoli into a generic image-generation request with a piece of broccoli.",
+          "variant": "Can you create an image that shows a rat sniffing a piece of broccoli?",
+          "slot_assigned": "interrogative",
+          "slot_returned": "interrogative",
+          "is_interrogative": true,
+          "slot_ok": true,
+          "passed": false
+        },
+        {
+          "modality_ok": true,
+          "meaning_ok": false,
+          "naturalness_ok": true,
+          "reason": "It clearly calls for a picture, but it does not preserve the source's implied edit of the provided image/the broccoli; it becomes a generic generated scene.",
+          "variant": "Would you generate a picture of a rat sniffing broccoli?",
+          "slot_assigned": "interrogative",
+          "slot_returned": "interrogative",
+          "is_interrogative": true,
+          "slot_ok": true,
+          "passed": false
+        },
+        {
+          "modality_ok": true,
+          "meaning_ok": false,
+          "naturalness_ok": true,
+          "reason": "The output modality is unambiguously image, but the wording requests a new generated image rather than making a rat sniff the broccoli in the provided image.",
+          "variant": "Generate an image of a rat sniffing broccoli.",
+          "slot_assigned": "non-interrogative",
+          "slot_returned": "non-interrogative",
+          "is_interrogative": false,
+          "slot_ok": true,
+          "passed": false
+        },
+        {
+          "modality_ok": true,
+          "meaning_ok": false,
+          "naturalness_ok": true,
+          "reason": "It naturally requests an image-like output, but it reframes the task as depicting a generic scene rather than editing the supplied image so a rat sniffs the broccoli.",
+          "variant": "Create a visual scene that depicts a rat sniffing a piece of broccoli.",
+          "slot_assigned": "non-interrogative",
+          "slot_returned": "non-interrogative",
+          "is_interrogative": false,
+          "slot_ok": true,
+          "passed": false
+        },
+        {
+          "modality_ok": true,
+          "meaning_ok": false,
+          "naturalness_ok": true,
+          "reason": "It clearly asks for an illustration, but it changes the source from an edit involving the provided broccoli to a generic illustration of a rat sniffing broccoli.",
+          "variant": "Produce an illustration in which a rat is sniffing broccoli.",
+          "slot_assigned": "non-interrogative",
+          "slot_returned": "non-interrogative",
+          "is_interrogative": false,
+          "slot_ok": true,
+          "passed": false
+        }
+      ],
+      "n_pass": 0,
+      "inspect_reason": "all_failed"
+    },
+    {
+      "id": "magicbrush_00032",
+      "prompt": "have the zebra bent over a hay pile",
+      "task": "TI2I",
+      "source": "MagicBrush",
+      "note": "unchanged_original",
+      "gold_answer": null,
+      "gold_modality": "image",
+      "image_path": "/nas/datahub/magicbrush/dev_source_images/57357_turn2.jpg",
+      "metadata": {},
+      "needs_refinement": true,
+      "basis": "The prompt is an image-editing-style desired outcome, but it does not explicitly ask the model to produce or edit an image. A competent UMM could respond in text describing the change rather than outputting an image.",
+      "refine_hint": "Explicitly request an image edit, e.g., “Edit the provided image so the zebra is bent over a hay pile, and return the edited image.”",
+      "gt_modality": "image",
+      "route": "fix",
+      "fixed_prompt": "Create an image of the zebra bent over a hay pile.",
+      "source_prompt": "Create an image of the zebra bent over a hay pile.",
+      "variants": [
+        {
+          "slot_assigned": "interrogative",
+          "slot_returned": "interrogative",
+          "text": "Could you generate an image that shows a zebra bent over a hay pile?",
+          "is_interrogative": true,
+          "slot_ok": true
+        },
+        {
+          "slot_assigned": "interrogative",
+          "slot_returned": "interrogative",
+          "text": "Would you create a picture of a zebra that is bent over a pile of hay?",
+          "is_interrogative": true,
+          "slot_ok": true
+        },
+        {
+          "slot_assigned": "non-interrogative",
+          "slot_returned": "non-interrogative",
+          "text": "Create a visual depiction of a zebra bent over a hay pile.",
+          "is_interrogative": false,
+          "slot_ok": true
+        },
+        {
+          "slot_assigned": "non-interrogative",
+          "slot_returned": "non-interrogative",
+          "text": "Generate an image illustrating a zebra leaning forward, bent over a hay pile.",
+          "is_interrogative": false,
+          "slot_ok": true
+        },
+        {
+          "slot_assigned": "non-interrogative",
+          "slot_returned": "non-interrogative",
+          "text": "Produce an image showing a zebra bent over a hay pile, focusing on the zebra’s posture over the hay.",
+          "is_interrogative": false,
+          "slot_ok": true
+        }
+      ],
+      "checks": [
+        {
+          "modality_ok": true,
+          "meaning_ok": false,
+          "naturalness_ok": true,
+          "reason": "It clearly asks for an image, and the wording is natural. However, it changes “the zebra” from the source, which likely refers to the provided input image, into a generic “a zebra.”",
+          "variant": "Could you generate an image that shows a zebra bent over a hay pile?",
+          "slot_assigned": "interrogative",
+          "slot_returned": "interrogative",
+          "is_interrogative": true,
+          "slot_ok": true,
+          "passed": false
+        },
+        {
+          "modality_ok": true,
+          "meaning_ok": false,
+          "naturalness_ok": true,
+          "reason": "It clearly requests a picture and reads naturally, but it changes the specific “the zebra” from the source into a generic zebra.",
+          "variant": "Would you create a picture of a zebra that is bent over a pile of hay?",
+          "slot_assigned": "interrogative",
+          "slot_returned": "interrogative",
+          "is_interrogative": true,
+          "slot_ok": true,
+          "passed": false
+        },
+        {
+          "modality_ok": true,
+          "meaning_ok": false,
+          "naturalness_ok": true,
+          "reason": "“Visual depiction” would reasonably call for an image and the phrasing is acceptable, but it drops the source’s reference to the specific zebra by saying “a zebra.”",
+          "variant": "Create a visual depiction of a zebra bent over a hay pile.",
+          "slot_assigned": "non-interrogative",
+          "slot_returned": "non-interrogative",
+          "is_interrogative": false,
+          "slot_ok": true,
+          "passed": false
+        },
+        {
+          "modality_ok": true,
+          "meaning_ok": false,
+          "naturalness_ok": true,
+          "reason": "It clearly asks for an image and is natural, but it changes the source from the specific zebra to a generic zebra.",
+          "variant": "Generate an image illustrating a zebra leaning forward, bent over a hay pile.",
+          "slot_assigned": "non-interrogative",
+          "slot_returned": "non-interrogative",
+          "is_interrogative": false,
+          "slot_ok": true,
+          "passed": false
+        },
+        {
+          "modality_ok": true,
+          "meaning_ok": false,
+          "naturalness_ok": true,
+          "reason": "It clearly requests an image and reads naturally. However, it changes “the zebra” to a generic zebra and adds extra emphasis on posture that was not explicitly requested.",
+          "variant": "Produce an image showing a zebra bent over a hay pile, focusing on the zebra’s posture over the hay.",
+          "slot_assigned": "non-interrogative",
+          "slot_returned": "non-interrogative",
+          "is_interrogative": false,
+          "slot_ok": true,
+          "passed": false
+        }
+      ],
+      "n_pass": 0,
+      "inspect_reason": "all_failed"
+    },
+    {
+      "id": "magicbrush_00034",
+      "prompt": "Let the zebra sit.",
+      "task": "TI2I",
+      "source": "MagicBrush",
+      "note": "unchanged_original",
+      "gold_answer": null,
+      "gold_modality": "image",
+      "image_path": "/nas/datahub/magicbrush/dev_source_images/553827_turn1.jpg",
+      "metadata": {},
+      "needs_refinement": true,
+      "basis": "The prompt states a desired visual change to the provided image but does not explicitly ask the model to generate or return an edited image. A competent UMM could respond in text.",
+      "refine_hint": "Edit the provided image so that the zebra is sitting, and return the edited image.",
+      "gt_modality": "image",
+      "route": "fix",
+      "fixed_prompt": "Show an image where the zebra sits.",
+      "source_prompt": "Show an image where the zebra sits.",
+      "variants": [
+        {
+          "slot_assigned": "interrogative",
+          "slot_returned": "interrogative",
+          "text": "Can you create an image showing a zebra in a seated position?",
+          "is_interrogative": true,
+          "slot_ok": true
+        },
+        {
+          "slot_assigned": "interrogative",
+          "slot_returned": "interrogative",
+          "text": "Would you generate a picture in which a zebra is sitting down?",
+          "is_interrogative": true,
+          "slot_ok": true
+        },
+        {
+          "slot_assigned": "non-interrogative",
+          "slot_returned": "non-interrogative",
+          "text": "Produce an image that depicts a zebra sitting.",
+          "is_interrogative": false,
+          "slot_ok": true
+        },
+        {
+          "slot_assigned": "non-interrogative",
+          "slot_returned": "non-interrogative",
+          "text": "Generate an illustration showing a zebra sitting on the ground.",
+          "is_interrogative": false,
+          "slot_ok": true
+        },
+        {
+          "slot_assigned": "non-interrogative",
+          "slot_returned": "non-interrogative",
+          "text": "Create a visual scene where the zebra is shown sitting rather than standing.",
+          "is_interrogative": false,
+          "slot_ok": true
+        }
+      ],
+      "checks": [
+        {
+          "modality_ok": true,
+          "meaning_ok": false,
+          "naturalness_ok": true,
+          "reason": "It clearly asks for an image, but it changes the referent from the provided/mentioned zebra to a generic zebra.",
+          "variant": "Can you create an image showing a zebra in a seated position?",
+          "slot_assigned": "interrogative",
+          "slot_returned": "interrogative",
+          "is_interrogative": true,
+          "slot_ok": true,
+          "passed": false
+        },
+        {
+          "modality_ok": true,
+          "meaning_ok": false,
+          "naturalness_ok": true,
+          "reason": "It would elicit an image, but it asks for a generic zebra rather than the specific zebra implied by the source and accompanying image.",
+          "variant": "Would you generate a picture in which a zebra is sitting down?",
+          "slot_assigned": "interrogative",
+          "slot_returned": "interrogative",
+          "is_interrogative": true,
+          "slot_ok": true,
+          "passed": false
+        },
+        {
+          "modality_ok": true,
+          "meaning_ok": false,
+          "naturalness_ok": true,
+          "reason": "The output modality is clearly image, but the wording drops the specific reference to 'the zebra' and makes it a generic zebra.",
+          "variant": "Produce an image that depicts a zebra sitting.",
+          "slot_assigned": "non-interrogative",
+          "slot_returned": "non-interrogative",
+          "is_interrogative": false,
+          "slot_ok": true,
+          "passed": false
+        },
+        {
+          "modality_ok": true,
+          "meaning_ok": false,
+          "naturalness_ok": true,
+          "reason": "It asks for an image-like output, but changes the request by making it a generic zebra, specifying an illustration, and adding that it is sitting on the ground.",
+          "variant": "Generate an illustration showing a zebra sitting on the ground.",
+          "slot_assigned": "non-interrogative",
+          "slot_returned": "non-interrogative",
+          "is_interrogative": false,
+          "slot_ok": true,
+          "passed": false
+        },
+        {
+          "modality_ok": true,
+          "meaning_ok": true,
+          "naturalness_ok": true,
+          "reason": "It asks for a visual output showing the specific zebra sitting, which preserves the core request; the contrast with standing is a natural clarification rather than a substantive change.",
+          "variant": "Create a visual scene where the zebra is shown sitting rather than standing.",
+          "slot_assigned": "non-interrogative",
+          "slot_returned": "non-interrogative",
+          "is_interrogative": false,
+          "slot_ok": true,
+          "passed": true
+        }
+      ],
+      "n_pass": 1,
+      "inspect_reason": "no_interrogative_survivor"
+    },
+    {
+      "id": "magicbrush_00049",
+      "prompt": "let the cat be white",
+      "task": "TI2I",
+      "source": "MagicBrush",
+      "note": "unchanged_original",
+      "gold_answer": null,
+      "gold_modality": "image",
+      "image_path": "/nas/datahub/magicbrush/dev_source_images/493074_turn1.jpg",
+      "metadata": {},
+      "needs_refinement": true,
+      "basis": "The prompt states a desired change to the input image but does not explicitly ask the model to output an edited image; a competent UMM could respond in text confirming or describing the change.",
+      "refine_hint": "Explicitly request image editing/output, e.g., \"Edit the provided image so the cat is white and return the edited image.\"",
+      "gt_modality": "image",
+      "route": "fix",
+      "fixed_prompt": "Show me an image where the cat is white.",
+      "source_prompt": "Show me an image where the cat is white.",
+      "variants": [
+        {
+          "slot_assigned": "interrogative",
+          "slot_returned": "interrogative",
+          "text": "Could you generate an image in which the cat is white?",
+          "is_interrogative": true,
+          "slot_ok": true
+        },
+        {
+          "slot_assigned": "interrogative",
+          "slot_returned": "interrogative",
+          "text": "Would you create a picture that shows a white cat?",
+          "is_interrogative": true,
+          "slot_ok": true
+        },
+        {
+          "slot_assigned": "non-interrogative",
+          "slot_returned": "non-interrogative",
+          "text": "Produce an image that features a cat with white fur.",
+          "is_interrogative": false,
+          "slot_ok": true
+        },
+        {
+          "slot_assigned": "non-interrogative",
+          "slot_returned": "non-interrogative",
+          "text": "Create a visual scene as an image where the cat appears white.",
+          "is_interrogative": false,
+          "slot_ok": true
+        },
+        {
+          "slot_assigned": "non-interrogative",
+          "slot_returned": "non-interrogative",
+          "text": "I want an image depiction of a white cat.",
+          "is_interrogative": false,
+          "slot_ok": true
+        }
+      ],
+      "checks": [
+        {
+          "modality_ok": true,
+          "meaning_ok": false,
+          "naturalness_ok": true,
+          "reason": "It clearly asks for an image output, but 'generate an image' can imply creating a new image rather than showing/editing the provided image with the cat white.",
+          "variant": "Could you generate an image in which the cat is white?",
+          "slot_assigned": "interrogative",
+          "slot_returned": "interrogative",
+          "is_interrogative": true,
+          "slot_ok": true,
+          "passed": false
+        },
+        {
+          "modality_ok": true,
+          "meaning_ok": false,
+          "naturalness_ok": true,
+          "reason": "It asks for a picture, so the modality is image, but it changes 'the cat' to 'a white cat,' dropping the likely reference to the cat in the provided image.",
+          "variant": "Would you create a picture that shows a white cat?",
+          "slot_assigned": "interrogative",
+          "slot_returned": "interrogative",
+          "is_interrogative": true,
+          "slot_ok": true,
+          "passed": false
+        },
+        {
+          "modality_ok": true,
+          "meaning_ok": false,
+          "naturalness_ok": true,
+          "reason": "It clearly requests an image, but 'a cat with white fur' no longer preserves the definite reference to the cat in the source/input image.",
+          "variant": "Produce an image that features a cat with white fur.",
+          "slot_assigned": "non-interrogative",
+          "slot_returned": "non-interrogative",
+          "is_interrogative": false,
+          "slot_ok": true,
+          "passed": false
+        },
+        {
+          "modality_ok": true,
+          "meaning_ok": false,
+          "naturalness_ok": true,
+          "reason": "It asks for an image, but 'create a visual scene' suggests generating a new scene and may not preserve the source request's reference to the given cat.",
+          "variant": "Create a visual scene as an image where the cat appears white.",
+          "slot_assigned": "non-interrogative",
+          "slot_returned": "non-interrogative",
+          "is_interrogative": false,
+          "slot_ok": true,
+          "passed": false
+        },
+        {
+          "modality_ok": true,
+          "meaning_ok": false,
+          "naturalness_ok": true,
+          "reason": "It asks for an image depiction, but 'a white cat' changes the request from the specific cat being white to any white cat.",
+          "variant": "I want an image depiction of a white cat.",
+          "slot_assigned": "non-interrogative",
+          "slot_returned": "non-interrogative",
+          "is_interrogative": false,
+          "slot_ok": true,
+          "passed": false
+        }
+      ],
+      "n_pass": 0,
+      "inspect_reason": "all_failed"
+    },
+    {
+      "id": "magicbrush_00079",
+      "prompt": "let white animals stick their tongues out",
+      "task": "TI2I",
+      "source": "MagicBrush",
+      "note": "unchanged_original",
+      "gold_answer": null,
+      "gold_modality": "image",
+      "image_path": "/nas/datahub/magicbrush/dev_source_images/92009_turn3.jpg",
+      "metadata": {},
+      "needs_refinement": false,
+      "basis": "With an input image, the imperative asks for a visual edit to the depicted white animals, so a competent multimodal model would infer an image output.",
+      "refine_hint": "",
+      "gt_modality": "image",
+      "route": "keep",
+      "fixed_prompt": null,
+      "source_prompt": "let white animals stick their tongues out",
+      "variants": [
+        {
+          "slot_assigned": "interrogative",
+          "slot_returned": "interrogative",
+          "text": "Can you generate an image where only white animals are sticking their tongues out?",
+          "is_interrogative": true,
+          "slot_ok": true
+        },
+        {
+          "slot_assigned": "interrogative",
+          "slot_returned": "interrogative",
+          "text": "Would you create a picture that shows white animals with their tongues sticking out?",
+          "is_interrogative": true,
+          "slot_ok": true
+        },
+        {
+          "slot_assigned": "non-interrogative",
+          "slot_returned": "interrogative",
+          "text": "Could I see an illustration featuring white animals that are all sticking their tongues out?",
+          "is_interrogative": true,
+          "slot_ok": false
+        },
+        {
+          "slot_assigned": "non-interrogative",
+          "slot_returned": "non-interrogative",
+          "text": "Make an image of white animals sticking their tongues out.",
+          "is_interrogative": false,
+          "slot_ok": true
+        },
+        {
+          "slot_assigned": "non-interrogative",
+          "slot_returned": "non-interrogative",
+          "text": "Create a picture in which white animals are shown with their tongues sticking out.",
+          "is_interrogative": false,
+          "slot_ok": true
+        }
+      ],
+      "checks": [
+        {
+          "modality_ok": true,
+          "meaning_ok": false,
+          "naturalness_ok": true,
+          "reason": "It clearly asks for an image, but it changes the request by adding 'only' white animals sticking their tongues out and by framing it as generating a new image rather than editing the provided image.",
+          "variant": "Can you generate an image where only white animals are sticking their tongues out?",
+          "slot_assigned": "interrogative",
+          "slot_returned": "interrogative",
+          "is_interrogative": true,
+          "slot_ok": true,
+          "passed": false
+        },
+        {
+          "modality_ok": true,
+          "meaning_ok": false,
+          "naturalness_ok": true,
+          "reason": "It asks for a picture, so the image modality is clear, but it reframes the task as creating a new picture rather than making the white animals in the provided image stick their tongues out.",
+          "variant": "Would you create a picture that shows white animals with their tongues sticking out?",
+          "slot_assigned": "interrogative",
+          "slot_returned": "interrogative",
+          "is_interrogative": true,
+          "slot_ok": true,
+          "passed": false
+        },
+        {
+          "modality_ok": true,
+          "meaning_ok": false,
+          "naturalness_ok": true,
+          "reason": "It would elicit an image, but it asks for an illustration featuring white animals rather than applying the requested change to the animals in the provided image.",
+          "variant": "Could I see an illustration featuring white animals that are all sticking their tongues out?",
+          "slot_assigned": "non-interrogative",
+          "slot_returned": "interrogative",
+          "is_interrogative": true,
+          "slot_ok": false,
+          "passed": false
+        },
+        {
+          "modality_ok": true,
+          "meaning_ok": false,
+          "naturalness_ok": true,
+          "reason": "The requested output is an image, but the wording asks for a new image of white animals rather than editing the provided image so the white animals stick their tongues out.",
+          "variant": "Make an image of white animals sticking their tongues out.",
+          "slot_assigned": "non-interrogative",
+          "slot_returned": "non-interrogative",
+          "is_interrogative": false,
+          "slot_ok": true,
+          "passed": false
+        },
+        {
+          "modality_ok": true,
+          "meaning_ok": false,
+          "naturalness_ok": true,
+          "reason": "It clearly requests a picture, but it changes the task from modifying the provided image to creating a new picture showing white animals with tongues out.",
+          "variant": "Create a picture in which white animals are shown with their tongues sticking out.",
+          "slot_assigned": "non-interrogative",
+          "slot_returned": "non-interrogative",
+          "is_interrogative": false,
+          "slot_ok": true,
+          "passed": false
+        }
+      ],
+      "n_pass": 0,
+      "inspect_reason": "all_failed"
+    },
+    {
+      "id": "magicbrush_00154",
+      "prompt": "let a cat lick its paw",
+      "task": "TI2I",
+      "source": "MagicBrush",
+      "note": "unchanged_original",
+      "gold_answer": null,
+      "gold_modality": "image",
+      "image_path": "/nas/datahub/magicbrush/dev_source_images/112286_turn3.jpg",
+      "metadata": {},
+      "needs_refinement": false,
+      "basis": "With an input image present, the imperative “let a cat lick its paw” is naturally an image-editing instruction: change the depicted cat’s pose/action so it is licking its paw. That implies an image output rather than a textual response.",
+      "refine_hint": "",
+      "gt_modality": "image",
+      "route": "keep",
+      "fixed_prompt": null,
+      "source_prompt": "let a cat lick its paw",
+      "variants": [
+        {
+          "slot_assigned": "interrogative",
+          "slot_returned": "interrogative",
+          "text": "Can you generate an image of a cat licking its paw?",
+          "is_interrogative": true,
+          "slot_ok": true
+        },
+        {
+          "slot_assigned": "interrogative",
+          "slot_returned": "interrogative",
+          "text": "Would you show me a picture where a cat is licking its paw?",
+          "is_interrogative": true,
+          "slot_ok": true
+        },
+        {
+          "slot_assigned": "non-interrogative",
+          "slot_returned": "interrogative",
+          "text": "Could you create an illustration depicting a cat that is licking its paw?",
+          "is_interrogative": true,
+          "slot_ok": false
+        },
+        {
+          "slot_assigned": "non-interrogative",
+          "slot_returned": "non-interrogative",
+          "text": "Create an image of a cat licking its paw.",
+          "is_interrogative": false,
+          "slot_ok": true
+        },
+        {
+          "slot_assigned": "non-interrogative",
+          "slot_returned": "non-interrogative",
+          "text": "Produce a picture showing a cat licking its paw.",
+          "is_interrogative": false,
+          "slot_ok": true
+        }
+      ],
+      "checks": [
+        {
+          "modality_ok": true,
+          "meaning_ok": false,
+          "naturalness_ok": true,
+          "reason": "It clearly asks for an image, but changes the likely image-editing request on the provided image into generating a new image.",
+          "variant": "Can you generate an image of a cat licking its paw?",
+          "slot_assigned": "interrogative",
+          "slot_returned": "interrogative",
+          "is_interrogative": true,
+          "slot_ok": true,
+          "passed": false
+        },
+        {
+          "modality_ok": true,
+          "meaning_ok": false,
+          "naturalness_ok": true,
+          "reason": "It clearly requests a picture, but it does not preserve the implied use/editing of the provided input image.",
+          "variant": "Would you show me a picture where a cat is licking its paw?",
+          "slot_assigned": "interrogative",
+          "slot_returned": "interrogative",
+          "is_interrogative": true,
+          "slot_ok": true,
+          "passed": false
+        },
+        {
+          "modality_ok": true,
+          "meaning_ok": false,
+          "naturalness_ok": true,
+          "reason": "It asks for an image-like output, but changes the request into creating an illustration and drops the implied edit of the provided image.",
+          "variant": "Could you create an illustration depicting a cat that is licking its paw?",
+          "slot_assigned": "non-interrogative",
+          "slot_returned": "interrogative",
+          "is_interrogative": true,
+          "slot_ok": false,
+          "passed": false
+        },
+        {
+          "modality_ok": true,
+          "meaning_ok": false,
+          "naturalness_ok": true,
+          "reason": "It clearly asks for an image, but changes the task from modifying the provided image into creating a new image.",
+          "variant": "Create an image of a cat licking its paw.",
+          "slot_assigned": "non-interrogative",
+          "slot_returned": "non-interrogative",
+          "is_interrogative": false,
+          "slot_ok": true,
+          "passed": false
+        },
+        {
+          "modality_ok": true,
+          "meaning_ok": false,
+          "naturalness_ok": true,
+          "reason": "It clearly asks for a picture, but it drops the implied use of the provided image and reframes the task as producing a new picture.",
+          "variant": "Produce a picture showing a cat licking its paw.",
+          "slot_assigned": "non-interrogative",
+          "slot_returned": "non-interrogative",
+          "is_interrogative": false,
+          "slot_ok": true,
+          "passed": false
+        }
+      ],
+      "n_pass": 0,
+      "inspect_reason": "all_failed"
+    },
+    {
+      "id": "magicbrush_00197",
+      "prompt": "let a cop stand on the side",
+      "task": "TI2I",
+      "source": "MagicBrush",
+      "note": "unchanged_original",
+      "gold_answer": null,
+      "gold_modality": "image",
+      "image_path": "/nas/datahub/magicbrush/dev_source_images/398575_turn3.jpg",
+      "metadata": {},
+      "needs_refinement": false,
+      "basis": "With an input image present, the imperative instruction asks for a visual edit—placing/adding a cop on the side—so a competent multimodal model would infer an image output.",
+      "refine_hint": "",
+      "gt_modality": "image",
+      "route": "keep",
+      "fixed_prompt": null,
+      "source_prompt": "let a cop stand on the side",
+      "variants": [
+        {
+          "slot_assigned": "interrogative",
+          "slot_returned": "interrogative",
+          "text": "Can you create an image that shows a cop standing on the side?",
+          "is_interrogative": true,
+          "slot_ok": true
+        },
+        {
+          "slot_assigned": "interrogative",
+          "slot_returned": "interrogative",
+          "text": "Would you generate a picture where a cop is standing off to the side?",
+          "is_interrogative": true,
+          "slot_ok": true
+        },
+        {
+          "slot_assigned": "non-interrogative",
+          "slot_returned": "interrogative",
+          "text": "Could you visually depict a scene with a cop standing on the side?",
+          "is_interrogative": true,
+          "slot_ok": false
+        },
+        {
+          "slot_assigned": "non-interrogative",
+          "slot_returned": "non-interrogative",
+          "text": "Generate an image of a cop standing on the side.",
+          "is_interrogative": false,
+          "slot_ok": true
+        },
+        {
+          "slot_assigned": "non-interrogative",
+          "slot_returned": "non-interrogative",
+          "text": "Create a visual scene showing a cop standing on the side.",
+          "is_interrogative": false,
+          "slot_ok": true
+        }
+      ],
+      "checks": [
+        {
+          "modality_ok": true,
+          "meaning_ok": false,
+          "naturalness_ok": true,
+          "reason": "It clearly asks for an image, but it changes the likely image-editing instruction into a generic request to create an image, without preserving the role of the provided input image.",
+          "variant": "Can you create an image that shows a cop standing on the side?",
+          "slot_assigned": "interrogative",
+          "slot_returned": "interrogative",
+          "is_interrogative": true,
+          "slot_ok": true,
+          "passed": false
+        },
+        {
+          "modality_ok": true,
+          "meaning_ok": false,
+          "naturalness_ok": true,
+          "reason": "It clearly calls for picture output, but it reframes the prompt as generating a new picture rather than editing/placing a cop in the provided image.",
+          "variant": "Would you generate a picture where a cop is standing off to the side?",
+          "slot_assigned": "interrogative",
+          "slot_returned": "interrogative",
+          "is_interrogative": true,
+          "slot_ok": true,
+          "passed": false
+        },
+        {
+          "modality_ok": true,
+          "meaning_ok": false,
+          "naturalness_ok": true,
+          "reason": "It would lead to visual output, but it asks to depict a scene generally and does not preserve the source's likely instruction to modify the supplied image.",
+          "variant": "Could you visually depict a scene with a cop standing on the side?",
+          "slot_assigned": "non-interrogative",
+          "slot_returned": "interrogative",
+          "is_interrogative": true,
+          "slot_ok": false,
+          "passed": false
+        },
+        {
+          "modality_ok": true,
+          "meaning_ok": false,
+          "naturalness_ok": true,
+          "reason": "It explicitly requests an image, but it changes the task into standalone image generation and drops the connection to the input image.",
+          "variant": "Generate an image of a cop standing on the side.",
+          "slot_assigned": "non-interrogative",
+          "slot_returned": "non-interrogative",
+          "is_interrogative": false,
+          "slot_ok": true,
+          "passed": false
+        },
+        {
+          "modality_ok": true,
+          "meaning_ok": false,
+          "naturalness_ok": true,
+          "reason": "It naturally asks for a visual scene, but it does not preserve the input-image editing meaning of the original prompt.",
+          "variant": "Create a visual scene showing a cop standing on the side.",
+          "slot_assigned": "non-interrogative",
+          "slot_returned": "non-interrogative",
+          "is_interrogative": false,
+          "slot_ok": true,
+          "passed": false
+        }
+      ],
+      "n_pass": 0,
+      "inspect_reason": "all_failed"
+    },
+    {
+      "id": "magicbrush_00261",
+      "prompt": "let it be a mushroom salad",
+      "task": "TI2I",
+      "source": "MagicBrush",
+      "note": "unchanged_original",
+      "gold_answer": null,
+      "gold_modality": "image",
+      "image_path": "/nas/datahub/magicbrush/dev_source_images/577847_turn3.jpg",
+      "metadata": {},
+      "needs_refinement": true,
+      "basis": "The prompt states a desired outcome for the provided image but does not explicitly ask the model to edit or generate an image; a competent UMM could respond in text.",
+      "refine_hint": "Explicitly request an image edit, e.g. “Edit the provided image so it becomes a mushroom salad, and return the edited image.”",
+      "gt_modality": "image",
+      "route": "fix",
+      "fixed_prompt": "Draw it so that it clearly looks like a mushroom salad.",
+      "source_prompt": "Draw it so that it clearly looks like a mushroom salad.",
+      "variants": [
+        {
+          "slot_assigned": "interrogative",
+          "slot_returned": "interrogative",
+          "text": "Could you draw an image that clearly looks like a mushroom salad?",
+          "is_interrogative": true,
+          "slot_ok": true
+        },
+        {
+          "slot_assigned": "interrogative",
+          "slot_returned": "interrogative",
+          "text": "Would you create a picture where it is obvious that the dish shown is a mushroom salad?",
+          "is_interrogative": true,
+          "slot_ok": true
+        },
+        {
+          "slot_assigned": "non-interrogative",
+          "slot_returned": "non-interrogative",
+          "text": "Draw a clear, recognizable illustration of a mushroom salad.",
+          "is_interrogative": false,
+          "slot_ok": true
+        },
+        {
+          "slot_assigned": "non-interrogative",
+          "slot_returned": "non-interrogative",
+          "text": "Produce an image that unmistakably depicts a mushroom salad.",
+          "is_interrogative": false,
+          "slot_ok": true
+        },
+        {
+          "slot_assigned": "non-interrogative",
+          "slot_returned": "non-interrogative",
+          "text": "Create a visual drawing in which it is clear that the subject is a mushroom salad.",
+          "is_interrogative": false,
+          "slot_ok": true
+        }
+      ],
+      "checks": [
+        {
+          "modality_ok": true,
+          "meaning_ok": false,
+          "naturalness_ok": true,
+          "reason": "It clearly asks for an image, but it drops the reference to the provided image/“it” and instead asks for a generic image of a mushroom salad.",
+          "variant": "Could you draw an image that clearly looks like a mushroom salad?",
+          "slot_assigned": "interrogative",
+          "slot_returned": "interrogative",
+          "is_interrogative": true,
+          "slot_ok": true,
+          "passed": false
+        },
+        {
+          "modality_ok": true,
+          "meaning_ok": false,
+          "naturalness_ok": true,
+          "reason": "It would elicit an image, but it changes the request from drawing the provided subject/image as a mushroom salad to creating a generic picture of a dish.",
+          "variant": "Would you create a picture where it is obvious that the dish shown is a mushroom salad?",
+          "slot_assigned": "interrogative",
+          "slot_returned": "interrogative",
+          "is_interrogative": true,
+          "slot_ok": true,
+          "passed": false
+        },
+        {
+          "modality_ok": true,
+          "meaning_ok": false,
+          "naturalness_ok": true,
+          "reason": "The image modality is clear, but the prompt no longer refers to the input image or to drawing 'it,' so it is not the same request.",
+          "variant": "Draw a clear, recognizable illustration of a mushroom salad.",
+          "slot_assigned": "non-interrogative",
+          "slot_returned": "non-interrogative",
+          "is_interrogative": false,
+          "slot_ok": true,
+          "passed": false
+        },
+        {
+          "modality_ok": true,
+          "meaning_ok": false,
+          "naturalness_ok": true,
+          "reason": "It asks for an image, but it drops the source prompt’s reference to transforming or redrawing the provided item/image.",
+          "variant": "Produce an image that unmistakably depicts a mushroom salad.",
+          "slot_assigned": "non-interrogative",
+          "slot_returned": "non-interrogative",
+          "is_interrogative": false,
+          "slot_ok": true,
+          "passed": false
+        },
+        {
+          "modality_ok": true,
+          "meaning_ok": false,
+          "naturalness_ok": true,
+          "reason": "It naturally requests a visual drawing, but it changes the meaning by omitting the dependence on the provided image/subject referred to as 'it.'",
+          "variant": "Create a visual drawing in which it is clear that the subject is a mushroom salad.",
+          "slot_assigned": "non-interrogative",
+          "slot_returned": "non-interrogative",
+          "is_interrogative": false,
+          "slot_ok": true,
+          "passed": false
+        }
+      ],
+      "n_pass": 0,
+      "inspect_reason": "all_failed"
+    },
+    {
+      "id": "magicbrush_00265",
+      "prompt": "Let's add a drawing of a flower to the fridge.",
+      "task": "TI2I",
+      "source": "MagicBrush",
+      "note": "unchanged_original",
+      "gold_answer": null,
+      "gold_modality": "image",
+      "image_path": "/nas/datahub/magicbrush/dev_source_images/360871_turn2.jpg",
+      "metadata": {},
+      "needs_refinement": false,
+      "basis": "The prompt, paired with an input image, gives a concrete visual editing instruction: add a flower drawing to the fridge. This naturally calls for returning the edited image rather than just text.",
+      "refine_hint": "",
+      "gt_modality": "image",
+      "route": "keep",
+      "fixed_prompt": null,
+      "source_prompt": "Let's add a drawing of a flower to the fridge.",
+      "variants": [
+        {
+          "slot_assigned": "interrogative",
+          "slot_returned": "interrogative",
+          "text": "Can you create an image that looks like a drawing of a flower that I could imagine putting on a fridge?",
+          "is_interrogative": true,
+          "slot_ok": true
+        },
+        {
+          "slot_assigned": "interrogative",
+          "slot_returned": "interrogative",
+          "text": "Would you draw a simple flower for me, as an image, like something I could hang on a fridge?",
+          "is_interrogative": true,
+          "slot_ok": true
+        },
+        {
+          "slot_assigned": "non-interrogative",
+          "slot_returned": "non-interrogative",
+          "text": "Make a picture that is a drawing of a flower, as if it were artwork to put on a fridge.",
+          "is_interrogative": false,
+          "slot_ok": true
+        },
+        {
+          "slot_assigned": "non-interrogative",
+          "slot_returned": "non-interrogative",
+          "text": "Generate an image that shows a hand-drawn style flower suitable for displaying on a fridge.",
+          "is_interrogative": false,
+          "slot_ok": true
+        },
+        {
+          "slot_assigned": "non-interrogative",
+          "slot_returned": "non-interrogative",
+          "text": "Produce a cute drawing of a flower as an image, the kind you might stick on a fridge door.",
+          "is_interrogative": false,
+          "slot_ok": true
+        }
+      ],
+      "checks": [
+        {
+          "modality_ok": true,
+          "meaning_ok": false,
+          "naturalness_ok": true,
+          "reason": "It clearly asks for an image, but it changes the task from adding a flower drawing to the fridge in the provided image to creating a standalone image one could imagine putting on a fridge.",
+          "variant": "Can you create an image that looks like a drawing of a flower that I could imagine putting on a fridge?",
+          "slot_assigned": "interrogative",
+          "slot_returned": "interrogative",
+          "is_interrogative": true,
+          "slot_ok": true,
+          "passed": false
+        },
+        {
+          "modality_ok": true,
+          "meaning_ok": false,
+          "naturalness_ok": true,
+          "reason": "It requests an image/drawing, so the modality is clear, but it asks for a standalone flower drawing rather than editing the provided fridge image to add one.",
+          "variant": "Would you draw a simple flower for me, as an image, like something I could hang on a fridge?",
+          "slot_assigned": "interrogative",
+          "slot_returned": "interrogative",
+          "is_interrogative": true,
+          "slot_ok": true,
+          "passed": false
+        },
+        {
+          "modality_ok": true,
+          "meaning_ok": false,
+          "naturalness_ok": true,
+          "reason": "It would naturally elicit an image, but it changes the request to making separate artwork for a fridge instead of adding a drawing of a flower onto the fridge in the input image.",
+          "variant": "Make a picture that is a drawing of a flower, as if it were artwork to put on a fridge.",
+          "slot_assigned": "non-interrogative",
+          "slot_returned": "non-interrogative",
+          "is_interrogative": false,
+          "slot_ok": true,
+          "passed": false
+        },
+        {
+          "modality_ok": true,
+          "meaning_ok": false,
+          "naturalness_ok": true,
+          "reason": "It specifies generating an image, but it drops the image-editing aspect of placing the drawing on the provided fridge.",
+          "variant": "Generate an image that shows a hand-drawn style flower suitable for displaying on a fridge.",
+          "slot_assigned": "non-interrogative",
+          "slot_returned": "non-interrogative",
+          "is_interrogative": false,
+          "slot_ok": true,
+          "passed": false
+        },
+        {
+          "modality_ok": true,
+          "meaning_ok": false,
+          "naturalness_ok": true,
+          "reason": "It clearly calls for an image, but it asks for a standalone cute flower drawing rather than adding the drawing to the fridge in the given image.",
+          "variant": "Produce a cute drawing of a flower as an image, the kind you might stick on a fridge door.",
+          "slot_assigned": "non-interrogative",
+          "slot_returned": "non-interrogative",
+          "is_interrogative": false,
+          "slot_ok": true,
+          "passed": false
+        }
+      ],
+      "n_pass": 0,
+      "inspect_reason": "all_failed"
+    },
+    {
+      "id": "magicbrush_00267",
+      "prompt": "It could be a microwave next to the woman.",
+      "task": "TI2I",
+      "source": "MagicBrush",
+      "note": "unchanged_original",
+      "gold_answer": null,
+      "gold_modality": "image",
+      "image_path": "/nas/datahub/magicbrush/dev_source_images/289514_turn1.jpg",
+      "metadata": {},
+      "needs_refinement": true,
+      "basis": "The prompt is only a statement about a possible object in the scene and does not explicitly ask the model to produce or edit an image. A competent UMM could reasonably respond in text, especially given the tentative wording.",
+      "refine_hint": "Explicitly request an image edit, e.g., \"Edit the provided image so that there is a microwave next to the woman.\"",
+      "gt_modality": "image",
+      "route": "fix",
+      "fixed_prompt": "Show me an image where it could be a microwave next to the woman.",
+      "source_prompt": "Show me an image where it could be a microwave next to the woman.",
+      "variants": [
+        {
+          "slot_assigned": "interrogative",
+          "slot_returned": "interrogative",
+          "text": "Could you generate an image in which there might be a microwave next to the woman?",
+          "is_interrogative": true,
+          "slot_ok": true
+        },
+        {
+          "slot_assigned": "interrogative",
+          "slot_returned": "interrogative",
+          "text": "Can you create a picture that shows a woman with what could be a microwave beside her?",
+          "is_interrogative": true,
+          "slot_ok": true
+        },
+        {
+          "slot_assigned": "non-interrogative",
+          "slot_returned": "non-interrogative",
+          "text": "Produce an image depicting a woman with a possible microwave next to her.",
+          "is_interrogative": false,
+          "slot_ok": true
+        },
+        {
+          "slot_assigned": "non-interrogative",
+          "slot_returned": "non-interrogative",
+          "text": "Generate an image of a woman standing or sitting with a device that could be a microwave right next to her.",
+          "is_interrogative": false,
+          "slot_ok": true
+        },
+        {
+          "slot_assigned": "non-interrogative",
+          "slot_returned": "non-interrogative",
+          "text": "Create an image where a woman appears with an object that could plausibly be a microwave placed to her side.",
+          "is_interrogative": false,
+          "slot_ok": true
+        }
+      ],
+      "checks": [
+        {
+          "modality_ok": true,
+          "meaning_ok": true,
+          "naturalness_ok": true,
+          "reason": "It asks for an image and preserves the idea of something that might be a microwave next to the woman.",
+          "variant": "Could you generate an image in which there might be a microwave next to the woman?",
+          "slot_assigned": "interrogative",
+          "slot_returned": "interrogative",
+          "is_interrogative": true,
+          "slot_ok": true,
+          "passed": true
+        },
+        {
+          "modality_ok": true,
+          "meaning_ok": false,
+          "naturalness_ok": true,
+          "reason": "It asks for an image, but changes the referred-to 'the woman' from the input/context into a generic 'a woman.'",
+          "variant": "Can you create a picture that shows a woman with what could be a microwave beside her?",
+          "slot_assigned": "interrogative",
+          "slot_returned": "interrogative",
+          "is_interrogative": true,
+          "slot_ok": true,
+          "passed": false
+        },
+        {
+          "modality_ok": true,
+          "meaning_ok": false,
+          "naturalness_ok": true,
+          "reason": "It clearly requests an image, but changes the specific contextual woman into a generic woman.",
+          "variant": "Produce an image depicting a woman with a possible microwave next to her.",
+          "slot_assigned": "non-interrogative",
+          "slot_returned": "non-interrogative",
+          "is_interrogative": false,
+          "slot_ok": true,
+          "passed": false
+        },
+        {
+          "modality_ok": true,
+          "meaning_ok": false,
+          "naturalness_ok": true,
+          "reason": "It requests an image, but changes the prompt to a generic woman and adds details about standing or sitting that were not in the source.",
+          "variant": "Generate an image of a woman standing or sitting with a device that could be a microwave right next to her.",
+          "slot_assigned": "non-interrogative",
+          "slot_returned": "non-interrogative",
+          "is_interrogative": false,
+          "slot_ok": true,
+          "passed": false
+        },
+        {
+          "modality_ok": true,
+          "meaning_ok": false,
+          "naturalness_ok": true,
+          "reason": "It requests an image naturally, but changes the specific 'the woman' from the source/context into a generic woman.",
+          "variant": "Create an image where a woman appears with an object that could plausibly be a microwave placed to her side.",
+          "slot_assigned": "non-interrogative",
+          "slot_returned": "non-interrogative",
+          "is_interrogative": false,
+          "slot_ok": true,
+          "passed": false
+        }
+      ],
+      "n_pass": 1,
+      "inspect_reason": "no_noninterrogative_survivor"
+    },
+    {
+      "id": "magicbrush_00348",
+      "prompt": "let the woman kiss",
+      "task": "TI2I",
+      "source": "MagicBrush",
+      "note": "unchanged_original",
+      "gold_answer": null,
+      "gold_modality": "image",
+      "image_path": "/nas/datahub/magicbrush/dev_source_images/2585_turn1.jpg",
+      "metadata": {},
+      "needs_refinement": true,
+      "basis": "The prompt is a terse desired change to the provided image, but it does not explicitly request an edited image output. A competent model could respond in text by asking for clarification or describing how to make the woman kiss.",
+      "refine_hint": "Explicitly ask for an image edit, e.g., \"Edit the provided image so that the woman is kissing someone, and return the edited image.\"",
+      "gt_modality": "image",
+      "route": "fix",
+      "fixed_prompt": "Draw an image to let the woman kiss.",
+      "source_prompt": "Draw an image to let the woman kiss.",
+      "variants": [
+        {
+          "slot_assigned": "interrogative",
+          "slot_returned": "interrogative",
+          "text": "Could you draw an image that depicts a woman leaning in to kiss?",
+          "is_interrogative": true,
+          "slot_ok": true
+        },
+        {
+          "slot_assigned": "interrogative",
+          "slot_returned": "interrogative",
+          "text": "Would you create a picture showing a woman in the act of kissing someone?",
+          "is_interrogative": true,
+          "slot_ok": true
+        },
+        {
+          "slot_assigned": "non-interrogative",
+          "slot_returned": "non-interrogative",
+          "text": "Draw a picture that shows a woman giving a kiss.",
+          "is_interrogative": false,
+          "slot_ok": true
+        },
+        {
+          "slot_assigned": "non-interrogative",
+          "slot_returned": "non-interrogative",
+          "text": "Create an illustration of a woman kissing.",
+          "is_interrogative": false,
+          "slot_ok": true
+        },
+        {
+          "slot_assigned": "non-interrogative",
+          "slot_returned": "non-interrogative",
+          "text": "Produce an image in which a woman is shown kissing.",
+          "is_interrogative": false,
+          "slot_ok": true
+        }
+      ],
+      "checks": [
+        {
+          "modality_ok": true,
+          "meaning_ok": false,
+          "naturalness_ok": true,
+          "reason": "It clearly asks for an image, but it changes the request from making the woman in the provided image kiss to a generic woman leaning in to kiss.",
+          "variant": "Could you draw an image that depicts a woman leaning in to kiss?",
+          "slot_assigned": "interrogative",
+          "slot_returned": "interrogative",
+          "is_interrogative": true,
+          "slot_ok": true,
+          "passed": false
+        },
+        {
+          "modality_ok": true,
+          "meaning_ok": false,
+          "naturalness_ok": true,
+          "reason": "It clearly calls for a picture, but it changes the referent to a generic woman and specifies kissing someone, rather than preserving the source request about the woman in the input.",
+          "variant": "Would you create a picture showing a woman in the act of kissing someone?",
+          "slot_assigned": "interrogative",
+          "slot_returned": "interrogative",
+          "is_interrogative": true,
+          "slot_ok": true,
+          "passed": false
+        },
+        {
+          "modality_ok": true,
+          "meaning_ok": false,
+          "naturalness_ok": true,
+          "reason": "It asks for a drawn picture, but replaces the specific woman from the prompt/image with a generic woman, so the meaning is not the same.",
+          "variant": "Draw a picture that shows a woman giving a kiss.",
+          "slot_assigned": "non-interrogative",
+          "slot_returned": "non-interrogative",
+          "is_interrogative": false,
+          "slot_ok": true,
+          "passed": false
+        },
+        {
+          "modality_ok": true,
+          "meaning_ok": false,
+          "naturalness_ok": true,
+          "reason": "It naturally asks for an illustration, but it drops the source's reference to the particular woman in the provided image.",
+          "variant": "Create an illustration of a woman kissing.",
+          "slot_assigned": "non-interrogative",
+          "slot_returned": "non-interrogative",
+          "is_interrogative": false,
+          "slot_ok": true,
+          "passed": false
+        },
+        {
+          "modality_ok": true,
+          "meaning_ok": false,
+          "naturalness_ok": true,
+          "reason": "It unambiguously requests an image, but changes the task to showing a generic woman kissing rather than making the woman in the input kiss.",
+          "variant": "Produce an image in which a woman is shown kissing.",
+          "slot_assigned": "non-interrogative",
+          "slot_returned": "non-interrogative",
+          "is_interrogative": false,
+          "slot_ok": true,
+          "passed": false
+        }
+      ],
+      "n_pass": 0,
+      "inspect_reason": "all_failed"
+    },
+    {
+      "id": "magicbrush_00351",
+      "prompt": "Open the lid of a toilet.",
+      "task": "TI2I",
+      "source": "MagicBrush",
+      "note": "unchanged_original",
+      "gold_answer": null,
+      "gold_modality": "image",
+      "image_path": "/nas/datahub/magicbrush/dev_source_images/490317_turn1.jpg",
+      "metadata": {},
+      "needs_refinement": false,
+      "basis": "With an input image, the imperative asks for a visual modification to the depicted toilet, so a competent multimodal model would infer an edited image output.",
+      "refine_hint": "",
+      "gt_modality": "image",
+      "route": "keep",
+      "fixed_prompt": null,
+      "source_prompt": "Open the lid of a toilet.",
+      "variants": [
+        {
+          "slot_assigned": "interrogative",
+          "slot_returned": "interrogative",
+          "text": "Can you visually show the action of opening the lid of a toilet?",
+          "is_interrogative": true,
+          "slot_ok": true
+        },
+        {
+          "slot_assigned": "interrogative",
+          "slot_returned": "interrogative",
+          "text": "Could you create an image that depicts someone opening the lid of a toilet?",
+          "is_interrogative": true,
+          "slot_ok": true
+        },
+        {
+          "slot_assigned": "non-interrogative",
+          "slot_returned": "non-interrogative",
+          "text": "Generate a picture that shows the lid of a toilet being opened.",
+          "is_interrogative": false,
+          "slot_ok": true
+        },
+        {
+          "slot_assigned": "non-interrogative",
+          "slot_returned": "non-interrogative",
+          "text": "Provide an illustration where a person is opening the lid of a toilet.",
+          "is_interrogative": false,
+          "slot_ok": true
+        },
+        {
+          "slot_assigned": "non-interrogative",
+          "slot_returned": "non-interrogative",
+          "text": "Produce an image that clearly visualizes the act of opening the lid of a toilet.",
+          "is_interrogative": false,
+          "slot_ok": true
+        }
+      ],
+      "checks": [
+        {
+          "modality_ok": true,
+          "meaning_ok": false,
+          "naturalness_ok": true,
+          "reason": "It asks for a visual depiction, so image output is appropriate, but it shifts the task from editing the provided image to open the toilet lid into generally showing the action.",
+          "variant": "Can you visually show the action of opening the lid of a toilet?",
+          "slot_assigned": "interrogative",
+          "slot_returned": "interrogative",
+          "is_interrogative": true,
+          "slot_ok": true,
+          "passed": false
+        },
+        {
+          "modality_ok": true,
+          "meaning_ok": false,
+          "naturalness_ok": true,
+          "reason": "It clearly requests an image, but adds someone performing the action and frames it as creating a new depiction rather than opening the lid in the provided image.",
+          "variant": "Could you create an image that depicts someone opening the lid of a toilet?",
+          "slot_assigned": "interrogative",
+          "slot_returned": "interrogative",
+          "is_interrogative": true,
+          "slot_ok": true,
+          "passed": false
+        },
+        {
+          "modality_ok": true,
+          "meaning_ok": false,
+          "naturalness_ok": true,
+          "reason": "It asks for a picture, matching the output modality, but changes the request into generating a generic picture of the lid being opened rather than editing the given toilet image.",
+          "variant": "Generate a picture that shows the lid of a toilet being opened.",
+          "slot_assigned": "non-interrogative",
+          "slot_returned": "non-interrogative",
+          "is_interrogative": false,
+          "slot_ok": true,
+          "passed": false
+        },
+        {
+          "modality_ok": true,
+          "meaning_ok": false,
+          "naturalness_ok": true,
+          "reason": "It requests an illustration, so image output fits, but it adds a person and does not preserve the original task of opening the lid in the provided image.",
+          "variant": "Provide an illustration where a person is opening the lid of a toilet.",
+          "slot_assigned": "non-interrogative",
+          "slot_returned": "non-interrogative",
+          "is_interrogative": false,
+          "slot_ok": true,
+          "passed": false
+        },
+        {
+          "modality_ok": true,
+          "meaning_ok": false,
+          "naturalness_ok": true,
+          "reason": "It clearly points to image output, but it asks for a generic visualization of the act rather than modifying the supplied image so the toilet lid is open.",
+          "variant": "Produce an image that clearly visualizes the act of opening the lid of a toilet.",
+          "slot_assigned": "non-interrogative",
+          "slot_returned": "non-interrogative",
+          "is_interrogative": false,
+          "slot_ok": true,
+          "passed": false
+        }
+      ],
+      "n_pass": 0,
+      "inspect_reason": "all_failed"
+    },
+    {
+      "id": "magicbrush_00374",
+      "prompt": "The car should be white.",
+      "task": "TI2I",
+      "source": "MagicBrush",
+      "note": "unchanged_original",
+      "gold_answer": null,
+      "gold_modality": "image",
+      "image_path": "/nas/datahub/magicbrush/dev_source_images/362944_turn1.jpg",
+      "metadata": {},
+      "needs_refinement": true,
+      "basis": "The prompt states a desired edit outcome but does not explicitly ask the model to generate or edit an image. A competent UMM could respond in text (e.g., acknowledging the requested change) rather than infer that an image output is required.",
+      "refine_hint": "Explicitly request an image edit, e.g., \"Edit the provided image so that the car is white, and return the edited image.\"",
+      "gt_modality": "image",
+      "route": "fix",
+      "fixed_prompt": "Show me a picture of the car, making sure the car is white.",
+      "source_prompt": "Show me a picture of the car, making sure the car is white.",
+      "variants": [
+        {
+          "slot_assigned": "interrogative",
+          "slot_returned": "interrogative",
+          "text": "Could you generate an image of a car where the car is clearly white?",
+          "is_interrogative": true,
+          "slot_ok": true
+        },
+        {
+          "slot_assigned": "interrogative",
+          "slot_returned": "interrogative",
+          "text": "Would you show me a picture that features a white car as the main subject?",
+          "is_interrogative": true,
+          "slot_ok": true
+        },
+        {
+          "slot_assigned": "non-interrogative",
+          "slot_returned": "non-interrogative",
+          "text": "Create an image of a car, ensuring that the car is white.",
+          "is_interrogative": false,
+          "slot_ok": true
+        },
+        {
+          "slot_assigned": "non-interrogative",
+          "slot_returned": "non-interrogative",
+          "text": "Produce a picture in which the car shown is white.",
+          "is_interrogative": false,
+          "slot_ok": true
+        },
+        {
+          "slot_assigned": "non-interrogative",
+          "slot_returned": "non-interrogative",
+          "text": "I want an image depicting a car, and the car needs to be white.",
+          "is_interrogative": false,
+          "slot_ok": true
+        }
+      ],
+      "checks": [
+        {
+          "modality_ok": true,
+          "meaning_ok": false,
+          "naturalness_ok": true,
+          "reason": "It clearly requests an image, but changes the request from the specific car in the provided image to a generic car.",
+          "variant": "Could you generate an image of a car where the car is clearly white?",
+          "slot_assigned": "interrogative",
+          "slot_returned": "interrogative",
+          "is_interrogative": true,
+          "slot_ok": true,
+          "passed": false
+        },
+        {
+          "modality_ok": true,
+          "meaning_ok": false,
+          "naturalness_ok": true,
+          "reason": "It asks for a picture, but it requests a generic white car as the main subject rather than the specific car from the input image.",
+          "variant": "Would you show me a picture that features a white car as the main subject?",
+          "slot_assigned": "interrogative",
+          "slot_returned": "interrogative",
+          "is_interrogative": true,
+          "slot_ok": true,
+          "passed": false
+        },
+        {
+          "modality_ok": true,
+          "meaning_ok": false,
+          "naturalness_ok": true,
+          "reason": "It clearly asks to create an image, but drops the reference to the particular car and asks for a generic white car.",
+          "variant": "Create an image of a car, ensuring that the car is white.",
+          "slot_assigned": "non-interrogative",
+          "slot_returned": "non-interrogative",
+          "is_interrogative": false,
+          "slot_ok": true,
+          "passed": false
+        },
+        {
+          "modality_ok": true,
+          "meaning_ok": false,
+          "naturalness_ok": true,
+          "reason": "It requests a picture, but 'the car shown' reads as the car within the new picture rather than necessarily the specific input car, so the original meaning is not preserved.",
+          "variant": "Produce a picture in which the car shown is white.",
+          "slot_assigned": "non-interrogative",
+          "slot_returned": "non-interrogative",
+          "is_interrogative": false,
+          "slot_ok": true,
+          "passed": false
+        },
+        {
+          "modality_ok": true,
+          "meaning_ok": false,
+          "naturalness_ok": true,
+          "reason": "It clearly asks for an image, but changes the request to a generic depiction of a white car instead of the specific car in the provided image.",
+          "variant": "I want an image depicting a car, and the car needs to be white.",
+          "slot_assigned": "non-interrogative",
+          "slot_returned": "non-interrogative",
+          "is_interrogative": false,
+          "slot_ok": true,
+          "passed": false
+        }
+      ],
+      "n_pass": 0,
+      "inspect_reason": "all_failed"
+    },
+    {
+      "id": "magicbrush_00433",
+      "prompt": "let a man run towards the tank",
+      "task": "TI2I",
+      "source": "MagicBrush",
+      "note": "unchanged_original",
+      "gold_answer": null,
+      "gold_modality": "image",
+      "image_path": "/nas/datahub/magicbrush/dev_source_images/501972_turn2.jpg",
+      "metadata": {},
+      "needs_refinement": false,
+      "basis": "With an input image provided, the imperative instruction describes an image edit/addition: making a man run toward the tank. This reasonably implies the expected output is an edited image rather than a text response.",
+      "refine_hint": "",
+      "gt_modality": "image",
+      "route": "keep",
+      "fixed_prompt": null,
+      "source_prompt": "let a man run towards the tank",
+      "variants": [
+        {
+          "slot_assigned": "interrogative",
+          "slot_returned": "interrogative",
+          "text": "Can you create an image that shows a man running toward a tank?",
+          "is_interrogative": true,
+          "slot_ok": true
+        },
+        {
+          "slot_assigned": "interrogative",
+          "slot_returned": "interrogative",
+          "text": "Would you generate a picture of a man running in the direction of a tank?",
+          "is_interrogative": true,
+          "slot_ok": true
+        },
+        {
+          "slot_assigned": "non-interrogative",
+          "slot_returned": "interrogative",
+          "text": "Could you visually depict, as an image, a man running toward a tank?",
+          "is_interrogative": true,
+          "slot_ok": false
+        },
+        {
+          "slot_assigned": "non-interrogative",
+          "slot_returned": "non-interrogative",
+          "text": "Generate an image of a man running toward a tank.",
+          "is_interrogative": false,
+          "slot_ok": true
+        },
+        {
+          "slot_assigned": "non-interrogative",
+          "slot_returned": "non-interrogative",
+          "text": "Produce a visual scene showing a man running toward a tank.",
+          "is_interrogative": false,
+          "slot_ok": true
+        }
+      ],
+      "checks": [
+        {
+          "modality_ok": true,
+          "meaning_ok": false,
+          "naturalness_ok": true,
+          "reason": "It clearly asks for an image, but it changes the input-image-referential instruction involving 'the tank' into a standalone creation request about 'a tank'.",
+          "variant": "Can you create an image that shows a man running toward a tank?",
+          "slot_assigned": "interrogative",
+          "slot_returned": "interrogative",
+          "is_interrogative": true,
+          "slot_ok": true,
+          "passed": false
+        },
+        {
+          "modality_ok": true,
+          "meaning_ok": false,
+          "naturalness_ok": true,
+          "reason": "It clearly calls for a picture, but it drops the likely use of the provided image and changes 'the tank' to an unspecified tank.",
+          "variant": "Would you generate a picture of a man running in the direction of a tank?",
+          "slot_assigned": "interrogative",
+          "slot_returned": "interrogative",
+          "is_interrogative": true,
+          "slot_ok": true,
+          "passed": false
+        },
+        {
+          "modality_ok": true,
+          "meaning_ok": false,
+          "naturalness_ok": true,
+          "reason": "The output modality is explicitly an image and the wording is acceptable, but it reframes the request as a standalone depiction rather than using the referenced tank in the provided image.",
+          "variant": "Could you visually depict, as an image, a man running toward a tank?",
+          "slot_assigned": "non-interrogative",
+          "slot_returned": "interrogative",
+          "is_interrogative": true,
+          "slot_ok": false,
+          "passed": false
+        },
+        {
+          "modality_ok": true,
+          "meaning_ok": false,
+          "naturalness_ok": true,
+          "reason": "It asks for an image, but 'generate an image of' with 'a tank' changes the original image-editing/reference-to-existing-tank request.",
+          "variant": "Generate an image of a man running toward a tank.",
+          "slot_assigned": "non-interrogative",
+          "slot_returned": "non-interrogative",
+          "is_interrogative": false,
+          "slot_ok": true,
+          "passed": false
+        },
+        {
+          "modality_ok": true,
+          "meaning_ok": false,
+          "naturalness_ok": true,
+          "reason": "It implies an image/visual output, but it no longer preserves the reference to the provided image's tank and instead asks for a generic visual scene.",
+          "variant": "Produce a visual scene showing a man running toward a tank.",
+          "slot_assigned": "non-interrogative",
+          "slot_returned": "non-interrogative",
+          "is_interrogative": false,
+          "slot_ok": true,
+          "passed": false
+        }
+      ],
+      "n_pass": 0,
+      "inspect_reason": "all_failed"
+    },
+    {
+      "id": "magicbrush_00454",
+      "prompt": "Put popcorn in the plate.",
+      "task": "TI2I",
+      "source": "MagicBrush",
+      "note": "unchanged_original",
+      "gold_answer": null,
+      "gold_modality": "image",
+      "image_path": "/nas/datahub/magicbrush/dev_source_images/267300_turn1.jpg",
+      "metadata": {},
+      "needs_refinement": false,
+      "basis": "With an input image, the imperative instruction to put popcorn on the plate is naturally an image-editing request, so the intended output modality is an edited image.",
+      "refine_hint": "",
+      "gt_modality": "image",
+      "route": "keep",
+      "fixed_prompt": null,
+      "source_prompt": "Put popcorn in the plate.",
+      "variants": [
+        {
+          "slot_assigned": "interrogative",
+          "slot_returned": "interrogative",
+          "text": "Can you show me an image of popcorn placed on a plate?",
+          "is_interrogative": true,
+          "slot_ok": true
+        },
+        {
+          "slot_assigned": "interrogative",
+          "slot_returned": "interrogative",
+          "text": "Would you create a picture that illustrates popcorn put in a plate?",
+          "is_interrogative": true,
+          "slot_ok": true
+        },
+        {
+          "slot_assigned": "non-interrogative",
+          "slot_returned": "interrogative",
+          "text": "Generate an image, please: popcorn should be in a plate.",
+          "is_interrogative": false,
+          "slot_ok": true
+        },
+        {
+          "slot_assigned": "non-interrogative",
+          "slot_returned": "non-interrogative",
+          "text": "Create an image that shows popcorn in a plate.",
+          "is_interrogative": false,
+          "slot_ok": true
+        },
+        {
+          "slot_assigned": "non-interrogative",
+          "slot_returned": "non-interrogative",
+          "text": "Produce a picture where popcorn has been put in a plate.",
+          "is_interrogative": false,
+          "slot_ok": true
+        }
+      ],
+      "checks": [
+        {
+          "modality_ok": true,
+          "meaning_ok": false,
+          "naturalness_ok": true,
+          "reason": "It clearly asks for an image, but it changes the edit instruction into a generic request for an image and says popcorn on a plate rather than putting popcorn in the existing plate.",
+          "variant": "Can you show me an image of popcorn placed on a plate?",
+          "slot_assigned": "interrogative",
+          "slot_returned": "interrogative",
+          "is_interrogative": true,
+          "slot_ok": true,
+          "passed": false
+        },
+        {
+          "modality_ok": true,
+          "meaning_ok": false,
+          "naturalness_ok": true,
+          "reason": "It asks for a picture, so the output modality is image, but it does not preserve the source's implied edit of the provided image/the plate and instead asks for a generic illustration.",
+          "variant": "Would you create a picture that illustrates popcorn put in a plate?",
+          "slot_assigned": "interrogative",
+          "slot_returned": "interrogative",
+          "is_interrogative": true,
+          "slot_ok": true,
+          "passed": false
+        },
+        {
+          "modality_ok": true,
+          "meaning_ok": false,
+          "naturalness_ok": true,
+          "reason": "It explicitly requests an image, but it changes the task from putting popcorn in the plate in the provided image to generating a generic image with popcorn in a plate.",
+          "variant": "Generate an image, please: popcorn should be in a plate.",
+          "slot_assigned": "non-interrogative",
+          "slot_returned": "interrogative",
+          "is_interrogative": false,
+          "slot_ok": true,
+          "passed": false
+        },
+        {
+          "modality_ok": true,
+          "meaning_ok": false,
+          "naturalness_ok": true,
+          "reason": "It would lead to an image output, but it asks for a generic image of popcorn in a plate rather than editing the provided image to put popcorn in the plate.",
+          "variant": "Create an image that shows popcorn in a plate.",
+          "slot_assigned": "non-interrogative",
+          "slot_returned": "non-interrogative",
+          "is_interrogative": false,
+          "slot_ok": true,
+          "passed": false
+        },
+        {
+          "modality_ok": true,
+          "meaning_ok": false,
+          "naturalness_ok": true,
+          "reason": "It asks for a picture, matching the image modality, but it drops the source prompt's reference to the existing plate/image and turns it into a generic scene description.",
+          "variant": "Produce a picture where popcorn has been put in a plate.",
+          "slot_assigned": "non-interrogative",
+          "slot_returned": "non-interrogative",
+          "is_interrogative": false,
+          "slot_ok": true,
+          "passed": false
+        }
+      ],
+      "n_pass": 0,
+      "inspect_reason": "all_failed"
+    },
+    {
+      "id": "dpg_bench_25",
+      "prompt": "A robust pigeon, with grey and white feathered plumage, sits comfortably on the sturdy branch of a venerable oak tree, replete with sprawling arms and knotted bark. Below, the mossy roots of the tree stretch out into the cobblestone paths of a charming village, where small, thatched-roof cottages neighbor each other. Sunlight dapples through the dense leaf canopy above, casting playful shadows on the scene below.",
+      "task": "T2I",
+      "source": "dpg_bench",
+      "note": "unchanged_original",
+      "gold_answer": null,
+      "gold_modality": "image",
+      "image_path": null,
+      "metadata": {},
+      "needs_refinement": true,
+      "basis": "The prompt is only a descriptive caption of a scene and does not explicitly ask for an image to be generated. A competent UMM could reasonably respond with text rather than an image.",
+      "refine_hint": "Add an explicit image-generation request, e.g., \"Generate an image of a robust pigeon with grey and white plumage sitting on an oak branch in a charming village scene...\"",
+      "gt_modality": "image",
+      "route": "fix",
+      "fixed_prompt": "Create a detailed illustration of a robust pigeon with grey and white plumage sitting on a sturdy branch of a venerable oak tree above a charming village with cobblestone paths and thatched-roof cottages, with sunlight dappling through the dense leaf canopy and casting playful shadows.",
+      "source_prompt": "Create a detailed illustration of a robust pigeon with grey and white plumage sitting on a sturdy branch of a venerable oak tree above a charming village with cobblestone paths and thatched-roof cottages, with sunlight dappling through the dense leaf canopy and casting playful shadows.",
+      "variants": [
+        {
+          "slot_assigned": "interrogative",
+          "slot_returned": "interrogative",
+          "text": "Could you create an illustration that shows a robust pigeon with grey and white plumage sitting on a sturdy branch of a venerable oak tree above a charming village with cobblestone paths and thatched-roof cottages, with sunlight dappling through the dense leaf canopy and casting playful shadows?",
+          "is_interrogative": true,
+          "slot_ok": true
+        },
+        {
+          "slot_assigned": "interrogative",
+          "slot_returned": "interrogative",
+          "text": "Would you generate an image depicting a strong, robust pigeon with grey and white plumage perched on a sturdy branch of a venerable oak tree, overlooking a charming village with cobblestone paths and thatched-roof cottages, where sunlight dapples through a dense leaf canopy and casts playful shadows?",
+          "is_interrogative": true,
+          "slot_ok": true
+        },
+        {
+          "slot_assigned": "non-interrogative",
+          "slot_returned": "non-interrogative",
+          "text": "Create an image illustration of a robust pigeon with grey and white plumage perched on a sturdy branch of a venerable oak tree above a charming village that has cobblestone paths and thatched-roof cottages, with sunlight filtering through the dense leaf canopy and casting playful shadows.",
+          "is_interrogative": false,
+          "slot_ok": true
+        },
+        {
+          "slot_assigned": "non-interrogative",
+          "slot_returned": "non-interrogative",
+          "text": "Generate a detailed drawing that shows a robust pigeon with grey and white plumage resting on a sturdy branch of a venerable oak tree high above a charming village featuring cobblestone paths and thatched-roof cottages, with sunlight dappling through the dense leaf canopy and creating playful shadows.",
+          "is_interrogative": false,
+          "slot_ok": true
+        },
+        {
+          "slot_assigned": "non-interrogative",
+          "slot_returned": "non-interrogative",
+          "text": "Produce a detailed illustration where a robust pigeon with grey and white plumage is seated on a sturdy branch of a venerable oak tree overlooking a charming village filled with cobblestone paths and thatched-roof cottages, while sunlight dapples through the dense leaf canopy and casts playful shadows.",
+          "is_interrogative": false,
+          "slot_ok": true
+        }
+      ],
+      "checks": [
+        {
+          "modality_ok": true,
+          "meaning_ok": false,
+          "naturalness_ok": true,
+          "reason": "It clearly asks for an image/illustration and reads naturally, but it drops the source request that the illustration be detailed.",
+          "variant": "Could you create an illustration that shows a robust pigeon with grey and white plumage sitting on a sturdy branch of a venerable oak tree above a charming village with cobblestone paths and thatched-roof cottages, with sunlight dappling through the dense leaf canopy and casting playful shadows?",
+          "slot_assigned": "interrogative",
+          "slot_returned": "interrogative",
+          "is_interrogative": true,
+          "slot_ok": true,
+          "passed": false
+        },
+        {
+          "modality_ok": true,
+          "meaning_ok": false,
+          "naturalness_ok": true,
+          "reason": "It clearly calls for an image and is natural, but it drops the requirement for a detailed illustration and adds 'strong' beyond the original description.",
+          "variant": "Would you generate an image depicting a strong, robust pigeon with grey and white plumage perched on a sturdy branch of a venerable oak tree, overlooking a charming village with cobblestone paths and thatched-roof cottages, where sunlight dapples through a dense leaf canopy and casts playful shadows?",
+          "slot_assigned": "interrogative",
+          "slot_returned": "interrogative",
+          "is_interrogative": true,
+          "slot_ok": true,
+          "passed": false
+        },
+        {
+          "modality_ok": true,
+          "meaning_ok": false,
+          "naturalness_ok": true,
+          "reason": "It would prompt an image and reads naturally, but it omits the source's 'detailed' requirement.",
+          "variant": "Create an image illustration of a robust pigeon with grey and white plumage perched on a sturdy branch of a venerable oak tree above a charming village that has cobblestone paths and thatched-roof cottages, with sunlight filtering through the dense leaf canopy and casting playful shadows.",
+          "slot_assigned": "non-interrogative",
+          "slot_returned": "non-interrogative",
+          "is_interrogative": false,
+          "slot_ok": true,
+          "passed": false
+        },
+        {
+          "modality_ok": true,
+          "meaning_ok": true,
+          "naturalness_ok": true,
+          "reason": "It naturally asks for a detailed visual work and preserves the requested scene and elements; 'drawing' and 'resting' are acceptable paraphrases of the original.",
+          "variant": "Generate a detailed drawing that shows a robust pigeon with grey and white plumage resting on a sturdy branch of a venerable oak tree high above a charming village featuring cobblestone paths and thatched-roof cottages, with sunlight dappling through the dense leaf canopy and creating playful shadows.",
+          "slot_assigned": "non-interrogative",
+          "slot_returned": "non-interrogative",
+          "is_interrogative": false,
+          "slot_ok": true,
+          "passed": true
+        },
+        {
+          "modality_ok": true,
+          "meaning_ok": true,
+          "naturalness_ok": true,
+          "reason": "It naturally asks for a detailed illustration and keeps the same pigeon, oak branch, village, canopy, sunlight, and shadow details.",
+          "variant": "Produce a detailed illustration where a robust pigeon with grey and white plumage is seated on a sturdy branch of a venerable oak tree overlooking a charming village filled with cobblestone paths and thatched-roof cottages, while sunlight dapples through the dense leaf canopy and casts playful shadows.",
+          "slot_assigned": "non-interrogative",
+          "slot_returned": "non-interrogative",
+          "is_interrogative": false,
+          "slot_ok": true,
+          "passed": true
+        }
+      ],
+      "n_pass": 2,
+      "inspect_reason": "no_interrogative_survivor"
+    },
+    {
+      "id": "dpg_bench_COCOval2014000000167696",
+      "prompt": "a life-sized zebra sculpture positioned in the center of a well-manicured garden space. The garden is dotted with a variety of lush plants and flowers, providing a vibrant backdrop to the monochromatic statue. A gravel pathway winds around the garden, inviting visitors to view the sculpture from different angles.",
+      "task": "T2I",
+      "source": "dpg_bench",
+      "note": "unchanged_original",
+      "gold_answer": null,
+      "gold_modality": "image",
+      "image_path": null,
+      "metadata": {},
+      "needs_refinement": true,
+      "basis": "The prompt is only a descriptive caption of a scene and does not explicitly request an image. A competent UMM could respond with text (e.g., elaboration or commentary) rather than generate an image.",
+      "refine_hint": "Explicitly ask for image generation, e.g., \"Create an image of a life-sized zebra sculpture positioned in the center of a well-manicured garden...\"",
+      "gt_modality": "image",
+      "route": "fix",
+      "fixed_prompt": "Create an image of a life-sized zebra sculpture positioned in the center of a well-manicured garden space. The garden is dotted with a variety of lush plants and flowers, providing a vibrant backdrop to the monochromatic statue, with a gravel pathway winding around it for viewing from different angles.",
+      "source_prompt": "Create an image of a life-sized zebra sculpture positioned in the center of a well-manicured garden space. The garden is dotted with a variety of lush plants and flowers, providing a vibrant backdrop to the monochromatic statue, with a gravel pathway winding around it for viewing from different angles.",
+      "variants": [
+        {
+          "slot_assigned": "interrogative",
+          "slot_returned": "interrogative",
+          "text": "Could you generate an image showing a life-sized zebra sculpture placed at the center of a well-manicured garden, with a variety of lush plants and colorful flowers all around it, and a gravel pathway winding around the statue so it can be viewed from different angles?",
+          "is_interrogative": true,
+          "slot_ok": true
+        },
+        {
+          "slot_assigned": "interrogative",
+          "slot_returned": "interrogative",
+          "text": "Would you create an image of a life-sized zebra statue standing in the middle of a neatly maintained garden that is dotted with lush plants and flowers, with a gravel path curving around the sculpture to allow viewing from multiple sides?",
+          "is_interrogative": true,
+          "slot_ok": true
+        },
+        {
+          "slot_assigned": "non-interrogative",
+          "slot_returned": "non-interrogative",
+          "text": "Create an image depicting a life-sized zebra sculpture in the very center of a well-manicured garden, surrounded by a variety of lush plants and flowers as a vibrant backdrop, with a gravel pathway looping around the statue for viewing from different angles.",
+          "is_interrogative": false,
+          "slot_ok": true
+        },
+        {
+          "slot_assigned": "non-interrogative",
+          "slot_returned": "non-interrogative",
+          "text": "Generate an image of a life-sized zebra sculpture positioned centrally in a carefully maintained garden, where numerous lush plants and flowers add vivid color, and a gravel pathway winds around the statue so it can be seen from various viewpoints.",
+          "is_interrogative": false,
+          "slot_ok": true
+        },
+        {
+          "slot_assigned": "non-interrogative",
+          "slot_returned": "non-interrogative",
+          "text": "Produce an image that shows a life-sized zebra sculpture in the middle of a meticulously kept garden space, with many lush plants and flowers creating a bright, vibrant setting, and a gravel path circling around the statue for viewing it from different angles.",
+          "is_interrogative": false,
+          "slot_ok": true
+        }
+      ],
+      "checks": [
+        {
+          "modality_ok": true,
+          "meaning_ok": false,
+          "naturalness_ok": true,
+          "reason": "It clearly asks for an image and reads naturally, but it omits the source prompt's detail that the statue is monochromatic.",
+          "variant": "Could you generate an image showing a life-sized zebra sculpture placed at the center of a well-manicured garden, with a variety of lush plants and colorful flowers all around it, and a gravel pathway winding around the statue so it can be viewed from different angles?",
+          "slot_assigned": "interrogative",
+          "slot_returned": "interrogative",
+          "is_interrogative": true,
+          "slot_ok": true,
+          "passed": false
+        },
+        {
+          "modality_ok": true,
+          "meaning_ok": false,
+          "naturalness_ok": true,
+          "reason": "It clearly requests an image and is natural, but it drops the monochromatic quality of the statue from the original prompt.",
+          "variant": "Would you create an image of a life-sized zebra statue standing in the middle of a neatly maintained garden that is dotted with lush plants and flowers, with a gravel path curving around the sculpture to allow viewing from multiple sides?",
+          "slot_assigned": "interrogative",
+          "slot_returned": "interrogative",
+          "is_interrogative": true,
+          "slot_ok": true,
+          "passed": false
+        },
+        {
+          "modality_ok": true,
+          "meaning_ok": false,
+          "naturalness_ok": true,
+          "reason": "It naturally asks for an image, but it omits the source's specification that the zebra sculpture/statue is monochromatic.",
+          "variant": "Create an image depicting a life-sized zebra sculpture in the very center of a well-manicured garden, surrounded by a variety of lush plants and flowers as a vibrant backdrop, with a gravel pathway looping around the statue for viewing from different angles.",
+          "slot_assigned": "non-interrogative",
+          "slot_returned": "non-interrogative",
+          "is_interrogative": false,
+          "slot_ok": true,
+          "passed": false
+        },
+        {
+          "modality_ok": true,
+          "meaning_ok": false,
+          "naturalness_ok": true,
+          "reason": "The output modality is clearly image and the wording is natural, but the monochromatic statue detail is not preserved.",
+          "variant": "Generate an image of a life-sized zebra sculpture positioned centrally in a carefully maintained garden, where numerous lush plants and flowers add vivid color, and a gravel pathway winds around the statue so it can be seen from various viewpoints.",
+          "slot_assigned": "non-interrogative",
+          "slot_returned": "non-interrogative",
+          "is_interrogative": false,
+          "slot_ok": true,
+          "passed": false
+        },
+        {
+          "modality_ok": true,
+          "meaning_ok": false,
+          "naturalness_ok": true,
+          "reason": "It is a natural image-generation request, but it changes the requested content by leaving out the original monochromatic-statue detail.",
+          "variant": "Produce an image that shows a life-sized zebra sculpture in the middle of a meticulously kept garden space, with many lush plants and flowers creating a bright, vibrant setting, and a gravel path circling around the statue for viewing it from different angles.",
+          "slot_assigned": "non-interrogative",
+          "slot_returned": "non-interrogative",
+          "is_interrogative": false,
+          "slot_ok": true,
+          "passed": false
+        }
+      ],
+      "n_pass": 0,
+      "inspect_reason": "all_failed"
+    },
+    {
+      "id": "dpg_bench_diffusiondb21",
+      "prompt": "A thought-provoking piece of digital art that has gained popularity on ArtStation depicts a surreal scene where an open binder notebook serves as a door, standing incongruously amidst a dense woodland setting. The trees surrounding the notebook are rendered in meticulous detail, their bark dark and textured against the misty backdrop. The overall feel of the image evokes an eerie sense of a thriller, with the peculiar juxtaposition of the school supply and the natural environment inviting viewers to ponder the story behind it.",
+      "task": "T2I",
+      "source": "dpg_bench",
+      "note": "unchanged_original",
+      "gold_answer": null,
+      "gold_modality": "image",
+      "image_path": null,
+      "metadata": {},
+      "needs_refinement": true,
+      "basis": "The prompt is only a descriptive caption of a digital artwork and does not explicitly ask the model to generate or output an image. A competent UMM could reasonably respond with text, such as an interpretation or rewrite of the description.",
+      "refine_hint": "Add an explicit image-generation instruction, e.g. \"Create a digital artwork depicting...\" or \"Generate an image of this surreal scene...\"",
+      "gt_modality": "image",
+      "route": "fix",
+      "fixed_prompt": "Create a thought-provoking piece of digital art for ArtStation that visually depicts a surreal scene: an open binder notebook standing upright and functioning as a door in the middle of a dense woodland, with dark, textured tree bark against a misty backdrop and an eerie thriller atmosphere.",
+      "source_prompt": "Create a thought-provoking piece of digital art for ArtStation that visually depicts a surreal scene: an open binder notebook standing upright and functioning as a door in the middle of a dense woodland, with dark, textured tree bark against a misty backdrop and an eerie thriller atmosphere.",
+      "variants": [
+        {
+          "slot_assigned": "interrogative",
+          "slot_returned": "interrogative",
+          "text": "Could you generate a piece of digital art suitable for ArtStation that shows a surreal scene of an open binder notebook standing upright and acting as a door in the middle of a dense woodland, with dark, textured tree bark, a misty backdrop, and an eerie thriller atmosphere?",
+          "is_interrogative": true,
+          "slot_ok": true
+        },
+        {
+          "slot_assigned": "interrogative",
+          "slot_returned": "interrogative",
+          "text": "Would you create an image of digital art for ArtStation that portrays a surreal scene where an open binder notebook stands upright like a door in the center of a dense woodland, surrounded by dark, textured tree bark and mist, with an overall eerie thriller mood?",
+          "is_interrogative": true,
+          "slot_ok": true
+        },
+        {
+          "slot_assigned": "non-interrogative",
+          "slot_returned": "non-interrogative",
+          "text": "Create a digital artwork for ArtStation that shows a surreal scene: an open binder notebook standing upright and serving as a door in the middle of a dense woodland, with dark, textured tree bark, a misty background, and an eerie thriller atmosphere.",
+          "is_interrogative": false,
+          "slot_ok": true
+        },
+        {
+          "slot_assigned": "non-interrogative",
+          "slot_returned": "non-interrogative",
+          "text": "Produce a thought-provoking digital art image for ArtStation depicting a surreal environment in which an open binder notebook is upright and functioning as a door in the midst of a dense woodland, featuring dark, textured tree bark, heavy mist in the background, and an unsettling thriller vibe.",
+          "is_interrogative": false,
+          "slot_ok": true
+        },
+        {
+          "slot_assigned": "non-interrogative",
+          "slot_returned": "non-interrogative",
+          "text": "Generate an ArtStation-ready digital art piece that visually represents a surreal scene of an open binder notebook standing vertically as a door in the middle of a dense woodland, emphasizing dark, textured tree bark, a foggy, mist-filled backdrop, and a chilling, eerie thriller atmosphere.",
+          "is_interrogative": false,
+          "slot_ok": true
+        }
+      ],
+      "checks": [
+        {
+          "modality_ok": true,
+          "meaning_ok": false,
+          "naturalness_ok": true,
+          "reason": "This clearly asks for generated digital art, but it drops the source requirement that the piece be thought-provoking. It otherwise reads naturally.",
+          "variant": "Could you generate a piece of digital art suitable for ArtStation that shows a surreal scene of an open binder notebook standing upright and acting as a door in the middle of a dense woodland, with dark, textured tree bark, a misty backdrop, and an eerie thriller atmosphere?",
+          "slot_assigned": "interrogative",
+          "slot_returned": "interrogative",
+          "is_interrogative": true,
+          "slot_ok": true,
+          "passed": false
+        },
+        {
+          "modality_ok": true,
+          "meaning_ok": false,
+          "naturalness_ok": true,
+          "reason": "This would elicit an image, but it omits the thought-provoking quality requested in the source prompt. The wording is natural.",
+          "variant": "Would you create an image of digital art for ArtStation that portrays a surreal scene where an open binder notebook stands upright like a door in the center of a dense woodland, surrounded by dark, textured tree bark and mist, with an overall eerie thriller mood?",
+          "slot_assigned": "interrogative",
+          "slot_returned": "interrogative",
+          "is_interrogative": true,
+          "slot_ok": true,
+          "passed": false
+        },
+        {
+          "modality_ok": true,
+          "meaning_ok": false,
+          "naturalness_ok": true,
+          "reason": "This is clearly an image-generation request, but it drops the 'thought-provoking' aspect from the original. It reads like a normal user prompt.",
+          "variant": "Create a digital artwork for ArtStation that shows a surreal scene: an open binder notebook standing upright and serving as a door in the middle of a dense woodland, with dark, textured tree bark, a misty background, and an eerie thriller atmosphere.",
+          "slot_assigned": "non-interrogative",
+          "slot_returned": "non-interrogative",
+          "is_interrogative": false,
+          "slot_ok": true,
+          "passed": false
+        },
+        {
+          "modality_ok": true,
+          "meaning_ok": true,
+          "naturalness_ok": true,
+          "reason": "The variant preserves the requested image modality and the same scene, style, setting, and mood, including the thought-provoking quality. It is naturally phrased.",
+          "variant": "Produce a thought-provoking digital art image for ArtStation depicting a surreal environment in which an open binder notebook is upright and functioning as a door in the midst of a dense woodland, featuring dark, textured tree bark, heavy mist in the background, and an unsettling thriller vibe.",
+          "slot_assigned": "non-interrogative",
+          "slot_returned": "non-interrogative",
+          "is_interrogative": false,
+          "slot_ok": true,
+          "passed": true
+        },
+        {
+          "modality_ok": true,
+          "meaning_ok": false,
+          "naturalness_ok": true,
+          "reason": "This clearly requests an image/art piece, but it omits the source prompt's requirement that the work be thought-provoking. The phrasing is natural.",
+          "variant": "Generate an ArtStation-ready digital art piece that visually represents a surreal scene of an open binder notebook standing vertically as a door in the middle of a dense woodland, emphasizing dark, textured tree bark, a foggy, mist-filled backdrop, and a chilling, eerie thriller atmosphere.",
+          "slot_assigned": "non-interrogative",
+          "slot_returned": "non-interrogative",
+          "is_interrogative": false,
+          "slot_ok": true,
+          "passed": false
+        }
+      ],
+      "n_pass": 1,
+      "inspect_reason": "no_interrogative_survivor"
+    },
+    {
+      "id": "dpg_bench_drawtext19",
+      "prompt": "a vibrant field of tall sunflowers standing against a clear blue sky, with one large, cheerful flower in the foreground about to be overwhelmed by an approaching green tractor. the sunflower's bright yellow petals and deep brown center contrast the cold metal of the tractor's body. the ominous caption 'after the sunflowers, they will come for you' overlays the image, giving an eerie foreshadowing to the scene.",
+      "task": "T2I",
+      "source": "dpg_bench",
+      "note": "unchanged_original",
+      "gold_answer": null,
+      "gold_modality": "image",
+      "image_path": null,
+      "metadata": {},
+      "needs_refinement": true,
+      "basis": "The prompt is only a detailed scene description/caption. It does not explicitly ask the model to generate or output an image, so a competent UMM could reasonably continue in text instead.",
+      "refine_hint": "Add an explicit image-generation instruction, e.g., \"Create an image of a vibrant field of tall sunflowers... with the caption 'after the sunflowers, they will come for you' overlaid.\"",
+      "gt_modality": "image",
+      "route": "fix",
+      "fixed_prompt": "Create an image of a vibrant field of tall sunflowers standing against a clear blue sky, with one large, cheerful flower in the foreground about to be overwhelmed by an approaching green tractor. The sunflower's bright yellow petals and deep brown center contrast with the cold metal of the tractor's body, and the ominous caption 'after the sunflowers, they will come for you' overlays the image, giving an eerie foreshadowing to the scene.",
+      "source_prompt": "Create an image of a vibrant field of tall sunflowers standing against a clear blue sky, with one large, cheerful flower in the foreground about to be overwhelmed by an approaching green tractor. The sunflower's bright yellow petals and deep brown center contrast with the cold metal of the tractor's body, and the ominous caption 'after the sunflowers, they will come for you' overlays the image, giving an eerie foreshadowing to the scene.",
+      "variants": [
+        {
+          "slot_assigned": "interrogative",
+          "slot_returned": "interrogative",
+          "text": "Could you generate an image showing a vibrant field of tall sunflowers under a clear blue sky, with one large, cheerful sunflower in the foreground about to be overwhelmed by an approaching green tractor, and the ominous caption \"after the sunflowers, they will come for you\" overlaid on the scene?",
+          "is_interrogative": true,
+          "slot_ok": true
+        },
+        {
+          "slot_assigned": "interrogative",
+          "slot_returned": "interrogative",
+          "text": "Would you create an image of a bright field full of tall sunflowers beneath a clear blue sky, where one big, cheerful sunflower in the foreground is about to be overwhelmed by a green tractor, and the words \"after the sunflowers, they will come for you\" appear as an ominous caption on top of the picture?",
+          "is_interrogative": true,
+          "slot_ok": true
+        },
+        {
+          "slot_assigned": "non-interrogative",
+          "slot_returned": "non-interrogative",
+          "text": "Create an image depicting a vibrant field of tall sunflowers under a clear blue sky, with a single large, cheerful sunflower in the foreground about to be overwhelmed by an approaching green tractor, and overlay the ominous caption \"after the sunflowers, they will come for you\" across the scene.",
+          "is_interrogative": false,
+          "slot_ok": true
+        },
+        {
+          "slot_assigned": "non-interrogative",
+          "slot_returned": "non-interrogative",
+          "text": "Generate an illustration of a vivid field of tall sunflowers standing against a clear blue sky, featuring one prominent, happy-looking sunflower in the foreground that is on the verge of being overwhelmed by a green tractor, with the eerie text \"after the sunflowers, they will come for you\" superimposed on the image.",
+          "is_interrogative": false,
+          "slot_ok": true
+        },
+        {
+          "slot_assigned": "non-interrogative",
+          "slot_returned": "non-interrogative",
+          "text": "Produce an image showing a colorful field of tall sunflowers beneath a clear blue sky, with one large, cheerful sunflower front and center about to be overwhelmed by an oncoming green tractor, and place the ominous phrase \"after the sunflowers, they will come for you\" as a caption over the entire scene.",
+          "is_interrogative": false,
+          "slot_ok": true
+        }
+      ],
+      "checks": [
+        {
+          "modality_ok": true,
+          "meaning_ok": false,
+          "naturalness_ok": true,
+          "reason": "Clearly asks for image generation and reads naturally, but it omits the source's explicit visual contrast between the sunflower's yellow petals/brown center and the tractor's cold metal body.",
+          "variant": "Could you generate an image showing a vibrant field of tall sunflowers under a clear blue sky, with one large, cheerful sunflower in the foreground about to be overwhelmed by an approaching green tractor, and the ominous caption \"after the sunflowers, they will come for you\" overlaid on the scene?",
+          "slot_assigned": "interrogative",
+          "slot_returned": "interrogative",
+          "is_interrogative": true,
+          "slot_ok": true,
+          "passed": false
+        },
+        {
+          "modality_ok": true,
+          "meaning_ok": false,
+          "naturalness_ok": true,
+          "reason": "Clearly calls for an image and is natural, but it drops the source detail about the sunflower's bright yellow petals/deep brown center contrasting with the tractor's cold metal body.",
+          "variant": "Would you create an image of a bright field full of tall sunflowers beneath a clear blue sky, where one big, cheerful sunflower in the foreground is about to be overwhelmed by a green tractor, and the words \"after the sunflowers, they will come for you\" appear as an ominous caption on top of the picture?",
+          "slot_assigned": "interrogative",
+          "slot_returned": "interrogative",
+          "is_interrogative": true,
+          "slot_ok": true,
+          "passed": false
+        },
+        {
+          "modality_ok": true,
+          "meaning_ok": false,
+          "naturalness_ok": true,
+          "reason": "The requested output modality is clearly an image and the wording is natural, but the variant omits the explicit color/material contrast detail from the source prompt.",
+          "variant": "Create an image depicting a vibrant field of tall sunflowers under a clear blue sky, with a single large, cheerful sunflower in the foreground about to be overwhelmed by an approaching green tractor, and overlay the ominous caption \"after the sunflowers, they will come for you\" across the scene.",
+          "slot_assigned": "non-interrogative",
+          "slot_returned": "non-interrogative",
+          "is_interrogative": false,
+          "slot_ok": true,
+          "passed": false
+        },
+        {
+          "modality_ok": true,
+          "meaning_ok": false,
+          "naturalness_ok": true,
+          "reason": "It naturally requests an image/illustration, but it narrows the style to an illustration and omits the source's specific contrast between the sunflower's petals/center and the tractor's cold metal body.",
+          "variant": "Generate an illustration of a vivid field of tall sunflowers standing against a clear blue sky, featuring one prominent, happy-looking sunflower in the foreground that is on the verge of being overwhelmed by a green tractor, with the eerie text \"after the sunflowers, they will come for you\" superimposed on the image.",
+          "slot_assigned": "non-interrogative",
+          "slot_returned": "non-interrogative",
+          "is_interrogative": false,
+          "slot_ok": true,
+          "passed": false
+        },
+        {
+          "modality_ok": true,
+          "meaning_ok": false,
+          "naturalness_ok": true,
+          "reason": "This is a natural image-generation request, but it leaves out the source prompt's explicit detail about the sunflower colors contrasting with the tractor's cold metal body.",
+          "variant": "Produce an image showing a colorful field of tall sunflowers beneath a clear blue sky, with one large, cheerful sunflower front and center about to be overwhelmed by an oncoming green tractor, and place the ominous phrase \"after the sunflowers, they will come for you\" as a caption over the entire scene.",
+          "slot_assigned": "non-interrogative",
+          "slot_returned": "non-interrogative",
+          "is_interrogative": false,
+          "slot_ok": true,
+          "passed": false
+        }
+      ],
+      "n_pass": 0,
+      "inspect_reason": "all_failed"
+    },
+    {
+      "id": "dpg_bench_drawtext20",
+      "prompt": "A digital image depicts an animated panda character, standing at a podium in a spacious conference room, giving a presentation to an invisible audience. The panda is adorned with a blue tie and is pointing towards a large projector screen that displays bold text stating 'Diffusion Models – in the style of van Gogh,’ with swirling patterns reminiscent of the famous Dutch painter's work in the background. The room is lined with grand windows showing a clear day outside, and rows of empty black chairs face the presenting panda, suggesting an air of anticipation for the talk.",
+      "task": "T2I",
+      "source": "dpg_bench",
+      "note": "unchanged_original",
+      "gold_answer": null,
+      "gold_modality": "image",
+      "image_path": null,
+      "metadata": {},
+      "needs_refinement": true,
+      "basis": "The prompt is only a descriptive caption of an image and does not explicitly ask the model to produce or generate an image. A competent UMM could reasonably respond in text, such as by paraphrasing or analyzing the description.",
+      "refine_hint": "Add an explicit image-generation request, e.g. “Generate a digital image of an animated panda character standing at a podium…”",
+      "gt_modality": "image",
+      "route": "fix",
+      "fixed_prompt": "Create a digital illustration showing an animated panda character standing at a podium in a spacious conference room, giving a presentation to an invisible audience. The panda wears a blue tie and points toward a large projector screen displaying bold text that reads 'Diffusion Models – in the style of van Gogh,' with swirling patterns reminiscent of the Dutch painter in the background. Grand windows reveal a clear day outside, and rows of empty black chairs face the presenting panda, suggesting anticipation for the talk.",
+      "source_prompt": "Create a digital illustration showing an animated panda character standing at a podium in a spacious conference room, giving a presentation to an invisible audience. The panda wears a blue tie and points toward a large projector screen displaying bold text that reads 'Diffusion Models – in the style of van Gogh,' with swirling patterns reminiscent of the Dutch painter in the background. Grand windows reveal a clear day outside, and rows of empty black chairs face the presenting panda, suggesting anticipation for the talk.",
+      "variants": [
+        {
+          "slot_assigned": "interrogative",
+          "slot_returned": "interrogative",
+          "text": "Could you generate a digital illustration of an animated panda character standing at a podium in a spacious conference room, wearing a blue tie and giving a presentation to an invisible audience, with a large projector screen that shows bold text reading “Diffusion Models – in the style of van Gogh” over swirling, van Gogh–like patterns, while grand windows reveal a clear day outside and rows of empty black chairs face the panda?",
+          "is_interrogative": true,
+          "slot_ok": true
+        },
+        {
+          "slot_assigned": "interrogative",
+          "slot_returned": "interrogative",
+          "text": "Would you create an image that depicts an animated panda in a blue tie standing at a podium in a large conference room, presenting to an invisible audience, with a big projector screen displaying bold text saying “Diffusion Models – in the style of van Gogh” against swirling patterns inspired by the Dutch painter, grand windows showing a clear day, and rows of empty black chairs arranged facing the panda?",
+          "is_interrogative": true,
+          "slot_ok": true
+        },
+        {
+          "slot_assigned": "non-interrogative",
+          "slot_returned": "non-interrogative",
+          "text": "Generate a digital illustration of an animated panda character at a podium in a spacious conference room, wearing a blue tie and giving a presentation to an invisible audience. The scene should include a large projector screen with bold text that reads “Diffusion Models – in the style of van Gogh,” backed by swirling patterns reminiscent of the Dutch painter, plus grand windows showing a clear day and rows of empty black chairs facing the panda.",
+          "is_interrogative": false,
+          "slot_ok": true
+        },
+        {
+          "slot_assigned": "non-interrogative",
+          "slot_returned": "non-interrogative",
+          "text": "Produce an image showing an animated panda character in a blue tie standing at a podium in a large conference room, presenting to an invisible audience. In the illustration, include a big projector screen with bold lettering that says “Diffusion Models – in the style of van Gogh” with swirling van Gogh–style patterns behind the text, grand windows that reveal a clear day outside, and multiple rows of empty black chairs directed toward the presenting panda.",
+          "is_interrogative": false,
+          "slot_ok": true
+        },
+        {
+          "slot_assigned": "non-interrogative",
+          "slot_returned": "non-interrogative",
+          "text": "Create a stylized digital scene: an animated panda, wearing a blue tie, stands at a podium in a spacious conference room as if giving a talk to an invisible audience. A large projector screen beside the panda must show bold text reading “Diffusion Models – in the style of van Gogh,” with swirling patterns in the background reminiscent of van Gogh, while grand windows display a clear day outdoors and rows of empty black chairs are lined up facing the panda.",
+          "is_interrogative": false,
+          "slot_ok": true
+        }
+      ],
+      "checks": [
+        {
+          "modality_ok": true,
+          "meaning_ok": false,
+          "naturalness_ok": true,
+          "reason": "Clearly asks for a generated digital illustration, but it omits the source detail that the panda is pointing toward the projector screen.",
+          "variant": "Could you generate a digital illustration of an animated panda character standing at a podium in a spacious conference room, wearing a blue tie and giving a presentation to an invisible audience, with a large projector screen that shows bold text reading “Diffusion Models – in the style of van Gogh” over swirling, van Gogh–like patterns, while grand windows reveal a clear day outside and rows of empty black chairs face the panda?",
+          "slot_assigned": "interrogative",
+          "slot_returned": "interrogative",
+          "is_interrogative": true,
+          "slot_ok": true,
+          "passed": false
+        },
+        {
+          "modality_ok": true,
+          "meaning_ok": false,
+          "naturalness_ok": true,
+          "reason": "Clearly calls for an image, but it drops the requirement that the panda points toward the large projector screen.",
+          "variant": "Would you create an image that depicts an animated panda in a blue tie standing at a podium in a large conference room, presenting to an invisible audience, with a big projector screen displaying bold text saying “Diffusion Models – in the style of van Gogh” against swirling patterns inspired by the Dutch painter, grand windows showing a clear day, and rows of empty black chairs arranged facing the panda?",
+          "slot_assigned": "interrogative",
+          "slot_returned": "interrogative",
+          "is_interrogative": true,
+          "slot_ok": true,
+          "passed": false
+        },
+        {
+          "modality_ok": true,
+          "meaning_ok": false,
+          "naturalness_ok": true,
+          "reason": "The requested output modality is clearly an image, and the wording is natural, but it omits the panda pointing toward the projector screen.",
+          "variant": "Generate a digital illustration of an animated panda character at a podium in a spacious conference room, wearing a blue tie and giving a presentation to an invisible audience. The scene should include a large projector screen with bold text that reads “Diffusion Models – in the style of van Gogh,” backed by swirling patterns reminiscent of the Dutch painter, plus grand windows showing a clear day and rows of empty black chairs facing the panda.",
+          "slot_assigned": "non-interrogative",
+          "slot_returned": "non-interrogative",
+          "is_interrogative": false,
+          "slot_ok": true,
+          "passed": false
+        },
+        {
+          "modality_ok": true,
+          "meaning_ok": false,
+          "naturalness_ok": true,
+          "reason": "This naturally requests an image, but it does not preserve the source detail that the panda points toward the projector screen.",
+          "variant": "Produce an image showing an animated panda character in a blue tie standing at a podium in a large conference room, presenting to an invisible audience. In the illustration, include a big projector screen with bold lettering that says “Diffusion Models – in the style of van Gogh” with swirling van Gogh–style patterns behind the text, grand windows that reveal a clear day outside, and multiple rows of empty black chairs directed toward the presenting panda.",
+          "slot_assigned": "non-interrogative",
+          "slot_returned": "non-interrogative",
+          "is_interrogative": false,
+          "slot_ok": true,
+          "passed": false
+        },
+        {
+          "modality_ok": true,
+          "meaning_ok": false,
+          "naturalness_ok": true,
+          "reason": "This is a natural image-generation prompt, but it omits the source action of the panda pointing toward the projector screen.",
+          "variant": "Create a stylized digital scene: an animated panda, wearing a blue tie, stands at a podium in a spacious conference room as if giving a talk to an invisible audience. A large projector screen beside the panda must show bold text reading “Diffusion Models – in the style of van Gogh,” with swirling patterns in the background reminiscent of van Gogh, while grand windows display a clear day outdoors and rows of empty black chairs are lined up facing the panda.",
+          "slot_assigned": "non-interrogative",
+          "slot_returned": "non-interrogative",
+          "is_interrogative": false,
+          "slot_ok": true,
+          "passed": false
+        }
+      ],
+      "n_pass": 0,
+      "inspect_reason": "all_failed"
+    },
+    {
+      "id": "dpg_bench_partiprompts12",
+      "prompt": "A scenic train journey unfolds during the monsoon season in Kerala, with raindrops rhythmically tapping against the windowpane. Inside one of the train's carriages, a plush koala bear toy, donning a small, colorful hat, is propped up against the glass, peering out at the lush landscape. Outside, numerous tall coconut trees sway gently in the rain, their green fronds glistening with moisture, creating a verdant backdrop as the train meanders through the countryside.",
+      "task": "T2I",
+      "source": "dpg_bench",
+      "note": "unchanged_original",
+      "gold_answer": null,
+      "gold_modality": "image",
+      "image_path": null,
+      "metadata": {},
+      "needs_refinement": true,
+      "basis": "The prompt is only a descriptive scene/caption and does not explicitly ask the model to produce an image. A competent UMM could reasonably continue with text rather than infer image generation.",
+      "refine_hint": "Explicitly request an image, e.g., “Generate an image of a scenic monsoon train journey in Kerala with a plush koala bear toy by the window…”",
+      "gt_modality": "image",
+      "route": "fix",
+      "fixed_prompt": "Generate a detailed illustration of a scenic train journey during the monsoon season in Kerala, showing a plush koala bear toy in a small colorful hat propped against the rainy window, looking out at tall coconut trees swaying in the lush, wet countryside.",
+      "source_prompt": "Generate a detailed illustration of a scenic train journey during the monsoon season in Kerala, showing a plush koala bear toy in a small colorful hat propped against the rainy window, looking out at tall coconut trees swaying in the lush, wet countryside.",
+      "variants": [
+        {
+          "slot_assigned": "interrogative",
+          "slot_returned": "interrogative",
+          "text": "Could you create an illustration that shows a scenic train journey during the monsoon season in Kerala, with a plush koala bear toy in a small colorful hat propped against a rainy window, looking out at tall coconut trees swaying in the lush, wet countryside?",
+          "is_interrogative": true,
+          "slot_ok": true
+        },
+        {
+          "slot_assigned": "interrogative",
+          "slot_returned": "interrogative",
+          "text": "Would you generate an image depicting a scenic train ride during the monsoon season in Kerala, where a plush koala bear toy wearing a small colorful hat is leaning against the rain-covered window and gazing at tall coconut trees swaying in the lush, wet countryside outside?",
+          "is_interrogative": true,
+          "slot_ok": true
+        },
+        {
+          "slot_assigned": "non-interrogative",
+          "slot_returned": "non-interrogative",
+          "text": "Generate an illustration of a scenic train journey during the monsoon season in Kerala, featuring a plush koala bear toy in a small colorful hat propped against a rainy window, looking out at tall coconut trees swaying in the lush, wet countryside.",
+          "is_interrogative": false,
+          "slot_ok": true
+        },
+        {
+          "slot_assigned": "non-interrogative",
+          "slot_returned": "non-interrogative",
+          "text": "Create a detailed image that portrays a scenic train journey in Kerala during the monsoon, with a plush koala bear toy wearing a small colorful hat resting against the rain-streaked window and staring at tall coconut trees swaying in the lush, wet countryside outside.",
+          "is_interrogative": false,
+          "slot_ok": true
+        },
+        {
+          "slot_assigned": "non-interrogative",
+          "slot_returned": "non-interrogative",
+          "text": "Produce a richly detailed illustration showing a scenic train journey during Kerala’s monsoon season, including a plush koala bear toy in a small colorful hat leaning against the rainy window and looking out at tall coconut trees that are swaying in the lush, wet countryside.",
+          "is_interrogative": false,
+          "slot_ok": true
+        }
+      ],
+      "checks": [
+        {
+          "modality_ok": true,
+          "meaning_ok": false,
+          "naturalness_ok": true,
+          "reason": "It clearly requests an illustration, so the image modality is right, and it reads naturally. However, it drops the source prompt's explicit request for a detailed illustration.",
+          "variant": "Could you create an illustration that shows a scenic train journey during the monsoon season in Kerala, with a plush koala bear toy in a small colorful hat propped against a rainy window, looking out at tall coconut trees swaying in the lush, wet countryside?",
+          "slot_assigned": "interrogative",
+          "slot_returned": "interrogative",
+          "is_interrogative": true,
+          "slot_ok": true,
+          "passed": false
+        },
+        {
+          "modality_ok": true,
+          "meaning_ok": false,
+          "naturalness_ok": true,
+          "reason": "It clearly asks for an image and reads naturally. However, it changes the requested detailed illustration into a more general image and omits the explicit detail requirement.",
+          "variant": "Would you generate an image depicting a scenic train ride during the monsoon season in Kerala, where a plush koala bear toy wearing a small colorful hat is leaning against the rain-covered window and gazing at tall coconut trees swaying in the lush, wet countryside outside?",
+          "slot_assigned": "interrogative",
+          "slot_returned": "interrogative",
+          "is_interrogative": true,
+          "slot_ok": true,
+          "passed": false
+        },
+        {
+          "modality_ok": true,
+          "meaning_ok": false,
+          "naturalness_ok": true,
+          "reason": "It clearly calls for an illustration and is natural, but it omits the source prompt's explicit requirement that the illustration be detailed.",
+          "variant": "Generate an illustration of a scenic train journey during the monsoon season in Kerala, featuring a plush koala bear toy in a small colorful hat propped against a rainy window, looking out at tall coconut trees swaying in the lush, wet countryside.",
+          "slot_assigned": "non-interrogative",
+          "slot_returned": "non-interrogative",
+          "is_interrogative": false,
+          "slot_ok": true,
+          "passed": false
+        },
+        {
+          "modality_ok": true,
+          "meaning_ok": false,
+          "naturalness_ok": true,
+          "reason": "It clearly requests an image and reads naturally, but it changes the requested detailed illustration into a detailed image, which is broader and not necessarily illustrative.",
+          "variant": "Create a detailed image that portrays a scenic train journey in Kerala during the monsoon, with a plush koala bear toy wearing a small colorful hat resting against the rain-streaked window and staring at tall coconut trees swaying in the lush, wet countryside outside.",
+          "slot_assigned": "non-interrogative",
+          "slot_returned": "non-interrogative",
+          "is_interrogative": false,
+          "slot_ok": true,
+          "passed": false
+        },
+        {
+          "modality_ok": true,
+          "meaning_ok": true,
+          "naturalness_ok": true,
+          "reason": "It naturally requests a richly detailed illustration of the same Kerala monsoon train scene with the plush koala toy, rainy window, and swaying coconut trees, so the modality and meaning are preserved.",
+          "variant": "Produce a richly detailed illustration showing a scenic train journey during Kerala’s monsoon season, including a plush koala bear toy in a small colorful hat leaning against the rainy window and looking out at tall coconut trees that are swaying in the lush, wet countryside.",
+          "slot_assigned": "non-interrogative",
+          "slot_returned": "non-interrogative",
+          "is_interrogative": false,
+          "slot_ok": true,
+          "passed": true
+        }
+      ],
+      "n_pass": 1,
+      "inspect_reason": "no_interrogative_survivor"
+    },
+    {
+      "id": "dpg_bench_partiprompts120",
+      "prompt": "A striking black and white image captures the whimsical scene of a panda, adorned with a pointed wizard's hat, perched atop a majestic horse. The panda appears engrossed in an open book it holds with its paws. The horse, with a glossy chestnut coat, stands motionless on an urban street, its hooves nestled among tufts of vibrant green grass peeking through the pavement cracks. In the background, a large expanse of a gray concrete wall serves as a canvas for a mural of vivid flowers in hues of red, yellow, and blue, with the bold letters spelling out \"PEACE\" adding a splash of color and a message of tranquility to the urban setting.",
+      "task": "T2I",
+      "source": "dpg_bench",
+      "note": "unchanged_original",
+      "gold_answer": null,
+      "gold_modality": "image",
+      "image_path": null,
+      "metadata": {},
+      "needs_refinement": true,
+      "basis": "The prompt is only a descriptive caption of a scene and does not explicitly ask the model to create or output an image. Although the ground truth is image, a competent model could reasonably respond with text, such as elaborating or interpreting the description.",
+      "refine_hint": "Add an explicit image-generation request, e.g. “Create an image of…” or “Generate a black-and-white image showing…”",
+      "gt_modality": "image",
+      "route": "fix",
+      "fixed_prompt": "Create a striking black and white image showing a panda wearing a pointed wizard's hat, perched atop a majestic horse, engrossed in an open book, on an urban street with tufts of vibrant green grass in the pavement cracks and a gray concrete wall behind them painted with vivid flowers and the word “PEACE.”",
+      "source_prompt": "Create a striking black and white image showing a panda wearing a pointed wizard's hat, perched atop a majestic horse, engrossed in an open book, on an urban street with tufts of vibrant green grass in the pavement cracks and a gray concrete wall behind them painted with vivid flowers and the word “PEACE.”",
+      "variants": [
+        {
+          "slot_assigned": "interrogative",
+          "slot_returned": "interrogative",
+          "text": "Could you generate a black and white illustration showing a panda wearing a pointed wizard's hat, sitting on top of a majestic horse on an urban street, with tufts of vibrant green grass growing in the pavement cracks and a gray concrete wall behind them that is painted with vivid flowers and the word “PEACE,” rather than describing it in text?",
+          "is_interrogative": true,
+          "slot_ok": true
+        },
+        {
+          "slot_assigned": "interrogative",
+          "slot_returned": "interrogative",
+          "text": "Would you create an image (not a text description) in black and white of a panda in a pointed wizard’s hat perched on a majestic horse on an urban street, with tufts of vibrant green grass in the cracks of the pavement and a gray concrete wall behind them covered in vivid flowers and the word “PEACE”?",
+          "is_interrogative": true,
+          "slot_ok": true
+        },
+        {
+          "slot_assigned": "non-interrogative",
+          "slot_returned": "non-interrogative",
+          "text": "Generate a striking black and white picture of a panda wearing a pointed wizard's hat, perched atop a majestic horse on an urban street, with tufts of vibrant green grass emerging from the pavement cracks and a gray concrete wall in the background that is painted with vivid flowers and the word “PEACE.”",
+          "is_interrogative": false,
+          "slot_ok": true
+        },
+        {
+          "slot_assigned": "non-interrogative",
+          "slot_returned": "non-interrogative",
+          "text": "Produce an image, in black and white, that shows a panda in a pointed wizard’s hat seated on a majestic horse on an urban street, with tufts of vibrant green grass growing in the cracks of the pavement and a gray concrete wall behind them painted with vivid flowers and the word “PEACE.”",
+          "is_interrogative": false,
+          "slot_ok": true
+        },
+        {
+          "slot_assigned": "non-interrogative",
+          "slot_returned": "non-interrogative",
+          "text": "Create a monochrome artwork depicting a panda wearing a pointed wizard’s hat, perched on a majestic horse on an urban street, while tufts of vibrant green grass poke through the pavement cracks and a gray concrete wall in the background is painted with vivid flowers and the word “PEACE.”",
+          "is_interrogative": false,
+          "slot_ok": true
+        }
+      ],
+      "checks": [
+        {
+          "modality_ok": true,
+          "meaning_ok": false,
+          "naturalness_ok": true,
+          "reason": "It clearly asks for an illustration/image, but it omits the panda being engrossed in an open book, which is a required element of the source prompt.",
+          "variant": "Could you generate a black and white illustration showing a panda wearing a pointed wizard's hat, sitting on top of a majestic horse on an urban street, with tufts of vibrant green grass growing in the pavement cracks and a gray concrete wall behind them that is painted with vivid flowers and the word “PEACE,” rather than describing it in text?",
+          "slot_assigned": "interrogative",
+          "slot_returned": "interrogative",
+          "is_interrogative": true,
+          "slot_ok": true,
+          "passed": false
+        },
+        {
+          "modality_ok": true,
+          "meaning_ok": false,
+          "naturalness_ok": true,
+          "reason": "It clearly requests an image, but it drops the open book/reading detail from the original request.",
+          "variant": "Would you create an image (not a text description) in black and white of a panda in a pointed wizard’s hat perched on a majestic horse on an urban street, with tufts of vibrant green grass in the cracks of the pavement and a gray concrete wall behind them covered in vivid flowers and the word “PEACE”?",
+          "slot_assigned": "interrogative",
+          "slot_returned": "interrogative",
+          "is_interrogative": true,
+          "slot_ok": true,
+          "passed": false
+        },
+        {
+          "modality_ok": true,
+          "meaning_ok": false,
+          "naturalness_ok": true,
+          "reason": "It would elicit an image, but it omits the panda being engrossed in an open book.",
+          "variant": "Generate a striking black and white picture of a panda wearing a pointed wizard's hat, perched atop a majestic horse on an urban street, with tufts of vibrant green grass emerging from the pavement cracks and a gray concrete wall in the background that is painted with vivid flowers and the word “PEACE.”",
+          "slot_assigned": "non-interrogative",
+          "slot_returned": "non-interrogative",
+          "is_interrogative": false,
+          "slot_ok": true,
+          "passed": false
+        },
+        {
+          "modality_ok": true,
+          "meaning_ok": false,
+          "naturalness_ok": true,
+          "reason": "It requests an image in the correct modality, but it leaves out the panda reading or being engrossed in an open book.",
+          "variant": "Produce an image, in black and white, that shows a panda in a pointed wizard’s hat seated on a majestic horse on an urban street, with tufts of vibrant green grass growing in the cracks of the pavement and a gray concrete wall behind them painted with vivid flowers and the word “PEACE.”",
+          "slot_assigned": "non-interrogative",
+          "slot_returned": "non-interrogative",
+          "is_interrogative": false,
+          "slot_ok": true,
+          "passed": false
+        },
+        {
+          "modality_ok": true,
+          "meaning_ok": false,
+          "naturalness_ok": true,
+          "reason": "It is a natural image-generation request, but it omits the open book/engrossed reading element from the source prompt.",
+          "variant": "Create a monochrome artwork depicting a panda wearing a pointed wizard’s hat, perched on a majestic horse on an urban street, while tufts of vibrant green grass poke through the pavement cracks and a gray concrete wall in the background is painted with vivid flowers and the word “PEACE.”",
+          "slot_assigned": "non-interrogative",
+          "slot_returned": "non-interrogative",
+          "is_interrogative": false,
+          "slot_ok": true,
+          "passed": false
+        }
+      ],
+      "n_pass": 0,
+      "inspect_reason": "all_failed"
+    },
+    {
+      "id": "dpg_bench_partiprompts121",
+      "prompt": "A plump wombat, adorned in a crisp white panama hat and a vibrant floral Hawaiian shirt, lounges comfortably in a bright yellow beach chair. In its paws, it delicately holds a martini glass, the drink precariously balanced atop the keys of an open laptop resting on its lap. Behind the relaxed marsupial, the silhouettes of palm trees sway gently, their forms blurred into the tropical backdrop.",
+      "task": "T2I",
+      "source": "dpg_bench",
+      "note": "unchanged_original",
+      "gold_answer": null,
+      "gold_modality": "image",
+      "image_path": null,
+      "metadata": {},
+      "needs_refinement": true,
+      "basis": "The prompt is only a descriptive caption of a scene and does not explicitly ask for an image. Since a competent UMM could continue in text, the intended image output modality is not clearly specified.",
+      "refine_hint": "Add an explicit image-generation request, e.g., \"Generate an image of a plump wombat...\"",
+      "gt_modality": "image",
+      "route": "fix",
+      "fixed_prompt": "Create an illustration of a plump wombat, adorned in a crisp white panama hat and a vibrant floral Hawaiian shirt, lounging comfortably in a bright yellow beach chair, holding a martini glass balanced on the keys of an open laptop on its lap, with blurred silhouettes of palm trees swaying in the tropical backdrop.",
+      "source_prompt": "Create an illustration of a plump wombat, adorned in a crisp white panama hat and a vibrant floral Hawaiian shirt, lounging comfortably in a bright yellow beach chair, holding a martini glass balanced on the keys of an open laptop on its lap, with blurred silhouettes of palm trees swaying in the tropical backdrop.",
+      "variants": [
+        {
+          "slot_assigned": "interrogative",
+          "slot_returned": "interrogative",
+          "text": "Could you create an illustration of a plump wombat wearing a crisp white panama hat and a vibrant floral Hawaiian shirt, lounging in a bright yellow beach chair with an open laptop on its lap, and a martini glass balanced on the laptop’s keys, with blurred silhouettes of palm trees swaying in a tropical background?",
+          "is_interrogative": true,
+          "slot_ok": true
+        },
+        {
+          "slot_assigned": "interrogative",
+          "slot_returned": "interrogative",
+          "text": "Would you draw a scene showing a plump wombat in a crisp white panama hat and a colorful floral Hawaiian shirt, relaxing in a bright yellow beach chair, with an open laptop on its lap and a martini glass resting on the laptop keys, set against a tropical backdrop with blurred palm tree silhouettes?",
+          "is_interrogative": true,
+          "slot_ok": true
+        },
+        {
+          "slot_assigned": "non-interrogative",
+          "slot_returned": "non-interrogative",
+          "text": "Produce an illustration depicting a plump wombat in a crisp white panama hat and a vibrant floral Hawaiian shirt, lounging comfortably in a bright yellow beach chair, with an open laptop on its lap and a martini glass balanced on the laptop keys, while blurred silhouettes of palm trees sway in the tropical background.",
+          "is_interrogative": false,
+          "slot_ok": true
+        },
+        {
+          "slot_assigned": "non-interrogative",
+          "slot_returned": "non-interrogative",
+          "text": "Generate artwork that shows a plump wombat dressed in a crisp white panama hat and a vivid floral Hawaiian shirt, reclining in a bright yellow beach chair, holding an open laptop on its lap with a martini glass perched on the laptop’s keys, with a tropical scene of blurred palm tree silhouettes behind it.",
+          "is_interrogative": false,
+          "slot_ok": true
+        },
+        {
+          "slot_assigned": "non-interrogative",
+          "slot_returned": "non-interrogative",
+          "text": "Create a stylized image of a plump wombat wearing a crisp white panama hat and a vibrant floral Hawaiian shirt, sitting back in a bright yellow beach chair, an open laptop resting on its lap and a martini glass balanced on the laptop keys, all set against a tropical backdrop featuring blurred silhouettes of swaying palm trees.",
+          "is_interrogative": false,
+          "slot_ok": true
+        }
+      ],
+      "checks": [
+        {
+          "modality_ok": true,
+          "meaning_ok": false,
+          "naturalness_ok": true,
+          "reason": "It clearly asks for an image and reads naturally, but it drops the detail that the wombat is holding the martini glass.",
+          "variant": "Could you create an illustration of a plump wombat wearing a crisp white panama hat and a vibrant floral Hawaiian shirt, lounging in a bright yellow beach chair with an open laptop on its lap, and a martini glass balanced on the laptop’s keys, with blurred silhouettes of palm trees swaying in a tropical background?",
+          "slot_assigned": "interrogative",
+          "slot_returned": "interrogative",
+          "is_interrogative": true,
+          "slot_ok": true,
+          "passed": false
+        },
+        {
+          "modality_ok": true,
+          "meaning_ok": false,
+          "naturalness_ok": true,
+          "reason": "It clearly requests a drawn image and is natural, but it omits the source detail that the wombat is holding the martini glass.",
+          "variant": "Would you draw a scene showing a plump wombat in a crisp white panama hat and a colorful floral Hawaiian shirt, relaxing in a bright yellow beach chair, with an open laptop on its lap and a martini glass resting on the laptop keys, set against a tropical backdrop with blurred palm tree silhouettes?",
+          "slot_assigned": "interrogative",
+          "slot_returned": "interrogative",
+          "is_interrogative": true,
+          "slot_ok": true,
+          "passed": false
+        },
+        {
+          "modality_ok": true,
+          "meaning_ok": false,
+          "naturalness_ok": true,
+          "reason": "The requested modality is clearly image and the wording is natural, but the wombat holding the martini glass is no longer specified.",
+          "variant": "Produce an illustration depicting a plump wombat in a crisp white panama hat and a vibrant floral Hawaiian shirt, lounging comfortably in a bright yellow beach chair, with an open laptop on its lap and a martini glass balanced on the laptop keys, while blurred silhouettes of palm trees sway in the tropical background.",
+          "slot_assigned": "non-interrogative",
+          "slot_returned": "non-interrogative",
+          "is_interrogative": false,
+          "slot_ok": true,
+          "passed": false
+        },
+        {
+          "modality_ok": true,
+          "meaning_ok": false,
+          "naturalness_ok": true,
+          "reason": "It naturally requests artwork, but it changes the held object: the source has the wombat holding the martini glass, while this says it is holding the laptop.",
+          "variant": "Generate artwork that shows a plump wombat dressed in a crisp white panama hat and a vivid floral Hawaiian shirt, reclining in a bright yellow beach chair, holding an open laptop on its lap with a martini glass perched on the laptop’s keys, with a tropical scene of blurred palm tree silhouettes behind it.",
+          "slot_assigned": "non-interrogative",
+          "slot_returned": "non-interrogative",
+          "is_interrogative": false,
+          "slot_ok": true,
+          "passed": false
+        },
+        {
+          "modality_ok": true,
+          "meaning_ok": false,
+          "naturalness_ok": true,
+          "reason": "It clearly asks for an image and reads naturally, but it omits the source requirement that the wombat is holding the martini glass.",
+          "variant": "Create a stylized image of a plump wombat wearing a crisp white panama hat and a vibrant floral Hawaiian shirt, sitting back in a bright yellow beach chair, an open laptop resting on its lap and a martini glass balanced on the laptop keys, all set against a tropical backdrop featuring blurred silhouettes of swaying palm trees.",
+          "slot_assigned": "non-interrogative",
+          "slot_returned": "non-interrogative",
+          "is_interrogative": false,
+          "slot_ok": true,
+          "passed": false
+        }
+      ],
+      "n_pass": 0,
+      "inspect_reason": "all_failed"
+    },
+    {
+      "id": "dpg_bench_partiprompts174",
+      "prompt": "an impressionistic painting that features a vibrant array of colors, depicting a tree with a swirl of green and yellow leaves next to an old stone building with a red-tiled roof. The brush strokes are thick and visible, giving the painting a textured look, and the tree's branches seem to dance around the building's edges. The sky in the background is a mix of blues and purples, suggesting either dawn or dusk.",
+      "task": "T2I",
+      "source": "dpg_bench",
+      "note": "unchanged_original",
+      "gold_answer": null,
+      "gold_modality": "image",
+      "image_path": null,
+      "metadata": {},
+      "needs_refinement": true,
+      "basis": "The prompt is only a descriptive caption of an artwork and does not explicitly ask the model to create or output an image. A competent UMM could reasonably continue in text rather than infer image generation.",
+      "refine_hint": "Explicitly request an image, e.g., \"Create an impressionistic painting featuring a vibrant array of colors...\"",
+      "gt_modality": "image",
+      "route": "fix",
+      "fixed_prompt": "Create an impressionistic painting that features a vibrant array of colors, depicting a tree with a swirl of green and yellow leaves next to an old stone building with a red-tiled roof, with thick, visible brush strokes and a sky of mixed blues and purples suggesting dawn or dusk.",
+      "source_prompt": "Create an impressionistic painting that features a vibrant array of colors, depicting a tree with a swirl of green and yellow leaves next to an old stone building with a red-tiled roof, with thick, visible brush strokes and a sky of mixed blues and purples suggesting dawn or dusk.",
+      "variants": [
+        {
+          "slot_assigned": "interrogative",
+          "slot_returned": "interrogative",
+          "text": "Could you generate an impressionistic painting that shows a tree with a swirl of green and yellow leaves next to an old stone building with a red-tiled roof, using thick, visible brush strokes and a sky of mixed blues and purples that suggests either dawn or dusk?",
+          "is_interrogative": true,
+          "slot_ok": true
+        },
+        {
+          "slot_assigned": "interrogative",
+          "slot_returned": "interrogative",
+          "text": "Would you create an image in an impressionistic style, with thick, visible brush strokes, showing a tree whose leaves form a swirl of green and yellow beside an old stone building that has a red-tiled roof, under a sky of mixed blues and purples to evoke dawn or dusk?",
+          "is_interrogative": true,
+          "slot_ok": true
+        },
+        {
+          "slot_assigned": "non-interrogative",
+          "slot_returned": "non-interrogative",
+          "text": "Generate an impressionistic painting-style image featuring a tree with swirling green and yellow leaves next to an old stone building with a red-tiled roof, painted with thick, visible brush strokes, and a sky of mixed blues and purples that suggests dawn or dusk.",
+          "is_interrogative": false,
+          "slot_ok": true
+        },
+        {
+          "slot_assigned": "non-interrogative",
+          "slot_returned": "non-interrogative",
+          "text": "Produce an impressionistic artwork as an image: depict a tree with a swirl of green and yellow leaves beside an old stone building with a red-tiled roof, rendered with thick, visible brush strokes, under a sky combining blues and purples to imply dawn or dusk.",
+          "is_interrogative": false,
+          "slot_ok": true
+        },
+        {
+          "slot_assigned": "non-interrogative",
+          "slot_returned": "non-interrogative",
+          "text": "Create an image in an impressionistic style, using thick, visible brush strokes, that depicts a vibrant tree whose leaves swirl in green and yellow next to an old stone building topped with a red-tiled roof, all set against a sky of mixed blues and purples that gives the feeling of dawn or dusk.",
+          "is_interrogative": false,
+          "slot_ok": true
+        }
+      ],
+      "checks": [
+        {
+          "modality_ok": true,
+          "meaning_ok": false,
+          "naturalness_ok": true,
+          "reason": "It clearly asks for an image/painting, and reads naturally. However, it drops the source requirement that the painting feature a vibrant array of colors.",
+          "variant": "Could you generate an impressionistic painting that shows a tree with a swirl of green and yellow leaves next to an old stone building with a red-tiled roof, using thick, visible brush strokes and a sky of mixed blues and purples that suggests either dawn or dusk?",
+          "slot_assigned": "interrogative",
+          "slot_returned": "interrogative",
+          "is_interrogative": true,
+          "slot_ok": true,
+          "passed": false
+        },
+        {
+          "modality_ok": true,
+          "meaning_ok": false,
+          "naturalness_ok": true,
+          "reason": "It clearly implies image generation and is natural. It preserves the main scene and style, but omits the 'vibrant array of colors' requirement from the source.",
+          "variant": "Would you create an image in an impressionistic style, with thick, visible brush strokes, showing a tree whose leaves form a swirl of green and yellow beside an old stone building that has a red-tiled roof, under a sky of mixed blues and purples to evoke dawn or dusk?",
+          "slot_assigned": "interrogative",
+          "slot_returned": "interrogative",
+          "is_interrogative": true,
+          "slot_ok": true,
+          "passed": false
+        },
+        {
+          "modality_ok": true,
+          "meaning_ok": false,
+          "naturalness_ok": true,
+          "reason": "The requested output modality is clearly an image, and the wording is natural. The prompt drops the explicit requirement for a vibrant array of colors.",
+          "variant": "Generate an impressionistic painting-style image featuring a tree with swirling green and yellow leaves next to an old stone building with a red-tiled roof, painted with thick, visible brush strokes, and a sky of mixed blues and purples that suggests dawn or dusk.",
+          "slot_assigned": "non-interrogative",
+          "slot_returned": "non-interrogative",
+          "is_interrogative": false,
+          "slot_ok": true,
+          "passed": false
+        },
+        {
+          "modality_ok": true,
+          "meaning_ok": false,
+          "naturalness_ok": true,
+          "reason": "It naturally requests an image/artwork, so the modality is clear. It otherwise matches the scene, but omits the source's explicit vibrant array of colors.",
+          "variant": "Produce an impressionistic artwork as an image: depict a tree with a swirl of green and yellow leaves beside an old stone building with a red-tiled roof, rendered with thick, visible brush strokes, under a sky combining blues and purples to imply dawn or dusk.",
+          "slot_assigned": "non-interrogative",
+          "slot_returned": "non-interrogative",
+          "is_interrogative": false,
+          "slot_ok": true,
+          "passed": false
+        },
+        {
+          "modality_ok": true,
+          "meaning_ok": false,
+          "naturalness_ok": true,
+          "reason": "It clearly requests an image and reads naturally. It changes 'a vibrant array of colors' into a 'vibrant tree,' which narrows/shifts the color requirement rather than preserving it exactly.",
+          "variant": "Create an image in an impressionistic style, using thick, visible brush strokes, that depicts a vibrant tree whose leaves swirl in green and yellow next to an old stone building topped with a red-tiled roof, all set against a sky of mixed blues and purples that gives the feeling of dawn or dusk.",
+          "slot_assigned": "non-interrogative",
+          "slot_returned": "non-interrogative",
+          "is_interrogative": false,
+          "slot_ok": true,
+          "passed": false
+        }
+      ],
+      "n_pass": 0,
+      "inspect_reason": "all_failed"
+    },
+    {
+      "id": "dpg_bench_vrd19",
+      "prompt": "A person stands on a bustling city street, gazing ahead with a contemplative expression, dressed in a striped shirt with sleeves rolled up to the elbows. To their left and right, a row of identical metallic chairs is arranged neatly in a line, with one chair adjacent to the person. The shiny surface of the chairs reflects the sunlight, hinting at their smooth texture. Above the street, a bright-colored ball is suspended in mid-air, adding a playful contrast against the gray urban backdrop.",
+      "task": "T2I",
+      "source": "dpg_bench",
+      "note": "unchanged_original",
+      "gold_answer": null,
+      "gold_modality": "image",
+      "image_path": null,
+      "metadata": {},
+      "needs_refinement": true,
+      "basis": "The prompt is only a descriptive caption of a scene and does not explicitly ask the model to produce an image. Since text continuation would also be a natural response, it does not reliably signal the intended image modality.",
+      "refine_hint": "Add an explicit image-generation request, e.g., \"Generate an image of a person standing on a bustling city street...\"",
+      "gt_modality": "image",
+      "route": "fix",
+      "fixed_prompt": "Create a detailed illustration of a person standing on a bustling city street, gazing ahead with a contemplative expression, wearing a striped shirt with sleeves rolled up to the elbows, with neat rows of identical metallic chairs on both sides and a bright-colored ball suspended in mid-air above the street against a gray urban backdrop.",
+      "source_prompt": "Create a detailed illustration of a person standing on a bustling city street, gazing ahead with a contemplative expression, wearing a striped shirt with sleeves rolled up to the elbows, with neat rows of identical metallic chairs on both sides and a bright-colored ball suspended in mid-air above the street against a gray urban backdrop.",
+      "variants": [
+        {
+          "slot_assigned": "interrogative",
+          "slot_returned": "interrogative",
+          "text": "Could you create an illustration showing a person standing on a bustling city street, looking ahead with a contemplative expression, wearing a striped shirt with the sleeves rolled up to the elbows, with neat rows of identical metallic chairs on both sides of the street and a bright-colored ball hanging in mid-air above the street against a gray urban backdrop?",
+          "is_interrogative": true,
+          "slot_ok": true
+        },
+        {
+          "slot_assigned": "interrogative",
+          "slot_returned": "interrogative",
+          "text": "Would you generate a detailed image of a person on a busy city street, gazing forward thoughtfully, dressed in a striped shirt with sleeves rolled up to the elbows, with orderly rows of identical metallic chairs lining both sides and a brightly colored ball floating in mid-air above the street set against a gray city background?",
+          "is_interrogative": true,
+          "slot_ok": true
+        },
+        {
+          "slot_assigned": "non-interrogative",
+          "slot_returned": "non-interrogative",
+          "text": "Create a detailed image depicting a person standing on a bustling city street, staring ahead with a contemplative expression, wearing a striped shirt with sleeves rolled up to the elbows, with neat rows of identical metallic chairs on both sides of the street and a bright-colored ball suspended in mid-air above the street against a gray urban backdrop.",
+          "is_interrogative": false,
+          "slot_ok": true
+        },
+        {
+          "slot_assigned": "non-interrogative",
+          "slot_returned": "non-interrogative",
+          "text": "Generate an illustration that shows a person standing in the middle of a busy city street, gazing forward in a contemplative way, wearing a striped shirt with the sleeves rolled up to the elbows, while neat rows of identical metallic chairs line both sides and a bright-colored ball hovers in mid-air over the street with a gray urban background behind it.",
+          "is_interrogative": false,
+          "slot_ok": true
+        },
+        {
+          "slot_assigned": "non-interrogative",
+          "slot_returned": "non-interrogative",
+          "text": "Produce a detailed urban scene illustration featuring a person standing on a bustling city street, looking ahead thoughtfully, dressed in a striped shirt with sleeves rolled up to the elbows, surrounded on both sides by orderly rows of identical metallic chairs, with a bright-colored ball suspended in mid-air above the street and a gray city backdrop in the distance.",
+          "is_interrogative": false,
+          "slot_ok": true
+        }
+      ],
+      "checks": [
+        {
+          "modality_ok": true,
+          "meaning_ok": false,
+          "naturalness_ok": true,
+          "reason": "It clearly asks for an image/illustration and reads naturally, but it drops the source prompt’s request for a detailed illustration.",
+          "variant": "Could you create an illustration showing a person standing on a bustling city street, looking ahead with a contemplative expression, wearing a striped shirt with the sleeves rolled up to the elbows, with neat rows of identical metallic chairs on both sides of the street and a bright-colored ball hanging in mid-air above the street against a gray urban backdrop?",
+          "slot_assigned": "interrogative",
+          "slot_returned": "interrogative",
+          "is_interrogative": true,
+          "slot_ok": true,
+          "passed": false
+        },
+        {
+          "modality_ok": true,
+          "meaning_ok": false,
+          "naturalness_ok": true,
+          "reason": "It clearly calls for an image and is natural, but it omits that the person is standing, which is part of the source request.",
+          "variant": "Would you generate a detailed image of a person on a busy city street, gazing forward thoughtfully, dressed in a striped shirt with sleeves rolled up to the elbows, with orderly rows of identical metallic chairs lining both sides and a brightly colored ball floating in mid-air above the street set against a gray city background?",
+          "slot_assigned": "interrogative",
+          "slot_returned": "interrogative",
+          "is_interrogative": true,
+          "slot_ok": true,
+          "passed": false
+        },
+        {
+          "modality_ok": true,
+          "meaning_ok": true,
+          "naturalness_ok": true,
+          "reason": "It preserves the image-generation intent and the details of the source prompt in natural wording.",
+          "variant": "Create a detailed image depicting a person standing on a bustling city street, staring ahead with a contemplative expression, wearing a striped shirt with sleeves rolled up to the elbows, with neat rows of identical metallic chairs on both sides of the street and a bright-colored ball suspended in mid-air above the street against a gray urban backdrop.",
+          "slot_assigned": "non-interrogative",
+          "slot_returned": "non-interrogative",
+          "is_interrogative": false,
+          "slot_ok": true,
+          "passed": true
+        },
+        {
+          "modality_ok": true,
+          "meaning_ok": false,
+          "naturalness_ok": true,
+          "reason": "It asks for an illustration naturally, but it changes the scene by placing the person in the middle of the street and also drops the detail requirement.",
+          "variant": "Generate an illustration that shows a person standing in the middle of a busy city street, gazing forward in a contemplative way, wearing a striped shirt with the sleeves rolled up to the elbows, while neat rows of identical metallic chairs line both sides and a bright-colored ball hovers in mid-air over the street with a gray urban background behind it.",
+          "slot_assigned": "non-interrogative",
+          "slot_returned": "non-interrogative",
+          "is_interrogative": false,
+          "slot_ok": true,
+          "passed": false
+        },
+        {
+          "modality_ok": true,
+          "meaning_ok": true,
+          "naturalness_ok": true,
+          "reason": "It naturally requests a detailed illustration and preserves the main visual elements and relationships from the source prompt.",
+          "variant": "Produce a detailed urban scene illustration featuring a person standing on a bustling city street, looking ahead thoughtfully, dressed in a striped shirt with sleeves rolled up to the elbows, surrounded on both sides by orderly rows of identical metallic chairs, with a bright-colored ball suspended in mid-air above the street and a gray city backdrop in the distance.",
+          "slot_assigned": "non-interrogative",
+          "slot_returned": "non-interrogative",
+          "is_interrogative": false,
+          "slot_ok": true,
+          "passed": true
+        }
+      ],
+      "n_pass": 2,
+      "inspect_reason": "no_interrogative_survivor"
+    }
+  ]
+}
