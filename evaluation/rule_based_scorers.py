@@ -4,9 +4,10 @@ model: gsm8k, VQAv2, mmlu, ScienceQA. Each takes (gold, response_text) and
 returns a 0-100 score. Attach the result to each item's `score` field before
 running compute_msa_tp.py.
 
-mmlu and ScienceQA are open-ended (no multiple-choice letters in the
-prompt -- see pipeline/stage0/scienceqa_openstyle/ for why), so there is no
-exact-match target. `score_open_style` uses loose containment as a cheap
+mmlu (reported as "OSQ-bench" in the paper's tables) and ScienceQA are
+open-ended (no multiple-choice letters in the prompt -- see
+pipeline/stage0/scienceqa_openstyle/ for why), so there is no exact-match
+target. `score_open_style` uses loose containment as a cheap
 proxy; it under-counts paraphrased correct answers, which is why the paper's
 mmlu/ScienceQA numbers come from an LLM judge instead (see evaluation/README.md)
 -- these rule-based versions are provided for quick local sanity-checking,

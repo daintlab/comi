@@ -1,356 +1,146 @@
 #!/usr/bin/env python3
-# -*- coding: utf-8 -*-
+"""Anole-7B free-choice inference over a COMI-Bench-format input file.
 
+No modality flag is passed -- the model decides text vs. image on its own
+via Chameleon's `Options()` (its official defaults: text greedy=False,
+temp=1.0, top_p=0.9, repetition_penalty=1.2; image greedy=False, temp=0.7,
+top_p=0.9, cfg.guidance_scale_text=3.0, cfg.guidance_scale_image=1.2 --
+both held simultaneously, so no special-casing is needed for free choice).
+This mirrors the official repo's own single-modality demo scripts
+(`text2image.py`, `scripts/run_samples_t2t.py`), just without forcing either
+`options.txt` or `options.img` to False.
+
+Requires a local clone of Anole / Chameleon (the official repo this project
+evaluated: https://github.com/GAIR-NLP/anole) importable as `chameleon` --
+point `--anole_repo` at it, or set it on PYTHONPATH yourself.
+
+Input: a COMI-Bench-format JSON (`data/stage3_2variant_final.json` or
+`data/comi_bench_final_original_5682.json`), `{"results": [...]}` where each
+result has either `variants: [{text, slot_assigned}, ...]` (2-variant file)
+or a single `prompt` (original-prompt file). `image_path` (optional) is
+loaded as the input image for TI2T/TI2I items.
+
+Output: one JSON object per line, matching what `evaluation/compute_msa_tp.py`
+expects: {variant_id, task_id, source, gold_modality, pred_modality,
+text_output, generated_image_paths}.
+
+Usage:
+    python anole_inference.py --anole_repo /path/to/anole \
+        --input ../data/stage3_2variant_final.json \
+        --out_dir outputs/anole_2variant --image_dir outputs/anole_2variant/images
 """
-Single-process batch runner for multimodal_inference.py inputs.
-
-Why:
-- run_merged_all_in_batches.sh spawns a new Python process per item, reloading the model every time.
-- This script loads the model ONCE and iterates over items, dramatically reducing overhead.
-
-Input:
-- JSON produced by convert_merged_all_to_inputs.py (or compatible):
-  - either {"items":[{task_id, source, benchmark, expectation, input:[{type,content},...]}, ...]}
-  - or a top-level list of such item dicts
-
-Output:
-- OUT_ROOT/batch_0000/item_0000/ ...
-  - input.json, meta.json, output.json, and generated *.png if any
-"""
+from __future__ import annotations
 
 import argparse
 import json
-import math
 import os
+import sys
 from pathlib import Path
-from typing import Any, Dict, List, Tuple
 
-import torch
-from PIL import Image
-
-from chameleon.inference.chameleon import ChameleonInferenceModel, Options
-from constants import (
-    MODEL_7B_PATH,
-    TOKENIZER_TEXT_PATH,
-    TOKENIZER_IMAGE_CFG_PATH,
-    TOKENIZER_IMAGE_PATH,
-)
+SEED = 42
+IMAGE_TOKEN_COUNT = 1024
 
 
-def split_interleaved(
-    tokens: torch.LongTensor,
-    boi: int,
-    eoi: int,
-) -> List[Tuple[str, List[int]]]:
-    if tokens.ndim != 2 or tokens.shape[0] != 1:
-        raise ValueError(f"Expected tokens shape (1, L), got {tuple(tokens.shape)}")
-
-    ids: List[int] = tokens[0].tolist()
-    segs: List[Tuple[str, List[int]]] = []
-    cur: List[int] = []
-    in_image = False
-
-    for tok in ids:
-        if tok == boi:
-            if cur:
-                segs.append(("text", cur))
-                cur = []
-            in_image = True
-            continue
-
-        if tok == eoi and in_image:
-            segs.append(("image", cur))
-            cur = []
-            in_image = False
-            continue
-
-        cur.append(tok)
-
-    if cur:
-        segs.append(("image" if in_image else "text", cur))
-
-    return segs
+def build_model(anole_repo: str, ckpt_path: str):
+    sys.path.insert(0, anole_repo)
+    from chameleon.inference.chameleon import ChameleonInferenceModel  # noqa: E402
+    from constants import (  # noqa: E402
+        TOKENIZER_IMAGE_CFG_PATH, TOKENIZER_IMAGE_PATH, TOKENIZER_TEXT_PATH,
+    )
+    return ChameleonInferenceModel(
+        ckpt_path, TOKENIZER_TEXT_PATH.as_posix(),
+        TOKENIZER_IMAGE_CFG_PATH.as_posix(), TOKENIZER_IMAGE_PATH.as_posix(),
+    )
 
 
-def build_prompt_ui(
-    input_segs: List[Dict[str, Any]],
-    no_eot: bool,
-) -> List[List[Dict[str, Any]]]:
-    batch_prompt_ui: List[List[Dict[str, Any]]] = [[]]
+def run_one(model, Options, split_token_sequence, prompt_text: str,
+            image_abspath: str | None, out_image_path: str | None):
+    prompt_ui = []
+    if image_abspath is not None:
+        prompt_ui.append({"type": "image", "value": f"file:{image_abspath}"})
+    prompt_ui.append({"type": "text", "value": prompt_text})
 
-    for seg in input_segs:
-        t = seg["type"]
-        c = seg["content"]
-
-        if t == "text":
-            batch_prompt_ui[0].append({"type": "text", "value": c})
-        elif t == "image":
-            abs_path = os.path.abspath(c)
-            batch_prompt_ui[0].append({"type": "image", "value": f"file:{abs_path}"})
-        elif t == "sentinel":
-            batch_prompt_ui[0].append({"type": "sentinel", "value": c})
-        else:
-            raise ValueError(f"Unknown segment type: {t}")
-
-    if not no_eot:
-        batch_prompt_ui[0].append(
-            {"type": "sentinel", "value": "<END-OF-TURN>"}
-        )
-
-    return batch_prompt_ui
-
-
-def run_one(
-    model: ChameleonInferenceModel,
-    options: Options,
-    item_dir: Path,
-    input_segs: List[Dict[str, Any]],
-    no_eot: bool,
-    output_json_name: str,
-    print_text: bool,
-    print_images: bool,
-    repeat_idx: int = 0,
-) -> None:
-    batch_prompt_ui = build_prompt_ui(input_segs, no_eot=no_eot)
-
-    # Stream tokens to capture first generated token's logits for BOI prob
-    first_gen_logits = None
-    token_ids = []
-    for tok in model.stream(batch_prompt_ui=batch_prompt_ui, options=options):
-        token_ids.append(tok.id)
-        if first_gen_logits is None and tok.logits is not None:
-            first_gen_logits = tok.logits  # [batch, vocab]
-
-    if not token_ids:
-        tokens = torch.LongTensor()
-    else:
-        tokens = torch.stack(token_ids).T
-
-    # Compute BOI probability from first generated token
+    options = Options(seed=SEED)
+    tokens = model.generate(batch_prompt_ui=[prompt_ui], options=options)
     boi, eoi = model.vocab.begin_image, model.vocab.end_image
-    print(f"boi: {boi} ----- eoi: {eoi}") 
-    boi_prob = None
-    if first_gen_logits is not None:
-        probs = first_gen_logits.softmax(dim=1)  # [batch, vocab]
-        boi_prob = probs[0, boi].item()
-        print(f"  [boi_prob] first token BOI prob = {boi_prob:.6f}")
+    segments = split_token_sequence(tokens, boi, eoi)
 
-    segs = split_interleaved(tokens, boi, eoi)
+    text_parts, image_paths = [], []
+    for seg_type, seg_tokens in segments:
+        if seg_type == "text_seg":
+            decoded = model.decode_text(seg_tokens)[0].strip()
+            if decoded:
+                text_parts.append(decoded)
+        elif seg_type == "image_seg" and seg_tokens.shape[1] == IMAGE_TOKEN_COUNT:
+            img = model.decode_image(seg_tokens)[0]
+            if out_image_path:
+                img.save(out_image_path)
+                image_paths.append(out_image_path)
 
-    item_dir.mkdir(parents=True, exist_ok=True)
-    out_segs: List[Dict[str, Any]] = []
+    pred_modality = "image" if any(s[0] == "image_seg" for s in segments) else "text"
+    return {
+        "pred_modality": pred_modality,
+        "n_generated_tokens": int(tokens.shape[1]),
+        "text_output": "\n".join(text_parts),
+        "generated_image_paths": image_paths,
+    }
 
-    device = "cuda"
-    for idx, (seg_type, seg_ids) in enumerate(segs):
-        if seg_type == "text":
-            text = model.decode_text([seg_ids])[0]
-            if print_text:
-                print(text, end="" if text.endswith("\n") else "\n")
-            out_segs.append({"type": "text", "content": text})
+
+def iter_items(data: dict):
+    """Yield (variant_id, task_id, source, gold_modality, prompt_text, image_path)
+    for every prompt in a 2-variant or original-prompt COMI-Bench file."""
+    for r in data["results"]:
+        task_id = r["id"]
+        source = r["source"]
+        gold_modality = r.get("gt_modality") or r.get("gold_modality")
+        image_path = r.get("image_path")
+        variants = r.get("variants")
+        if variants:
+            for v in variants:
+                slot = v.get("slot_assigned", "v")
+                yield f"{task_id}__{slot}", task_id, source, gold_modality, v["text"], image_path
         else:
-            if len(seg_ids) != 1024:
-                print(
-                    f"[warn] partial image segment: len={len(seg_ids)} (expected 1024). "
-                    f"skipping decode. (segment idx={idx})"
-                )
-                out_segs.append(
-                    {
-                        "type": "image",
-                        "status": "partial",
-                        "token_len": len(seg_ids),
-                    }
-                )
-                continue
-
-            img_tokens = torch.tensor(
-                seg_ids,
-                dtype=torch.long,
-                device=device,
-            ).reshape(1, -1)
-
-            img: Image.Image = model.decode_image(img_tokens)[0]
-            image_path = item_dir / f"r{repeat_idx:02d}_{idx}.png"
-            img.save(image_path.as_posix())
-
-            if print_images:
-                print(f"<img: {image_path}>")
-
-            out_segs.append({"type": "image", "path": image_path.as_posix()})
-
-    if output_json_name:
-        stem, dot, suf = output_json_name.partition(".")
-        name = (
-            f"{stem}_r{repeat_idx:02d}{dot}{suf}"
-            if dot
-            else f"{output_json_name}_r{repeat_idx:02d}"
-        )
-        out_path = item_dir / name
-        output_data = [{"type": "meta", "boi_prob": boi_prob}] + out_segs
-        out_path.write_text(
-            json.dumps(output_data, ensure_ascii=False, indent=2) + "\n",
-            encoding="utf-8",
-        )
-        print(f"[saved] {out_path}")
+            yield f"{task_id}__orig", task_id, source, gold_modality, r["prompt"], image_path
 
 
-def main() -> None:
-    p = argparse.ArgumentParser(
-        description="Single-load batch runner for Chameleon multimodal inference."
-    )
-    p.add_argument(
-        "--input_json",
-        required=True,
-        help="JSON with .items or list of items containing 'input'.",
-    )
-    p.add_argument(
-        "--out_root",
-        required=True,
-        help="Root directory to write batch/item outputs.",
-    )
-    p.add_argument("--batch_size", type=int, default=10)
+def main() -> int:
+    ap = argparse.ArgumentParser(description=__doc__)
+    ap.add_argument("--anole_repo", required=True, help="path to a local Anole/Chameleon clone")
+    ap.add_argument("--ckpt_path", required=True, help="path to the Anole-7b-v0.1 checkpoint")
+    ap.add_argument("--input", required=True, help="COMI-Bench-format JSON")
+    ap.add_argument("--out_dir", required=True)
+    ap.add_argument("--image_dir", default=None, help="default: <out_dir>/images")
+    ap.add_argument("--limit", type=int, default=None)
+    args = ap.parse_args()
 
-    p.add_argument("--text-only", action="store_true", help="Generate text only.")
-    p.add_argument("--image-only", action="store_true", help="Generate image only.")
-    p.add_argument(
-        "--no-eot",
-        action="store_true",
-        help="Do not append <END-OF-TURN> automatically.",
-    )
+    image_dir = args.image_dir or os.path.join(args.out_dir, "images")
+    os.makedirs(args.out_dir, exist_ok=True)
+    os.makedirs(image_dir, exist_ok=True)
 
-    p.add_argument(
-        "--output-json",
-        default="output.json",
-        help="Output JSON filename per item (empty to disable).",
-    )
-    p.add_argument("--print-text", action="store_true", default=True)
-    p.add_argument("--print-images", action="store_true", default=True)
-    p.add_argument(
-        "--repeat",
-        type=int,
-        default=1,
-        help="Repeat generation per item N times (saved as *_rXX.json).",
-    )
-    p.add_argument(
-        "--flat",
-        action="store_true",
-        help="Save items flat (item_XXXX/) instead of batch_XXXX/item_XXXX/.",
-    )
+    sys.path.insert(0, args.anole_repo)
+    from chameleon.inference.chameleon import Options  # noqa: E402
+    from inference import split_token_sequence  # noqa: E402  (official repo's own helper)
 
-    args = p.parse_args()
+    model = build_model(args.anole_repo, args.ckpt_path)
 
-    if args.output_json == "":
-        args.output_json = None
+    data = json.loads(Path(args.input).read_text())
+    items = list(iter_items(data))
+    if args.limit:
+        items = items[: args.limit]
 
-    if args.text_only and args.image_only:
-        raise ValueError("Cannot set both --text-only and --image-only.")
-
-    input_path = Path(args.input_json)
-    out_root = Path(args.out_root)
-    out_root.mkdir(parents=True, exist_ok=True)
-
-    data = json.loads(input_path.read_text(encoding="utf-8"))
-    items = data["items"] if isinstance(data, dict) and "items" in data else data
-
-    if not isinstance(items, list):
-        raise ValueError("Expected list under .items or top-level list.")
-
-    total = len(items)
-    batch_size = int(args.batch_size)
-    batches = math.ceil(total / batch_size) if batch_size > 0 else 0
-
-    print(
-        f"[info] input={input_path} total_items={total} "
-        f"batch_size={batch_size} batches={batches}"
-    )
-    print(f"[info] out_root={out_root}")
-
-    # Load model once
-    model = ChameleonInferenceModel(
-        MODEL_7B_PATH.as_posix(),
-        TOKENIZER_TEXT_PATH.as_posix(),
-        TOKENIZER_IMAGE_CFG_PATH.as_posix(),
-        TOKENIZER_IMAGE_PATH.as_posix(),
-    )
-
-    options = Options()
-    if args.text_only:
-        options.img = False
-    if args.image_only:
-        options.txt = False
-
-    for b in range(batches):
-        start = b * batch_size
-        end = min(total, (b + 1) * batch_size)
-        batch = items[start:end]
-
-        if not args.flat:
-            batch_dir = out_root / f"batch_{b:04d}"
-            batch_dir.mkdir(parents=True, exist_ok=True)
-        print(f"[batch] {b:04d} items {start}..{end - 1}")
-
-        for k, it in enumerate(batch):
-            global_idx = start + k
-            if args.flat:
-                item_dir = out_root / f"item_{global_idx:04d}"
-            else:
-                item_dir = batch_dir / f"item_{k:04d}"
-            item_dir.mkdir(parents=True, exist_ok=True)
-
-            in_segs = it.get("input")
-            if not isinstance(in_segs, list):
-                (item_dir / "error.json").write_text(
-                    json.dumps(
-                        {"error": "missing_input_list", "item": it},
-                        ensure_ascii=False,
-                        indent=2,
-                    )
-                    + "\n",
-                    encoding="utf-8",
-                )
-                continue
-
-            (item_dir / "input.json").write_text(
-                json.dumps(in_segs, ensure_ascii=False, indent=2) + "\n",
-                encoding="utf-8",
-            )
-
-            meta = {
-                "task_id": it.get("task_id"),
-                "source": it.get("source"),
-                "benchmark": it.get("benchmark"),
-                "expectation": it.get("expectation"),
-            }
-            (item_dir / "meta.json").write_text(
-                json.dumps(meta, ensure_ascii=False, indent=2) + "\n",
-                encoding="utf-8",
-            )
-
-            try:
-                rep = int(args.repeat)
-                if rep < 1:
-                    raise ValueError("--repeat must be >= 1")
-
-                for r in range(rep):
-                    run_one(
-                        model=model,
-                        options=options,
-                        item_dir=item_dir,
-                        input_segs=in_segs,
-                        no_eot=args.no_eot,
-                        output_json_name=args.output_json or "",
-                        print_text=args.print_text,
-                        print_images=args.print_images,
-                        repeat_idx=r,
-                    )
-            except Exception as e:
-                (item_dir / "error.json").write_text(
-                    json.dumps({"error": str(e)}, ensure_ascii=False, indent=2) + "\n",
-                    encoding="utf-8",
-                )
-                print(f"[error] batch={b:04d} item={k:04d} err={e}")
-
-    print("[done] single-load run complete")
+    out_path = os.path.join(args.out_dir, "results.jsonl")
+    with open(out_path, "w") as out_f:
+        for i, (variant_id, task_id, source, gold_modality, prompt_text, image_path) in enumerate(items):
+            out_image_path = os.path.join(image_dir, f"{variant_id}.png")
+            result = run_one(model, Options, split_token_sequence, prompt_text, image_path, out_image_path)
+            rec = {"variant_id": variant_id, "task_id": task_id, "source": source,
+                   "gold_modality": gold_modality, **result}
+            out_f.write(json.dumps(rec, ensure_ascii=False) + "\n")
+            out_f.flush()
+            print(f"\r  {i + 1}/{len(items)}", end="", file=sys.stderr)
+    print(f"\nsaved -> {out_path}", file=sys.stderr)
+    return 0
 
 
 if __name__ == "__main__":
-    main()
+    raise SystemExit(main())

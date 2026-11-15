@@ -1,21 +1,27 @@
 #!/usr/bin/env python3
-"""Modality Selection Accuracy (MSA, strict) / Task Performance (TP) /
-Conditional Task Performance (C-TP) over COMI-Bench model outputs.
+"""Modality Selection Accuracy (MSA) / Task Performance on correct-modality
+responses (TP+) / COMI-aware task score (COMI-score) over COMI-Bench model
+outputs -- the three metrics reported in the paper.
 
-These are the metrics reported in the paper. Definitions:
+Definitions:
 
-  MSA (strict): for a text-gold item, success iff the response's text
-    content is non-empty -- regardless of what `pred_modality` says (a
-    response can contain an image segment *and* non-empty text; that still
-    counts as a text-modality success). For an image-gold item, success
-    iff `pred_modality == "image"`.
+  MSA: for a text-gold item, success iff the response's text content is
+    non-empty -- regardless of what `pred_modality` says (a response can
+    contain an image segment *and* non-empty text; that still counts as a
+    text-modality success, since the paper's response-modality classifier
+    treats text and special-token signals as independent and MSA only
+    requires the gold modality to be *among* the detected modalities). For
+    an image-gold item, success iff `pred_modality == "image"`.
 
-  TP: mean per-item score (0-100), over MSA-passing items only.
+  TP+: mean per-item score (0-100), over MSA-passing items only (`I+` in
+    the paper).
 
-  C-TP: mean per-item score (0-100) over *all* items -- MSA-passing items
-    keep their real score, MSA-failing items are scored as `s_fail`
-    (dataset-specific: 50 for MagicBrush's 0-100 CLIP-I scale, 0 for every
-    other source).
+  COMI-score: mean per-item score (0-100) over *all* items -- MSA-passing
+    items keep their real score, MSA-failing items are scored as `s_min`
+    (dataset-specific: 50 for MagicBrush's 0-100 CLIP-I scale -- the paper
+    empirically sets the CLIP-I floor to 0.50 rather than the metric's
+    theoretical -1.0, since unrelated-image pairs average ~0.52 similarity;
+    0 for every other source).
 
 Expected input (one results jsonl per model, produced by `inference/` and
 then scored per-source -- see evaluation/README.md): each line is a JSON
@@ -36,13 +42,17 @@ import json
 from collections import defaultdict
 from pathlib import Path
 
-# Per-source score for an MSA-failing item, on the 0-100 scale every
-# `score` field in the input is expected to already be on.
-S_FAIL = defaultdict(lambda: 0.0)
-S_FAIL["MagicBrush"] = 50.0
+# Per-source score for an MSA-failing item (the paper's `s_min`), on the
+# 0-100 scale every `score` field in the input is expected to already be on.
+S_MIN = defaultdict(lambda: 0.0)
+S_MIN["MagicBrush"] = 50.0
 
+# Paper's own source labels: the OSQ-bench column is MMLU converted to
+# open-style questions via the OSQ-bench procedure (Myrzakhan et al., 2024)
+# -- same underlying dataset as `rule_based_scorers.py`'s "mmlu".
 SOURCE_ORDER = ["gsm8k", "mmlu", "ScienceQA", "VQAv2",
                 "geneval", "dpg_bench", "MagicBrush", "ImgEditBench"]
+SOURCE_LABEL = {"mmlu": "OSQ-bench"}
 
 
 def load_jsonl(path: str) -> list[dict]:
@@ -72,26 +82,27 @@ def compute_table(items: list[dict]) -> dict[str, dict]:
         passed = [it for it in its if msa_pass(it)]
         msa = len(passed) / n * 100 if n else 0.0
 
-        tp = (sum(it["score"] for it in passed) / len(passed)) if passed else None
+        tp_plus = (sum(it["score"] for it in passed) / len(passed)) if passed else None
 
-        s_fail = S_FAIL[source]
-        ctp_scores = [it["score"] if msa_pass(it) else s_fail for it in its]
-        ctp = sum(ctp_scores) / n if n else None
+        s_min = S_MIN[source]
+        comi_scores = [it["score"] if msa_pass(it) else s_min for it in its]
+        comi_score = sum(comi_scores) / n if n else None
 
         rows[source] = {"n": n, "n_msa_pass": len(passed), "MSA": msa,
-                         "TP": tp, "C-TP": ctp}
+                         "TP+": tp_plus, "COMI-score": comi_score}
     return rows
 
 
 def format_markdown(rows: dict[str, dict]) -> str:
-    out = ["| Source | n | MSA (%) | TP | C-TP |", "|---|---:|---:|---:|---:|"]
+    out = ["| Source | n | MSA (%) | TP+ | COMI-score |", "|---|---:|---:|---:|---:|"]
     for source in SOURCE_ORDER:
         if source not in rows:
             continue
         r = rows[source]
-        tp_s = f"{r['TP']:.1f}" if r["TP"] is not None else "N/A"
-        ctp_s = f"{r['C-TP']:.1f}" if r["C-TP"] is not None else "N/A"
-        out.append(f"| {source} | {r['n']} | {r['MSA']:.1f} | {tp_s} | {ctp_s} |")
+        tp_s = f"{r['TP+']:.1f}" if r["TP+"] is not None else "N/A"
+        comi_s = f"{r['COMI-score']:.1f}" if r["COMI-score"] is not None else "N/A"
+        label = SOURCE_LABEL.get(source, source)
+        out.append(f"| {label} | {r['n']} | {r['MSA']:.1f} | {tp_s} | {comi_s} |")
     return "\n".join(out)
 
 

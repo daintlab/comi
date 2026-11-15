@@ -1,9 +1,10 @@
 # Evaluation
 
-Computes the paper's three metrics -- **MSA** (Modality Selection Accuracy,
-strict), **TP** (Task Performance), **C-TP** (Conditional Task Performance)
--- from a model's COMI-Bench outputs. Definitions and the rationale for each
-are in `compute_msa_tp.py`'s docstring and `docs/Experiments.md`.
+Computes the paper's three metrics -- **MSA** (Modality Selection Accuracy),
+**TP+** (task performance on correct-modality responses), **COMI-score**
+(COMI-aware task score) -- from a model's COMI-Bench outputs. Definitions
+and the rationale for each are in `compute_msa_tp.py`'s docstring and
+`docs/Experiments.md`.
 
 ## Pipeline
 
@@ -14,7 +15,8 @@ are in `compute_msa_tp.py`'s docstring and `docs/Experiments.md`.
    generated_image_paths}`.
 2. **Score** -- add a `score` field (0-100) to each record, per source:
    - `gsm8k`, `VQAv2`: `rule_based_scorers.py` (exact rules, no judge needed).
-   - `mmlu`, `ScienceQA`: `rule_based_scorers.py`'s `score_open_style` is a
+   - `mmlu` (reported as **OSQ-bench** in the paper's tables), `ScienceQA`:
+     `rule_based_scorers.py`'s `score_open_style` is a
      cheap local proxy, but it under-counts paraphrased correct answers
      (loose text containment, not semantic match). The paper's reported
      numbers use a GPT-5.5 judge instead -- grade the response against the
@@ -42,6 +44,6 @@ prompt, with the model's output modality hard-forced to the gold modality
 using each model's own official single-modality inference path (not COMI's
 free-choice generation). This isolates "how well would the model do this
 task if told the right modality" from "does it pick the right modality on
-its own." See `docs/Experiments.md` for how baseline TP/C-TP compare to the
-free-choice numbers above, and `inference/` for per-model baseline-forcing
+its own." See `docs/Experiments.md` for how Baseline compares to the
+free-choice COMI-score above, and `inference/` for per-model baseline-forcing
 notes.

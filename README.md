@@ -35,7 +35,7 @@ See `data/README.md` for per-source licenses and what each data file is.
 │   ├── prompts/      # system prompts, one txt per stage
 │   └── decisions/    # human-review decisions applied by stage4/stage5
 ├── inference/        # Single-load batch inference runners (Tar, Anole)
-├── evaluation/       # MSA / TP / C-TP computation (see evaluation/README.md)
+├── evaluation/       # MSA / TP+ / COMI-score computation (see evaluation/README.md)
 ├── docs/
 │   └── Experiments.md   # methodology + the paper's reported tables
 ├── data/             # Benchmark data, all pipeline stages' outputs
@@ -70,11 +70,12 @@ evaluation methodology and reported results.
 ## Citation
 
 ```bibtex
-@inproceedings{comibench,
-  title     = {COMI-Bench: A Contextual Output Modality Inference Benchmark},
-  author    = {TODO},
-  booktitle = {TODO},
-  year      = {2026},
+@article{comibench,
+  title   = {A Blind Spot in Evaluating Unified Multimodal Models:
+             Contextual Output Modality Inference},
+  author  = {Kim, Yeonsu and Kim, Jihyo and Hwang, Sangheum},
+  journal = {TODO},
+  year    = {2026},
 }
 ```
 
