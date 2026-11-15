@@ -191,18 +191,6 @@ the right modality on its own." See `docs/Experiments.md` for how Baseline
 compares to the free-choice COMI-score above, and `inference/` for per-model
 baseline-forcing notes.
 
-## References
-
-- Panickssery et al. *LLM Evaluators Recognize and Favor Their Own
-  Generations.* NeurIPS 2024.
-- Mizrahi et al. *State of What Art? A Call for Multi-Prompt LLM Evaluation.*
-  TACL 2024.
-- Chen et al. *Are We on the Right Way for Evaluating Large Vision-Language
-  Models?* (MMStar) NeurIPS 2024. -- basis for the visual-grounding filter.
-- Myrzakhan et al. *Open-LLM-Leaderboard: From Multi-Choice to Open-Style
-  Questions for LLMs Evaluation, Benchmark, and Arena.* arXiv:2406.07545,
-  2024. -- the OSQ-bench conversion procedure, see `pipeline/stage0/mmlu_openstyle/`.
-
 ## Citation
 
 ```bibtex
