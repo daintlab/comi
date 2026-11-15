@@ -5,9 +5,13 @@ stage2_pipeline.py에 묶여있던 2a(수정)만 분리했다. route == "fix"인
 재작성하고, keep은 원본 그대로 통과시킨다. 시스템 프롬프트(prompts/stage2a_fix.txt)는
 그대로 재사용 — 건드리지 않았다.
 
-Stage 2a는 stage1_judge.py의 refine_hint를 쓰지 않는다. 재작성 원칙을 시스템
-프롬프트에 고정해 두었다. hint를 쓰면 judge의 판정 근거가 그대로 처방이 되어
-모든 프롬프트에 "Generate an image:"가 붙는다.
+Stage 2a는 stage1_judge.py의 basis/refine_hint를 사용자 메시지에 그대로 넣는다.
+원래는 hint를 안 썼는데(judge 판정 근거가 그대로 처방이 되어 모든 프롬프트에
+"Generate an image:"가 붙을 거라는 우려 때문), 실제로 30건 ablation(결과:
+results/hint_ablation_30.md)을 돌려보니 반대였다 -- hint 없이 자유 재작성하면
+오히려 동작/디테일이 드리프트하는 경우(예: "extract" -> "draw", 입력 이미지
+편집 요청이 신규 생성 요청으로 바뀜)가 많았고, meaning_ok 통과율이 23/30(힌트
+없음)보다 29/30(힌트 있음)으로 더 높았다. 그래서 hint를 쓰는 쪽으로 바꿨다.
 
   입력    stage1_judge.py의 출력 (results[]에 route, needs_refinement 포함)
   출력    각 샘플에 fixed_prompt(route=="fix"일 때만 값 있음, 아니면 None)와
@@ -112,9 +116,11 @@ def process(client: OpenAI, sample: dict) -> dict:
     route = sample.get("route", "keep")
 
     if route == "fix":
-        f = call(client, GEN_MODEL, FIX_SYSTEM,
-                 ctx(sample) + f'Prompt:\n"""\n{original}\n"""',
-                 FIX_SCHEMA, temperature=1.0)
+        user = (ctx(sample)
+                + f'Diagnosis: {sample["basis"]}\n'
+                + f'Suggestion: {sample["refine_hint"]}\n'
+                + f'Prompt:\n"""\n{original}\n"""')
+        f = call(client, GEN_MODEL, FIX_SYSTEM, user, FIX_SCHEMA, temperature=1.0)
         if f is None or not f.get("prompt"):
             return {**rec, "fixed_prompt": None, "source_prompt": original,
                     "error": "fix failed"}

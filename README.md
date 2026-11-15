@@ -58,9 +58,15 @@ per-source licenses, dataset license).
 | 3 | Validate each variant on modality / meaning / naturalness | all |
 | 5 | Reduce 5 variants to 2 (1 interrogative + 1 non-interrogative); human review for the rest | all |
 
-Stage 1 doesn't produce repair instructions -- its judgement would become the
-prescription (every image prompt rewritten as "Generate an image: ...") -- so
-Stage 2a follows a fixed rewriting policy instead.
+Stage 2a feeds Stage 1's diagnosis (`basis`) and suggested fix (`refine_hint`)
+into the rewriter as context (not as a literal instruction to copy). An
+earlier version withheld them, worried the judge's reasoning would become a
+rote prescription (every image prompt rewritten as "Generate an image: ...");
+a 30-item ablation (`results/hint_ablation_30.md`) showed the opposite --
+without the hint, rewrites more often drifted off the original's action or
+details (e.g. "extract" turning into "draw", an edit request on the input
+image turning into a fresh-generation request), passing `meaning_ok` on
+23/30 items vs. 29/30 with the hint.
 
 **Visual grounding** (VQAv2, ScienceQA): each TI2T sample is answered by
 GPT-5.2 three times without the image; dropped if >=2/3 responses are still

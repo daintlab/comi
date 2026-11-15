@@ -1,0 +1,314 @@
+{
+  "gen_model": "gpt-5.1",
+  "seed": 42,
+  "sampling_plan": {
+    "geneval": 8,
+    "dpg_bench": 8,
+    "MagicBrush": 8,
+    "ImgEditBench": 6
+  },
+  "source_of_sample": "data/stage1_full_5682.json (route=='fix')",
+  "no_hint_reference": "data/stage2a_full_5682.json (existing_fixed_prompt field)",
+  "results": [
+    {
+      "id": "geneval_00114",
+      "source": "geneval",
+      "task": "T2I",
+      "original_prompt": "a photo of a scissors and a bowl",
+      "basis": "The prompt is only a bare caption/description (“a photo of…”). It does not explicitly ask the model to create or output an image, so a competent UMM could reasonably respond in text.",
+      "refine_hint": "Make the requested modality explicit, e.g., “Generate an image/photo of a scissors and a bowl.”",
+      "existing_fixed_prompt": "Generate a realistic image: a photo of a scissors and a bowl.",
+      "withhint_fixed_prompt": "Generate a photo of a scissors and a bowl."
+    },
+    {
+      "id": "geneval_00025",
+      "source": "geneval",
+      "task": "T2I",
+      "original_prompt": "a photo of a bird",
+      "basis": "The prompt is only a bare caption/description and does not explicitly ask the model to produce an image, so a competent UMM could reasonably respond in text despite the ground-truth modality being image.",
+      "refine_hint": "Explicitly request image generation, e.g., \"Generate a photo-realistic image of a bird.\"",
+      "existing_fixed_prompt": "Generate a realistic image that looks like a photo of a bird.",
+      "withhint_fixed_prompt": "Generate a photo-realistic image of a bird."
+    },
+    {
+      "id": "geneval_00281",
+      "source": "geneval",
+      "task": "T2I",
+      "original_prompt": "a photo of a pink skateboard",
+      "basis": "The prompt is only a bare caption/description. Although the intended modality is an image, it does not explicitly ask the model to generate or return an image, so a competent UMM could reasonably respond in text.",
+      "refine_hint": "Explicitly request image generation, e.g., \"Generate an image of a pink skateboard.\"",
+      "existing_fixed_prompt": "Generate a realistic photo of a pink skateboard.",
+      "withhint_fixed_prompt": "Generate a photo of a pink skateboard."
+    },
+    {
+      "id": "geneval_00250",
+      "source": "geneval",
+      "task": "T2I",
+      "original_prompt": "a photo of two hair driers",
+      "basis": "The prompt is only a bare caption/description. Although the ground-truth modality is image, it does not explicitly ask the model to create or output an image, so a competent UMM could reasonably respond in text.",
+      "refine_hint": "Explicitly request image generation, e.g., \"Generate an image/photo of two hair dryers.\"",
+      "existing_fixed_prompt": "Generate a realistic photo of two hair driers.",
+      "withhint_fixed_prompt": "Generate a photo of two hair driers."
+    },
+    {
+      "id": "geneval_00228",
+      "source": "geneval",
+      "task": "T2I",
+      "original_prompt": "a photo of four tvs",
+      "basis": "The prompt is only a bare caption/descriptive phrase. Although the ground-truth modality is image, it does not explicitly ask the model to create or output an image, so a competent UMM could reasonably continue in text.",
+      "refine_hint": "Make the image request explicit, e.g., \"Generate an image: a photo of four TVs.\"",
+      "existing_fixed_prompt": "Generate a realistic photo showing four TVs.",
+      "withhint_fixed_prompt": "Generate an image of a photo of four tvs."
+    },
+    {
+      "id": "geneval_00142",
+      "source": "geneval",
+      "task": "T2I",
+      "original_prompt": "a photo of a bench and a vase",
+      "basis": "The prompt is only a bare caption/description. Although the ground-truth modality is image, it does not explicitly ask the model to generate or return an image, so a competent UMM could reasonably respond in text.",
+      "refine_hint": "Make the image request explicit, e.g., \"Generate an image of a bench and a vase.\"",
+      "existing_fixed_prompt": "Generate a realistic photo of a bench and a vase.",
+      "withhint_fixed_prompt": "Generate a photo of a bench and a vase."
+    },
+    {
+      "id": "geneval_00104",
+      "source": "geneval",
+      "task": "T2I",
+      "original_prompt": "a photo of a zebra and a bed",
+      "basis": "The prompt is only a bare caption/description. Although the ground truth is image, it does not explicitly ask the model to create or output an image, so a competent UMM could reasonably continue in text.",
+      "refine_hint": "Explicitly request image generation, e.g., \"Generate an image: a photo of a zebra and a bed.\"",
+      "existing_fixed_prompt": "Generate a realistic photo showing both a zebra and a bed together in the same scene.",
+      "withhint_fixed_prompt": "Generate an image: a photo of a zebra and a bed"
+    },
+    {
+      "id": "geneval_00089",
+      "source": "geneval",
+      "task": "T2I",
+      "original_prompt": "a photo of a toothbrush and a carrot",
+      "basis": "The prompt is only a bare caption/description. Although the ground truth is image, it does not explicitly ask the model to generate or return an image, so a competent UMM could reasonably continue in text.",
+      "refine_hint": "Make the image request explicit, e.g., “Generate an image: a photo of a toothbrush and a carrot.”",
+      "existing_fixed_prompt": "Generate a realistic photo of a toothbrush and a carrot.",
+      "withhint_fixed_prompt": "Generate an image: a photo of a toothbrush and a carrot"
+    },
+    {
+      "id": "dpg_bench_partiprompts62",
+      "source": "dpg_bench",
+      "task": "T2I",
+      "original_prompt": "An intricately designed robot with a polished metallic surface, donning a vibrant red and white race car suit, stands with a confident posture in front of a sleek F1 race car. The robot's black visor reflects the brilliant hues of the setting sun, which casts a warm glow over the futuristic cityscape depicted in the background. The illustration, reminiscent of a scene from a dynamic comic book, captures the essence of speed and technology.",
+      "basis": "The prompt is only a descriptive caption of an intended scene and does not explicitly ask the model to produce an image; a competent UMM could continue with text instead.",
+      "refine_hint": "Add an explicit image-generation request, e.g., \"Create an illustration of an intricately designed robot...\"",
+      "existing_fixed_prompt": "Create an illustration that visually shows an intricately designed robot with a polished metallic surface, wearing a vibrant red and white race car suit, standing confidently in front of a sleek F1 race car against a futuristic cityscape at sunset, in a dynamic comic book style.",
+      "withhint_fixed_prompt": "Create an illustration of an intricately designed robot with a polished metallic surface, donning a vibrant red and white race car suit, standing with a confident posture in front of a sleek F1 race car. The robot's black visor should reflect the brilliant hues of the setting sun, which casts a warm glow over the futuristic cityscape in the background, in a dynamic comic book style that captures the essence of speed and technology."
+    },
+    {
+      "id": "dpg_bench_157",
+      "source": "dpg_bench",
+      "task": "T2I",
+      "original_prompt": "A fluffy white pillow rests against the cool glass of a large window, accompanied by a pair of sleek black binoculars positioned on the ledge. The windowsill, bathed in the early morning light, also houses a small potted plant with vibrant green leaves, offering a contrast to the neutral tones of the room. Outside the window, the faint pre-dawn hues hint at the promise of a new day.",
+      "basis": "The prompt is only a descriptive scene caption and never explicitly asks the model to create, draw, or output an image. A competent UMM could reasonably continue with text rather than infer an image output.",
+      "refine_hint": "Add an explicit image-generation instruction, e.g., “Create an image of: A fluffy white pillow rests against…”",
+      "existing_fixed_prompt": "Create an image of a fluffy white pillow resting against the cool glass of a large window, with sleek black binoculars on the sunlit windowsill beside a small potted plant with vibrant green leaves, and faint pre-dawn hues visible outside.",
+      "withhint_fixed_prompt": "Create an image of the following scene: A fluffy white pillow rests against the cool glass of a large window, accompanied by a pair of sleek black binoculars positioned on the ledge. The windowsill, bathed in the early morning light, also houses a small potted plant with vibrant green leaves, offering a contrast to the neutral tones of the room. Outside the window, the faint pre-dawn hues hint at the promise of a new day."
+    },
+    {
+      "id": "dpg_bench_153",
+      "source": "dpg_bench",
+      "task": "T2I",
+      "original_prompt": "A transparent glass flask stands upright on a smooth, dark surface, filled with bright green beans that sharply contrast against the stunning backdrop depicting a starry night sky. The intricately painted celestial scene features deep blues and purples, with dots of white representing distant stars. The curvature of the flask magnifies the beans and some of the stars, creating an enchanting visual effect.",
+      "basis": "The prompt is only a descriptive caption of a scene and does not explicitly ask the model to produce an image. A competent UMM could respond with text rather than infer an image output solely from the description.",
+      "refine_hint": "Add an explicit image-generation request, e.g., \"Generate an image of a transparent glass flask...\"",
+      "existing_fixed_prompt": "Generate an image of a transparent glass flask standing upright on a smooth, dark surface, filled with bright green beans that contrast against a stunning backdrop depicting a starry night sky with deep blues, purples, and white dots of distant stars, where the flask’s curvature magnifies the beans and some of the stars.",
+      "withhint_fixed_prompt": "Generate an image of a transparent glass flask standing upright on a smooth, dark surface, filled with bright green beans that sharply contrast against the stunning backdrop depicting a starry night sky, with the intricately painted celestial scene in deep blues and purples and dots of white stars, and the flask’s curvature magnifying the beans and some of the stars to create an enchanting visual effect."
+    },
+    {
+      "id": "dpg_bench_271",
+      "source": "dpg_bench",
+      "task": "T2I",
+      "original_prompt": "In a room bathed in the warm glow of the late afternoon sun, a single large golden camera sits prominently on a desk. This camera, with its polished metallic finish, outshines and is notably bigger than the two smaller silver monitors positioned on either side of it. The edges of the monitors are reflecting the soft light, creating a contrast with the camera's shining surface.",
+      "basis": "The prompt is only a descriptive scene/caption and does not explicitly ask the model to create or output an image, so a competent UMM could reasonably continue with text.",
+      "refine_hint": "Add an explicit image-generation instruction, e.g., \"Generate an image of a room bathed in warm late-afternoon sun, with a large golden camera on a desk between two smaller silver monitors...\"",
+      "existing_fixed_prompt": "Create an image of a room bathed in the warm glow of the late afternoon sun, with a single large golden camera sitting prominently on a desk. The camera, with its polished metallic finish, should outshine and be notably bigger than the two smaller silver monitors positioned on either side of it, whose edges reflect the soft light in contrast to the camera's shining surface.",
+      "withhint_fixed_prompt": "Generate an image of a room bathed in the warm glow of the late afternoon sun, where a single large golden camera sits prominently on a desk, outshining and notably bigger than the two smaller silver monitors positioned on either side, whose edges reflect the soft light in contrast to the camera's shining surface."
+    },
+    {
+      "id": "dpg_bench_diffusiondb16",
+      "source": "dpg_bench",
+      "task": "T2I",
+      "original_prompt": "a collection of rare and vibrant CS: GO holo stickers, each emblazoned with the logos of iconic esports teams. The Titan Katowice 2014 sticker shines with a prismatic effect, while the iBuyPower Katowice 2014 sticker boasts a delicate balance of red and black hues. The Reason Gaming Katowice 2014 and LDLC.com Katowice 2014 stickers both display a mesmerizing holographic sheen, capturing the eye with every tilt and turn. These stickers represent a significant piece of esports history and are a must-have for enthusiasts and collectors alike.",
+      "basis": "The prompt is only a descriptive caption of the desired scene and does not explicitly ask the model to create or output an image. A competent multimodal model could reasonably continue in text rather than infer an image response from this alone.",
+      "refine_hint": "Add an explicit image-generation request, such as: \"Create an image of a collection of rare and vibrant CS:GO holo stickers...\"",
+      "existing_fixed_prompt": "Create an image showing a collection of rare and vibrant CS: GO holo stickers, featuring the Titan Katowice 2014, iBuyPower Katowice 2014, Reason Gaming Katowice 2014, and LDLC.com Katowice 2014 team logos with their distinctive holographic effects and colors.",
+      "withhint_fixed_prompt": "Create an image of a collection of rare and vibrant CS: GO holo stickers, each emblazoned with the logos of iconic esports teams. The Titan Katowice 2014 sticker shines with a prismatic effect, while the iBuyPower Katowice 2014 sticker boasts a delicate balance of red and black hues. The Reason Gaming Katowice 2014 and LDLC.com Katowice 2014 stickers both display a mesmerizing holographic sheen, capturing the eye with every tilt and turn. These stickers represent a significant piece of esports history and are a must-have for enthusiasts and collectors alike."
+    },
+    {
+      "id": "dpg_bench_diffusiondb7",
+      "source": "dpg_bench",
+      "task": "T2I",
+      "original_prompt": "An artistic fusion of styles reminiscent of the great masters like H.R. Giger's dark surrealism, Richard Schmid's refined realism, and Jeremy Lipking's contemporary impressionism comes to life in a striking full-length portrait painting. The expansive canvas is filled with loose, impressionistic brushstrokes that capture the haunting beauty of a Victorian-style giant spaceship. The vessel exists in an otherworldly space, its intricate metalwork framed by ethereal swaths of color, giving it an almost dreamlike presence amidst the undefined, loose genre of the painting's background.",
+      "basis": "The prompt is only a descriptive caption of an artwork/scene and does not explicitly ask the model to produce an image. Since a competent UMM could reasonably continue with text, the intended image modality is not settled by the wording alone.",
+      "refine_hint": "Add an explicit image-generation request, e.g., “Create an image of…” or “Generate a full-length portrait painting showing…”",
+      "existing_fixed_prompt": "Create an image: an artistic fusion of styles reminiscent of the great masters like H.R. Giger's dark surrealism, Richard Schmid's refined realism, and Jeremy Lipking's contemporary impressionism, depicted as a striking full-length portrait painting. The expansive canvas is filled with loose, impressionistic brushstrokes that capture the haunting beauty of a Victorian-style giant spaceship, existing in an otherworldly space, its intricate metalwork framed by ethereal swaths of color, with a dreamlike presence amidst the undefined, loose genre of the painting's background.",
+      "withhint_fixed_prompt": "Create an image: an artistic fusion of styles reminiscent of the great masters like H.R. Giger's dark surrealism, Richard Schmid's refined realism, and Jeremy Lipking's contemporary impressionism comes to life in a striking full-length portrait painting. The expansive canvas is filled with loose, impressionistic brushstrokes that capture the haunting beauty of a Victorian-style giant spaceship. The vessel exists in an otherworldly space, its intricate metalwork framed by ethereal swaths of color, giving it an almost dreamlike presence amidst the undefined, loose genre of the painting's background."
+    },
+    {
+      "id": "dpg_bench_whoops17",
+      "source": "dpg_bench",
+      "task": "T2I",
+      "original_prompt": "Two individuals are deeply engrossed in a strategic game, seated at a polished wooden table with a chessboard that uniquely features all black chess pieces. The players, both wearing glasses, are in a room with cream-colored walls and a potted plant in the corner. To the side of the chessboard, a timer is set, indicating the serious nature of their contest. The sunlight from the adjacent window casts a soft glow on the game, highlighting the intricate details of the ebony pieces.",
+      "basis": "The prompt is only a descriptive caption. It does not explicitly ask the model to produce or generate an image, so a competent model could reasonably continue in text instead.",
+      "refine_hint": "Add an explicit image-generation instruction, e.g., \"Generate an image of two individuals deeply engrossed in a strategic game...\"",
+      "existing_fixed_prompt": "Create an image of two individuals deeply engrossed in a strategic game, seated at a polished wooden table with a chessboard that uniquely features all black chess pieces, in a cream-walled room with a potted plant in the corner, a timer beside the board, and sunlight from a nearby window highlighting the ebony pieces.",
+      "withhint_fixed_prompt": "Generate an image of two individuals deeply engrossed in a strategic game, seated at a polished wooden table with a chessboard that uniquely features all black chess pieces. The players, both wearing glasses, are in a room with cream-colored walls and a potted plant in the corner. To the side of the chessboard, a timer is set, indicating the serious nature of their contest. The sunlight from the adjacent window casts a soft glow on the game, highlighting the intricate details of the ebony pieces."
+    },
+    {
+      "id": "dpg_bench_147",
+      "source": "dpg_bench",
+      "task": "T2I",
+      "original_prompt": "In the midst of a bustling cityscape, during the golden hour of sunset, stands an enormous trombone that stretches upwards like a unique city monument. Its brass surface is painted with bold sections of red, green, and yellow, mimicking the familiar sequence of a traffic signal. Around its base, people and vehicles move about, creating a dynamic contrast between the stillness of the instrument and the motion of the city life.",
+      "basis": "The prompt is only a descriptive scene/caption and does not explicitly ask the model to generate or output an image. A competent UMM could reasonably continue with text rather than produce an image.",
+      "refine_hint": "Add an explicit image-generation request, e.g. “Create an image of…” or “Generate a visual scene showing…”",
+      "existing_fixed_prompt": "Create a detailed illustration of a bustling cityscape at golden-hour sunset featuring an enormous trombone as a central monument, its brass body painted in bold red, green, and yellow sections like a traffic signal, with people and vehicles moving dynamically around its base.",
+      "withhint_fixed_prompt": "Create an image showing this scene: In the midst of a bustling cityscape, during the golden hour of sunset, stands an enormous trombone that stretches upwards like a unique city monument. Its brass surface is painted with bold sections of red, green, and yellow, mimicking the familiar sequence of a traffic signal. Around its base, people and vehicles move about, creating a dynamic contrast between the stillness of the instrument and the motion of the city life."
+    },
+    {
+      "id": "magicbrush_00413",
+      "source": "MagicBrush",
+      "task": "TI2I",
+      "original_prompt": "Let the blood orange be swapped with an apple.",
+      "basis": "The prompt states a desired visual change to the provided image, but it does not explicitly ask the model to produce an edited image. A competent UMM could respond in text describing the change rather than outputting an image.",
+      "refine_hint": "Explicitly request an image edit, e.g., “Edit the provided image so the blood orange is replaced with an apple, and return the edited image.”",
+      "existing_fixed_prompt": "Here is an image; edit it so that the blood orange is replaced with an apple.",
+      "withhint_fixed_prompt": "Edit the provided image so the blood orange is swapped with an apple, and return the edited image."
+    },
+    {
+      "id": "magicbrush_00175",
+      "source": "MagicBrush",
+      "task": "TI2I",
+      "original_prompt": "let there be a giant snowball next to the man",
+      "basis": "The prompt is an implicit image-editing desire, but it does not explicitly ask the model to produce or return an edited image. A competent UMM could respond in text rather than infer image output solely from this phrasing.",
+      "refine_hint": "Edit the provided image to add a giant snowball next to the man, and return the edited image.",
+      "existing_fixed_prompt": "Edit the image so that there is a giant snowball next to the man.",
+      "withhint_fixed_prompt": "Edit the provided image to add a giant snowball next to the man and return the edited image."
+    },
+    {
+      "id": "magicbrush_00495",
+      "source": "MagicBrush",
+      "task": "TI2I",
+      "original_prompt": "let the boy wear a superhero costume",
+      "basis": "The prompt implies a desired visual edit to the provided image, but it does not explicitly ask the model to produce or edit an image. As written, a competent model could respond in text describing the change.",
+      "refine_hint": "Explicitly request an image edit, e.g., “Edit the provided image so the boy is wearing a superhero costume.”",
+      "existing_fixed_prompt": "Edit the provided image so that the boy is now wearing a superhero costume.",
+      "withhint_fixed_prompt": "Edit the provided image so that the boy is wearing a superhero costume."
+    },
+    {
+      "id": "magicbrush_00406",
+      "source": "MagicBrush",
+      "task": "TI2I",
+      "original_prompt": "let there be a game show on TV",
+      "basis": "The prompt describes a desired visual change/result but does not explicitly ask the model to generate or edit an image. A competent UMM could respond in text, so the intended image output is underspecified.",
+      "refine_hint": "Explicitly request an image edit, e.g. “Edit the image so the TV is showing a game show.”",
+      "existing_fixed_prompt": "Create an image that looks like a game show on TV.",
+      "withhint_fixed_prompt": "Edit the provided image so that the TV is showing a game show."
+    },
+    {
+      "id": "magicbrush_00317",
+      "source": "MagicBrush",
+      "task": "TI2I",
+      "original_prompt": "let the woman hold a cup",
+      "basis": "The prompt states a desired change to the provided image but does not explicitly ask the model to edit or output an image; a competent UMM could respond in text acknowledging the request.",
+      "refine_hint": "Please edit the provided image so that the woman is holding a cup.",
+      "existing_fixed_prompt": "Edit the input image so that the woman is shown holding a cup.",
+      "withhint_fixed_prompt": "Edit the provided image so that the woman is holding a cup."
+    },
+    {
+      "id": "magicbrush_00191",
+      "source": "MagicBrush",
+      "task": "TI2I",
+      "original_prompt": "There should be some cutlery on the table.",
+      "basis": "The prompt is only a statement of a desired change to the provided image; it does not explicitly ask the model to generate or edit an image, so a competent UMM could respond in text.",
+      "refine_hint": "Explicitly request an image edit, e.g., \"Edit the provided image to add some cutlery on the table.\"",
+      "existing_fixed_prompt": "Show me an image where there is some cutlery on the table.",
+      "withhint_fixed_prompt": "Edit the provided image so that there is some cutlery on the table."
+    },
+    {
+      "id": "magicbrush_00330",
+      "source": "MagicBrush",
+      "task": "TI2I",
+      "original_prompt": "Let's give him a yellow shirt",
+      "basis": "The prompt expresses a desired edit to the provided image, but it does not explicitly ask the model to output an edited image. A competent UMM could respond in text rather than generate the modified image.",
+      "refine_hint": "Explicitly request an image edit, e.g. “Edit the provided image so that he is wearing a yellow shirt, and output the edited image.”",
+      "existing_fixed_prompt": "Edit the provided image so that he is wearing a yellow shirt.",
+      "withhint_fixed_prompt": "Edit the provided image so that he is wearing a yellow shirt, and output the edited image."
+    },
+    {
+      "id": "magicbrush_00430",
+      "source": "MagicBrush",
+      "task": "TI2I",
+      "original_prompt": "let the window show a garden",
+      "basis": "The prompt states a desired visual edit to the provided image, but it does not explicitly ask the model to produce or return an edited image. A competent UMM could answer in text describing the change.",
+      "refine_hint": "Edit the provided image so that the window shows a garden, and return the edited image.",
+      "existing_fixed_prompt": "Modify the image so that the window clearly shows a garden outside.",
+      "withhint_fixed_prompt": "Edit the provided image so that the window shows a garden, and return the edited image."
+    },
+    {
+      "id": "imgeditbench_00274",
+      "source": "ImgEditBench",
+      "task": "TI2I",
+      "original_prompt": "Extract the architecture from the image.",
+      "basis": "The prompt does not explicitly ask for an image output. “Extract the architecture” is ambiguous and could naturally be satisfied with a textual description or identification of the architecture in the image.",
+      "refine_hint": "Specify the desired image operation, e.g., “Create an output image that isolates/extracts the architectural structure from the input image, removing other elements/background.”",
+      "existing_fixed_prompt": "Draw the architecture shown in the image.",
+      "withhint_fixed_prompt": "Create an output image that extracts only the architecture from the input image, removing all other elements and background."
+    },
+    {
+      "id": "imgeditbench_00631",
+      "source": "ImgEditBench",
+      "task": "TI2I",
+      "original_prompt": "Extract the vehicles visible in the image.",
+      "basis": "The prompt asks to “Extract” vehicles from the image, but it does not explicitly specify that the output should be an image. A competent model could interpret this as a request to identify or list the vehicles in text.",
+      "refine_hint": "Specify the desired visual output, e.g. “Create an image containing only the vehicles visible in the input, with the background removed,” or “Crop out each visible vehicle and return them as images.”",
+      "existing_fixed_prompt": "Show only the vehicles visible in the image as a new image output.",
+      "withhint_fixed_prompt": "Extract the vehicles visible in the image and return them as a new image containing only those vehicles with the background removed."
+    },
+    {
+      "id": "imgeditbench_00049",
+      "source": "ImgEditBench",
+      "task": "TI2I",
+      "original_prompt": "Extract the architecture of the house in the image, focusing on the design and structure of the building, including the driveway, landscaping, and surrounding elements.",
+      "basis": "The prompt does not explicitly request an image output. “Extract the architecture” could mean describe/analyze the house’s architectural features in text, or it could mean create an edited/isolated image, so a competent UMM could reasonably continue in text.",
+      "refine_hint": "Explicitly ask for an image edit or generated image, e.g., “Create an image that isolates/extracts the house architecture from the provided photo, preserving the driveway, landscaping, and surrounding elements.”",
+      "existing_fixed_prompt": "Visually highlight and label the architectural features of the house in the image, including the building design, driveway, landscaping, and surrounding elements, in a single annotated image output.",
+      "withhint_fixed_prompt": "Create an edited image that extracts and highlights the architecture of the house in the provided image, focusing on the design and structure of the building, including the driveway, landscaping, and surrounding elements."
+    },
+    {
+      "id": "imgeditbench_00171",
+      "source": "ImgEditBench",
+      "task": "TI2I",
+      "original_prompt": "Raise the person's left arm.",
+      "basis": "The prompt implies a visual edit to the provided image, but it does not explicitly ask the model to output an edited image. A competent UMM could interpret it as an instruction needing clarification or respond in text.",
+      "refine_hint": "Edit the provided image and return the modified image with the person's left arm raised.",
+      "existing_fixed_prompt": "Edit the given image so that the person’s left arm is raised.",
+      "withhint_fixed_prompt": "Edit the provided image so that the person’s left arm is raised, and return the modified image."
+    },
+    {
+      "id": "imgeditbench_00442",
+      "source": "ImgEditBench",
+      "task": "TI2I",
+      "original_prompt": "Extract the architectural elements present in the image, focusing on any building structures, architectural features, or objects related to architecture.",
+      "basis": "The prompt asks to “extract” architectural elements from the provided image, which a competent model would likely interpret as producing a textual list or description. It does not explicitly request an image output such as an annotated image, mask, diagram, or edited version.",
+      "refine_hint": "Specify the desired visual output, e.g., “Create an annotated image highlighting and labeling the architectural elements present in the photo.”",
+      "existing_fixed_prompt": "Visually highlight and label the architectural elements in the provided image, marking building structures, architectural features, and any objects related to architecture directly on the image.",
+      "withhint_fixed_prompt": "Create an annotated image highlighting and labeling the architectural elements present in the image, focusing on any building structures, architectural features, or objects related to architecture."
+    },
+    {
+      "id": "imgeditbench_00371",
+      "source": "ImgEditBench",
+      "task": "TI2I",
+      "original_prompt": "Extract the architecture of the building, focusing on the overall structure, roof, and surrounding landscape.",
+      "basis": "The prompt asks to 'extract the architecture' from the provided image, but it does not explicitly request a visual output such as an edited image, mask, cutout, or rendering. A competent model could reasonably answer with a textual description of the building’s structure, roof, and landscape.",
+      "refine_hint": "Specify the desired image output, e.g. 'Create an edited image that isolates/emphasizes the building’s architecture, including the overall structure, roof, and surrounding landscape.'",
+      "existing_fixed_prompt": "Visually extract and depict the architecture of the building from the image, focusing on the overall structure, roof, and surrounding landscape.",
+      "withhint_fixed_prompt": "Create an edited image that extracts and visually isolates the architecture of the building from the input, clearly emphasizing the overall structure, roof, and surrounding landscape."
+    }
+  ]
+}
