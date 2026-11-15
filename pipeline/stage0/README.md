@@ -59,6 +59,15 @@ B's Step 1 — see root README's Human verification section... actually see
 `blind_test_full.py`'s own docstring, which documents every deliberate
 difference from ScienceQA's version).
 
+## D) `scienceqa_openstyle/` -- the MC-option-free rewrite actually used downstream
+
+`normalize_scienceqa_409()` below keeps the source question's multiple-choice
+options in `prompt`. The released dataset does not use that text for
+ScienceQA's `source_prompt`/`variants` -- it uses the option-free rewrite in
+`scienceqa_openstyle/` instead, applied to `data/stage3_2variant_final.json`
+after the fact. See `scienceqa_openstyle/README.md` for what's there, what's
+missing, and an important caveat about validation coverage (60/409 items).
+
 ## What actually feeds `stage0_prepare_originals.py`
 
 It does **not** call any of the above at runtime — it reads their frozen

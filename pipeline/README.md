@@ -42,6 +42,13 @@ Stage 1 does not produce repair instructions. Its judgement criterion would
 become the prescription, and every image prompt would end up rewritten as
 "Generate an image: …". Stage 2a follows a fixed rewriting policy instead.
 
+ScienceQA's MCQ-option stripping (Stage 0's job per the table above) is not
+done inside `stage0_prepare_originals.py` itself -- it's applied as a
+post-process directly on `data/stage3_2variant_final.json`'s ScienceQA rows.
+See `pipeline/stage0/scienceqa_openstyle/README.md` for the conversion and an
+important validation-coverage caveat (only 60/409 items went through real
+Stage-3-equivalent LLM validation).
+
 There is also a `stage4_finalize.py`, an earlier human-curation path (apply
 per-sample drop decisions to the 5-variant Stage 3 output) that predates
 Stage 5. **It is not part of the path that produced the released dataset.**

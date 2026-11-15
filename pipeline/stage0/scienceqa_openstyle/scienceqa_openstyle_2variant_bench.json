@@ -1,0 +1,4912 @@
+{
+  "results": [
+    {
+      "task_id": "scienceqa_filtered_2210",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "repel",
+      "image_path": "/nas/datahub/ScienceQA/test/2210/image.png",
+      "refined_variants": [
+        "Do the magnets shown in the image attract each other or repel each other?",
+        "Tell me whether the magnets shown in the image will attract each other or repel each other."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_4749",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "The magnitude of the magnetic force is smaller in Pair 1.",
+      "image_path": "/nas/datahub/ScienceQA/test/4749/image.png",
+      "refined_variants": [
+        "Thinking about the magnetic force between the magnets in each pair shown in the image, which of the following statements is true?",
+        "Determine which of the following statements is true by thinking about the magnetic force between the magnets in each pair shown in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_19237",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "sample B",
+      "image_path": "/nas/datahub/ScienceQA/test/19237/image.png",
+      "refined_variants": [
+        "Based on the provided image, how do the average kinetic energies of the particles in each sample compare, and which sample has the higher temperature?",
+        "Compare the average kinetic energies of the particles in each sample shown in the image and identify the sample with the higher temperature."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_15171",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "Saint Lucia",
+      "image_path": "/nas/datahub/ScienceQA/test/15171/image.png",
+      "refined_variants": [
+        "Which country is highlighted in the image?",
+        "Identify the country highlighted in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_12397",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "The Bahamas",
+      "image_path": "/nas/datahub/ScienceQA/test/12397/image.png",
+      "refined_variants": [
+        "Which country is highlighted in the image?",
+        "Identify the country highlighted in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_15705",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "sample A",
+      "image_path": "/nas/datahub/ScienceQA/test/15705/image.png",
+      "refined_variants": [
+        "Based on the image, how do the average kinetic energies of the particles in each sample compare, and which sample has the higher temperature?",
+        "Compare the average kinetic energies of the particles in the samples shown in the image, then identify the sample with the higher temperature."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_14826",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "Grenada",
+      "image_path": "/nas/datahub/ScienceQA/test/14826/image.png",
+      "refined_variants": [
+        "Which country is highlighted in the image?",
+        "Identify the country highlighted in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_16746",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "palm leaf",
+      "image_path": "/nas/datahub/ScienceQA/test/16746/image.png",
+      "refined_variants": [
+        "Which fossil shown in the provided image is younger? Select the more likely answer.",
+        "Select the more likely answer for which fossil in the provided image is younger."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_17857",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "The magnitude of the magnetic force is smaller in Pair 1.",
+      "image_path": "/nas/datahub/ScienceQA/test/17857/image.png",
+      "refined_variants": [
+        "Looking at the magnets in each pair in the image, which of the following statements about the magnetic force between the magnets is true?",
+        "Identify the true statement about the magnetic force between the magnets in each pair shown in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_3541",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "the Southern Ocean",
+      "image_path": "/nas/datahub/ScienceQA/test/3541/image.png",
+      "refined_variants": [
+        "Which ocean is highlighted in the image?",
+        "Identify the ocean highlighted in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_5203",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "New Hampshire",
+      "image_path": "/nas/datahub/ScienceQA/test/5203/image.png",
+      "refined_variants": [
+        "What is the name of the colony shown in the image?",
+        "Please provide the name of the colony shown in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_16293",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "the Atlantic Ocean",
+      "image_path": "/nas/datahub/ScienceQA/test/16293/image.png",
+      "refined_variants": [
+        "Which ocean is highlighted in the image?",
+        "Identify the ocean highlighted in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_2788",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "The magnitude of the magnetic force is greater in Pair 1.",
+      "image_path": "/nas/datahub/ScienceQA/test/2788/image.png",
+      "refined_variants": [
+        "Looking at the image, which statement is true about the magnetic force between the magnets in each pair?",
+        "Identify the true statement about the magnetic force between the magnets in each pair shown in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_13945",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "false",
+      "image_path": "/nas/datahub/ScienceQA/test/13945/image.png",
+      "refined_variants": [
+        "Is this statement about our solar system true or false: The volume of Mars is more than three times as large as Mercury's?",
+        "Decide whether this statement about our solar system is true or false: The volume of Mars is more than three times as large as Mercury's."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_14192",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "Fiji",
+      "image_path": "/nas/datahub/ScienceQA/test/14192/image.png",
+      "refined_variants": [
+        "Which country is highlighted in the image?",
+        "Identify the country highlighted in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_841",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "mushroom",
+      "image_path": "/nas/datahub/ScienceQA/test/841/image.png",
+      "refined_variants": [
+        "Which organism shown in the image contains matter that was once part of the lichen?",
+        "Identify the organism in the image that contains matter that was once part of the lichen."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_11675",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "New Zealand",
+      "image_path": "/nas/datahub/ScienceQA/test/11675/image.png",
+      "refined_variants": [
+        "Which country is highlighted in the image?",
+        "Identify the country highlighted in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_4217",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "sample B",
+      "image_path": "/nas/datahub/ScienceQA/test/4217/image.png",
+      "refined_variants": [
+        "Looking at the image, how do the average kinetic energies of the particles in each sample compare, and which sample has the higher temperature?",
+        "Compare the average kinetic energies of the particles in each sample shown in the image, then identify the sample with the higher temperature."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_5352",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "Solution A",
+      "image_path": "/nas/datahub/ScienceQA/test/5352/image.png",
+      "refined_variants": [
+        "In the image, which solution has a higher concentration of pink particles?",
+        "Identify the solution in the image that has a higher concentration of pink particles."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_2704",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "repel",
+      "image_path": "/nas/datahub/ScienceQA/test/2704/image.png",
+      "refined_variants": [
+        "In the image, will the magnets attract or repel each other?",
+        "Determine whether the magnets in the image will attract each other or repel each other."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_20788",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "2:2",
+      "image_path": "/nas/datahub/ScienceQA/test/20788/image.png",
+      "refined_variants": [
+        "What is the most likely expected ratio of offspring with vestigial wings to offspring with normal wings?",
+        "Choose the most likely expected ratio of offspring with vestigial wings to offspring with normal wings."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_5146",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "short-tailed weasel",
+      "image_path": "/nas/datahub/ScienceQA/test/5146/image.png",
+      "refined_variants": [
+        "In the food web shown, which organism contains matter that eventually moves to the earthworm?",
+        "Identify the organism in this food web that contains matter that eventually moves to the earthworm."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_9503",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "South America",
+      "image_path": "/nas/datahub/ScienceQA/test/9503/image.png",
+      "refined_variants": [
+        "Which continent is highlighted in the image?",
+        "Identify the continent highlighted in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_14547",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "New Jersey",
+      "image_path": "/nas/datahub/ScienceQA/test/14547/image.png",
+      "refined_variants": [
+        "What is the name of the colony shown in the image?",
+        "Identify the name of the colony shown in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_16456",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "sample B",
+      "image_path": "/nas/datahub/ScienceQA/test/16456/image.png",
+      "refined_variants": [
+        "Looking at the provided image, how do the average kinetic energies of the particles in each sample compare, and which sample has the higher temperature?",
+        "Compare the average kinetic energies of the particles in each sample shown in the image and identify the sample with the higher temperature."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_4537",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "Connecticut",
+      "image_path": "/nas/datahub/ScienceQA/test/4537/image.png",
+      "refined_variants": [
+        "What is the name of the colony shown in the image?",
+        "Identify the name of the colony shown in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_2877",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "The magnetic force is weaker in Pair 1.",
+      "image_path": "/nas/datahub/ScienceQA/test/2877/image.png",
+      "refined_variants": [
+        "Considering the magnetic force between the magnets in each pair shown in the image, which of the following statements is true?",
+        "Determine which of the following statements is true about the magnetic force between the magnets in each pair shown in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_3147",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "to the left than to the right",
+      "image_path": "/nas/datahub/ScienceQA/test/3147/image.png",
+      "refined_variants": [
+        "Can you complete the text that describes the diagram: “Solute particles moved in both directions across the permeable membrane. But more solute particles moved across the membrane (). When there was an equal concentration on both sides, the particles reached equilibrium.”",
+        "Complete the sentence in parentheses in this description of the diagram: “Solute particles moved in both directions across the permeable membrane. But more solute particles moved across the membrane (). When there was an equal concentration on both sides, the particles reached equilibrium.”"
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_13016",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "South America",
+      "image_path": "/nas/datahub/ScienceQA/test/13016/image.png",
+      "refined_variants": [
+        "Which continent is highlighted in the image?",
+        "Identify the continent highlighted in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_12965",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "Solution B",
+      "image_path": "/nas/datahub/ScienceQA/test/12965/image.png",
+      "refined_variants": [
+        "Which solution shown has the higher concentration of green particles?",
+        "Identify the solution in the image that has the higher concentration of green particles."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_14958",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "Connecticut",
+      "image_path": "/nas/datahub/ScienceQA/test/14958/image.png",
+      "refined_variants": [
+        "What is the name of the colony shown in the image?",
+        "Name the colony shown in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_15445",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "2/4",
+      "image_path": "/nas/datahub/ScienceQA/test/15445/image.png",
+      "refined_variants": [
+        "Based on the cross shown in the image, what is the probability that a scarlet rosemallow plant produced by this cross will have white flowers?",
+        "Determine the probability that a scarlet rosemallow plant produced by the cross shown in the image will have white flowers."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_3518",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "sample B",
+      "image_path": "/nas/datahub/ScienceQA/test/3518/image.png",
+      "refined_variants": [
+        "In the image, how do the average kinetic energies of the particles in each sample compare, and which sample has the higher temperature?",
+        "Compare the average kinetic energies of the particles in each sample shown in the image, then identify the sample with the higher temperature."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_13446",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "Maryland",
+      "image_path": "/nas/datahub/ScienceQA/test/13446/image.png",
+      "refined_variants": [
+        "What is the name of the colony shown in the image?",
+        "Identify the name of the colony shown in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_21063",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "Dominica",
+      "image_path": "/nas/datahub/ScienceQA/test/21063/image.png",
+      "refined_variants": [
+        "Which country is highlighted in the image?",
+        "Identify the country highlighted in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_10338",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "stretchy",
+      "image_path": "/nas/datahub/ScienceQA/test/10338/image.png",
+      "refined_variants": [
+        "Which property matches the object in the image?",
+        "Identify the property that matches the object in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_10307",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "Asia",
+      "image_path": "/nas/datahub/ScienceQA/test/10307/image.png",
+      "refined_variants": [
+        "Which continent is highlighted in the image?",
+        "Identify the continent that is highlighted in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_19955",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "the Marshall Islands",
+      "image_path": "/nas/datahub/ScienceQA/test/19955/image.png",
+      "refined_variants": [
+        "Which country is highlighted in the image?",
+        "Identify the country highlighted in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_13017",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "Europe",
+      "image_path": "/nas/datahub/ScienceQA/test/13017/image.png",
+      "refined_variants": [
+        "Which continent is highlighted in the image?",
+        "Identify the continent highlighted in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_20747",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "the flowers",
+      "image_path": "/nas/datahub/ScienceQA/test/20747/image.png",
+      "refined_variants": [
+        "Which part of the tomato plant produces the seeds?",
+        "Identify the part of the tomato plant that makes the seeds."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_6091",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "to the left than to the right",
+      "image_path": "/nas/datahub/ScienceQA/test/6091/image.png",
+      "refined_variants": [
+        "Can you complete the text so it describes the diagram? Solute particles moved in both directions across the permeable membrane. But more solute particles moved across the membrane (). When there was an equal concentration on both sides, the particles reached equilibrium.",
+        "Complete the description of the diagram by filling in the parentheses: Solute particles moved in both directions across the permeable membrane. But more solute particles moved across the membrane (). When there was an equal concentration on both sides, the particles reached equilibrium."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_18689",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "true",
+      "image_path": "/nas/datahub/ScienceQA/test/18689/image.png",
+      "refined_variants": [
+        "Is this statement about our solar system true or false: Saturn's volume is more than 50% of Jupiter's volume?",
+        "Determine whether this statement about our solar system is true or false: Saturn's volume is more than 50% of Jupiter's volume."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_21191",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "North America",
+      "image_path": "/nas/datahub/ScienceQA/test/21191/image.png",
+      "refined_variants": [
+        "Which continent is highlighted in the image?",
+        "Identify the continent that is highlighted in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_20820",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "The magnitude of the magnetic force is the same in both pairs.",
+      "image_path": "/nas/datahub/ScienceQA/test/20820/image.png",
+      "refined_variants": [
+        "Looking at the image, which of the following statements is true about the magnetic force between the magnets in each pair?",
+        "Identify the true statement about the magnetic force between the magnets in each pair."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_5211",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "Trinidad and Tobago",
+      "image_path": "/nas/datahub/ScienceQA/test/5211/image.png",
+      "refined_variants": [
+        "Which country is highlighted in the image?",
+        "Identify the country highlighted in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_6759",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "attract",
+      "image_path": "/nas/datahub/ScienceQA/test/6759/image.png",
+      "refined_variants": [
+        "Will the magnets shown in the image attract each other or repel each other?",
+        "Determine whether the magnets shown in the image will attract each other or repel each other."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_9814",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "sample A",
+      "image_path": "/nas/datahub/ScienceQA/test/9814/image.png",
+      "refined_variants": [
+        "Based on the image, how do the average kinetic energies of the particles in each sample compare, and which sample has the higher temperature?",
+        "Compare the average kinetic energies of the particles in each sample shown in the image, then state which sample has the higher temperature."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_4883",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "July",
+      "image_path": "/nas/datahub/ScienceQA/test/4883/image.png",
+      "refined_variants": [
+        "Which month shows the lowest average precipitation in London?",
+        "Identify the month that has the lowest average precipitation in London."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_18284",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "the Arctic Ocean",
+      "image_path": "/nas/datahub/ScienceQA/test/18284/image.png",
+      "refined_variants": [
+        "What ocean is highlighted?",
+        "Identify the highlighted ocean."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_13858",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "soft",
+      "image_path": "/nas/datahub/ScienceQA/test/13858/image.png",
+      "refined_variants": [
+        "What property do the four objects in the image have in common?",
+        "Identify the property that all four objects in the image have in common."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_11758",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "Solution A",
+      "image_path": "/nas/datahub/ScienceQA/test/11758/image.png",
+      "refined_variants": [
+        "Which solution in the image has the higher concentration of yellow particles?",
+        "Identify the solution in the image with the higher concentration of yellow particles."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_14106",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "30°C",
+      "image_path": "/nas/datahub/ScienceQA/test/14106/image.png",
+      "refined_variants": [
+        "What air temperature was measured within the outlined area shown in the image?",
+        "Identify the air temperature measured within the outlined area shown in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_9285",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "The strength of the magnetic force is the same in both pairs.",
+      "image_path": "/nas/datahub/ScienceQA/test/9285/image.png",
+      "refined_variants": [
+        "Looking at the image, which of the following statements about the magnetic force between the magnets in each pair is true?",
+        "Identify the true statement about the magnetic force between the magnets in each pair shown in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_6129",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "Utah",
+      "image_path": "/nas/datahub/ScienceQA/test/6129/image.png",
+      "refined_variants": [
+        "Which state is highlighted in the image?",
+        "Identify the state highlighted in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_42",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "4:0",
+      "image_path": "/nas/datahub/ScienceQA/test/42/image.png",
+      "refined_variants": [
+        "What is the most likely expected ratio of offspring with a woolly fleece to offspring with a hairy fleece?",
+        "Choose the most likely expected ratio of offspring with a woolly fleece to offspring with a hairy fleece."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_600",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "4/4",
+      "image_path": "/nas/datahub/ScienceQA/test/600/image.png",
+      "refined_variants": [
+        "Based on the cross shown in the image, what is the probability that an American curl cat produced by the cross will be homozygous dominant for the ear type gene?",
+        "Determine the probability that an American curl cat produced by the cross shown in the image will be homozygous dominant for the ear type gene."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_4918",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "Grenada",
+      "image_path": "/nas/datahub/ScienceQA/test/4918/image.png",
+      "refined_variants": [
+        "Which country is highlighted in the image?",
+        "Identify the country that is highlighted."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_4645",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "0/4",
+      "image_path": "/nas/datahub/ScienceQA/test/4645/image.png",
+      "refined_variants": [
+        "What is the probability that a muskmelon plant produced by the cross shown in the image will be homozygous recessive for the fruit taste gene?",
+        "Determine the probability that a muskmelon plant produced by the cross shown in the image will be homozygous recessive for the fruit taste gene."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_10555",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "The magnitude of the magnetic force is smaller in Pair 2.",
+      "image_path": "/nas/datahub/ScienceQA/test/10555/image.png",
+      "refined_variants": [
+        "Which of the following statements is true about the magnetic force between the magnets in each pair shown in the image?",
+        "Identify the statement that is true about the magnetic force between the magnets in each pair shown in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_9019",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "sample A",
+      "image_path": "/nas/datahub/ScienceQA/test/9019/image.png",
+      "refined_variants": [
+        "In the provided image, how do the average kinetic energies of the particles in each sample compare, and which sample has the higher temperature?",
+        "Compare the average kinetic energies of the particles in each sample shown in the image, then identify the sample with the higher temperature."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_20381",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "The magnetic force is weaker in Pair 1.",
+      "image_path": "/nas/datahub/ScienceQA/test/20381/image.png",
+      "refined_variants": [
+        "Looking at the image, which of the following statements about the magnetic force between the magnets in each pair is true?",
+        "Determine which of the following statements is true about the magnetic force between the magnets in each pair shown in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_19850",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "repel",
+      "image_path": "/nas/datahub/ScienceQA/test/19850/image.png",
+      "refined_variants": [
+        "Will the magnets shown in the image attract each other or repel each other?",
+        "Tell me whether the magnets shown in the image will attract each other or repel each other."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_3703",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "Solution B",
+      "image_path": "/nas/datahub/ScienceQA/test/3703/image.png",
+      "refined_variants": [
+        "Which solution in the image has the higher concentration of yellow particles?",
+        "Identify the solution in the image with the higher concentration of yellow particles."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_13054",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "Arctic fox",
+      "image_path": "/nas/datahub/ScienceQA/test/13054/image.png",
+      "refined_variants": [
+        "Which organism shown in this food web is the primary consumer?",
+        "Identify the primary consumer in this food web."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_2045",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "ethos (character)",
+      "image_path": "/nas/datahub/ScienceQA/test/2045/image.png",
+      "refined_variants": [
+        "What is the main persuasive appeal used in the provided ad?",
+        "Identify the main persuasive appeal used in the provided ad."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_13754",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "South America",
+      "image_path": "/nas/datahub/ScienceQA/test/13754/image.png",
+      "refined_variants": [
+        "Which continent is highlighted in the image?",
+        "Identify the continent highlighted in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_3773",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "The strength of the magnetic force is the same in both pairs.",
+      "image_path": "/nas/datahub/ScienceQA/test/3773/image.png",
+      "refined_variants": [
+        "Looking at the image, which statement is true about the magnetic force between the magnets in each pair?",
+        "Think about the magnetic force between the magnets in each pair, then identify the true statement."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_1431",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "the Atlantic Ocean",
+      "image_path": "/nas/datahub/ScienceQA/test/1431/image.png",
+      "refined_variants": [
+        "Which ocean is highlighted in the image?",
+        "Identify the ocean that is highlighted in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_1974",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "Maryland",
+      "image_path": "/nas/datahub/ScienceQA/test/1974/image.png",
+      "refined_variants": [
+        "What is the name of the colony shown in the image?",
+        "Identify the name of the colony shown in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_4482",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "sample B",
+      "image_path": "/nas/datahub/ScienceQA/test/4482/image.png",
+      "refined_variants": [
+        "Based on the image, how do the average kinetic energies of the particles in each sample compare, and which sample has the higher temperature?",
+        "Compare the average kinetic energies of the particles in each sample shown in the image, then identify the sample with the higher temperature."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_4124",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "Georgia",
+      "image_path": "/nas/datahub/ScienceQA/test/4124/image.png",
+      "refined_variants": [
+        "What is the name of the colony shown in the image?",
+        "Please provide the name of the colony shown in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_4361",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "South America",
+      "image_path": "/nas/datahub/ScienceQA/test/4361/image.png",
+      "refined_variants": [
+        "Which continent is highlighted in the image?",
+        "Identify the continent that is highlighted in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_14462",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "to the left than to the right",
+      "image_path": "/nas/datahub/ScienceQA/test/14462/image.png",
+      "refined_variants": [
+        "Can you complete the text to describe the diagram: \"Solute particles moved in both directions across the permeable membrane. But more solute particles moved across the membrane (). When there was an equal concentration on both sides, the particles reached equilibrium.\"",
+        "Complete the description of the diagram by filling in the parentheses: \"Solute particles moved in both directions across the permeable membrane. But more solute particles moved across the membrane (). When there was an equal concentration on both sides, the particles reached equilibrium.\""
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_16595",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "insect",
+      "image_path": "/nas/datahub/ScienceQA/test/16595/image.png",
+      "refined_variants": [
+        "Which fossil shown in the image is older? Select the more likely answer.",
+        "Identify the older fossil shown in the image, and select the more likely answer."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_6578",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "Samoa",
+      "image_path": "/nas/datahub/ScienceQA/test/6578/image.png",
+      "refined_variants": [
+        "Which country is highlighted in the image?",
+        "Identify the country highlighted in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_2789",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "The strength of the magnetic force is the same in both pairs.",
+      "image_path": "/nas/datahub/ScienceQA/test/2789/image.png",
+      "refined_variants": [
+        "Looking at the provided image, which of the following statements is true about the magnetic force between the magnets in each pair?",
+        "Use the magnetic force between the magnets in each pair shown in the image to identify the true statement."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_10867",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "North Carolina",
+      "image_path": "/nas/datahub/ScienceQA/test/10867/image.png",
+      "refined_variants": [
+        "What is the name of the colony shown in the image?",
+        "Identify the name of the colony shown in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_6880",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "The magnetic force is stronger in Pair 1.",
+      "image_path": "/nas/datahub/ScienceQA/test/6880/image.png",
+      "refined_variants": [
+        "Which of the following statements is true about the magnetic force between the magnets in each pair shown in the image?",
+        "Determine which of the following statements is true about the magnetic force between the magnets in each pair."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_7487",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "The magnitude of the magnetic force is greater in Pair 1.",
+      "image_path": "/nas/datahub/ScienceQA/test/7487/image.png",
+      "refined_variants": [
+        "Based on the image, which statement about the magnetic force between the magnets in each pair is true?",
+        "Identify the true statement about the magnetic force between the magnets in each pair."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_9834",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "true",
+      "image_path": "/nas/datahub/ScienceQA/test/9834/image.png",
+      "refined_variants": [
+        "Is this statement about our solar system true or false: The volume of Uranus is less than ten times the volume of Neptune?",
+        "Tell me whether this statement about our solar system is true or false: The volume of Uranus is less than ten times the volume of Neptune."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_7531",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "Haiti",
+      "image_path": "/nas/datahub/ScienceQA/test/7531/image.png",
+      "refined_variants": [
+        "Which country is highlighted in the image?",
+        "Identify the country highlighted in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_2993",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "North Dakota",
+      "image_path": "/nas/datahub/ScienceQA/test/2993/image.png",
+      "refined_variants": [
+        "Which state is highlighted in the image?",
+        "Identify the state that is highlighted in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_11083",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "New Mexico",
+      "image_path": "/nas/datahub/ScienceQA/test/11083/image.png",
+      "refined_variants": [
+        "Which state is highlighted in the image?",
+        "Identify the highlighted state."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_6207",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "North America",
+      "image_path": "/nas/datahub/ScienceQA/test/6207/image.png",
+      "refined_variants": [
+        "Which continent is highlighted in the image?",
+        "Identify the continent highlighted in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_282",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "the Indian Ocean",
+      "image_path": "/nas/datahub/ScienceQA/test/282/image.png",
+      "refined_variants": [
+        "Which ocean is highlighted in the image?",
+        "Identify the ocean that is highlighted in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_18550",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "0/4",
+      "image_path": "/nas/datahub/ScienceQA/test/18550/image.png",
+      "refined_variants": [
+        "What is the probability that a sheep produced by the cross shown in the image will be homozygous dominant for the wool color gene?",
+        "Determine the probability that a sheep produced by the cross shown in the image will be homozygous dominant for the wool color gene."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_16744",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "New Jersey",
+      "image_path": "/nas/datahub/ScienceQA/test/16744/image.png",
+      "refined_variants": [
+        "What is the name of the colony shown in the image?",
+        "Identify the name of the colony shown in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_13552",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "repel",
+      "image_path": "/nas/datahub/ScienceQA/test/13552/image.png",
+      "refined_variants": [
+        "Will the magnets shown in the image attract each other or repel each other?",
+        "Tell me whether the magnets in the image will attract each other or repel each other."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_18779",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "Africa",
+      "image_path": "/nas/datahub/ScienceQA/test/18779/image.png",
+      "refined_variants": [
+        "Which continent is highlighted in the image?",
+        "Identify the highlighted continent."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_7916",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "The magnitude of the magnetic force is greater in Pair 2.",
+      "image_path": "/nas/datahub/ScienceQA/test/7916/image.png",
+      "refined_variants": [
+        "Looking at the provided image, which of the statements shown is true about the magnetic force between the magnets in each pair?",
+        "Use the provided image to determine which statement is true about the magnetic force between the magnets in each pair."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_15457",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "Solution A",
+      "image_path": "/nas/datahub/ScienceQA/test/15457/image.png",
+      "refined_variants": [
+        "Which solution in the image has the higher concentration of purple particles?",
+        "Identify the solution in the image with the higher concentration of purple particles."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_20518",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "The magnitude of the magnetic force is smaller in Pair 1.",
+      "image_path": "/nas/datahub/ScienceQA/test/20518/image.png",
+      "refined_variants": [
+        "Looking at the image, think about the magnetic force between the magnets in each pair. Which of the following statements is true?",
+        "Use the image to think about the magnetic force between the magnets in each pair, then identify the true statement from the following statements."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_16947",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "The magnetic force is stronger in Pair 2.",
+      "image_path": "/nas/datahub/ScienceQA/test/16947/image.png",
+      "refined_variants": [
+        "Considering the magnetic force between the magnets in each pair shown in the image, which statement is true?",
+        "Identify the true statement about the magnetic force between the magnets in each pair shown in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_6967",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "sample B",
+      "image_path": "/nas/datahub/ScienceQA/test/6967/image.png",
+      "refined_variants": [
+        "Based on the image, how do the average kinetic energies of the particles in each sample compare, and which sample has the higher temperature?",
+        "Compare the average kinetic energies of the particles in each sample shown in the image, then state which sample has the higher temperature."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_5912",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "sample A",
+      "image_path": "/nas/datahub/ScienceQA/test/5912/image.png",
+      "refined_variants": [
+        "Based on the provided image, how do the average kinetic energies of the particles in each sample compare, and which sample has the higher temperature?",
+        "Compare the average kinetic energies of the particles in each sample shown in the provided image, then identify the sample with the higher temperature."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_18202",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "The strength of the magnetic force is the same in both pairs.",
+      "image_path": "/nas/datahub/ScienceQA/test/18202/image.png",
+      "refined_variants": [
+        "Looking at the image, which of the following statements is true about the magnetic force between the magnets in each pair?",
+        "Use the image to think about the magnetic force between the magnets in each pair, then identify the true statement from the following statements."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_12135",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "Michigan",
+      "image_path": "/nas/datahub/ScienceQA/test/12135/image.png",
+      "refined_variants": [
+        "Which state is highlighted in the image?",
+        "Identify the state highlighted in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_16240",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "logos (reason)",
+      "image_path": "/nas/datahub/ScienceQA/test/16240/image.png",
+      "refined_variants": [
+        "What is the main persuasive appeal used in this ad?",
+        "Identify the main persuasive appeal used in this ad."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_1940",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "Indiana",
+      "image_path": "/nas/datahub/ScienceQA/test/1940/image.png",
+      "refined_variants": [
+        "Which state is highlighted in the image?",
+        "Identify the state highlighted in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_20703",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "Africa",
+      "image_path": "/nas/datahub/ScienceQA/test/20703/image.png",
+      "refined_variants": [
+        "Which continent is highlighted in the image?",
+        "Identify the continent highlighted in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_6955",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "false",
+      "image_path": "/nas/datahub/ScienceQA/test/6955/image.png",
+      "refined_variants": [
+        "Is it true or false that Earth's volume is more than ten times as great as Mars's volume?",
+        "Determine whether the statement “Earth's volume is more than ten times as great as Mars's volume” is true or false."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_17543",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "logos (reason)",
+      "image_path": "/nas/datahub/ScienceQA/test/17543/image.png",
+      "refined_variants": [
+        "What rhetorical appeal is used most prominently in this ad?",
+        "Identify the rhetorical appeal that is primarily used in this ad."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_2978",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "Saint Lucia",
+      "image_path": "/nas/datahub/ScienceQA/test/2978/image.png",
+      "refined_variants": [
+        "Which country is highlighted in the image?",
+        "Identify the country highlighted in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_3233",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "rough",
+      "image_path": "/nas/datahub/ScienceQA/test/3233/image.png",
+      "refined_variants": [
+        "What property do the three objects in the provided image have in common?",
+        "Identify the property that all three objects in the provided image have in common."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_14165",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "0:4",
+      "image_path": "/nas/datahub/ScienceQA/test/14165/image.png",
+      "refined_variants": [
+        "What is the expected ratio of offspring with black eyes to offspring with red eyes, and which ratio is most likely?",
+        "Determine the expected ratio of offspring with black eyes to offspring with red eyes, choosing the most likely ratio."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_16699",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "sea cucumber",
+      "image_path": "/nas/datahub/ScienceQA/test/16699/image.png",
+      "refined_variants": [
+        "Which organism shown in the image contains matter that was once part of the kelp?",
+        "Identify the organism in the image that contains matter that was once part of the kelp."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_8099",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "bouncy",
+      "image_path": "/nas/datahub/ScienceQA/test/8099/image.png",
+      "refined_variants": [
+        "What property do the three objects in the image have in common?",
+        "Identify the property that the three objects in the image have in common."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_4690",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "Nauru",
+      "image_path": "/nas/datahub/ScienceQA/test/4690/image.png",
+      "refined_variants": [
+        "Which country is highlighted in the image?",
+        "Identify the country highlighted in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_517",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "Asia",
+      "image_path": "/nas/datahub/ScienceQA/test/517/image.png",
+      "refined_variants": [
+        "Which continent is highlighted in the image?",
+        "Identify the continent that is highlighted in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_13953",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "0/4",
+      "image_path": "/nas/datahub/ScienceQA/test/13953/image.png",
+      "refined_variants": [
+        "Using the cross shown in the image, what is the probability that a cow produced by this cross will have solid coloring?",
+        "Determine the probability that a cow produced by the cross shown in the image will have solid coloring."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_12016",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "Solution B",
+      "image_path": "/nas/datahub/ScienceQA/test/12016/image.png",
+      "refined_variants": [
+        "In the image, which solution has a higher concentration of purple particles?",
+        "Identify the solution in the image that has the higher concentration of purple particles."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_632",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "South Carolina",
+      "image_path": "/nas/datahub/ScienceQA/test/632/image.png",
+      "refined_variants": [
+        "What is the name of the colony shown in the image?",
+        "Tell me the name of the colony shown in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_15645",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "Solomon Islands",
+      "image_path": "/nas/datahub/ScienceQA/test/15645/image.png",
+      "refined_variants": [
+        "Which country is highlighted in the image?",
+        "Identify the country highlighted in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_4996",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "snowy owl",
+      "image_path": "/nas/datahub/ScienceQA/test/4996/image.png",
+      "refined_variants": [
+        "Which animal in the provided image has skin that is also adapted for survival in cold places?",
+        "Identify the animal in the provided image whose skin is also adapted for survival in cold places."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_13741",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "Solution B",
+      "image_path": "/nas/datahub/ScienceQA/test/13741/image.png",
+      "refined_variants": [
+        "Which solution in the image has the higher concentration of pink particles?",
+        "Identify the solution in the image that has the higher concentration of pink particles."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_10071",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "false",
+      "image_path": "/nas/datahub/ScienceQA/test/10071/image.png",
+      "refined_variants": [
+        "Is this statement about our solar system true or false: of the four largest planets, three are made mainly of gas?",
+        "Determine whether this statement about our solar system is true or false: of the four largest planets, three are made mainly of gas."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_691",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "South America",
+      "image_path": "/nas/datahub/ScienceQA/test/691/image.png",
+      "refined_variants": [
+        "Which continent is highlighted in the image?",
+        "Identify the continent highlighted in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_3751",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "Europe",
+      "image_path": "/nas/datahub/ScienceQA/test/3751/image.png",
+      "refined_variants": [
+        "Which continent is highlighted in the image?",
+        "Identify the continent highlighted in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_3823",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "Solution B",
+      "image_path": "/nas/datahub/ScienceQA/test/3823/image.png",
+      "refined_variants": [
+        "Which solution in the image contains the higher concentration of green particles?",
+        "Identify the solution with the higher concentration of green particles."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_13886",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "ethos (character)",
+      "image_path": "/nas/datahub/ScienceQA/test/13886/image.png",
+      "refined_variants": [
+        "Which rhetorical appeal is used most prominently in the ad shown in the image?",
+        "Identify the rhetorical appeal that is primarily used in the ad shown in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_5175",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "Alabama",
+      "image_path": "/nas/datahub/ScienceQA/test/5175/image.png",
+      "refined_variants": [
+        "Which state is highlighted in the image?",
+        "Identify the state that is highlighted in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_2332",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "repel",
+      "image_path": "/nas/datahub/ScienceQA/test/2332/image.png",
+      "refined_variants": [
+        "Will the magnets shown in the image attract each other or repel each other?",
+        "Determine whether the magnets shown in the image will attract each other or repel each other."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_14440",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "The strength of the magnetic force is the same in both pairs.",
+      "image_path": "/nas/datahub/ScienceQA/test/14440/image.png",
+      "refined_variants": [
+        "Looking at the provided image, which statement about the magnetic force between the magnets in each pair is true?",
+        "Use the provided image to identify the true statement about the magnetic force between the magnets in each pair."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_3583",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "Idaho",
+      "image_path": "/nas/datahub/ScienceQA/test/3583/image.png",
+      "refined_variants": [
+        "Which state is highlighted in the image?",
+        "Identify the state that is highlighted in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_16868",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "Maryland",
+      "image_path": "/nas/datahub/ScienceQA/test/16868/image.png",
+      "refined_variants": [
+        "What is the name of the colony shown in the image?",
+        "Name the colony shown in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_20926",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "Haiti",
+      "image_path": "/nas/datahub/ScienceQA/test/20926/image.png",
+      "refined_variants": [
+        "Which country is highlighted in the image?",
+        "Identify the highlighted country in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_2921",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "Solution A",
+      "image_path": "/nas/datahub/ScienceQA/test/2921/image.png",
+      "refined_variants": [
+        "Which solution shown in the image has a higher concentration of blue particles?",
+        "Identify the solution in the image that has a higher concentration of blue particles."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_952",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "Solution B",
+      "image_path": "/nas/datahub/ScienceQA/test/952/image.png",
+      "refined_variants": [
+        "Which solution in the image has the higher concentration of pink particles?",
+        "Identify the solution in the image that has a higher concentration of pink particles."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_11514",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "shiny",
+      "image_path": "/nas/datahub/ScienceQA/test/11514/image.png",
+      "refined_variants": [
+        "What property is shared by the three objects shown in the image?",
+        "Identify the property that the three objects shown in the image have in common."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_13461",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "Asia",
+      "image_path": "/nas/datahub/ScienceQA/test/13461/image.png",
+      "refined_variants": [
+        "Which continent is highlighted in the image?",
+        "Identify the continent highlighted in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_7349",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "more than 150 years",
+      "image_path": "/nas/datahub/ScienceQA/test/7349/image.png",
+      "refined_variants": [
+        "How many years elapsed between the founding of Jamestown, Virginia, and the start of the Revolutionary War?",
+        "Calculate the time that passed between the founding of Jamestown, Virginia, and the start of the Revolutionary War."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_6686",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "The magnetic force is weaker in Pair 1.",
+      "image_path": "/nas/datahub/ScienceQA/test/6686/image.png",
+      "refined_variants": [
+        "Considering the magnetic force between the magnets in each pair shown in the image, which statement is true?",
+        "Identify the true statement about the magnetic force between the magnets in each pair shown in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_18421",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "The magnitude of the magnetic force is greater in Pair 1.",
+      "image_path": "/nas/datahub/ScienceQA/test/18421/image.png",
+      "refined_variants": [
+        "Considering the magnetic force between the magnets in each pair, which statement is true?",
+        "Identify the true statement about the magnetic force between the magnets in each pair."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_13162",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "The magnitude of the magnetic force is smaller in Pair 1.",
+      "image_path": "/nas/datahub/ScienceQA/test/13162/image.png",
+      "refined_variants": [
+        "Looking at the image, which statement is true about the magnetic force between the magnets in each pair?",
+        "Determine the true statement about the magnetic force between the magnets in each pair shown in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_2165",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "The magnetic force is weaker in Pair 1.",
+      "image_path": "/nas/datahub/ScienceQA/test/2165/image.png",
+      "refined_variants": [
+        "Looking at the magnets in each pair, which of the following statements about the magnetic force between them is true?",
+        "Think about the magnetic force between the magnets in each pair, and identify the true statement from the following statements."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_9655",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "the Federated States of Micronesia",
+      "image_path": "/nas/datahub/ScienceQA/test/9655/image.png",
+      "refined_variants": [
+        "Which country is highlighted in the image?",
+        "Identify the country highlighted in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_15415",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "South America",
+      "image_path": "/nas/datahub/ScienceQA/test/15415/image.png",
+      "refined_variants": [
+        "Which continent is highlighted in the image?",
+        "Identify the highlighted continent."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_7428",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "sample A",
+      "image_path": "/nas/datahub/ScienceQA/test/7428/image.png",
+      "refined_variants": [
+        "Looking at the image, how do the average kinetic energies of the particles in each sample compare, and which sample has the higher temperature?",
+        "Compare the average kinetic energies of the particles in each sample in the image, then identify the sample with the higher temperature."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_15277",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "sample B",
+      "image_path": "/nas/datahub/ScienceQA/test/15277/image.png",
+      "refined_variants": [
+        "In the provided image, how do the average kinetic energies of the particles in each sample compare, and which sample has the higher temperature?",
+        "Compare the average kinetic energies of the particles in each sample shown in the image and identify the sample with the higher temperature."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_20262",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "earthworm",
+      "image_path": "/nas/datahub/ScienceQA/test/20262/image.png",
+      "refined_variants": [
+        "Which organism shown in the image contains matter that was once part of the bilberry?",
+        "Identify the organism in the image that contains matter that was once part of the bilberry."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_20383",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "Minnesota",
+      "image_path": "/nas/datahub/ScienceQA/test/20383/image.png",
+      "refined_variants": [
+        "Which state shown in the image is farthest west?",
+        "Identify the state in the image that is farthest west."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_21200",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "away from the bulldozer",
+      "image_path": "/nas/datahub/ScienceQA/test/21200/image.png",
+      "refined_variants": [
+        "What direction is this push going?",
+        "Tell me the direction of this push."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_5697",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "Massachusetts",
+      "image_path": "/nas/datahub/ScienceQA/test/5697/image.png",
+      "refined_variants": [
+        "What is the name of the colony shown in the image?",
+        "Please provide the name of the colony shown in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_21149",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "Ohio",
+      "image_path": "/nas/datahub/ScienceQA/test/21149/image.png",
+      "refined_variants": [
+        "Which state is highlighted in the image?",
+        "Identify the state highlighted in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_18822",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "Australia",
+      "image_path": "/nas/datahub/ScienceQA/test/18822/image.png",
+      "refined_variants": [
+        "Which continent is highlighted in the image?",
+        "Identify the continent highlighted in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_14722",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "false",
+      "image_path": "/nas/datahub/ScienceQA/test/14722/image.png",
+      "refined_variants": [
+        "In our solar system, is this statement true or false: Of the four largest planets, three are made mainly of gas?",
+        "Determine whether the statement about our solar system is true or false: Of the four largest planets, three are made mainly of gas."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_20349",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "The magnitude of the magnetic force is the same in both pairs.",
+      "image_path": "/nas/datahub/ScienceQA/test/20349/image.png",
+      "refined_variants": [
+        "Looking at the image, think about the magnetic force between the magnets in each pair. Which of the following statements is true?",
+        "Look at the image and identify which of the following statements is true about the magnetic force between the magnets in each pair."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_1779",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "The magnitude of the magnetic force is greater in Pair 2.",
+      "image_path": "/nas/datahub/ScienceQA/test/1779/image.png",
+      "refined_variants": [
+        "Considering the magnetic force between the magnets in each pair shown in the image, which of the following statements is true?",
+        "Determine which of the following statements is true by thinking about the magnetic force between the magnets in each pair."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_5836",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "Australia",
+      "image_path": "/nas/datahub/ScienceQA/test/5836/image.png",
+      "refined_variants": [
+        "Which continent is highlighted in the image?",
+        "Identify the continent that is highlighted in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_11123",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "The strength of the magnetic force is the same in both pairs.",
+      "image_path": "/nas/datahub/ScienceQA/test/11123/image.png",
+      "refined_variants": [
+        "Looking at the image, which statement is true about the magnetic force between the magnets in each pair?",
+        "Determine which statement is true about the magnetic force between the magnets in each pair shown in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_9277",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "The strength of the magnetic force is the same in both pairs.",
+      "image_path": "/nas/datahub/ScienceQA/test/9277/image.png",
+      "refined_variants": [
+        "Looking at the image, which statement is true about the magnetic force between the magnets in each pair?",
+        "Look at the image and identify the true statement about the magnetic force between the magnets in each pair."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_5812",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "The magnitude of the magnetic force is greater in Pair 1.",
+      "image_path": "/nas/datahub/ScienceQA/test/5812/image.png",
+      "refined_variants": [
+        "Looking at the image, which of the following statements is true about the magnetic force between the magnets in each pair?",
+        "Determine which of the following statements is true by thinking about the magnetic force between the magnets in each pair shown in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_61",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "The magnitude of the magnetic force is smaller in Pair 2.",
+      "image_path": "/nas/datahub/ScienceQA/test/61/image.png",
+      "refined_variants": [
+        "Looking at the image, which of the following statements about the magnetic force between the magnets in each pair is true?",
+        "Look at the magnet pairs in the image and identify the statement that is true about the magnetic force between the magnets in each pair."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_17408",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "The magnitude of the magnetic force is smaller in Pair 1.",
+      "image_path": "/nas/datahub/ScienceQA/test/17408/image.png",
+      "refined_variants": [
+        "Looking at the provided image, which statement shown there is true about the magnetic force between the magnets in each pair?",
+        "Think about the magnetic force between the magnets in each pair in the provided image, then identify the statement shown there that is true."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_18184",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "Solution B",
+      "image_path": "/nas/datahub/ScienceQA/test/18184/image.png",
+      "refined_variants": [
+        "Which solution has the higher concentration of blue particles?",
+        "Identify the solution with the higher concentration of blue particles."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_12842",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "Pennsylvania",
+      "image_path": "/nas/datahub/ScienceQA/test/12842/image.png",
+      "refined_variants": [
+        "What is the name of the colony shown in the image?",
+        "Name the colony shown in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_8722",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "Africa",
+      "image_path": "/nas/datahub/ScienceQA/test/8722/image.png",
+      "refined_variants": [
+        "Which continent is highlighted in the image?",
+        "Name the continent that is highlighted in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_5316",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "The magnitude of the magnetic force is smaller in Pair 2.",
+      "image_path": "/nas/datahub/ScienceQA/test/5316/image.png",
+      "refined_variants": [
+        "Which of the following statements is true when you think about the magnetic force between the magnets in each pair?",
+        "Think about the magnetic force between the magnets in each pair and identify the true statement from the following statements."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_20368",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "The strength of the magnetic force is the same in both pairs.",
+      "image_path": "/nas/datahub/ScienceQA/test/20368/image.png",
+      "refined_variants": [
+        "Considering the magnetic force between the magnets in each pair shown in the image, which of the following statements is true?",
+        "Determine which of the following statements is true by thinking about the magnetic force between the magnets in each pair shown in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_8456",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "the Federated States of Micronesia",
+      "image_path": "/nas/datahub/ScienceQA/test/8456/image.png",
+      "refined_variants": [
+        "Which country is highlighted in the image?",
+        "Identify the country highlighted in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_18152",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "Solution B",
+      "image_path": "/nas/datahub/ScienceQA/test/18152/image.png",
+      "refined_variants": [
+        "Which solution in the image has the higher concentration of green particles?",
+        "Identify the solution in the image with the higher concentration of green particles."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_2460",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "Papua New Guinea",
+      "image_path": "/nas/datahub/ScienceQA/test/2460/image.png",
+      "refined_variants": [
+        "Which country is highlighted in the image?",
+        "Identify the country highlighted in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_15799",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "Asia",
+      "image_path": "/nas/datahub/ScienceQA/test/15799/image.png",
+      "refined_variants": [
+        "Which continent is highlighted in the image?",
+        "Identify the continent highlighted in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_12026",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "Delaware",
+      "image_path": "/nas/datahub/ScienceQA/test/12026/image.png",
+      "refined_variants": [
+        "What is the name of the colony shown in the image?",
+        "Please provide the name of the colony shown in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_3125",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "Arctic fox",
+      "image_path": "/nas/datahub/ScienceQA/test/3125/image.png",
+      "refined_variants": [
+        "Which organism shown in the image contains matter that was once part of the bear sedge?",
+        "Identify the organism in the image that contains matter that was once part of the bear sedge."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_10141",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "2:2",
+      "image_path": "/nas/datahub/ScienceQA/test/10141/image.png",
+      "refined_variants": [
+        "What is the expected ratio of offspring with sweet fruit to offspring with sour fruit? Choose the most likely ratio.",
+        "Choose the most likely expected ratio of offspring with sweet fruit to offspring with sour fruit."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_10266",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "New Hampshire",
+      "image_path": "/nas/datahub/ScienceQA/test/10266/image.png",
+      "refined_variants": [
+        "What is the name of the colony shown in the image?",
+        "Please provide the name of the colony shown in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_8965",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "Saint Lucia",
+      "image_path": "/nas/datahub/ScienceQA/test/8965/image.png",
+      "refined_variants": [
+        "Which country is highlighted in the image?",
+        "Identify the country highlighted in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_3069",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "repel",
+      "image_path": "/nas/datahub/ScienceQA/test/3069/image.png",
+      "refined_variants": [
+        "In the provided image, will the magnets attract or repel each other?",
+        "Determine whether the magnets in the provided image will attract or repel each other."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_2401",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "Saint Vincent and the Grenadines",
+      "image_path": "/nas/datahub/ScienceQA/test/2401/image.png",
+      "refined_variants": [
+        "Which country is highlighted in the image?",
+        "Identify the country highlighted in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_10681",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "Barbados",
+      "image_path": "/nas/datahub/ScienceQA/test/10681/image.png",
+      "refined_variants": [
+        "Which country is highlighted in the image?",
+        "Identify the country highlighted in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_9058",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "false",
+      "image_path": "/nas/datahub/ScienceQA/test/9058/image.png",
+      "refined_variants": [
+        "Is this statement about our solar system true or false: Jupiter's volume is more than 10,000 times as large as the volume of Mars?",
+        "Decide whether this statement about our solar system is true or false: Jupiter's volume is more than 10,000 times as large as the volume of Mars."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_693",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "repel",
+      "image_path": "/nas/datahub/ScienceQA/test/693/image.png",
+      "refined_variants": [
+        "Do the magnets shown in the image attract each other or repel each other?",
+        "Determine whether the magnets shown in the image will attract each other or repel each other."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_1259",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "Tuvalu",
+      "image_path": "/nas/datahub/ScienceQA/test/1259/image.png",
+      "refined_variants": [
+        "Which country is highlighted in the image?",
+        "Identify the country highlighted in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_8346",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "Asia",
+      "image_path": "/nas/datahub/ScienceQA/test/8346/image.png",
+      "refined_variants": [
+        "Which continent is highlighted in the image?",
+        "Identify the highlighted continent in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_9783",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "Rhode Island",
+      "image_path": "/nas/datahub/ScienceQA/test/9783/image.png",
+      "refined_variants": [
+        "What is the name of the colony shown in the image?",
+        "Identify the name of the colony shown in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_12403",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "the Indian Ocean",
+      "image_path": "/nas/datahub/ScienceQA/test/12403/image.png",
+      "refined_variants": [
+        "Which ocean is highlighted in the image?",
+        "Identify the ocean that is highlighted in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_19134",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "The magnetic force is weaker in Pair 1.",
+      "image_path": "/nas/datahub/ScienceQA/test/19134/image.png",
+      "refined_variants": [
+        "Considering the magnetic force between the magnets in each pair shown in the image, which of the following statements is true?",
+        "Identify the true statement about the magnetic force between the magnets in each pair shown in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_10188",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "New Zealand",
+      "image_path": "/nas/datahub/ScienceQA/test/10188/image.png",
+      "refined_variants": [
+        "Which country is highlighted in the image?",
+        "Identify the country highlighted in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_21090",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "Antigua and Barbuda",
+      "image_path": "/nas/datahub/ScienceQA/test/21090/image.png",
+      "refined_variants": [
+        "Which country is highlighted in the image?",
+        "Identify the highlighted country in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_7713",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "false",
+      "image_path": "/nas/datahub/ScienceQA/test/7713/image.png",
+      "refined_variants": [
+        "Is it true or false that 50% of the planets in our solar system are made mainly of gas?",
+        "Decide whether the statement \"50% of the planets in our solar system are made mainly of gas\" is true or false."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_1714",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "4:0",
+      "image_path": "/nas/datahub/ScienceQA/test/1714/image.png",
+      "refined_variants": [
+        "What is the most likely expected ratio of offspring with a normal-sized body to offspring with a dwarf body?",
+        "Choose the most likely expected ratio of offspring with a normal-sized body to offspring with a dwarf body."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_19375",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "Solution B",
+      "image_path": "/nas/datahub/ScienceQA/test/19375/image.png",
+      "refined_variants": [
+        "In the image, which solution has a higher concentration of green particles?",
+        "Identify the solution in the image that has a higher concentration of green particles."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_19259",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "repel",
+      "image_path": "/nas/datahub/ScienceQA/test/19259/image.png",
+      "refined_variants": [
+        "Will the magnets shown in the image attract or repel each other?",
+        "Determine whether the magnets shown in the image will attract or repel each other."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_2400",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "attract",
+      "image_path": "/nas/datahub/ScienceQA/test/2400/image.png",
+      "refined_variants": [
+        "Will the magnets in the image attract each other or repel each other?",
+        "Tell me whether the magnets in the image will attract each other or repel each other."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_14146",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "shiny",
+      "image_path": "/nas/datahub/ScienceQA/test/14146/image.png",
+      "refined_variants": [
+        "What property do the three objects in the provided image have in common?",
+        "Identify the property that the three objects in the provided image have in common."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_16444",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "July",
+      "image_path": "/nas/datahub/ScienceQA/test/16444/image.png",
+      "refined_variants": [
+        "Which month shows the lowest average precipitation in London?",
+        "Identify the month that has the lowest average precipitation in London."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_2677",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "Australia",
+      "image_path": "/nas/datahub/ScienceQA/test/2677/image.png",
+      "refined_variants": [
+        "Which continent is highlighted in the image?",
+        "Name the continent highlighted in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_12924",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "the Northwest",
+      "image_path": "/nas/datahub/ScienceQA/test/12924/image.png",
+      "refined_variants": [
+        "Which region shown in the image was the Republican candidate's strongest?",
+        "Identify the region in the image where the Republican candidate did the best."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_7621",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "Solution A",
+      "image_path": "/nas/datahub/ScienceQA/test/7621/image.png",
+      "refined_variants": [
+        "Which solution in the image has a higher concentration of purple particles?",
+        "Identify the solution in the image that has a higher concentration of purple particles."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_8720",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "The strength of the magnetic force is the same in both pairs.",
+      "image_path": "/nas/datahub/ScienceQA/test/8720/image.png",
+      "refined_variants": [
+        "Looking at the magnets in each pair, which of the following statements about the magnetic force between them is true?",
+        "Determine which of the following statements is true about the magnetic force between the magnets in each pair."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_1009",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "sample B",
+      "image_path": "/nas/datahub/ScienceQA/test/1009/image.png",
+      "refined_variants": [
+        "How do the average kinetic energies of the particles in each sample compare, and which sample has the higher temperature?",
+        "Compare the average kinetic energies of the particles in each sample shown in the image and identify the sample with the higher temperature."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_4009",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "the flowers",
+      "image_path": "/nas/datahub/ScienceQA/test/4009/image.png",
+      "refined_variants": [
+        "What part of the orange tree makes the seeds?",
+        "Identify the part of the orange tree that makes the seeds."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_8259",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "the Atlantic Ocean",
+      "image_path": "/nas/datahub/ScienceQA/test/8259/image.png",
+      "refined_variants": [
+        "Which ocean is highlighted in the image?",
+        "Identify the ocean that is highlighted in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_20979",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "The magnitude of the magnetic force is the same in both pairs.",
+      "image_path": "/nas/datahub/ScienceQA/test/20979/image.png",
+      "refined_variants": [
+        "Looking at the image, which listed statement is true about the magnetic force between the magnets in each pair?",
+        "Look at the magnets in each pair in the image and identify the statement that is true about the magnetic force between them."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_10344",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "false",
+      "image_path": "/nas/datahub/ScienceQA/test/10344/image.png",
+      "refined_variants": [
+        "Is this statement about our solar system true or false: Neptune's volume is more than 100 times as large as Earth's?",
+        "Decide whether the statement about our solar system is true or false: Neptune's volume is more than 100 times as large as Earth's."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_8606",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "sample A",
+      "image_path": "/nas/datahub/ScienceQA/test/8606/image.png",
+      "refined_variants": [
+        "Based on the image, how do the average kinetic energies of the particles in each sample compare, and which sample has the higher temperature?",
+        "Compare the average kinetic energies of the particles in each sample shown in the image, then identify the sample with the higher temperature."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_9626",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "New Jersey",
+      "image_path": "/nas/datahub/ScienceQA/test/9626/image.png",
+      "refined_variants": [
+        "What is the name of the colony shown in the image?",
+        "Please provide the name of the colony shown in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_10984",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "Europe",
+      "image_path": "/nas/datahub/ScienceQA/test/10984/image.png",
+      "refined_variants": [
+        "Which continent is highlighted in the image?",
+        "Identify the continent highlighted in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_10729",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "Africa",
+      "image_path": "/nas/datahub/ScienceQA/test/10729/image.png",
+      "refined_variants": [
+        "Which continent is highlighted in the image?",
+        "Identify the continent highlighted in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_15488",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "Pennsylvania",
+      "image_path": "/nas/datahub/ScienceQA/test/15488/image.png",
+      "refined_variants": [
+        "What is the name of the colony shown in the image?",
+        "Identify the name of the colony shown in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_2969",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "The magnitude of the magnetic force is greater in Pair 2.",
+      "image_path": "/nas/datahub/ScienceQA/test/2969/image.png",
+      "refined_variants": [
+        "Looking at the provided image, think about the magnetic force between the magnets in each pair. Which of the following statements is true?",
+        "Use the provided image to think about the magnetic force between the magnets in each pair, then identify the true statement from the following statements."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_6814",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "Haiti",
+      "image_path": "/nas/datahub/ScienceQA/test/6814/image.png",
+      "refined_variants": [
+        "Which country is highlighted in the image?",
+        "Identify the country highlighted in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_1558",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "the Southern Ocean",
+      "image_path": "/nas/datahub/ScienceQA/test/1558/image.png",
+      "refined_variants": [
+        "Which ocean is highlighted in the image?",
+        "Identify the highlighted ocean in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_10960",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "the Dominican Republic",
+      "image_path": "/nas/datahub/ScienceQA/test/10960/image.png",
+      "refined_variants": [
+        "Which country is highlighted in the image?",
+        "Identify the country highlighted in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_16680",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "Europe",
+      "image_path": "/nas/datahub/ScienceQA/test/16680/image.png",
+      "refined_variants": [
+        "Which continent is highlighted in the image?",
+        "Identify the continent highlighted in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_3077",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "-24°C",
+      "image_path": "/nas/datahub/ScienceQA/test/3077/image.png",
+      "refined_variants": [
+        "What air temperature was measured within the outlined area shown in the image?",
+        "State the air temperature measured within the outlined area shown in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_15024",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "the Arctic Ocean",
+      "image_path": "/nas/datahub/ScienceQA/test/15024/image.png",
+      "refined_variants": [
+        "Which ocean is highlighted in the image?",
+        "Identify the ocean highlighted in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_10256",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "Solution B",
+      "image_path": "/nas/datahub/ScienceQA/test/10256/image.png",
+      "refined_variants": [
+        "In the image, which solution has a higher concentration of green particles?",
+        "Identify the solution in the image with the higher concentration of green particles."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_17784",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "The strength of the magnetic force is the same in both pairs.",
+      "image_path": "/nas/datahub/ScienceQA/test/17784/image.png",
+      "refined_variants": [
+        "Looking at the magnets in each pair shown in the image, which statement about the magnetic force between the magnets is true?",
+        "Determine which of the following statements is true about the magnetic force between the magnets in each pair shown in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_13122",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "The magnitude of the magnetic force is greater in Pair 2.",
+      "image_path": "/nas/datahub/ScienceQA/test/13122/image.png",
+      "refined_variants": [
+        "Looking at the image, which of the statements shown is true about the magnetic force between the magnets in each pair?",
+        "Identify the true statement about the magnetic force between the magnets in each pair shown in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_21070",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "Africa",
+      "image_path": "/nas/datahub/ScienceQA/test/21070/image.png",
+      "refined_variants": [
+        "Which continent is highlighted in the image?",
+        "Identify the continent highlighted in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_1269",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "shiny",
+      "image_path": "/nas/datahub/ScienceQA/test/1269/image.png",
+      "refined_variants": [
+        "What property do the three objects in the image have in common?",
+        "Identify the property that the three objects in the image have in common."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_19602",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "The strength of the magnetic force is the same in both pairs.",
+      "image_path": "/nas/datahub/ScienceQA/test/19602/image.png",
+      "refined_variants": [
+        "Looking at the image, which of the following statements about the magnetic force between the magnets in each pair is true?",
+        "Use the image to think about the magnetic force between the magnets in each pair, then identify the true statement from the choices."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_6786",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "attract",
+      "image_path": "/nas/datahub/ScienceQA/test/6786/image.png",
+      "refined_variants": [
+        "Will the magnets shown in the image attract each other or repel each other?",
+        "Determine whether the magnets shown in the image attract each other or repel each other."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_14764",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "Solution A",
+      "image_path": "/nas/datahub/ScienceQA/test/14764/image.png",
+      "refined_variants": [
+        "Which solution in the image has the higher concentration of blue particles?",
+        "Identify the solution in the image that has the higher concentration of blue particles."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_10689",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "New Zealand",
+      "image_path": "/nas/datahub/ScienceQA/test/10689/image.png",
+      "refined_variants": [
+        "Which country is highlighted in the image?",
+        "Identify the country highlighted in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_2644",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "false",
+      "image_path": "/nas/datahub/ScienceQA/test/2644/image.png",
+      "refined_variants": [
+        "Is it true or false that, in our solar system, the volume of Mars is more than ten times as large as Mercury's?",
+        "Decide whether the statement about our solar system is true or false: The volume of Mars is more than ten times as large as Mercury's."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_13949",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "sample A",
+      "image_path": "/nas/datahub/ScienceQA/test/13949/image.png",
+      "refined_variants": [
+        "In the provided image, how do the average kinetic energies of the particles in each sample compare, and which sample has the higher temperature?",
+        "Compare the average kinetic energies of the particles in each sample shown in the image, then identify the sample with the higher temperature."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_2479",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "toward the pliers",
+      "image_path": "/nas/datahub/ScienceQA/test/2479/image.png",
+      "refined_variants": [
+        "Which direction is this pull going?",
+        "Identify the direction of this pull."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_1951",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "South America",
+      "image_path": "/nas/datahub/ScienceQA/test/1951/image.png",
+      "refined_variants": [
+        "What continent is highlighted in the image?",
+        "Name the continent that is highlighted in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_16012",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "Saint Vincent and the Grenadines",
+      "image_path": "/nas/datahub/ScienceQA/test/16012/image.png",
+      "refined_variants": [
+        "Which country is highlighted in the provided image?",
+        "Identify the country highlighted in the provided image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_17679",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "sample B",
+      "image_path": "/nas/datahub/ScienceQA/test/17679/image.png",
+      "refined_variants": [
+        "How do the average kinetic energies of the particles in each sample compare, and which sample has the higher temperature?",
+        "Compare the average kinetic energies of the particles in each sample, then state which sample has the higher temperature."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_9262",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "Asia",
+      "image_path": "/nas/datahub/ScienceQA/test/9262/image.png",
+      "refined_variants": [
+        "Which continent is highlighted in the image?",
+        "Identify the continent that is highlighted in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_13695",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "The magnitude of the magnetic force is smaller in Pair 1.",
+      "image_path": "/nas/datahub/ScienceQA/test/13695/image.png",
+      "refined_variants": [
+        "Considering the magnetic force between the magnets in each pair shown in the provided image, which of the following statements is true?",
+        "Determine which of the following statements is true about the magnetic force between the magnets in each pair shown in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_3428",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "salty",
+      "image_path": "/nas/datahub/ScienceQA/test/3428/image.png",
+      "refined_variants": [
+        "What property do the three objects in the image share?",
+        "Identify the property that the three objects in the image have in common."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_15696",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "the Federated States of Micronesia",
+      "image_path": "/nas/datahub/ScienceQA/test/15696/image.png",
+      "refined_variants": [
+        "Which country is highlighted in the image?",
+        "Identify the country highlighted in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_1669",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "South America",
+      "image_path": "/nas/datahub/ScienceQA/test/1669/image.png",
+      "refined_variants": [
+        "Which continent is highlighted in the image?",
+        "Identify the continent highlighted in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_16592",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "the Atlantic Ocean",
+      "image_path": "/nas/datahub/ScienceQA/test/16592/image.png",
+      "refined_variants": [
+        "Which ocean is highlighted in the image?",
+        "Identify the ocean highlighted in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_15272",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "sample B",
+      "image_path": "/nas/datahub/ScienceQA/test/15272/image.png",
+      "refined_variants": [
+        "Looking at the provided image, how do the average kinetic energies of the particles in each sample compare, and which sample has the higher temperature?",
+        "Compare the average kinetic energies of the particles in each sample in the image, then state which sample has the higher temperature."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_3255",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "Solution A",
+      "image_path": "/nas/datahub/ScienceQA/test/3255/image.png",
+      "refined_variants": [
+        "In the image, which solution has a higher concentration of blue particles?",
+        "Identify the solution in the image that has the higher concentration of blue particles."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_15289",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "sample A",
+      "image_path": "/nas/datahub/ScienceQA/test/15289/image.png",
+      "refined_variants": [
+        "How do the average kinetic energies of the particles in each sample compare, and which sample has the higher temperature?",
+        "Compare the average kinetic energies of the particles in each sample and identify the sample with the higher temperature."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_10465",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "New Hampshire",
+      "image_path": "/nas/datahub/ScienceQA/test/10465/image.png",
+      "refined_variants": [
+        "What is the name of the colony shown in the image?",
+        "Identify the name of the colony shown in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_4444",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "The strength of the magnetic force is the same in both pairs.",
+      "image_path": "/nas/datahub/ScienceQA/test/4444/image.png",
+      "refined_variants": [
+        "Looking at the image, which statement is true about the magnetic force between the magnets in each pair?",
+        "Identify the true statement about the magnetic force between the magnets in each pair shown in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_11607",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "the Pacific Ocean",
+      "image_path": "/nas/datahub/ScienceQA/test/11607/image.png",
+      "refined_variants": [
+        "What ocean is highlighted in the image?",
+        "Identify the ocean highlighted in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_20922",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "sample A",
+      "image_path": "/nas/datahub/ScienceQA/test/20922/image.png",
+      "refined_variants": [
+        "Looking at the image, how do the average kinetic energies of the particles in each sample compare, and which sample has the higher temperature?",
+        "Compare the average kinetic energies of the particles in each sample shown in the image, then state which sample has the higher temperature."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_140",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "Asia",
+      "image_path": "/nas/datahub/ScienceQA/test/140/image.png",
+      "refined_variants": [
+        "Which continent is highlighted in the image?",
+        "Identify the continent highlighted in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_9084",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "sample A",
+      "image_path": "/nas/datahub/ScienceQA/test/9084/image.png",
+      "refined_variants": [
+        "How do the average kinetic energies of the particles in each sample compare, and which sample has the higher temperature?",
+        "Compare the average kinetic energies of the particles in each sample and identify the sample with the higher temperature."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_2983",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "Solution B",
+      "image_path": "/nas/datahub/ScienceQA/test/2983/image.png",
+      "refined_variants": [
+        "Which solution in the image has a higher concentration of green particles?",
+        "Identify the solution with the higher concentration of green particles."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_9874",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "false",
+      "image_path": "/nas/datahub/ScienceQA/test/9874/image.png",
+      "refined_variants": [
+        "Is this statement about our solar system true or false: The volume of Mars is more than three times as large as Mercury's?",
+        "Decide whether this statement about our solar system is true or false: The volume of Mars is more than three times as large as Mercury's."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_18127",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "toward her hand",
+      "image_path": "/nas/datahub/ScienceQA/test/18127/image.png",
+      "refined_variants": [
+        "What direction is the pull shown in the image?",
+        "Identify the direction of the pull in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_6412",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "Tara can trade her tomatoes for Jeremiah's broccoli.",
+      "image_path": "/nas/datahub/ScienceQA/test/6412/image.png",
+      "refined_variants": [
+        "What trade can Tara and Jeremiah make so that Tara gets what Tara wants and Jeremiah gets what Jeremiah wants?",
+        "Identify what Tara and Jeremiah can trade so each of them gets what they want."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_17607",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "The strength of the magnetic force is the same in both pairs.",
+      "image_path": "/nas/datahub/ScienceQA/test/17607/image.png",
+      "refined_variants": [
+        "Which of the following statements is true about the magnetic force between the magnets in each pair?",
+        "Think about the magnetic force between the magnets in each pair and identify which of the following statements is true."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_19545",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "Palau",
+      "image_path": "/nas/datahub/ScienceQA/test/19545/image.png",
+      "refined_variants": [
+        "Which country is highlighted in the image?",
+        "Identify the country highlighted in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_11818",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "the Marshall Islands",
+      "image_path": "/nas/datahub/ScienceQA/test/11818/image.png",
+      "refined_variants": [
+        "Which country is highlighted in the image?",
+        "Identify the country highlighted in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_18311",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "The magnetic force is weaker in Pair 1.",
+      "image_path": "/nas/datahub/ScienceQA/test/18311/image.png",
+      "refined_variants": [
+        "Looking at the image, which statement is true about the magnetic force between the magnets in each pair?",
+        "Determine the true statement about the magnetic force between the magnets in each pair shown in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_13392",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "repel",
+      "image_path": "/nas/datahub/ScienceQA/test/13392/image.png",
+      "refined_variants": [
+        "In the provided image, will the magnets attract each other or repel each other?",
+        "Determine whether the magnets shown in the image will attract each other or repel each other."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_18937",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "Solution B",
+      "image_path": "/nas/datahub/ScienceQA/test/18937/image.png",
+      "refined_variants": [
+        "In the image, which solution has a higher concentration of green particles?",
+        "Identify the solution in the image that has a higher concentration of green particles."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_14626",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "each aquarium . . . the surroundings",
+      "image_path": "/nas/datahub/ScienceQA/test/14626/image.png",
+      "refined_variants": [
+        "During this time, from what was thermal energy transferred, and to what was it transferred?",
+        "Complete the sentence: During this time, thermal energy was transferred from () to ()."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_12473",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "Antigua and Barbuda",
+      "image_path": "/nas/datahub/ScienceQA/test/12473/image.png",
+      "refined_variants": [
+        "Which country is highlighted in the image?",
+        "Identify the country highlighted in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_1955",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "Solution B",
+      "image_path": "/nas/datahub/ScienceQA/test/1955/image.png",
+      "refined_variants": [
+        "Which solution shown in the image has a higher concentration of green particles?",
+        "Identify the solution in the image that has a higher concentration of green particles."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_879",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "sample A",
+      "image_path": "/nas/datahub/ScienceQA/test/879/image.png",
+      "refined_variants": [
+        "In the provided image, how do the average kinetic energies of the particles in each sample compare, and which sample has the higher temperature?",
+        "Compare the average kinetic energies of the particles in each sample shown in the image and identify the sample with the higher temperature."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_19305",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "true",
+      "image_path": "/nas/datahub/ScienceQA/test/19305/image.png",
+      "refined_variants": [
+        "Is this statement about our solar system true or false: Earth is the largest planet that is made mainly of rock?",
+        "Tell me whether the statement about our solar system is true or false: Earth is the largest planet that is made mainly of rock."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_17328",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "Nauru",
+      "image_path": "/nas/datahub/ScienceQA/test/17328/image.png",
+      "refined_variants": [
+        "Which country is highlighted in the image?",
+        "Identify the country highlighted in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_11690",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "repel",
+      "image_path": "/nas/datahub/ScienceQA/test/11690/image.png",
+      "refined_variants": [
+        "In the provided image, will the magnets attract or repel each other?",
+        "Tell me whether the magnets in the provided image will attract or repel each other."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_2259",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "Jamaica",
+      "image_path": "/nas/datahub/ScienceQA/test/2259/image.png",
+      "refined_variants": [
+        "Which country is highlighted in the image?",
+        "Identify the country highlighted in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_3815",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "Solution A",
+      "image_path": "/nas/datahub/ScienceQA/test/3815/image.png",
+      "refined_variants": [
+        "In the image, which solution has the higher concentration of pink particles?",
+        "Identify the solution in the image that has the higher concentration of pink particles."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_7933",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "sample B",
+      "image_path": "/nas/datahub/ScienceQA/test/7933/image.png",
+      "refined_variants": [
+        "In the image, how do the average kinetic energies of the particles in each sample compare, and which sample has the higher temperature?",
+        "Compare the average kinetic energies of the particles in each sample shown in the image and identify the sample with the higher temperature."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_11252",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "sample B",
+      "image_path": "/nas/datahub/ScienceQA/test/11252/image.png",
+      "refined_variants": [
+        "Looking at the image, how do the average kinetic energies of the particles in each sample compare, and which sample has the higher temperature?",
+        "Compare the average kinetic energies of the particles in each sample shown in the image and identify the sample with the higher temperature."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_4832",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "Solution A",
+      "image_path": "/nas/datahub/ScienceQA/test/4832/image.png",
+      "refined_variants": [
+        "Which solution shown in the image has the higher concentration of blue particles?",
+        "Identify the solution in the image that has a higher concentration of blue particles."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_6454",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "sample A",
+      "image_path": "/nas/datahub/ScienceQA/test/6454/image.png",
+      "refined_variants": [
+        "How do the average kinetic energies of the particles in each sample compare, and which sample has the higher temperature?",
+        "Compare the average kinetic energy of the particles in each sample and identify the sample with the higher temperature."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_9750",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "Maryland",
+      "image_path": "/nas/datahub/ScienceQA/test/9750/image.png",
+      "refined_variants": [
+        "What is the name of the colony shown in the image?",
+        "Please provide the name of the colony shown in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_7841",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "Solution B",
+      "image_path": "/nas/datahub/ScienceQA/test/7841/image.png",
+      "refined_variants": [
+        "In the image, which solution has a higher concentration of blue particles?",
+        "Identify the solution in the image that has a higher concentration of blue particles."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_23",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "mushroom",
+      "image_path": "/nas/datahub/ScienceQA/test/23/image.png",
+      "refined_variants": [
+        "Which organism shown in the image contains matter that was once part of the lichen?",
+        "Identify the organism in the image that contains matter that was once part of the lichen."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_16141",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "the Federated States of Micronesia",
+      "image_path": "/nas/datahub/ScienceQA/test/16141/image.png",
+      "refined_variants": [
+        "Which country is highlighted in the provided image?",
+        "Identify the country highlighted in the provided image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_4459",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "Papua New Guinea",
+      "image_path": "/nas/datahub/ScienceQA/test/4459/image.png",
+      "refined_variants": [
+        "Which country is highlighted in the image?",
+        "Identify the country highlighted in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_1702",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "The magnitude of the magnetic force is greater in Pair 1.",
+      "image_path": "/nas/datahub/ScienceQA/test/1702/image.png",
+      "refined_variants": [
+        "Considering the magnetic force between the magnets in each pair shown in the image, which statement is true?",
+        "Determine which statement is true about the magnetic force between the magnets in each pair shown in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_1526",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "May",
+      "image_path": "/nas/datahub/ScienceQA/test/1526/image.png",
+      "refined_variants": [
+        "Based on the image, which month is the wettest on average in Christchurch?",
+        "Identify the wettest month on average in Christchurch."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_11757",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "The magnetic force is stronger in Pair 1.",
+      "image_path": "/nas/datahub/ScienceQA/test/11757/image.png",
+      "refined_variants": [
+        "Looking at the provided image, which statement is true about the magnetic force between the magnets in each pair?",
+        "Identify the true statement about the magnetic force between the magnets in each pair in the provided image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_1382",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "Palau",
+      "image_path": "/nas/datahub/ScienceQA/test/1382/image.png",
+      "refined_variants": [
+        "Which country is highlighted in the image?",
+        "Identify the highlighted country in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_4578",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "South America",
+      "image_path": "/nas/datahub/ScienceQA/test/4578/image.png",
+      "refined_variants": [
+        "Which continent is highlighted in the image?",
+        "Identify the continent highlighted in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_12096",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "Africa",
+      "image_path": "/nas/datahub/ScienceQA/test/12096/image.png",
+      "refined_variants": [
+        "What continent is highlighted in the image?",
+        "Name the continent highlighted in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_11772",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "The magnitude of the magnetic force is smaller in Pair 1.",
+      "image_path": "/nas/datahub/ScienceQA/test/11772/image.png",
+      "refined_variants": [
+        "Looking at the provided image, which statement shown is true about the magnetic force between the magnets in each pair?",
+        "Think about the magnetic force between the magnets in each pair in the provided image, then choose the true statement from the statements shown."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_5696",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "New Zealand",
+      "image_path": "/nas/datahub/ScienceQA/test/5696/image.png",
+      "refined_variants": [
+        "Which country is highlighted in the image?",
+        "Identify the country highlighted in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_13476",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "the Southern Ocean",
+      "image_path": "/nas/datahub/ScienceQA/test/13476/image.png",
+      "refined_variants": [
+        "Which ocean is highlighted in the image?",
+        "Identify the ocean that is highlighted in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_9784",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "the Southern Ocean",
+      "image_path": "/nas/datahub/ScienceQA/test/9784/image.png",
+      "refined_variants": [
+        "Which ocean is highlighted in the image?",
+        "Identify the ocean highlighted in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_9120",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "sample B",
+      "image_path": "/nas/datahub/ScienceQA/test/9120/image.png",
+      "refined_variants": [
+        "How do the average kinetic energies of the particles in each sample shown in the image compare, and which sample has the higher temperature?",
+        "Compare the average kinetic energies of the particles in each sample shown in the image, then identify the sample with the higher temperature."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_13164",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "when there is not much water",
+      "image_path": "/nas/datahub/ScienceQA/test/13164/image.png",
+      "refined_variants": [
+        "Under what circumstances might a giant tortoise sleep for weeks at a time?",
+        "Explain when a giant tortoise might sleep for weeks at a time."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_9628",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "the Atlantic Ocean",
+      "image_path": "/nas/datahub/ScienceQA/test/9628/image.png",
+      "refined_variants": [
+        "What ocean is highlighted in the image?",
+        "Identify the ocean highlighted in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_3534",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "The magnitude of the magnetic force is greater in Pair 2.",
+      "image_path": "/nas/datahub/ScienceQA/test/3534/image.png",
+      "refined_variants": [
+        "Looking at the provided image, which of the following statements about the magnetic force between the magnets in each pair is true?",
+        "Identify the true statement about the magnetic force between the magnets in each pair in the provided image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_8490",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "Pennsylvania",
+      "image_path": "/nas/datahub/ScienceQA/test/8490/image.png",
+      "refined_variants": [
+        "What is the name of the colony shown in the image?",
+        "Name the colony shown in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_7726",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "to the left than to the right",
+      "image_path": "/nas/datahub/ScienceQA/test/7726/image.png",
+      "refined_variants": [
+        "Can you complete the text describing the diagram? Solute particles moved in both directions across the permeable membrane. But more solute particles moved across the membrane (). When there was an equal concentration on both sides, the particles reached equilibrium.",
+        "Complete the missing part of this diagram description: Solute particles moved in both directions across the permeable membrane. But more solute particles moved across the membrane (). When there was an equal concentration on both sides, the particles reached equilibrium."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_5559",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "The magnetic force is weaker in Pair 1.",
+      "image_path": "/nas/datahub/ScienceQA/test/5559/image.png",
+      "refined_variants": [
+        "Looking at the magnets in each pair, which of the following statements about the magnetic force between the magnets is true?",
+        "Determine which of the following statements is true about the magnetic force between the magnets in each pair."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_1551",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "repel",
+      "image_path": "/nas/datahub/ScienceQA/test/1551/image.png",
+      "refined_variants": [
+        "Will the magnets shown in the image attract each other or repel each other?",
+        "Tell me whether the magnets shown in the image will attract each other or repel each other."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_20722",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "attract",
+      "image_path": "/nas/datahub/ScienceQA/test/20722/image.png",
+      "refined_variants": [
+        "Do the magnets shown in the image attract or repel each other?",
+        "Tell me whether the magnets shown in the image will attract or repel each other."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_3920",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "The magnitude of the magnetic force is greater in Pair 1.",
+      "image_path": "/nas/datahub/ScienceQA/test/3920/image.png",
+      "refined_variants": [
+        "Looking at the image, which of the following statements is true about the magnetic force between the magnets in each pair?",
+        "Determine which of the following statements is true about the magnetic force between the magnets in each pair shown in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_15787",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "sample B",
+      "image_path": "/nas/datahub/ScienceQA/test/15787/image.png",
+      "refined_variants": [
+        "Based on the image, how do the average kinetic energies of the particles in each sample compare, and which sample has the higher temperature?",
+        "Compare the average kinetic energies of the particles in each sample shown in the image, then state which sample has the higher temperature."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_15224",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "The magnetic force is stronger in Pair 1.",
+      "image_path": "/nas/datahub/ScienceQA/test/15224/image.png",
+      "refined_variants": [
+        "Which of the following statements is true about the magnetic force between the magnets in each pair shown in the image?",
+        "Think about the magnetic force between the magnets in each pair shown in the image, then identify the true statement from the following choices."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_11149",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "Tonga",
+      "image_path": "/nas/datahub/ScienceQA/test/11149/image.png",
+      "refined_variants": [
+        "Which country is highlighted in the image?",
+        "Identify the highlighted country in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_10873",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "Africa",
+      "image_path": "/nas/datahub/ScienceQA/test/10873/image.png",
+      "refined_variants": [
+        "Which continent is highlighted in the image?",
+        "Identify the highlighted continent in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_8614",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "Solution B",
+      "image_path": "/nas/datahub/ScienceQA/test/8614/image.png",
+      "refined_variants": [
+        "Which solution in the image has the higher concentration of blue particles?",
+        "Identify the solution in the image that has the higher concentration of blue particles."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_4385",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "sea cucumber",
+      "image_path": "/nas/datahub/ScienceQA/test/4385/image.png",
+      "refined_variants": [
+        "Which organism shown in the image contains matter that was once part of the phytoplankton?",
+        "Identify the organism in the image that contains matter that was once part of the phytoplankton."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_15960",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "Solution A",
+      "image_path": "/nas/datahub/ScienceQA/test/15960/image.png",
+      "refined_variants": [
+        "Which solution in the image has the higher concentration of green particles?",
+        "Identify the solution that has the higher concentration of green particles."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_4072",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "Asia",
+      "image_path": "/nas/datahub/ScienceQA/test/4072/image.png",
+      "refined_variants": [
+        "Which continent is highlighted in the image?",
+        "Identify the continent that is highlighted in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_16115",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "Asia",
+      "image_path": "/nas/datahub/ScienceQA/test/16115/image.png",
+      "refined_variants": [
+        "Which continent is highlighted in the image?",
+        "Identify the continent highlighted in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_20567",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "sample B",
+      "image_path": "/nas/datahub/ScienceQA/test/20567/image.png",
+      "refined_variants": [
+        "Based on the image, how do the average kinetic energies of the particles in each sample compare, and which sample has the higher temperature?",
+        "Compare the average kinetic energies of the particles in each sample shown in the image, then state which sample has the higher temperature."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_10569",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "Asia",
+      "image_path": "/nas/datahub/ScienceQA/test/10569/image.png",
+      "refined_variants": [
+        "What continent is highlighted in the image?",
+        "Identify the continent that is highlighted in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_20507",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "New Jersey",
+      "image_path": "/nas/datahub/ScienceQA/test/20507/image.png",
+      "refined_variants": [
+        "What is the name of the colony shown in the image?",
+        "Identify the name of the colony shown in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_1226",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "Turner can trade his tomatoes for Mona's broccoli.",
+      "image_path": "/nas/datahub/ScienceQA/test/1226/image.png",
+      "refined_variants": [
+        "What trade can Turner and Mona make so that Turner and Mona each get what they want?",
+        "Identify a trade Turner and Mona can make so that each of them gets what they want."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_1002",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "Haiti",
+      "image_path": "/nas/datahub/ScienceQA/test/1002/image.png",
+      "refined_variants": [
+        "What country is highlighted in the image?",
+        "Identify the country highlighted in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_10522",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "Solution A",
+      "image_path": "/nas/datahub/ScienceQA/test/10522/image.png",
+      "refined_variants": [
+        "Which solution in the image has the higher concentration of yellow particles?",
+        "Identify the solution in the image with the higher concentration of yellow particles."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_5499",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "the Federated States of Micronesia",
+      "image_path": "/nas/datahub/ScienceQA/test/5499/image.png",
+      "refined_variants": [
+        "Which country is highlighted in the image?",
+        "Identify the country highlighted in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_10099",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "the Arctic Ocean",
+      "image_path": "/nas/datahub/ScienceQA/test/10099/image.png",
+      "refined_variants": [
+        "Which ocean is highlighted in the image?",
+        "Identify the ocean highlighted in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_10616",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "Georgia",
+      "image_path": "/nas/datahub/ScienceQA/test/10616/image.png",
+      "refined_variants": [
+        "What is the name of the colony shown in the image?",
+        "Please identify the name of the colony shown in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_2566",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "attract",
+      "image_path": "/nas/datahub/ScienceQA/test/2566/image.png",
+      "refined_variants": [
+        "Based on the image, will these magnets attract each other or repel each other?",
+        "Determine whether the magnets shown in the image will attract each other or repel each other."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_13253",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "Grenada",
+      "image_path": "/nas/datahub/ScienceQA/test/13253/image.png",
+      "refined_variants": [
+        "Which country is highlighted in the image?",
+        "Identify the country highlighted in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_10519",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "the surroundings . . . each refrigerator",
+      "image_path": "/nas/datahub/ScienceQA/test/10519/image.png",
+      "refined_variants": [
+        "During this time, from what to what was thermal energy transferred?",
+        "Fill in the blanks in this statement: During this time, thermal energy was transferred from () to ()."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_16221",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "The magnitude of the magnetic force is greater in Pair 1.",
+      "image_path": "/nas/datahub/ScienceQA/test/16221/image.png",
+      "refined_variants": [
+        "Looking at the provided image, which statement is true about the magnetic force between the magnets in each pair?",
+        "Identify the true statement about the magnetic force between the magnets in each pair shown in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_6735",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "sample A",
+      "image_path": "/nas/datahub/ScienceQA/test/6735/image.png",
+      "refined_variants": [
+        "Looking at the image, how do the average kinetic energies of the particles in each sample compare, and which sample has the higher temperature?",
+        "Compare the average kinetic energies of the particles in each sample shown in the image, then identify the sample with the higher temperature."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_12556",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "Solution B",
+      "image_path": "/nas/datahub/ScienceQA/test/12556/image.png",
+      "refined_variants": [
+        "In the image, which solution has a higher concentration of yellow particles?",
+        "Identify the solution in the image that has a higher concentration of yellow particles."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_5389",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "New Jersey",
+      "image_path": "/nas/datahub/ScienceQA/test/5389/image.png",
+      "refined_variants": [
+        "Which state is highlighted in the image?",
+        "Identify the state highlighted in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_13491",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "repel",
+      "image_path": "/nas/datahub/ScienceQA/test/13491/image.png",
+      "refined_variants": [
+        "Will the magnets shown in the image attract each other or repel each other?",
+        "Determine whether the magnets shown in the image will attract each other or repel each other."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_20245",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "sample B",
+      "image_path": "/nas/datahub/ScienceQA/test/20245/image.png",
+      "refined_variants": [
+        "Can you compare the average kinetic energies of the particles in each sample shown in the image and tell me which sample has the higher temperature?",
+        "Compare the average kinetic energies of the particles in each sample shown in the image, then identify the sample with the higher temperature."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_338",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "Saint Lucia",
+      "image_path": "/nas/datahub/ScienceQA/test/338/image.png",
+      "refined_variants": [
+        "Which country is highlighted in the image?",
+        "Identify the country highlighted in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_3495",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "the Southern Ocean",
+      "image_path": "/nas/datahub/ScienceQA/test/3495/image.png",
+      "refined_variants": [
+        "Which ocean is highlighted in the image?",
+        "Identify the ocean highlighted in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_19879",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "repel",
+      "image_path": "/nas/datahub/ScienceQA/test/19879/image.png",
+      "refined_variants": [
+        "Will the magnets shown in the image attract or repel each other?",
+        "Determine whether the magnets shown in the image will attract or repel each other."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_6266",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "false",
+      "image_path": "/nas/datahub/ScienceQA/test/6266/image.png",
+      "refined_variants": [
+        "Is this statement about our solar system true or false: Of the four largest planets, three are made mainly of gas?",
+        "Determine whether the statement about our solar system is true or false: Of the four largest planets, three are made mainly of gas."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_18069",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "South America",
+      "image_path": "/nas/datahub/ScienceQA/test/18069/image.png",
+      "refined_variants": [
+        "Which continent is highlighted in the image?",
+        "Identify the continent highlighted in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_15749",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "Fiji",
+      "image_path": "/nas/datahub/ScienceQA/test/15749/image.png",
+      "refined_variants": [
+        "Which country is highlighted in the image?",
+        "Identify the country highlighted in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_17406",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "South America",
+      "image_path": "/nas/datahub/ScienceQA/test/17406/image.png",
+      "refined_variants": [
+        "Which continent is highlighted in the image?",
+        "Identify the continent that is highlighted in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_19882",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "repel",
+      "image_path": "/nas/datahub/ScienceQA/test/19882/image.png",
+      "refined_variants": [
+        "In the provided image, will these magnets attract each other or repel each other?",
+        "Tell me whether the magnets shown in the image will attract each other or repel each other."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_5781",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "sample B",
+      "image_path": "/nas/datahub/ScienceQA/test/5781/image.png",
+      "refined_variants": [
+        "In the provided image, how do the average kinetic energies of the particles in each sample compare, and which sample has the higher temperature?",
+        "Compare the average kinetic energies of the particles in each sample shown in the image and identify the sample with the higher temperature."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_3398",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "the Marshall Islands",
+      "image_path": "/nas/datahub/ScienceQA/test/3398/image.png",
+      "refined_variants": [
+        "Which country is highlighted in the image?",
+        "Identify the country that is highlighted in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_20949",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "Solution B",
+      "image_path": "/nas/datahub/ScienceQA/test/20949/image.png",
+      "refined_variants": [
+        "In the image, which solution has the higher concentration of blue particles?",
+        "Identify the solution in the image that has a higher concentration of blue particles."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_10947",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "New Jersey",
+      "image_path": "/nas/datahub/ScienceQA/test/10947/image.png",
+      "refined_variants": [
+        "What is the name of the colony shown in the image?",
+        "Identify the name of the colony shown in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_3138",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "Dominica",
+      "image_path": "/nas/datahub/ScienceQA/test/3138/image.png",
+      "refined_variants": [
+        "Which country is highlighted in the image?",
+        "Identify the highlighted country in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_10374",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "North America",
+      "image_path": "/nas/datahub/ScienceQA/test/10374/image.png",
+      "refined_variants": [
+        "Which continent is highlighted in the image?",
+        "Identify the continent highlighted in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_7860",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "Mesozoic era",
+      "image_path": "/nas/datahub/ScienceQA/test/7860/image.png",
+      "refined_variants": [
+        "Which term matches the picture?",
+        "Identify the term that matches the picture."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_12983",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "Saint Kitts and Nevis",
+      "image_path": "/nas/datahub/ScienceQA/test/12983/image.png",
+      "refined_variants": [
+        "Which country is highlighted in the image?",
+        "Identify the country that is highlighted in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_16731",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "sample B",
+      "image_path": "/nas/datahub/ScienceQA/test/16731/image.png",
+      "refined_variants": [
+        "Looking at the image, how do the average kinetic energies of the particles in each sample compare, and which sample has the higher temperature?",
+        "Compare the average kinetic energies of the particles in each sample shown in the image, then identify the sample with the higher temperature."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_8004",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "Connecticut",
+      "image_path": "/nas/datahub/ScienceQA/test/8004/image.png",
+      "refined_variants": [
+        "What is the name of the colony shown in the image?",
+        "Tell me the name of the colony shown in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_7694",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "logos (reason)",
+      "image_path": "/nas/datahub/ScienceQA/test/7694/image.png",
+      "refined_variants": [
+        "What is the main persuasive appeal used in this ad?",
+        "Identify the main persuasive appeal used in this ad."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_8931",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "About the same amount of precipitation falls each month between May and October.",
+      "image_path": "/nas/datahub/ScienceQA/test/8931/image.png",
+      "refined_variants": [
+        "Which statement best describes the average monthly precipitation in Boston?",
+        "Identify the statement that best describes the average monthly precipitation in Boston."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_17723",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "The magnitude of the magnetic force is greater in Pair 1.",
+      "image_path": "/nas/datahub/ScienceQA/test/17723/image.png",
+      "refined_variants": [
+        "Looking at the provided image, which of the following statements is true about the magnetic force between the magnets in each pair?",
+        "Use the provided image to identify the true statement about the magnetic force between the magnets in each pair."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_4351",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "Solution B",
+      "image_path": "/nas/datahub/ScienceQA/test/4351/image.png",
+      "refined_variants": [
+        "In the image, which solution has a higher concentration of yellow particles?",
+        "Identify the solution in the image that has a higher concentration of yellow particles."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_237",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "repel",
+      "image_path": "/nas/datahub/ScienceQA/test/237/image.png",
+      "refined_variants": [
+        "Do the magnets shown in the image attract each other or repel each other?",
+        "Tell me whether the magnets shown in the image will attract each other or repel each other."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_5306",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "0:4",
+      "image_path": "/nas/datahub/ScienceQA/test/5306/image.png",
+      "refined_variants": [
+        "What is the expected ratio of offspring with yellow pods to offspring with green pods, and which ratio is most likely?",
+        "Determine the expected ratio of offspring with yellow pods to offspring with green pods, and choose the most likely ratio."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_3377",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "Solution A",
+      "image_path": "/nas/datahub/ScienceQA/test/3377/image.png",
+      "refined_variants": [
+        "Which solution shown in the image has the higher concentration of purple particles?",
+        "Identify the solution in the image that has the higher concentration of purple particles."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_15541",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "Samoa",
+      "image_path": "/nas/datahub/ScienceQA/test/15541/image.png",
+      "refined_variants": [
+        "Which country is highlighted in the image?",
+        "Identify the highlighted country in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_1586",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "Missouri",
+      "image_path": "/nas/datahub/ScienceQA/test/1586/image.png",
+      "refined_variants": [
+        "Which state shown in the image is farthest south?",
+        "Identify the state in the image that is farthest south."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_2538",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "the Southern Ocean",
+      "image_path": "/nas/datahub/ScienceQA/test/2538/image.png",
+      "refined_variants": [
+        "Which ocean is highlighted in the image?",
+        "Identify the ocean highlighted in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_3439",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "Europe",
+      "image_path": "/nas/datahub/ScienceQA/test/3439/image.png",
+      "refined_variants": [
+        "Which continent is highlighted in the image?",
+        "Identify the continent highlighted in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_19225",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "the Indian Ocean",
+      "image_path": "/nas/datahub/ScienceQA/test/19225/image.png",
+      "refined_variants": [
+        "Which ocean is highlighted in the image?",
+        "Identify the ocean that is highlighted in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_2716",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "Jamaica",
+      "image_path": "/nas/datahub/ScienceQA/test/2716/image.png",
+      "refined_variants": [
+        "Which country is highlighted in the image?",
+        "Identify the country highlighted in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_9546",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "to the left than to the right",
+      "image_path": "/nas/datahub/ScienceQA/test/9546/image.png",
+      "refined_variants": [
+        "How should the text be completed to describe the diagram? Solute particles moved in both directions across the permeable membrane. But more solute particles moved across the membrane (). When there was an equal concentration on both sides, the particles reached equilibrium.",
+        "Complete this text so it accurately describes the diagram: Solute particles moved in both directions across the permeable membrane. But more solute particles moved across the membrane (). When there was an equal concentration on both sides, the particles reached equilibrium."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_21192",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "South America",
+      "image_path": "/nas/datahub/ScienceQA/test/21192/image.png",
+      "refined_variants": [
+        "Which continent is highlighted in the provided image?",
+        "Identify the continent highlighted in the provided image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_12116",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "sample B",
+      "image_path": "/nas/datahub/ScienceQA/test/12116/image.png",
+      "refined_variants": [
+        "Can you compare the average kinetic energies of the particles in each sample shown in the image and tell me which sample has the higher temperature?",
+        "Compare the average kinetic energies of the particles in each sample shown in the image, then identify the sample with the higher temperature."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_5223",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "rough",
+      "image_path": "/nas/datahub/ScienceQA/test/5223/image.png",
+      "refined_variants": [
+        "What property matches this object?",
+        "Identify the property that matches this object."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_16811",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "repel",
+      "image_path": "/nas/datahub/ScienceQA/test/16811/image.png",
+      "refined_variants": [
+        "Do the magnets shown in the image attract each other or repel each other?",
+        "Determine whether the magnets shown in the image will attract each other or repel each other."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_16708",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "Tonga",
+      "image_path": "/nas/datahub/ScienceQA/test/16708/image.png",
+      "refined_variants": [
+        "What country is highlighted in the image?",
+        "Name the country highlighted in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_19934",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "Australia",
+      "image_path": "/nas/datahub/ScienceQA/test/19934/image.png",
+      "refined_variants": [
+        "Which continent is highlighted in the image?",
+        "Identify the continent highlighted in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_4532",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "The magnitude of the magnetic force is smaller in Pair 1.",
+      "image_path": "/nas/datahub/ScienceQA/test/4532/image.png",
+      "refined_variants": [
+        "Looking at the image, which statement is true about the magnetic force between the magnets in each pair?",
+        "Identify the true statement about the magnetic force between the magnets in each pair shown in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_12861",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "sample B",
+      "image_path": "/nas/datahub/ScienceQA/test/12861/image.png",
+      "refined_variants": [
+        "Based on the provided image, how do the average kinetic energies of the particles in each sample compare, and which sample has the higher temperature?",
+        "Compare the average kinetic energies of the particles in each sample shown in the image, then identify the sample with the higher temperature."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_3379",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "July",
+      "image_path": "/nas/datahub/ScienceQA/test/3379/image.png",
+      "refined_variants": [
+        "Which month shows the lowest average precipitation in London?",
+        "Identify the month with the lowest average precipitation in London."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_6558",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "Rhode Island",
+      "image_path": "/nas/datahub/ScienceQA/test/6558/image.png",
+      "refined_variants": [
+        "What is the name of the colony shown in the image?",
+        "Identify the name of the colony shown in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_20075",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "Solution A",
+      "image_path": "/nas/datahub/ScienceQA/test/20075/image.png",
+      "refined_variants": [
+        "Which solution shown in the image has the higher concentration of green particles?",
+        "Identify the solution in the image that has a higher concentration of green particles."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_15306",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "Asia",
+      "image_path": "/nas/datahub/ScienceQA/test/15306/image.png",
+      "refined_variants": [
+        "Which continent is highlighted in the provided image?",
+        "Identify the continent highlighted in the provided image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_11333",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "sample A",
+      "image_path": "/nas/datahub/ScienceQA/test/11333/image.png",
+      "refined_variants": [
+        "In the provided image, how do the average kinetic energies of the particles in each sample compare, and which sample has the higher temperature?",
+        "Compare the average kinetic energies of the particles in the samples shown in the image and identify the sample with the higher temperature."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_14897",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "Nauru",
+      "image_path": "/nas/datahub/ScienceQA/test/14897/image.png",
+      "refined_variants": [
+        "What country is highlighted in the image?",
+        "Identify the country that is highlighted in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_7135",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "sample A",
+      "image_path": "/nas/datahub/ScienceQA/test/7135/image.png",
+      "refined_variants": [
+        "In the provided image, how do the average kinetic energies of the particles in each sample compare, and which sample has the higher temperature?",
+        "Compare the average kinetic energies of the particles in each sample shown in the image, then identify the sample with the higher temperature."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_15642",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "Solomon Islands",
+      "image_path": "/nas/datahub/ScienceQA/test/15642/image.png",
+      "refined_variants": [
+        "What country is highlighted in the image?",
+        "Identify the country that is highlighted in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_1139",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "sample B",
+      "image_path": "/nas/datahub/ScienceQA/test/1139/image.png",
+      "refined_variants": [
+        "How do the average kinetic energies of the particles in each sample shown in the image compare, and which sample has the higher temperature?",
+        "Compare the average kinetic energies of the particles in each sample shown in the image, then identify the sample with the higher temperature."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_12995",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "Oregon",
+      "image_path": "/nas/datahub/ScienceQA/test/12995/image.png",
+      "refined_variants": [
+        "Which state is highlighted in the image?",
+        "Identify the state highlighted in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_6020",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "grizzly bear",
+      "image_path": "/nas/datahub/ScienceQA/test/6020/image.png",
+      "refined_variants": [
+        "Which organism shown contains matter that was once part of the lichen?",
+        "Identify the organism in the image that contains matter that was once part of the lichen."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_17613",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "The magnitude of the magnetic force is greater in Pair 1.",
+      "image_path": "/nas/datahub/ScienceQA/test/17613/image.png",
+      "refined_variants": [
+        "Considering the magnetic force between the magnets in each pair shown in the image, which of the following statements is true?",
+        "Determine which of the following statements is true about the magnetic force between the magnets in each pair."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_11283",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "Solution B",
+      "image_path": "/nas/datahub/ScienceQA/test/11283/image.png",
+      "refined_variants": [
+        "Which solution in the image has a higher concentration of pink particles?",
+        "Identify the solution in the image with the higher concentration of pink particles."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_14162",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "false",
+      "image_path": "/nas/datahub/ScienceQA/test/14162/image.png",
+      "refined_variants": [
+        "Is this statement about our solar system true or false: 50% of the planets are made mainly of gas?",
+        "Determine whether this statement about our solar system is true or false: 50% of the planets are made mainly of gas."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_6387",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "Australia",
+      "image_path": "/nas/datahub/ScienceQA/test/6387/image.png",
+      "refined_variants": [
+        "Which continent is highlighted in the image?",
+        "Identify the continent highlighted in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_7306",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "Europe",
+      "image_path": "/nas/datahub/ScienceQA/test/7306/image.png",
+      "refined_variants": [
+        "Which continent is highlighted in the image?",
+        "Identify the continent highlighted in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_16180",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "The strength of the magnetic force is the same in both pairs.",
+      "image_path": "/nas/datahub/ScienceQA/test/16180/image.png",
+      "refined_variants": [
+        "Looking at the image, which of the following statements is true about the magnetic force between the magnets in each pair?",
+        "Use the image to identify which of the following statements is true about the magnetic force between the magnets in each pair."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_6008",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "Missouri",
+      "image_path": "/nas/datahub/ScienceQA/test/6008/image.png",
+      "refined_variants": [
+        "Which state is highlighted in the image?",
+        "Identify the highlighted state in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_3788",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "away from the baseball bat",
+      "image_path": "/nas/datahub/ScienceQA/test/3788/image.png",
+      "refined_variants": [
+        "What direction is this push going?",
+        "Tell me the direction of this push."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_11613",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "Solution B",
+      "image_path": "/nas/datahub/ScienceQA/test/11613/image.png",
+      "refined_variants": [
+        "Which solution in the image has the higher concentration of yellow particles?",
+        "Identify the solution in the image with the higher concentration of yellow particles."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_16379",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "the Dominican Republic",
+      "image_path": "/nas/datahub/ScienceQA/test/16379/image.png",
+      "refined_variants": [
+        "Which country is highlighted in the image?",
+        "Identify the highlighted country in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_16459",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "Pennsylvania",
+      "image_path": "/nas/datahub/ScienceQA/test/16459/image.png",
+      "refined_variants": [
+        "What is the name of the colony shown in the image?",
+        "Name the colony shown in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_9361",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "The magnitude of the magnetic force is greater in Pair 2.",
+      "image_path": "/nas/datahub/ScienceQA/test/9361/image.png",
+      "refined_variants": [
+        "Looking at the image, think about the magnetic force between the magnets in each pair. Which of the statements shown is true?",
+        "Identify the true statement shown in the image by considering the magnetic force between the magnets in each pair."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_15486",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "Haiti",
+      "image_path": "/nas/datahub/ScienceQA/test/15486/image.png",
+      "refined_variants": [
+        "Which country is highlighted in the image?",
+        "Identify the country highlighted in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_3530",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "The magnitude of the magnetic force is greater in Pair 1.",
+      "image_path": "/nas/datahub/ScienceQA/test/3530/image.png",
+      "refined_variants": [
+        "Looking at the provided image, which of the following statements is true about the magnetic force between the magnets in each pair?",
+        "Use the provided image to decide which of the following statements is true about the magnetic force between the magnets in each pair."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_3681",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "The magnetic force is stronger in Pair 2.",
+      "image_path": "/nas/datahub/ScienceQA/test/3681/image.png",
+      "refined_variants": [
+        "Looking at the provided image, think about the magnetic force between the magnets in each pair. Which of the following statements is true?",
+        "Use the provided image to determine which of the following statements is true about the magnetic force between the magnets in each pair."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_9328",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "sample A",
+      "image_path": "/nas/datahub/ScienceQA/test/9328/image.png",
+      "refined_variants": [
+        "In the provided image, how do the average kinetic energies of the particles in each sample compare, and which sample has the higher temperature?",
+        "Compare the average kinetic energies of the particles in each sample shown in the image and identify the sample with the higher temperature."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_17387",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "New Hampshire",
+      "image_path": "/nas/datahub/ScienceQA/test/17387/image.png",
+      "refined_variants": [
+        "Which state is highlighted in the image?",
+        "Identify the highlighted state in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_4263",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "Solution B",
+      "image_path": "/nas/datahub/ScienceQA/test/4263/image.png",
+      "refined_variants": [
+        "Which solution in the image has the higher concentration of blue particles?",
+        "Identify the solution in the image that has the higher concentration of blue particles."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_11860",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "sticky",
+      "image_path": "/nas/datahub/ScienceQA/test/11860/image.png",
+      "refined_variants": [
+        "What property do the three objects in the image have in common?",
+        "Identify the property that the three objects in the image have in common."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_15983",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "1",
+      "image_path": "/nas/datahub/ScienceQA/test/15983/image.png",
+      "refined_variants": [
+        "Which number on the image marks the New England Colonies?",
+        "Identify the number that marks the New England Colonies."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_17508",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "2:2",
+      "image_path": "/nas/datahub/ScienceQA/test/17508/image.png",
+      "refined_variants": [
+        "What is the expected ratio of offspring with climbing growth to offspring with bush growth? Select the most likely ratio.",
+        "Determine the expected ratio of offspring with climbing growth to offspring with bush growth, and choose the most likely ratio."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_16546",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "Solution B",
+      "image_path": "/nas/datahub/ScienceQA/test/16546/image.png",
+      "refined_variants": [
+        "Which solution in the image has the higher concentration of green particles?",
+        "Identify the solution in the image with the higher concentration of green particles."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_4740",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "to the left than to the right",
+      "image_path": "/nas/datahub/ScienceQA/test/4740/image.png",
+      "refined_variants": [
+        "Can you complete the text describing the diagram: “Solute particles moved in both directions across the permeable membrane. But more solute particles moved across the membrane (). When there was an equal concentration on both sides, the particles reached equilibrium.”?",
+        "Complete the missing part of this text to describe the diagram: “Solute particles moved in both directions across the permeable membrane. But more solute particles moved across the membrane (). When there was an equal concentration on both sides, the particles reached equilibrium.”"
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_17713",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "Asia",
+      "image_path": "/nas/datahub/ScienceQA/test/17713/image.png",
+      "refined_variants": [
+        "Which continent is highlighted in the image?",
+        "Identify the continent highlighted in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_17988",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "Wyoming",
+      "image_path": "/nas/datahub/ScienceQA/test/17988/image.png",
+      "refined_variants": [
+        "Which state is highlighted in the image?",
+        "Identify the state highlighted in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_11",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "New Hampshire",
+      "image_path": "/nas/datahub/ScienceQA/test/11/image.png",
+      "refined_variants": [
+        "What is the name of the colony shown in the image?",
+        "Identify the name of the colony shown in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_1232",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "sample B",
+      "image_path": "/nas/datahub/ScienceQA/test/1232/image.png",
+      "refined_variants": [
+        "Looking at the provided image, how do the average kinetic energies of the particles in each sample compare, and which sample has the higher temperature?",
+        "Use the provided image to compare the average kinetic energies of the particles in each sample and identify the sample with the higher temperature."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_1281",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "Maryland",
+      "image_path": "/nas/datahub/ScienceQA/test/1281/image.png",
+      "refined_variants": [
+        "What is the name of the colony shown in the image?",
+        "Name the colony shown in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_17464",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "the Federated States of Micronesia",
+      "image_path": "/nas/datahub/ScienceQA/test/17464/image.png",
+      "refined_variants": [
+        "What country is highlighted in the image?",
+        "Name the country that is highlighted in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_20734",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "Virginia",
+      "image_path": "/nas/datahub/ScienceQA/test/20734/image.png",
+      "refined_variants": [
+        "Which state is highlighted in the image?",
+        "Identify the state highlighted in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_11988",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "4/4",
+      "image_path": "/nas/datahub/ScienceQA/test/11988/image.png",
+      "refined_variants": [
+        "In the cross shown in the image, what is the probability that a fruit fly offspring will have normal wings?",
+        "Determine the probability that a fruit fly produced by the cross shown in the image will have normal wings."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_18146",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "Arkansas",
+      "image_path": "/nas/datahub/ScienceQA/test/18146/image.png",
+      "refined_variants": [
+        "Which state is highlighted in the image?",
+        "Identify the state highlighted in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_3089",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "Samoa",
+      "image_path": "/nas/datahub/ScienceQA/test/3089/image.png",
+      "refined_variants": [
+        "Which country is highlighted in the image?",
+        "Identify the country highlighted in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_5642",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "Samoa",
+      "image_path": "/nas/datahub/ScienceQA/test/5642/image.png",
+      "refined_variants": [
+        "What country is highlighted in the image?",
+        "Identify the country highlighted in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_11015",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "the Southern Ocean",
+      "image_path": "/nas/datahub/ScienceQA/test/11015/image.png",
+      "refined_variants": [
+        "What ocean is highlighted in the image?",
+        "Name the ocean highlighted in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_15241",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "The magnitude of the magnetic force is smaller in Pair 1.",
+      "image_path": "/nas/datahub/ScienceQA/test/15241/image.png",
+      "refined_variants": [
+        "Considering the magnetic force between the magnets in each pair, which of the statements shown is true?",
+        "Identify the true statement by considering the magnetic force between the magnets in each pair."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_15857",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "The magnitude of the magnetic force is smaller in Pair 2.",
+      "image_path": "/nas/datahub/ScienceQA/test/15857/image.png",
+      "refined_variants": [
+        "Looking at the magnets in each pair shown in the image, which listed statement about the magnetic force between the magnets is true?",
+        "Determine the true statement about the magnetic force between the magnets in each pair shown in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_21199",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "Europe",
+      "image_path": "/nas/datahub/ScienceQA/test/21199/image.png",
+      "refined_variants": [
+        "Which continent is highlighted in the image?",
+        "Identify the continent highlighted in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_15068",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "plainfin midshipman",
+      "image_path": "/nas/datahub/ScienceQA/test/15068/image.png",
+      "refined_variants": [
+        "Which organism shown in the food web is the primary consumer?",
+        "Identify the primary consumer among the organisms in the food web shown in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_17171",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "The magnitude of the magnetic force is greater in Pair 2.",
+      "image_path": "/nas/datahub/ScienceQA/test/17171/image.png",
+      "refined_variants": [
+        "Looking at the provided image, which of the following statements is true about the magnetic force between the magnets in each pair?",
+        "Use the provided image to identify the true statement about the magnetic force between the magnets in each pair."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_3123",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "South Dakota",
+      "image_path": "/nas/datahub/ScienceQA/test/3123/image.png",
+      "refined_variants": [
+        "Which state is highlighted in the image?",
+        "Identify the state highlighted in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_9357",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "salty",
+      "image_path": "/nas/datahub/ScienceQA/test/9357/image.png",
+      "refined_variants": [
+        "What property do the four objects in the image have in common?",
+        "Identify the property that the four objects in the image have in common."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_5805",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "the Marshall Islands",
+      "image_path": "/nas/datahub/ScienceQA/test/5805/image.png",
+      "refined_variants": [
+        "Which country is highlighted in the image?",
+        "Identify the country highlighted in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_1582",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "New Zealand",
+      "image_path": "/nas/datahub/ScienceQA/test/1582/image.png",
+      "refined_variants": [
+        "Which country is highlighted in the image?",
+        "Name the country highlighted in the image."
+      ]
+    },
+    {
+      "task_id": "scienceqa_filtered_6099",
+      "task": "TI2T",
+      "source": "ScienceQA",
+      "gold_modality": "text",
+      "expected": "Solution B",
+      "image_path": "/nas/datahub/ScienceQA/test/6099/image.png",
+      "refined_variants": [
+        "In the image, which solution has a higher concentration of green particles?",
+        "Identify the solution in the image that has a higher concentration of green particles."
+      ]
+    }
+  ]
+}
