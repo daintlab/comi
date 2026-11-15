@@ -13,6 +13,11 @@ existing datasets with minimal refinement.
 
 ![pipeline](../assets/comi_pipeline.png)
 
+(This diagram predates Stage 5 -- it shows Stage 3's output as the final
+dataset, with each sample carrying 4-5 variants. The actually-released
+dataset applies Stage 5 on top of this, reducing every sample to exactly 2
+variants, 11,276 prompts total; see the Pipeline table below.)
+
 ## Why existing data cannot be used as is
 
 Prompts in text-to-image datasets are typically bare captions (`a photo of a
@@ -41,6 +46,14 @@ construction pipeline controls for this.
 Stage 1 does not produce repair instructions. Its judgement criterion would
 become the prescription, and every image prompt would end up rewritten as
 "Generate an image: …". Stage 2a follows a fixed rewriting policy instead.
+
+Stage 0 also filters VQAv2 and ScienceQA for **visual grounding**, following
+MMStar (Chen et al., 2024): each TI2T sample is answered by GPT-5.2 three
+times *without* the image, and dropped if at least two of the three
+responses are still correct (i.e. the question didn't need the image at
+all). 1,541/2,400 sampled VQAv2 questions and 653/2,017 ScienceQA samples
+survive this filter -- see `pipeline/stage0/vqav2_filtering/` and
+`pipeline/stage0/scienceqa_filtering/`.
 
 ScienceQA's MCQ-option stripping (Stage 0's job per the table above) is not
 done inside `stage0_prepare_originals.py` itself -- it's applied as a
@@ -183,5 +196,11 @@ the released dataset.
 - Mizrahi et al. *State of What Art? A Call for Multi-Prompt LLM Evaluation.*
   TACL 2024.
 - Chen et al. *Are We on the Right Way for Evaluating Large Vision-Language
-  Models?* (MMStar) NeurIPS 2024.
-- Wang et al. *MMLU-Pro.* NeurIPS 2024 Datasets and Benchmarks.
+  Models?* (MMStar) NeurIPS 2024. -- basis for the visual-grounding filter
+  (see below): a TI2T sample is dropped if a text-only judge (no image
+  given) still answers it correctly at least 2/3 times.
+- Myrzakhan et al. *Open-LLM-Leaderboard: From Multi-Choice to Open-Style
+  Questions for LLMs Evaluation, Benchmark, and Arena.* arXiv:2406.07545,
+  2024. -- the OSQ-bench procedure used to convert MMLU (and, adapted, the
+  other multiple-choice sources) into open-ended questions; see
+  `pipeline/stage0/mmlu_openstyle/`.

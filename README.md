@@ -10,6 +10,9 @@ the model produce the modality the prompt actually calls for?
 
 ![pipeline](assets/comi_pipeline.png)
 
+(Predates Stage 5: see `pipeline/README.md` for the up-to-date pipeline,
+which reduces each sample to exactly 2 variants.)
+
 ## Dataset
 
 5,638 samples / 11,276 prompts (1 interrogative + 1 non-interrogative
