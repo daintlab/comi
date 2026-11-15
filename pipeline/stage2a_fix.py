@@ -3,17 +3,14 @@ Stage 2a: 수정 (fix).
 
 stage2_pipeline.py에 묶여있던 2a(수정)만 분리했다. route == "fix"인 샘플만
 재작성하고, keep은 원본 그대로 통과시킨다. 시스템 프롬프트(prompts/stage2a_fix.txt)는
-그대로 재사용 — 건드리지 않았다.
+그대로 재사용한다.
 
 Stage 2a는 stage1_judge.py의 basis/refine_hint를 사용자 메시지에 그대로 넣는다.
-원래는 hint를 안 썼는데(judge 판정 근거가 그대로 처방이 되어 모든 프롬프트에
-"Generate an image:"가 붙을 거라는 우려 때문), 실제로 30건 ablation(결과:
-results/hint_ablation_30.md)을 돌려보니 반대였다 -- hint 없이 자유 재작성하면
-오히려 동작/디테일이 드리프트하는 경우(예: "extract" -> "draw", 입력 이미지
-편집 요청이 신규 생성 요청으로 바뀜)가 많았고, meaning_ok 통과율이 23/30(힌트
-없음)보다 29/30(힌트 있음)으로 더 높았다. 그래서 hint를 쓰는 쪽으로 바꿨다.
+재작성이 진단된 문제에 맞춰 이루어지고, 원본의 동작과 디테일이 바뀌지 않도록
+하기 위함이다.
 
-  입력    stage1_judge.py의 출력 (results[]에 route, needs_refinement 포함)
+  입력    stage1_judge.py의 출력 (results[]에 route, needs_refinement, basis,
+          refine_hint 포함)
   출력    각 샘플에 fixed_prompt(route=="fix"일 때만 값 있음, 아니면 None)와
           source_prompt(2b/3에서 실제로 쓸 프롬프트 -- fix면 수정본, keep이면 원본)
           를 추가. 이후 stage2_pipeline.py(2b/3)가 이 출력을 입력으로 받으면
@@ -21,9 +18,8 @@ results/hint_ablation_30.md)을 돌려보니 반대였다 -- hint 없이 자유 
 
 사용법
 ------
-    python stage2a_fix.py --input stage1_full_5682.json --output stage2a_full_5682.json
-    python stage2a_fix.py --input stage1_full_5682.json --limit 20 --workers 4
-    GEN_MODEL=gpt-5.5 python stage2a_fix.py ...
+    GEN_MODEL=gpt-5.1 python stage2a_fix.py --input stage1_full_5682.json --output stage2a_full_5682.json
+    GEN_MODEL=gpt-5.1 python stage2a_fix.py --input stage1_full_5682.json --limit 20 --workers 4
 """
 
 from __future__ import annotations
