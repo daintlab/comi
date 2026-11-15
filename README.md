@@ -35,7 +35,7 @@ See `data/README.md` for per-source licenses and what each data file is.
 │   ├── stage0/       # per-source candidate-pool sub-pipelines
 │   ├── prompts/      # system prompts, one txt per stage
 │   └── decisions/    # Stage 5's human-review decisions
-├── inference/        # Single-load batch inference runners (Tar, Anole)
+├── inference/        # Single-load batch inference runners (Tar, Anole, Emu3.5)
 ├── evaluation/       # MSA / TP+ / COMI-score computation (see evaluation/README.md)
 ├── docs/
 │   └── Experiments.md   # methodology + the paper's reported tables
