@@ -82,10 +82,15 @@ produced them were not preserved.
 - `mmlu_openstyle/` -- fully reproducible: pulls `Open-Style/Open-LLM-Benchmark`
   and `cais/mmlu` from the HF Hub only (OSQ-bench conversion, Myrzakhan et al.,
   arXiv:2406.07545).
-- `scienceqa_filtering/`, `vqav2_filtering/` -- the visual-grounding filter
-  above; need `OPENAI_API_KEY` plus each source's official images/annotations
-  (ScienceQA via HF or `/nas/datahub/ScienceQA/`; VQAv2 via
-  <https://visualqa.org/download.html>).
+- `vqav2_filtering/` -- the visual-grounding filter above, fully reproducible
+  from scratch given the official VQAv2 files (`prepare_pool.py` samples the
+  starting 2,400-item pool itself, `SEED=42`); needs `OPENAI_API_KEY` and
+  <https://visualqa.org/download.html>.
+- `scienceqa_filtering/` -- the same filter, but only reproducible from its
+  frozen `gpt_audit_full.json` (the starting 2,017-item pool) onward; the
+  script that built that pool from raw ScienceQA wasn't preserved, so treat
+  the frozen file as the source of truth. Needs `OPENAI_API_KEY` and
+  ScienceQA images (HF `derek-thomas/ScienceQA` or `/nas/datahub/ScienceQA/`).
 - `scienceqa_openstyle/` -- frozen output of the rewrite above.
 
 A Stage 4 (`_archive/stage4_finalize_unused/`) predates Stage 5 and is **not**
