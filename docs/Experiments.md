@@ -71,7 +71,7 @@ ScienceQA similarly has its multiple-choice options removed (see
 `pipeline/stage0/scienceqa_openstyle/`).
 
 Construction pipeline, the "why" behind each stage, and exact reproduction
-counts are in `pipeline/README.md`.
+counts are in the root `README.md`'s "Construction pipeline" section.
 
 ### Metrics
 
@@ -96,7 +96,7 @@ counts are in `pipeline/README.md`.
 Implementation: `evaluation/compute_msa_tp.py`; per-source scorers:
 `evaluation/rule_based_scorers.py` (GSM8K, VQAv2 exactly; MMLU/OSQ-bench,
 ScienceQA as a cheap local proxy only -- the paper's numbers use a GPT-5.5
-judge for these two, see `evaluation/README.md`) plus each benchmark's own
+judge for these two, see root `README.md`'s "Evaluation" section) plus each benchmark's own
 official evaluator or a VLM/CLIP judge for the four image-output sources.
 
 ### Baseline (forced modality)

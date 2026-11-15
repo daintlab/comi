@@ -24,13 +24,13 @@ Definitions:
     0 for every other source).
 
 Expected input (one results jsonl per model, produced by `inference/` and
-then scored per-source -- see evaluation/README.md): each line is a JSON
+then scored per-source -- see root README.md, "Evaluation"): each line is a JSON
 object with at least:
     variant_id, source, gold_modality ("text" or "image"),
     pred_modality ("text" or "image"), text_output (string)
 plus a per-item `score` field (0-100) added by a source-specific scorer
 (see rule_based_scorers.py for the four sources that don't need a judge
-model; the other four need a judge -- see evaluation/README.md).
+model; the other four need a judge -- see root README.md, "Evaluation").
 
 Usage:
     python compute_msa_tp.py --input results_scored.jsonl --out table.md
@@ -118,7 +118,7 @@ def main() -> int:
     if missing_score:
         raise SystemExit(
             f"{len(missing_score)}/{len(items)} items have no `score` field -- "
-            f"run a source-specific scorer first (see evaluation/README.md). "
+            f"run a source-specific scorer first (see root README.md, 'Evaluation'). "
             f"First missing item: {missing_score[0].get('variant_id')}")
 
     rows = compute_table(items)

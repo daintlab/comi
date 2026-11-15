@@ -18,7 +18,7 @@ Stage 0: 원본 프롬프트 확정 (MC/language bias 완화 재샘플링 + 최�
        Step2 (선지 의존도): 선지 없이 이미지+질문만으로 유일하게 답 가능한지 판정.
        전체 2,017건 -> Step1 생존 653 -> Step2 생존 409.
        재현: pipeline/stage0/scienceqa_filtering/{blind_test_full.py, run_gpt_audit_v5_full.py}
-             (원본 2,017건 pool과 이미지는 이 저장소에 없음 -- pipeline/stage0/README.md 참고)
+             (원본 2,017건 pool과 이미지는 이 저장소에 없음 -- 루트 README.md "Stage 0 sub-pipelines" 참고)
        산출물: data/stage0_inputs/scienceqa_final_409.json (409건)
        리포트: /nas/home/ysk1207/nips/after-rebuttar/scienceqa_filtering_report.md
                (이 기기 로컬 경로, 레포에는 없음 -- 필요시 별도 공유)

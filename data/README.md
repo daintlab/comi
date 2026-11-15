@@ -5,12 +5,12 @@
 | File | What it is |
 |---|---|
 | `stage0_originals.jsonl` | Stage 0 output: 5,682 candidate items pooled from the 8 source datasets, before any LLM judging/rewriting. |
-| `stage0_inputs/` | Frozen per-source inputs that `stage0_prepare_originals.py` assembles from (see `pipeline/stage0/README.md`). |
+| `stage0_inputs/` | Frozen per-source inputs that `stage0_prepare_originals.py` assembles from (see root `README.md`, "Stage 0 sub-pipelines"). |
 | `stage1_full_5682.json` | Stage 1 output: adds `needs_refinement`/`route` per item. |
 | `stage2a_full_5682.json` | Stage 2a output: adds `fixed_prompt`/`source_prompt` for `route=="fix"` items. |
 | `stage2b_full_5682.json` | Stage 2b output: adds 5 variants per item (2 interrogative, 3 non-interrogative). |
 | `stage3_full_5682.json` | Stage 3 output: adds per-variant validation (`modality_ok`/`meaning_ok`/`naturalness_ok`). |
-| `stage3_2variant_final.json` | **The released dataset.** 5,638 samples, 2 variants each -- 11,276 prompts total. ScienceQA's variants have their source question's MC options stripped (see `pipeline/stage0/README.md`, section D); this differs from the other files above. |
+| `stage3_2variant_final.json` | **The released dataset.** 5,638 samples, 2 variants each -- 11,276 prompts total. ScienceQA's variants have their source question's MC options stripped (see root `README.md`, "ScienceQA open-style rewrite"); this differs from the other files above. |
 | `comi_bench_final_original_5682.json` | The untouched original prompts (pre-Stage-1), for the "original prompt, no forcing" baseline comparison reported in the paper. |
 
 ## Source datasets and their licenses

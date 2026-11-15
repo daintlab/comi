@@ -9,7 +9,7 @@ open-ended (no multiple-choice letters in the prompt -- see
 pipeline/stage0/scienceqa_openstyle/ for why), so there is no exact-match
 target. `score_open_style` uses loose containment as a cheap
 proxy; it under-counts paraphrased correct answers, which is why the paper's
-mmlu/ScienceQA numbers come from an LLM judge instead (see evaluation/README.md)
+mmlu/ScienceQA numbers come from an LLM judge instead (see root README.md, "Evaluation")
 -- these rule-based versions are provided for quick local sanity-checking,
 not as the source of the paper's reported numbers for those two sources.
 """
