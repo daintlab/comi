@@ -36,24 +36,39 @@ construction pipeline controls for this.
 | 2a | Rewrite prompts that failed Stage 1 | `fix` only |
 | 2b | Generate 5 variants (2 interrogative, 3 non-interrogative) | all |
 | 3 | Validate each variant on modality / meaning / naturalness | all |
-| 4 | Apply human drop decisions, produce final dataset | flagged samples only |
+| 5 | Reduce 5 variants to 2 (1 interrogative + 1 non-interrogative); human review for samples that can't be reduced mechanically | all |
 
 Stage 1 does not produce repair instructions. Its judgement criterion would
 become the prescription, and every image prompt would end up rewritten as
 "Generate an image: …". Stage 2a follows a fixed rewriting policy instead.
 
+There is also a `stage4_finalize.py`, an earlier human-curation path (apply
+per-sample drop decisions to the 5-variant Stage 3 output) that predates
+Stage 5. **It is not part of the path that produced the released dataset.**
+Stage 5 runs directly on Stage 3's output and does its own, separate human
+review (see Human verification). `stage4_finalize.py` and its decision files
+are kept for reference only; nothing downstream reads its output.
+
 ## Layout
 
 ```
 pipeline/
-  stage1_judge.py       Stage 1 only
-  stage2_pipeline.py    Stage 2a → 2b → 3
-  stage4_finalize.py    Stage 4: apply drop decisions
-  prompts/              system prompts, one txt per stage
-  decisions/            per-sample drop/keep decisions (see Human verification)
-  logs/                 full-run logs, one per stage
+  stage0_prepare_originals.py    Stage 0: assemble data/stage0_originals.jsonl from data/stage0_inputs/
+  stage0/                        sub-pipelines that produce data/stage0_inputs/ (see stage0/README.md)
+  stage1_judge.py                Stage 1 only
+  stage2a_fix.py                 Stage 2a only (rewrite `fix`-routed prompts)
+  stage2b_generate.py            Stage 2b only (generate 5 variants)
+  stage3_validate.py             Stage 3 only (validate variants, per-variant or --batch-by-sample)
+  stage5_reduce_to_2variants.py  Stage 5: reduce 5 variants to 2, human review for the rest
+  stage4_finalize.py             earlier, unused curation path -- see Pipeline section above
+  stage2_pipeline.py             superseded combined 2a+2b+3 script, kept for history; not used for the released data
+  prompts/                       system prompts, one txt per stage
+  decisions/                     per-sample drop/keep decisions (see Human verification)
+  logs/                          full-run logs, one per stage (stage1/2a/2b/3 only)
 data/
-  samples.jsonl         input samples
+  stage0_originals.jsonl       Stage 0 output, input to Stage 1
+  stage1_full_5682.json ... stage3_full_5682.json   per-stage outputs
+  stage3_2variant_final.json   final released dataset (Stage 5 output)
 assets/
   comi_pipeline.png
 ```
@@ -65,15 +80,18 @@ pip install openai python-dotenv
 echo 'OPENAI_API_KEY=sk-...' > .env
 
 cd pipeline
-python stage1_judge.py --input ../data/samples.jsonl --output stage1.json
-python stage2_pipeline.py --input stage1.json --output stage2.json
+python stage1_judge.py --input ../data/stage0_originals.jsonl --output stage1_out.json
+python stage2a_fix.py --input stage1_out.json --output stage2a_out.json
+python stage2b_generate.py --input stage2a_out.json --output stage2b_out.json
+python stage3_validate.py --input stage2b_out.json --output stage3_out.json
+python stage5_reduce_to_2variants.py --input stage3_out.json --output ../data/stage3_2variant_final.json
 ```
 
 Models are set through environment variables. The validator is deliberately a
 different model from the generator (Panickssery et al., NeurIPS 2024).
 
 ```bash
-JUDGE_MODEL=gpt-5.5 GEN_MODEL=gpt-5.1 VAL_MODEL=gpt-5.5 python stage2_pipeline.py ...
+JUDGE_MODEL=gpt-5.5 GEN_MODEL=gpt-5.5 VAL_MODEL=gpt-5.5 python stage1_judge.py ...
 ```
 
 System prompts live in `prompts/` as plain text so they can be edited without
@@ -105,8 +123,31 @@ LLM judgements are spot-checked by hand: Stage 1 decisions for agreement with
 human labels, and a sample of Stage 3 survivors for meaning preservation.
 Details in the paper.
 
-Two failure patterns needed a human decision rather than the axis scores
-alone:
+**Stage 5's human review (this is what produced the released dataset).**
+`stage5_reduce_to_2variants.py` picks 1 passed interrogative + 1 passed
+non-interrogative variant per sample automatically wherever possible
+(`random.Random(42)`, see the script). A sample can't be reduced this way if
+all 5 variants failed Stage 3, or if no variant in one of the two slots
+passed. Running the script against the released `data/stage3_full_5682.json`
+and `pipeline/decisions/variant2_reduction_*.json`:
+
+- **74** samples needed inspection (33 all-failed, 23 no non-interrogative
+  survivor, 18 no interrogative survivor).
+- Of those, **30** were rescued by hand (`variant2_reduction_manual_decisions.json`,
+  `decision: "rescue"`, a specific pair of variants picked manually) and
+  **44** were dropped (25 via the automatic drop registry
+  `variant2_reduction_auto_drop_registry.json` for failure patterns with a
+  single clear cause across many samples, the rest via explicit manual
+  `"drop"` decisions — manual decisions always take priority over the
+  registry).
+- 5,682 → 5,638 samples (11,276 prompts).
+
+**Stage 4's human review (superseded, not part of the released path).**
+`pipeline/stage4_finalize.py` is an earlier, separate curation pass over the
+same `data/stage3_full_5682.json`, driven by its own decision files
+(`pipeline/decisions/drop_decisions.json`, `qa_decisions.json`; one row per
+sample: `keep`, `drop`, or `keep` with a specific list of variants to drop).
+Its two failure patterns:
 
 - **Rule-based-graded sources** (`gsm8k`, `mmlu`, `ScienceQA`, `VQAv2`) reuse a
   single fixed `gold_answer` across all 5 variants of a sample. A variant that
@@ -114,17 +155,19 @@ alone:
   more than he has" → "short by 2") silently invalidates that gold answer —
   unlike model-judged sources (`ImgEditBench`, `MagicBrush`, `dpg_bench`,
   `geneval`), where a judge scores the actual output against whatever was
-  asked, so prompt drift there doesn't break grading the same way. 39 such
-  variants across 19 samples were identified and dropped.
+  asked, so prompt drift there doesn't break grading the same way.
 - **Source-level defects** independent of the variant step: duplicated text in
   the original prompt, and a couple of `ImgEditBench` items whose source
-  prompt asked for a text answer despite being labeled `TI2I`. 6 samples
-  dropped, plus one `gsm8k` sample whose gold answer changed in every variant.
+  prompt asked for a text answer despite being labeled `TI2I`.
 
-`pipeline/stage4_finalize.py` applies these decisions
-(`pipeline/decisions/*.json`, one row per sample: `keep`, `drop`, or `keep`
-with a specific list of variants to drop) to `data/stage3_full_5682.json` and
-produces `data/stage3_final_5675.json`.
+Running `stage4_finalize.py` against the current decision files: 36 samples
+reviewed, 7 dropped outright, 25 variants dropped across 17 other samples,
+5,682 → 5,675. **This output (`data/stage3_final_5675.json`) is not present
+in the repo and nothing downstream reads it** — Stage 5 was run directly on
+`data/stage3_full_5682.json` instead, and the dataset it produced is what was
+released. `stage4_finalize.py` is kept only so this history stays legible;
+treat the numbers in this subsection as historical, not as a description of
+the released dataset.
 
 ## References
 
