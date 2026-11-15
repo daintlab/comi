@@ -1,57 +1,85 @@
-# CAMO-Bench
+# COMI-Bench
 
-**Contextual Autonomous Modality Output Benchmark**
+**C**ontextual **O**utput **M**odality **I**nference benchmark.
 
-Evaluating whether unified multimodal models (UMMs) can infer the intended output modality from context alone.
+Unified multimodal models (UMMs) can respond with either text or an image.
+Existing benchmarks always tell the model which mode to use, so they cannot
+measure whether a model would have chosen correctly on its own. COMI-Bench
+removes that instruction and asks a single question: given a prompt, does
+the model produce the modality the prompt actually calls for?
+
+![pipeline](assets/comi_pipeline.png)
+
+## Dataset
+
+5,638 samples / 11,276 prompts (1 interrogative + 1 non-interrogative
+variant per sample), built from 8 existing datasets across 4 task types:
+
+| Task type | Input | Expected output | Sources | Samples |
+|-----------|-------|------------------|---------|--------:|
+| t2t | text | text | GSM8K, MMLU | 1,390 |
+| ti2t | text + image | text | VQAv2, ScienceQA | 1,394 |
+| t2i | text | image | GenEval, DPG-Bench | 1,609 |
+| ti2i | text + image | image | MagicBrush, ImgEdit-Bench | 1,245 |
+| **Total** | | | | **5,638** |
+
+See `data/README.md` for per-source licenses and what each data file is.
 
 ## Structure
 
 ```
-CAMO-Bench/
-├── data/                   # Benchmark data
-│   ├── camo_bench_v3.json  # 496 questions, 4 task types, 5 variants each
-│   └── original_prompts.json
-├── pipeline/               # Benchmark construction (Steps 1-3)
-│   ├── check_expected.py   # Step 1: instruction-completeness gate
-│   ├── refine.py           # Step 2: generate prompt variants
-│   ├── score_variants.py   # Step 3: cosine similarity QC
-│   └── ...
-├── inference/              # Model inference scripts
-│   ├── tar_inference.py    # Tar-7B (single-load batch runner)
-│   ├── anole_inference.py  # Anole-7B (Chameleon-based)
-│   ├── convert_to_inputs.py
-│   ├── convert_to_original.py
-│   └── setup_tar_env.sh
-├── evaluation/             # Analysis & metrics
-│   ├── analyze_experiments.py  # Main: Exp 1-4 tables
-│   ├── compute_msa.py
-│   └── analyze_anole.py
-├── docs/                   # Documentation
-│   └── Experiments.md
-└── _archive/               # Raw dataset collection (not polished)
-    └── collecting/
+.
+├── pipeline/        # Benchmark construction: Stage 0-5 (see pipeline/README.md)
+│   ├── stage0_prepare_originals.py ... stage5_reduce_to_2variants.py
+│   ├── stage0/       # per-source candidate-pool sub-pipelines
+│   ├── prompts/      # system prompts, one txt per stage
+│   └── decisions/    # human-review decisions applied by stage4/stage5
+├── inference/        # Single-load batch inference runners (Tar, Anole)
+├── evaluation/       # MSA / TP / C-TP computation (see evaluation/README.md)
+├── docs/
+│   └── Experiments.md   # methodology + the paper's reported tables
+├── data/             # Benchmark data, all pipeline stages' outputs
+├── assets/
+└── _archive/         # superseded code, kept for provenance only
 ```
 
-## Task Types
+## Quick start
 
-| Type | Input | Expected Output | Sources |
-|------|-------|----------------|---------|
-| t2t  | text | text | GSM8K, MMLU |
-| ti2t | text + image | text | VQAv2, ScienceQA |
-| t2i  | text | image | GenEval, DPG-Bench |
-| ti2i | text + image | image | MagicBrush, ImgEditBench |
-
-## Quick Start
+Construct the benchmark from scratch, or regenerate a stage:
 
 ```bash
-# Run analysis on existing results
-python evaluation/analyze_experiments.py \
-  --v3 data/camo_bench_v3.json \
-  --models "tar:<tar_output_dir>,anole:<anole_output_dir>" \
-  --mock show-o2 \
-  --out results/
+cd pipeline
+python stage1_judge.py --input ../data/stage0_originals.jsonl --output stage1_out.json
+python stage2a_fix.py --input stage1_out.json --output stage2a_out.json
+python stage2b_generate.py --input stage2a_out.json --output stage2b_out.json
+python stage3_validate.py --input stage2b_out.json --output stage3_out.json
+python stage5_reduce_to_2variants.py --input stage3_out.json --output ../data/stage3_2variant_final.json
+```
+
+Evaluate a model's outputs against the released dataset:
+
+```bash
+cd evaluation
+python compute_msa_tp.py --input <scored_results>.jsonl --out table.md
+```
+
+See `pipeline/README.md` for the construction pipeline's full design
+rationale, and `evaluation/README.md` / `docs/Experiments.md` for the
+evaluation methodology and reported results.
+
+## Citation
+
+```bibtex
+@inproceedings{comibench,
+  title     = {COMI-Bench: A Contextual Output Modality Inference Benchmark},
+  author    = {TODO},
+  booktitle = {TODO},
+  year      = {2026},
+}
 ```
 
 ## License
 
-TBD
+- **Code** (`pipeline/`, `evaluation/`, `inference/`): MIT, see `LICENSE`.
+- **Dataset** (`data/`): CC BY-NC-SA 4.0, see `data/README.md` for per-source
+  license details (ScienceQA's CC BY-NC-SA 4.0 is the binding constraint).

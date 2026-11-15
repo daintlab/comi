@@ -4,159 +4,205 @@
 
 ### Models
 
-We evaluate three representative UMMs that differ in how they handle output modality selection:
+Three unified multimodal models (UMMs) are evaluated under COMI-Bench's free
+modality-choice protocol (no external modality flag):
 
-- **Tar-7B** (Han et al., 2025): Based on Qwen2.5-7B-Instruct with a text-aligned visual tokenizer (TA-Tok). The model can autonomously emit an `<im_start>` token to initiate image generation as part of its standard next-token prediction. We use the first-token probability of `<im_start>` as the modality decision signal.
+- **Tar-7B** (Han et al., 2025) -- Qwen2.5-7B-Instruct with a text-aligned
+  visual tokenizer (TA-Tok). Emits `<im_start>` to switch into image
+  generation as part of ordinary next-token prediction.
+- **Anole-7B** (Chern et al., 2024) -- Chameleon-7B, an early-fusion model
+  that interleaves text and image tokens in one shared vocabulary. Emits a
+  begin-of-image (BOI) token to switch to image generation.
+- **Emu3.5** (BAAI) -- a unified autoregressive model with its own native
+  BOI-emission mechanism for free modality choice, used with its official
+  decoding settings throughout.
 
-- **Anole-7B** (Chern et al., 2024): Based on Chameleon-7B, an early-fusion model that interleaves text and image tokens in a shared vocabulary. The model generates a begin-of-image (BOI) token to switch to image generation. We use the first-token BOI probability as the modality decision signal.
+BAGEL, Janus-Pro, Emu3, Show-o and Show-o2 are used only for the qualitative
+comparison figure, not for the quantitative tables below -- most either
+require an external modality flag (so they cannot be evaluated under free
+choice at all) or were not part of the main quantitative comparison.
 
-- **Show-o2** (Xie et al., 2025): A unified model that supports both understanding and generation, but requires an external modality flag to select the output type. When no flag is provided, the model defaults to text-only output, making it unable to produce images through contextual inference alone.
+### Decoding settings
 
-### Data
+Free-choice generation uses **each model's own official, released decoding
+settings** (sampling parameters, resolution, image-token budget) rather than
+a single shared greedy configuration, so that a model's reported MSA/TP/C-TP
+reflects how it is actually meant to be run. For Tar specifically, free
+choice needs settings for both an initial text-or-BOI decision and (if BOI is
+emitted) continued image-token decoding; these are applied as two decoding
+stages over one continuous generation, not two independent samples, so
+neither stage's sampling parameters contaminate the other's token
+distribution. See `inference/` for the per-model settings actually used.
 
-We use CAMO-Bench, constructed by reformulating 496 questions from eight existing datasets spanning four task types:
+### Dataset
 
-| Task type | Input | Expected output | Sources | N |
-|-----------|-------|----------------|---------|---|
-| t2t | text | text | GSM8K, MMLU | 121 |
-| ti2t | text + image | text | VQAv2, ScienceQA | 125 |
-| t2i | text | image | GenEval, DPG-Bench | 125 |
-| ti2i | text + image | image | MagicBrush, ImgEditBench | 125 |
+**COMI-Bench**: 5,638 samples / 11,276 prompts (1 interrogative + 1
+non-interrogative variant per sample) across 8 sources:
 
-Each question has up to 5 semantically equivalent prompt variants produced by the CAMO-Bench reformulation pipeline, yielding 2,472 items in total. The reformulation removes surface-form cues (e.g., "generate an image of") that could trivially signal the intended output modality, while preserving task semantics.
+| Task type | Input | Expected output | Sources | Samples |
+|-----------|-------|------------------|---------|--------:|
+| t2t | text | text | GSM8K, MMLU | 699 + 691 = 1,390 |
+| ti2t | text + image | text | VQAv2, ScienceQA | 985 + 409 = 1,394 |
+| t2i | text | image | GenEval, DPG-Bench | 553 + 1,056 = 1,609 |
+| ti2i | text + image | image | MagicBrush, ImgEdit-Bench | 510 + 735 = 1,245 |
+| **Total** | | | | **5,638** |
+
+Construction pipeline, the "why" behind each stage, and exact reproduction
+counts are in `pipeline/README.md`.
 
 ### Metrics
 
-We frame modality selection as a binary classification problem: given a prompt, the model must decide whether to produce an image (positive) or text (negative). Each model exposes a modality decision signal---the probability assigned to the image-initiating token at the first generation step (`im_start_prob` for Tar, `boi_prob` for Anole). For Show-o2, which lacks such a signal, we assign a constant probability of 0.
+- **MSA (Modality Selection Accuracy, strict)**: for a text-gold item,
+  success iff the response's text content is non-empty (independent of
+  whether the response also contains an image). For an image-gold item,
+  success iff the response's modality is image.
+- **TP (Task Performance)**: mean per-item correctness score (0-100), over
+  MSA-passing items only.
+- **C-TP (Conditional Task Performance)**: mean per-item score over *all*
+  items; an MSA-failing item is scored as `s_fail` (50 for MagicBrush's
+  0-100 CLIP-I scale, 0 for every other source) instead of being scored on
+  its (nonexistent or wrong-modality) output.
 
-Our primary metric is **AUROC** (Area Under the Receiver Operating Characteristic curve), which measures how well the modality decision signal separates image-expected from text-expected prompts. AUROC = 1.0 indicates perfect separation; AUROC = 0.5 indicates no discriminative ability (random baseline). We also report FPR and TPR at the optimal threshold (Youden's J statistic).
+Implementation: `evaluation/compute_msa_tp.py`; per-source scorers:
+`evaluation/rule_based_scorers.py` (GSM8K, VQAv2 exactly; MMLU, ScienceQA as
+a cheap local proxy only -- the paper's numbers use a GPT-5.5 judge for
+these two, see `evaluation/README.md`) plus each benchmark's own official
+evaluator or a VLM/CLIP judge for the four image-output sources.
 
-For accuracy-based evaluation, we adopt an **inclusion criterion**: a response is correct if it contains the expected modality, regardless of whether it also contains additional modalities. For example, a response that produces both text and an image is counted as correct for a text-expected prompt.
+### Baseline (forced modality)
 
-
-## Experiment 1: Modality Decision
-
-**Goal.** Can models select the correct output modality when it is not externally specified?
-
-**Setup.** We run each model on 496 questions (variant 0) without any modality flag, and measure how well the modality decision signal discriminates image-expected from text-expected prompts.
-
-### Results
-
-**Table 1.** Overall modality decision performance.
-
-| Model | FPR | TPR | AUROC |
-|-------|-----|-----|-------|
-| Tar-7B | 0.004 | 0.992 | **0.9997** |
-| Anole-7B | 0.000 | 0.540 | 0.7711 |
-| Show-o2 | 0.000 | 0.000 | 0.5000 |
-
-**Table 2.** Modality decision by input modality. T-in: text-only input (t2t + t2i). I-in: text + image input (ti2t + ti2i).
-
-| Model | Input | FPR | TPR | AUROC |
-|-------|-------|-----|-----|-------|
-| Tar-7B | T-in | 0.000 | 1.000 | 1.0000 |
-| Tar-7B | I-in | 0.008 | 0.984 | 0.9988 |
-| Anole-7B | T-in | 0.000 | 0.960 | 0.9800 |
-| Anole-7B | I-in | 0.000 | 0.128 | 0.5605 |
-| Show-o2 | T-in | 0.000 | 0.000 | 0.5000 |
-| Show-o2 | I-in | 0.000 | 0.000 | 0.5000 |
-
-**Table 3.** Modality decision accuracy (supplementary). Inclusion criterion: correct if expected modality is present in output.
-
-| Model | Overall | t2t | ti2t | t2i | ti2i |
-|-------|---------|-----|------|-----|------|
-| Tar-7B | 98.4% | 98.4% | 96.8% | 100% | 98.4% |
-| Anole-7B | 75.8% | 100% | 100% | 92.0% | 12.0% |
-| Show-o2 | 49.6% | 100% | 100% | 0.0% | 0.0% |
-
-### Analysis
-
-Three distinct patterns emerge.
-
-**Show-o2** achieves AUROC = 0.5 (random), confirming that models relying on external modality control have no contextual modality inference capability. Its 100% accuracy on text tasks (t2t, ti2t) is trivial: it always outputs text.
-
-**Anole-7B** shows a striking asymmetry between input modalities. With text-only input (T-in), the model achieves AUROC = 0.98, successfully distinguishing between prompts that call for text vs. image responses. However, when images are present in the input (I-in), AUROC drops to 0.56---near random. This manifests as a catastrophic failure on ti2i tasks (12.0% accuracy), where the model almost never initiates image generation despite the task clearly requiring it. This asymmetry may reflect training data composition rather than an architectural limitation, as the model's BOI token mechanism is in principle capable of signaling image generation.
-
-**Tar-7B** achieves near-perfect modality decision (AUROC = 0.9997) across both input modalities, with TPR > 0.98 and FPR < 0.01. This suggests that when the image-initiating token is integrated into the model's standard generation vocabulary and the model is trained on diverse multimodal tasks, contextual modality inference can be highly reliable.
+For comparison, each model is also run on the **original** (pre-rewrite)
+prompt with its output modality **hard-forced** to the gold modality, using
+that model's own official single-modality inference path (not COMI-Bench's
+free-choice generation). This isolates how well a model can do the task at
+all from whether it chooses the right modality unprompted; Table 2 reports
+this as `Baseline`, denominator = full prompt count (an empty forced-text
+response scores 0).
 
 
-## Experiment 2: Prompt Variant Sensitivity
+## Table 1: MSA (%), official decoding, free choice
 
-**Goal.** Do models make consistent modality decisions when the same question is rephrased in semantically equivalent ways?
+"COMI" = the released 2-variant prompts, averaged over both variants.
+"Original" = the pre-rewrite prompt (free choice, no forcing), reported only
+for the 5 sources where the pipeline produces this condition
+(GenEval/DPG-Bench/MagicBrush/ImgEdit-Bench/ScienceQA -- see
+`pipeline/README.md`).
 
-**Setup.** For each of the 496 questions, we use all available prompt variants (up to 5) and measure whether the model's modality decision remains stable across variants. We define:
-- **Consistency rate**: fraction of questions where all variants produce the same modality decision.
-- **Flip rate**: fraction of questions where at least one variant yields a different modality.
-- **Mean entropy**: average binary entropy of per-question modality distributions (0 = fully consistent, 1 = maximally split).
-
-### Results
-
-**Table 4.** Prompt variant sensitivity. (Tar results pending full variant inference.)
-
-| Model | Consistency | Flip Rate | Mean Entropy | t2t | ti2t | t2i | ti2i |
-|-------|-------------|-----------|--------------|-----|------|-----|------|
-| Anole-7B | 82.3% | 17.7% | 0.139 | 100% | 96.8% | 83.2% | 49.6% |
-| Show-o2 | 100% | 0.0% | 0.000 | 100% | 100% | 100% | 100% |
-
-### Analysis
-
-**Show-o2** is trivially consistent: it always outputs text regardless of prompt form.
-
-**Anole-7B** reveals a notable sensitivity to prompt form. Overall, 17.7% of questions have at least one variant that flips the modality decision. This sensitivity is not uniform across task types:
-
-- **t2t and ti2t** (text-expected): near-perfect consistency (100%, 96.8%). The model reliably decides on text output.
-- **t2i**: 83.2% consistency. For roughly 1 in 6 image-generation questions, at least one rephrasing causes the model to not generate an image.
-- **ti2i**: only 49.6% consistency---effectively a coin flip. For more than half of image-editing questions, the modality decision depends on how the prompt is worded rather than what it means.
-
-This pattern suggests that Anole's modality decision mechanism is more sensitive to surface-form variation when the expected output is an image, particularly when images are also present in the input.
-
-
-## Experiment 3: Sensitivity and Output Quality
-
-**Goal.** Does prompt variant sensitivity affect not only modality selection but also the quality of correct outputs?
-
-**Setup.** For text-expected tasks (t2t, ti2t) where the model correctly outputs text, we measure answer accuracy (gold answer containment) across variants. For image-expected tasks, we measure variance in modality decision probability across variants. Higher variance indicates that the model's confidence in its modality choice fluctuates with prompt form.
-
-### Results
-
-**Table 5.** Output quality sensitivity across prompt variants.
-
-| Model | Text Mean Acc | Text Acc Variance | Questions w/ Variance | Image Prob Variance |
-|-------|---------------|-------------------|-----------------------|---------------------|
-| Anole-7B | 32.7% | 0.1246 | 151 / 246 | 0.0593 |
-
-### Analysis
-
-Among the 246 text-expected questions, 151 (61.4%) show non-zero variance in answer correctness across prompt variants. This means that for a majority of questions, whether the model answers correctly depends on how the prompt is worded, even when the semantics are held constant.
-
-The image probability variance (0.059) for image-expected tasks corroborates the Exp 2 finding: the model's confidence in generating images fluctuates across semantically equivalent prompts.
-
-These results demonstrate that prompt variant sensitivity is not merely a modality selection issue---it propagates to output quality. A model that inconsistently selects the correct modality also inconsistently produces correct answers within that modality.
+| Model | Source | Condition | n | MSA |
+|---|---|---|---:|---:|
+| Emu3.5 | gsm8k | COMI | 1398 | 100.0 |
+| Tar | gsm8k | COMI | 1398 | 97.6 |
+| Anole | gsm8k | COMI | 1398 | 100.0 |
+| Emu3.5 | mmlu | COMI | 1382 | 99.6 |
+| Tar | mmlu | COMI | 1382 | 89.6 |
+| Anole | mmlu | COMI | 1382 | 100.0 |
+| Emu3.5 | ScienceQA | COMI | 818 | 82.4 |
+| Tar | ScienceQA | COMI | 818 | 99.9 |
+| Anole | ScienceQA | COMI | 818 | 84.0 |
+| Emu3.5 | VQAv2 | COMI | 1970 | 68.7 |
+| Tar | VQAv2 | COMI | 1970 | 97.7 |
+| Anole | VQAv2 | COMI | 1970 | 84.1 |
+| Emu3.5 | geneval | COMI | 1106 | 100.0 |
+| Tar | geneval | COMI | 1106 | 100.0 |
+| Anole | geneval | COMI | 1106 | 100.0 |
+| Emu3.5 | dpg_bench | COMI | 2112 | 99.9 |
+| Tar | dpg_bench | COMI | 2112 | 100.0 |
+| Anole | dpg_bench | COMI | 2112 | 100.0 |
+| Emu3.5 | MagicBrush | COMI | 1020 | 100.0 |
+| Tar | MagicBrush | COMI | 1020 | 99.0 |
+| Anole | MagicBrush | COMI | 1020 | 18.2 |
+| Emu3.5 | ImgEditBench | COMI | 1470 | 100.0 |
+| Tar | ImgEditBench | COMI | 1470 | 99.3 |
+| Anole | ImgEditBench | COMI | 1470 | 26.6 |
+| Emu3.5 | geneval | Original | 553 | 100.0 |
+| Tar | geneval | Original | 553 | 100.0 |
+| Anole | geneval | Original | 553 | 97.6 |
+| Emu3.5 | dpg_bench | Original | 1056 | 99.9 |
+| Tar | dpg_bench | Original | 1056 | 100.0 |
+| Anole | dpg_bench | Original | 1056 | 92.8 |
+| Emu3.5 | MagicBrush | Original | 510 | 100.0 |
+| Tar | MagicBrush | Original | 510 | 99.4 |
+| Anole | MagicBrush | Original | 510 | 7.6 |
+| Emu3.5 | ImgEditBench | Original | 735 | 100.0 |
+| Tar | ImgEditBench | Original | 735 | 99.3 |
+| Anole | ImgEditBench | Original | 735 | 11.7 |
+| Emu3.5 | ScienceQA | Original | 409 | 99.8 |
+| Tar | ScienceQA | Original | 409 | 100.0 |
+| Anole | ScienceQA | Original | 409 | 65.3 |
 
 
-## Experiment 4: Surface-Form Cue Analysis
+## Table 2: Baseline / TP / C-TP / Δ, COMI condition
 
-**Goal.** Do original benchmark prompts contain surface-form cues that inflate modality decision accuracy compared to CAMO-Bench reformulated prompts?
+Δ = C-TP − Baseline. ScienceQA's Δ is reported as `--`: COMI's TP/C-TP here
+use a GPT-5.5 judge while Baseline uses a different scoring path for this
+source, so the two are not on a directly comparable basis for a Δ (see
+`evaluation/README.md`).
 
-**Setup.** We compare modality decision accuracy between original prompts (from the source datasets) and CAMO-Bench reformulated prompts on the same questions using the same model.
+| Model | Source | n | Baseline | TP | C-TP | Δ |
+|---|---|---:|---:|---:|---:|---:|
+| Emu3.5 | gsm8k | 1398 | 78.7 | 76.6 | 76.6 | -2.1 |
+| Tar | gsm8k | 1398 | 56.1 | 55.5 | 54.2 | -1.9 |
+| Anole | gsm8k | 1398 | 20.9 | 23.1 | 23.1 | 2.2 |
+| Emu3.5 | mmlu | 1382 | 51.7 | 48.1 | 47.9 | -3.8 |
+| Tar | mmlu | 1382 | 25.5 | 31.1 | 27.9 | 2.4 |
+| Anole | mmlu | 1382 | 23.3 | 28.1 | 28.1 | 4.8 |
+| Emu3.5 | ScienceQA | 818 | 33.0 | 32.8 | 27.0 | -- |
+| Tar | ScienceQA | 818 | 52.6 | 25.9 | 25.9 | -- |
+| Anole | ScienceQA | 818 | 9.0 | 13.5 | 11.4 | -- |
+| Emu3.5 | VQAv2 | 1970 | 40.3 | 50.5 | 34.7 | -5.6 |
+| Tar | VQAv2 | 1970 | 67.3 | 58.5 | 57.1 | -10.2 |
+| Anole | VQAv2 | 1970 | 19.3 | 37.5 | 31.5 | 12.2 |
+| Emu3.5 | geneval | 1106 | 69.3 | 68.4 | 68.4 | -0.9 |
+| Tar | geneval | 1106 | 85.4 | 70.6 | 70.6 | -14.7 |
+| Anole | geneval | 1106 | 36.3 | 28.7 | 28.7 | -7.7 |
+| Emu3.5 | dpg_bench | 2112 | 85.8 | 84.1 | 84.1 | -1.7 |
+| Tar | dpg_bench | 2112 | 80.8 | 76.0 | 76.0 | -4.8 |
+| Anole | dpg_bench | 2112 | 56.8 | 54.7 | 54.7 | -2.1 |
+| Emu3.5 | MagicBrush | 1020 | 84.5 | 82.3 | 82.3 | -2.1 |
+| Tar | MagicBrush | 1020 | 77.2 | 76.4 | 76.1 | -1.1 |
+| Anole | MagicBrush | 1020 | 59.6 | 61.4 | 52.1 | -7.6 |
+| Emu3.5 | ImgEditBench | 1470 | 69.3 | 69.4 | 69.4 | 0.1 |
+| Tar | ImgEditBench | 1470 | 66.9 | 64.3 | 63.9 | -3.0 |
+| Anole | ImgEditBench | 1470 | 51.2 | 48.9 | 10.0 | -41.2 |
 
-### Results
 
-*(Pending: original prompt inference runs for Tar and Anole.)*
+## Table 3: before/after comparisons
 
-### Expected Analysis
+- **+Instr.**: samples whose original prompt was classified as
+  *underspecified* (a rule-based classifier over explicit-instruction
+  markers, `scripts/underspec_rule.py` in the evaluation codebase) --
+  before = original prompt (free choice, no forcing), after = that same
+  sample's COMI non-interrogative (statement-form) variant, which carries
+  an explicit instruction the original lacked. (T2I): GenEval/DPG-Bench
+  samples. (TI2I): MagicBrush/ImgEdit-Bench samples.
+- **Q→N**: within COMI, interrogative variant (before) vs. non-interrogative
+  variant (after) of the same sample, for the two sources where this
+  comparison is reported (ScienceQA, VQAv2).
+- **−Opt.** (ScienceQA only): before = original prompt (keeps the source
+  question's multiple-choice options), after = COMI interrogative variant
+  (options removed, see `pipeline/stage0/scienceqa_openstyle/`).
 
-If original prompts yield substantially higher modality accuracy than CAMO-Bench prompts, this would confirm that existing benchmarks contain surface-form cues that trivially signal the expected output modality. The gap between original and CAMO accuracy would quantify the degree to which current evaluation overestimates contextual modality inference capability.
+`n_paired` = number of samples with both a before- and an after-condition
+MSA-passing response (required for a TP delta); below 20, TP is reported as
+`N/A`.
 
+| Row | Model | n | MSA before | MSA after | ΔMSA | TP before | TP after | ΔTP | n_paired |
+|---|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| +Instr. (T2I) | Emu3.5 | 1604 | 99.9 | 99.9 | 0.0 | 80.8 | 78.1 | -2.6 | 1603 |
+| +Instr. (T2I) | Tar | 1604 | 100.0 | 100.0 | 0.0 | 74.2 | 73.9 | -0.4 | 1604 |
+| +Instr. (T2I) | Anole | 1604 | 94.5 | 99.9 | 5.5 | 49.1 | 45.8 | -3.3 | 1515 |
+| +Instr. (TI2I) | Emu3.5 | 83 | 100.0 | 100.0 | 0.0 | 84.5 | 82.8 | -1.7 | 83 |
+| +Instr. (TI2I) | Tar | 83 | 96.4 | 100.0 | 3.6 | 79.0 | 76.9 | -2.1 | 80 |
+| +Instr. (TI2I) | Anole | 83 | 2.4 | 28.9 | 26.5 | N/A | N/A | N/A | 2 |
+| Q→N (ScienceQA) | Emu3.5 | 409 | 94.9 | 69.9 | -24.9 | 34.5 | 34.9 | 0.4 | 278 |
+| Q→N (ScienceQA) | Tar | 409 | 100.0 | 99.8 | -0.2 | 28.9 | 23.0 | -5.9 | 408 |
+| Q→N (ScienceQA) | Anole | 409 | 84.8 | 83.1 | -1.7 | 13.2 | 12.3 | -0.9 | 312 |
+| Q→N (VQAv2) | Emu3.5 | 985 | 65.7 | 71.8 | 6.1 | 52.4 | 48.9 | -3.4 | 509 |
+| Q→N (VQAv2) | Tar | 985 | 97.6 | 97.8 | 0.2 | 59.7 | 58.4 | -1.3 | 943 |
+| Q→N (VQAv2) | Anole | 985 | 73.4 | 94.7 | 21.3 | 41.4 | 35.5 | -5.9 | 697 |
+| −Opt. (ScienceQA) | Emu3.5 | 409 | 99.8 | 94.9 | -4.9 | N/A | N/A | N/A | - |
+| −Opt. (ScienceQA) | Tar | 409 | 100.0 | 100.0 | 0.0 | N/A | N/A | N/A | - |
+| −Opt. (ScienceQA) | Anole | 409 | 65.3 | 84.8 | 19.6 | N/A | N/A | N/A | - |
 
-## Summary of Findings
-
-1. **Models that rely on external modality control (Show-o2) have zero contextual modality inference capability** (AUROC = 0.5), confirming that this is a non-trivial capability that must be explicitly supported.
-
-2. **Modality inference is asymmetric**: even models with autonomous modality selection (Anole) are markedly weaker at deciding to generate images than text. This asymmetry is particularly severe when images are present in the input (AUROC drops from 0.98 to 0.56 for Anole).
-
-3. **Modality decisions are sensitive to prompt form**: 17.7% of questions trigger modality flips across semantically equivalent variants in Anole, concentrated in image-expected tasks (ti2i: 49.6% consistency).
-
-4. **Prompt sensitivity propagates to output quality**: over 60% of text-expected questions show answer accuracy variance across prompt variants, indicating that the fragility is not limited to modality selection.
-
-5. **Not all models are equally affected**: Tar-7B achieves AUROC = 0.9997, demonstrating that near-perfect contextual modality inference is achievable when the model architecture and training adequately support it.
+A LaTeX (`\begin{tabular}`) version of all three tables is generated
+alongside these by the same reporting scripts referenced in the paper.
