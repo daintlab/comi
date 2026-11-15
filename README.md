@@ -34,7 +34,7 @@ See `data/README.md` for per-source licenses and what each data file is.
 │   ├── stage0_prepare_originals.py ... stage5_reduce_to_2variants.py
 │   ├── stage0/       # per-source candidate-pool sub-pipelines
 │   ├── prompts/      # system prompts, one txt per stage
-│   └── decisions/    # human-review decisions applied by stage4/stage5
+│   └── decisions/    # Stage 5's human-review decisions
 ├── inference/        # Single-load batch inference runners (Tar, Anole)
 ├── evaluation/       # MSA / TP+ / COMI-score computation (see evaluation/README.md)
 ├── docs/

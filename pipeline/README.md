@@ -56,12 +56,13 @@ See `pipeline/stage0/scienceqa_openstyle/README.md` for the conversion and an
 important validation-coverage caveat (only 60/409 items went through real
 Stage-3-equivalent LLM validation).
 
-There is also a `stage4_finalize.py`, an earlier human-curation path (apply
-per-sample drop decisions to the 5-variant Stage 3 output) that predates
-Stage 5. **It is not part of the path that produced the released dataset.**
-Stage 5 runs directly on Stage 3's output and does its own, separate human
-review (see Human verification). `stage4_finalize.py` and its decision files
-are kept for reference only; nothing downstream reads its output.
+There is also a Stage 4 (`_archive/stage4_finalize_unused/stage4_finalize.py`),
+an earlier human-curation path (apply per-sample drop decisions to the
+5-variant Stage 3 output) that predates Stage 5. **It is not part of the
+path that produced the released dataset.** Stage 5 runs directly on Stage
+3's output and does its own, separate human review (see Human
+verification). Stage 4 and its decision files are archived for reference
+only; nothing downstream reads its output.
 
 ## Layout
 
@@ -74,15 +75,16 @@ pipeline/
   stage2b_generate.py            Stage 2b only (generate 5 variants)
   stage3_validate.py             Stage 3 only (validate variants, per-variant or --batch-by-sample)
   stage5_reduce_to_2variants.py  Stage 5: reduce 5 variants to 2, human review for the rest
-  stage4_finalize.py             earlier, unused curation path -- see Pipeline section above
-  stage2_pipeline.py             superseded combined 2a+2b+3 script, kept for history; not used for the released data
   prompts/                       system prompts, one txt per stage
-  decisions/                     per-sample drop/keep decisions (see Human verification)
+  decisions/                     Stage 5's human-review decisions (see Human verification)
   logs/                          full-run logs, one per stage (stage1/2a/2b/3 only)
 data/
   stage0_originals.jsonl       Stage 0 output, input to Stage 1
   stage1_full_5682.json ... stage3_full_5682.json   per-stage outputs
   stage3_2variant_final.json   final released dataset (Stage 5 output)
+_archive/
+  stage2_pipeline_combined/    superseded combined 2a+2b+3 script, kept for history; not used for the released data
+  stage4_finalize_unused/      earlier, unused curation path (Stage 4) -- see Pipeline section above
 ```
 
 ## Usage
@@ -154,10 +156,11 @@ and `pipeline/decisions/variant2_reduction_*.json`:
   registry).
 - 5,682 → 5,638 samples (11,276 prompts).
 
-**Stage 4's human review (superseded, not part of the released path).**
-`pipeline/stage4_finalize.py` is an earlier, separate curation pass over the
+**Stage 4's human review (superseded, not part of the released path,
+archived under `_archive/stage4_finalize_unused/`).**
+`stage4_finalize.py` is an earlier, separate curation pass over the
 same `data/stage3_full_5682.json`, driven by its own decision files
-(`pipeline/decisions/drop_decisions.json`, `qa_decisions.json`; one row per
+(`drop_decisions.json`, `qa_decisions.json`; one row per
 sample: `keep`, `drop`, or `keep` with a specific list of variants to drop).
 Its two failure patterns:
 
@@ -177,9 +180,9 @@ reviewed, 7 dropped outright, 25 variants dropped across 17 other samples,
 5,682 → 5,675. **This output (`data/stage3_final_5675.json`) is not present
 in the repo and nothing downstream reads it** — Stage 5 was run directly on
 `data/stage3_full_5682.json` instead, and the dataset it produced is what was
-released. `stage4_finalize.py` is kept only so this history stays legible;
-treat the numbers in this subsection as historical, not as a description of
-the released dataset.
+released. This script and its decisions are kept archived only so this
+history stays legible; treat the numbers in this subsection as historical,
+not as a description of the released dataset.
 
 ## References
 
