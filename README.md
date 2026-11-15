@@ -8,9 +8,6 @@ measure whether a model would have chosen correctly on its own. COMI-Bench
 removes that instruction and asks a single question: given a prompt, does
 the model produce the modality the prompt actually calls for?
 
-See `pipeline/README.md` for the construction pipeline's stage-by-stage
-diagram and design rationale.
-
 ## Dataset
 
 5,638 samples / 11,276 prompts (1 interrogative + 1 non-interrogative

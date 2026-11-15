@@ -15,26 +15,20 @@ and the rationale for each are in `compute_msa_tp.py`'s docstring and
    generated_image_paths}`.
 2. **Score** -- add a `score` field (0-100) to each record, per source:
    - `gsm8k`, `VQAv2`: `rule_based_scorers.py` (exact rules, no judge needed).
-   - `mmlu` (reported as **OSQ-bench** in the paper's tables), `ScienceQA`:
-     `rule_based_scorers.py`'s `score_open_style` is a
-     cheap local proxy, but it under-counts paraphrased correct answers
-     (loose text containment, not semantic match). The paper's reported
-     numbers use a GPT-5.5 judge instead -- grade the response against the
-     gold answer, asking only "does this response state the correct
-     answer" (binary, strict), independent of modality.
-   - `geneval`, `dpg_bench`: score with each benchmark's own official
-     evaluator against the generated image (geneval's object-detection
-     checker; dpg_bench's VQA-based question answering over the generated
-     image, following each benchmark's own released code).
-   - `MagicBrush`, `ImgEditBench`: `MagicBrush` uses CLIP-I similarity
-     between the generated image and the target image, scaled to 0-100.
-     `ImgEditBench` uses a VLM judge (the paper uses Qwen2.5-VL) rating
-     prompt compliance / visual seamlessness / content preservation each
-     1-5, averaged and rescaled to 0-100 via `(avg_1to5 - 1) / 4 * 100`.
+   - `mmlu` (= **OSQ-bench** in the paper's tables), `ScienceQA`:
+     `rule_based_scorers.py`'s `score_open_style` is a cheap local proxy
+     (loose containment, under-counts paraphrases); the paper uses a
+     GPT-5.5 judge instead (binary correct/incorrect, independent of modality).
+   - `geneval`, `dpg_bench`: each benchmark's own official evaluator
+     (object-detection checker; VQA-based question answering) on the
+     generated image.
+   - `MagicBrush`: CLIP-I similarity to the target image, scaled to 0-100.
+   - `ImgEditBench`: a VLM judge (paper uses Qwen2.5-VL) rating prompt
+     compliance / visual seamlessness / content preservation 1-5 each,
+     rescaled via `(avg_1to5 - 1) / 4 * 100`.
    These four judge-based scorers need external models/API access not
-   bundled in this repo; wire up whichever judge you have access to, as
-   long as it outputs a 0-100 `score` per item matching the rubric above --
-   `compute_msa_tp.py` only consumes the scored jsonl, not how it was scored.
+   bundled here; `compute_msa_tp.py` only consumes the scored jsonl, not
+   how it was scored.
 3. **Aggregate** -- `python compute_msa_tp.py --input <scored>.jsonl --out table.md`.
 
 ## Baseline comparison (forced-modality)

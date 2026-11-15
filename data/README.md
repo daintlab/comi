@@ -10,7 +10,7 @@
 | `stage2a_full_5682.json` | Stage 2a output: adds `fixed_prompt`/`source_prompt` for `route=="fix"` items. |
 | `stage2b_full_5682.json` | Stage 2b output: adds 5 variants per item (2 interrogative, 3 non-interrogative). |
 | `stage3_full_5682.json` | Stage 3 output: adds per-variant validation (`modality_ok`/`meaning_ok`/`naturalness_ok`). |
-| `stage3_2variant_final.json` | **The released dataset.** 5,638 samples, 2 variants each (1 interrogative + 1 non-interrogative) -- 11,276 prompts total. ScienceQA's variants here have their source question's multiple-choice options stripped (see `pipeline/stage0/scienceqa_openstyle/README.md`); this differs from the MC-option-included text in `comi_bench_final_original_5682.json` and the earlier per-stage files above. |
+| `stage3_2variant_final.json` | **The released dataset.** 5,638 samples, 2 variants each -- 11,276 prompts total. ScienceQA's variants have their source question's MC options stripped (see `pipeline/stage0/README.md`, section D); this differs from the other files above. |
 | `comi_bench_final_original_5682.json` | The untouched original prompts (pre-Stage-1), for the "original prompt, no forcing" baseline comparison reported in the paper. |
 
 ## Source datasets and their licenses

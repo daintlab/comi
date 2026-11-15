@@ -5,86 +5,64 @@
 Unified multimodal models (UMMs) can respond with either text or an image.
 Existing benchmarks always tell the model which mode to use, so they cannot
 measure whether a model would have chosen correctly on its own. COMI-Bench
-removes that instruction and asks a single question: given a prompt, does the
-model produce the modality the prompt actually calls for?
-
-The benchmark covers four task types — T2T, TI2T, T2I, TI2I — built from
-existing datasets with minimal refinement.
-
+removes that instruction: given a prompt, does the model produce the
+modality the prompt actually calls for?
 
 ## Why existing data cannot be used as is
 
 Prompts in text-to-image datasets are typically bare captions (`a photo of a
-dog`) or statements of a desired result (`the sky should be clearer`). These
-read as image requests only by convention of the dataset they came from. A UMM
-can always continue in text, so on their own such prompts do not settle what
-the model should do — and scoring a text continuation as wrong would be unfair.
-
-A second problem is surface form. In source datasets, question marks correlate
-almost perfectly with the text modality: VQA prompts are questions, image
-prompts are not. A model could score well by looking at punctuation alone. The
-construction pipeline controls for this.
+dog`) or result statements (`the sky should be clearer`) -- a UMM can always
+continue in text, so these don't settle what the model should do. Separately,
+question marks correlate almost perfectly with the text modality across
+source datasets, so a model could score well on punctuation alone. The
+pipeline below controls for both.
 
 ## Pipeline
 
 | Stage | What it does | Applies to |
 |---|---|---|
-| 0 | Preprocess: strip MCQ options, drop image-independent TI samples | subset of sources |
+| 0 | Preprocess: strip MCQ options, visual-grounding filter (see below) | subset of sources |
 | 1 | Judge whether the prompt leads to its ground-truth modality | all |
 | 1.5 | Gate: `keep` or `fix` (code, no LLM call) | all |
 | 2a | Rewrite prompts that failed Stage 1 | `fix` only |
 | 2b | Generate 5 variants (2 interrogative, 3 non-interrogative) | all |
 | 3 | Validate each variant on modality / meaning / naturalness | all |
-| 5 | Reduce 5 variants to 2 (1 interrogative + 1 non-interrogative); human review for samples that can't be reduced mechanically | all |
+| 5 | Reduce 5 variants to 2 (1 interrogative + 1 non-interrogative); human review for the rest | all |
 
-Stage 1 does not produce repair instructions. Its judgement criterion would
-become the prescription, and every image prompt would end up rewritten as
-"Generate an image: …". Stage 2a follows a fixed rewriting policy instead.
+Stage 1 doesn't produce repair instructions -- its judgement would become the
+prescription (every image prompt rewritten as "Generate an image: ..."), so
+Stage 2a follows a fixed rewriting policy instead.
 
-Stage 0 also filters VQAv2 and ScienceQA for **visual grounding**, following
-MMStar (Chen et al., 2024): each TI2T sample is answered by GPT-5.2 three
-times *without* the image, and dropped if at least two of the three
-responses are still correct (i.e. the question didn't need the image at
-all). 1,541/2,400 sampled VQAv2 questions and 653/2,017 ScienceQA samples
-survive this filter -- see `pipeline/stage0/vqav2_filtering/` and
-`pipeline/stage0/scienceqa_filtering/`.
+**Visual grounding** (VQAv2, ScienceQA): each TI2T sample is answered by
+GPT-5.2 three times without the image; dropped if ≥2/3 responses are still
+correct. 1,541/2,400 VQAv2 and 653/2,017 ScienceQA samples survive -- see
+`stage0/vqav2_filtering/`, `stage0/scienceqa_filtering/`.
 
-ScienceQA's MCQ-option stripping (Stage 0's job per the table above) is not
-done inside `stage0_prepare_originals.py` itself -- it's applied as a
-post-process directly on `data/stage3_2variant_final.json`'s ScienceQA rows.
-See `pipeline/stage0/scienceqa_openstyle/README.md` for the conversion and an
-important validation-coverage caveat (only 60/409 items went through real
-Stage-3-equivalent LLM validation).
+**ScienceQA MCQ-option stripping** is a post-process on
+`data/stage3_2variant_final.json`, not inside `stage0_prepare_originals.py` --
+see `stage0/README.md` (D) (also notes a validation-coverage caveat: only
+60/409 items got full Stage-3-equivalent LLM validation).
 
-There is also a Stage 4 (`_archive/stage4_finalize_unused/stage4_finalize.py`),
-an earlier human-curation path (apply per-sample drop decisions to the
-5-variant Stage 3 output) that predates Stage 5. **It is not part of the
-path that produced the released dataset.** Stage 5 runs directly on Stage
-3's output and does its own, separate human review (see Human
-verification). Stage 4 and its decision files are archived for reference
-only; nothing downstream reads its output.
+A Stage 4 (`_archive/stage4_finalize_unused/`) predates Stage 5 and is **not**
+part of the released dataset's path -- see Human verification below.
 
 ## Layout
 
 ```
 pipeline/
-  stage0_prepare_originals.py    Stage 0: assemble data/stage0_originals.jsonl from data/stage0_inputs/
-  stage0/                        sub-pipelines that produce data/stage0_inputs/ (see stage0/README.md)
-  stage1_judge.py                Stage 1 only
-  stage2a_fix.py                 Stage 2a only (rewrite `fix`-routed prompts)
-  stage2b_generate.py            Stage 2b only (generate 5 variants)
-  stage3_validate.py             Stage 3 only (validate variants, per-variant or --batch-by-sample)
-  stage5_reduce_to_2variants.py  Stage 5: reduce 5 variants to 2, human review for the rest
+  stage0_prepare_originals.py    Stage 0
+  stage0/                        per-source candidate-pool sub-pipelines
+  stage1_judge.py                Stage 1
+  stage2a_fix.py                 Stage 2a
+  stage2b_generate.py            Stage 2b
+  stage3_validate.py             Stage 3
+  stage5_reduce_to_2variants.py  Stage 5
   prompts/                       system prompts, one txt per stage
-  decisions/                     Stage 5's human-review decisions (see Human verification)
-  logs/                          full-run logs, one per stage (stage1/2a/2b/3 only)
+  decisions/                     Stage 5's human-review decisions
+  logs/                          full-run logs (stage1/2a/2b/3)
 data/
-  stage0_originals.jsonl       Stage 0 output, input to Stage 1
-  stage1_full_5682.json ... stage3_full_5682.json   per-stage outputs
-  stage3_2variant_final.json   final released dataset (Stage 5 output)
-_archive/
-  stage2_pipeline_combined/    superseded combined 2a+2b+3 script, kept for history; not used for the released data
-  stage4_finalize_unused/      earlier, unused curation path (Stage 4) -- see Pipeline section above
+  stage0_originals.jsonl ... stage3_full_5682.json   per-stage outputs
+  stage3_2variant_final.json                         released dataset
 ```
 
 ## Usage
@@ -101,15 +79,14 @@ python stage3_validate.py --input stage2b_out.json --output stage3_out.json
 python stage5_reduce_to_2variants.py --input stage3_out.json --output ../data/stage3_2variant_final.json
 ```
 
-Models are set through environment variables. The validator is deliberately a
-different model from the generator (Panickssery et al., NeurIPS 2024).
+Models are set via env vars (the validator is deliberately a different model
+from the generator, Panickssery et al. NeurIPS 2024):
 
 ```bash
 JUDGE_MODEL=gpt-5.5 GEN_MODEL=gpt-5.5 VAL_MODEL=gpt-5.5 python stage1_judge.py ...
 ```
 
-System prompts live in `prompts/` as plain text so they can be edited without
-touching the scripts. `PROMPT_DIR` overrides the location.
+System prompts live in `prompts/`; `PROMPT_DIR` overrides the location.
 
 ### Input format
 
@@ -117,72 +94,31 @@ touching the scripts. `PROMPT_DIR` overrides the location.
 {"id": "t2i_007", "prompt": "an astronaut riding a horse on Mars", "task": "T2I", "source": "DrawBench"}
 ```
 
-`task` is one of `T2T`, `TI2T`, `T2I`, `TI2I`. Ground-truth modality and input
+`task` is one of `T2T`/`TI2T`/`T2I`/`TI2I`; ground-truth modality and input
 image presence are derived from it.
 
 ## What to check in the output
 
-- **`gate_per_task`** — bare captions and bare goal states should route to
-  `fix`; explicit directives and plain VQA should stay `keep`.
-- **`interrogative_ratio_by_modality`** — text and image should be close. A gap
-  means question marks still predict the answer.
-- **`axis_fail_rate`** and **`fail_combinations`** — which of the three
-  validation checks is doing the rejecting.
-- **`pass_rate_by_route`** — a low rate on `fix` points at Stage 2a; a low rate
-  on `keep` points at Stage 2b.
+- `gate_per_task` -- bare captions/goal states should route to `fix`.
+- `interrogative_ratio_by_modality` -- should be close across modalities.
+- `axis_fail_rate` / `fail_combinations` -- which validation axis is rejecting.
+- `pass_rate_by_route` -- low `fix` rate points at Stage 2a, low `keep` at 2b.
 
 ## Human verification
 
-LLM judgements are spot-checked by hand: Stage 1 decisions for agreement with
-human labels, and a sample of Stage 3 survivors for meaning preservation.
-Details in the paper.
+Stage 1 decisions and a sample of Stage 3 survivors are spot-checked by hand
+for agreement with human labels (details in the paper).
 
-**Stage 5's human review (this is what produced the released dataset).**
-`stage5_reduce_to_2variants.py` picks 1 passed interrogative + 1 passed
-non-interrogative variant per sample automatically wherever possible
-(`random.Random(42)`, see the script). A sample can't be reduced this way if
-all 5 variants failed Stage 3, or if no variant in one of the two slots
-passed. Running the script against the released `data/stage3_full_5682.json`
-and `pipeline/decisions/variant2_reduction_*.json`:
+**Stage 5** (`stage5_reduce_to_2variants.py`, `random.Random(42)`) is what
+produced the released dataset: 74 samples couldn't be auto-reduced (33
+all-failed, 23 no non-interrogative survivor, 18 no interrogative survivor);
+30 were rescued by hand, 44 dropped (25 via an automatic drop registry, the
+rest manual) -- 5,682 → 5,638 samples.
 
-- **74** samples needed inspection (33 all-failed, 23 no non-interrogative
-  survivor, 18 no interrogative survivor).
-- Of those, **30** were rescued by hand (`variant2_reduction_manual_decisions.json`,
-  `decision: "rescue"`, a specific pair of variants picked manually) and
-  **44** were dropped (25 via the automatic drop registry
-  `variant2_reduction_auto_drop_registry.json` for failure patterns with a
-  single clear cause across many samples, the rest via explicit manual
-  `"drop"` decisions — manual decisions always take priority over the
-  registry).
-- 5,682 → 5,638 samples (11,276 prompts).
-
-**Stage 4's human review (superseded, not part of the released path,
-archived under `_archive/stage4_finalize_unused/`).**
-`stage4_finalize.py` is an earlier, separate curation pass over the
-same `data/stage3_full_5682.json`, driven by its own decision files
-(`drop_decisions.json`, `qa_decisions.json`; one row per
-sample: `keep`, `drop`, or `keep` with a specific list of variants to drop).
-Its two failure patterns:
-
-- **Rule-based-graded sources** (`gsm8k`, `mmlu`, `ScienceQA`, `VQAv2`) reuse a
-  single fixed `gold_answer` across all 5 variants of a sample. A variant that
-  quietly changes a quantity or relationship in the source problem (e.g. "2
-  more than he has" → "short by 2") silently invalidates that gold answer —
-  unlike model-judged sources (`ImgEditBench`, `MagicBrush`, `dpg_bench`,
-  `geneval`), where a judge scores the actual output against whatever was
-  asked, so prompt drift there doesn't break grading the same way.
-- **Source-level defects** independent of the variant step: duplicated text in
-  the original prompt, and a couple of `ImgEditBench` items whose source
-  prompt asked for a text answer despite being labeled `TI2I`.
-
-Running `stage4_finalize.py` against the current decision files: 36 samples
-reviewed, 7 dropped outright, 25 variants dropped across 17 other samples,
-5,682 → 5,675. **This output (`data/stage3_final_5675.json`) is not present
-in the repo and nothing downstream reads it** — Stage 5 was run directly on
-`data/stage3_full_5682.json` instead, and the dataset it produced is what was
-released. This script and its decisions are kept archived only so this
-history stays legible; treat the numbers in this subsection as historical,
-not as a description of the released dataset.
+**Stage 4** (`_archive/stage4_finalize_unused/`) was an earlier, separate
+curation pass (36 reviewed, 7 dropped, 5,682 → 5,675) that predates Stage 5
+and is not part of the released path -- Stage 5 ran directly on Stage 3's
+output instead. Kept only so this history stays legible.
 
 ## References
 
@@ -191,11 +127,7 @@ not as a description of the released dataset.
 - Mizrahi et al. *State of What Art? A Call for Multi-Prompt LLM Evaluation.*
   TACL 2024.
 - Chen et al. *Are We on the Right Way for Evaluating Large Vision-Language
-  Models?* (MMStar) NeurIPS 2024. -- basis for the visual-grounding filter
-  (see below): a TI2T sample is dropped if a text-only judge (no image
-  given) still answers it correctly at least 2/3 times.
+  Models?* (MMStar) NeurIPS 2024. -- basis for the visual-grounding filter.
 - Myrzakhan et al. *Open-LLM-Leaderboard: From Multi-Choice to Open-Style
   Questions for LLMs Evaluation, Benchmark, and Arena.* arXiv:2406.07545,
-  2024. -- the OSQ-bench procedure used to convert MMLU (and, adapted, the
-  other multiple-choice sources) into open-ended questions; see
-  `pipeline/stage0/mmlu_openstyle/`.
+  2024. -- the OSQ-bench conversion procedure, see `stage0/mmlu_openstyle/`.
