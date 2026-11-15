@@ -8,10 +8,8 @@ measure whether a model would have chosen correctly on its own. COMI-Bench
 removes that instruction and asks a single question: given a prompt, does
 the model produce the modality the prompt actually calls for?
 
-![pipeline](assets/comi_pipeline.png)
-
-(Predates Stage 5: see `pipeline/README.md` for the up-to-date pipeline,
-which reduces each sample to exactly 2 variants.)
+See `pipeline/README.md` for the construction pipeline's stage-by-stage
+diagram and design rationale.
 
 ## Dataset
 
@@ -42,8 +40,7 @@ See `data/README.md` for per-source licenses and what each data file is.
 ├── docs/
 │   └── Experiments.md   # methodology + the paper's reported tables
 ├── data/             # Benchmark data, all pipeline stages' outputs
-├── assets/
-└── _archive/         # superseded code, kept for provenance only
+└── _archive/         # superseded code and assets, kept for provenance only
 ```
 
 ## Quick start

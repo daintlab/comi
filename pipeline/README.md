@@ -11,12 +11,6 @@ model produce the modality the prompt actually calls for?
 The benchmark covers four task types — T2T, TI2T, T2I, TI2I — built from
 existing datasets with minimal refinement.
 
-![pipeline](../assets/comi_pipeline.png)
-
-(This diagram predates Stage 5 -- it shows Stage 3's output as the final
-dataset, with each sample carrying 4-5 variants. The actually-released
-dataset applies Stage 5 on top of this, reducing every sample to exactly 2
-variants, 11,276 prompts total; see the Pipeline table below.)
 
 ## Why existing data cannot be used as is
 
@@ -89,8 +83,6 @@ data/
   stage0_originals.jsonl       Stage 0 output, input to Stage 1
   stage1_full_5682.json ... stage3_full_5682.json   per-stage outputs
   stage3_2variant_final.json   final released dataset (Stage 5 output)
-assets/
-  comi_pipeline.png
 ```
 
 ## Usage
