@@ -120,8 +120,10 @@ python stage3_validate.py --input stage2b_out.json --output stage3_out.json
 python stage5_reduce_to_2variants.py --input stage3_out.json --output ../data/stage3_2variant_final.json
 ```
 
-Models are set via env vars (the validator is deliberately a different model
-from the generator, Panickssery et al. NeurIPS 2024):
+Models are set via env vars (default `gpt-5.5` for all three roles). The
+paper's own construction run mixed three GPT-5 versions (5.1/5.2/5.5) across
+stages -- not a deliberate judge/generator separation, just changes to the
+available model during the project (paper, footnote 5):
 
 ```bash
 JUDGE_MODEL=gpt-5.5 GEN_MODEL=gpt-5.5 VAL_MODEL=gpt-5.5 python stage1_judge.py ...
